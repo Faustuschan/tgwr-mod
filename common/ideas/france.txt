@@ -1,5 +1,197 @@
 ideas = {
+
+	country = {
+
+		FRA_memories_of_1870 = {
+			allowed = {
+				original_tag = FRA
+				always = no
+			}
+			allowed_civil_war = {
+				has_government = democratic
+			}
+			removal_cost = -1
+			picture = FRA_memories_of_18702
+			modifier = {
+				surrender_limit = -0.25
+				recruitable_population_factor = -0.25
+			}
+		}
+
+		FRA_disjointed_government = {
+			allowed = {
+				original_tag = FRA
+				always = no
+			}
+			allowed_civil_war = {
+				has_government = democratic
+			}
+			removal_cost = -1
+			picture = generic_disjointed_gov
+			modifier = {
+				political_power_cost = 0.5
+				stability_factor = -0.1
+			}
+		}
+
+		FRA_artisanal_industry = {
+			allowed = {
+				original_tag = FRA
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = FRA_memories_of_1870
+			modifier = {
+				industrial_capacity_factory = -0.20
+				industrial_capacity_dockyard = -0.20
+			}
+		}
+
+		FRA_popular_labor_service = {
+			allowed = {
+				original_tag = FRA
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = FRA_expanded_duty
+			modifier = {
+				production_speed_buildings_factor = 0.10
+			}
+		}
+
+		FRA_popular_labor_service2 = {
+			allowed = {
+				original_tag = FRA
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = FRA_expanded_duty
+			modifier = {
+				production_speed_buildings_factor = 0.10
+				industrial_capacity_factory = 0.10
+				industrial_capacity_dockyard = 0.10
+			}
+		}
+
+		FRA_popular_labor_service3 = {
+			allowed = {
+				original_tag = FRA
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = FRA_expanded_duty
+			modifier = {
+				production_speed_buildings_factor = 0.10
+				industrial_capacity_factory = 0.10
+				industrial_capacity_dockyard = 0.10
+				recruitable_population_factor = 0.10
+			}
+		}
+
+		FRA_CGT_support = {
+			allowed = {
+				original_tag = FRA
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = FRA_market_dynamism
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.10
+				production_factory_max_efficiency_factor = 0.10
+				communism_acceptance = 50
+			}
+		}
+
+		FRA_CGT_support2 = {
+			allowed = {
+				original_tag = FRA
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = FRA_market_dynamism
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.10
+				production_factory_max_efficiency_factor = 0.10
+				consumer_goods_factor = -0.05
+				communism_acceptance = 50
+			}
+		}
+
+		FRA_idea_world_revolution = {
+			picture = home_of_revolution
+			allowed = { tag = FRA }
+			allowed_civil_war = { has_government = communism }
+			removal_cost = -1
+			available = {
+				ROOT = {
+					has_government = communism
+				}
+			}
+			modifier = {
+				send_volunteer_size = 3
+				subversive_activites_upkeep = -0.15
+				foreign_subversive_activites = -0.15
+			}
+		}
+
+		FRA_guards_of_the_motherland = {
+			picture = FRA_national_mobilization_focus
+			allowed = { tag = FRA }
+			allowed_civil_war = { has_government = communism }
+			removal_cost = -1
+			available = {
+				ROOT = {
+					has_government = communism
+				}
+			}
+			modifier = {
+				army_core_defence_factor = 0.10
+				army_org_factor = 0.1
+			}
+		}
+
+
+
+
+
+
+	}
 	political_advisor = {
+		FRA_marcel_cachin = {
+			allowed = {
+				original_tag = FRA
+			}
+			traits = {
+				communist_revolutionary
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					ROOT = {
+						has_completed_focus = FRA_ww1_memories_of_the_commune
+					}
+					factor = 100
+				}
+			}
+		}
 		FRA_louis_franchet_d_esperey = {
 			allowed = {
 				original_tag = FRA
@@ -58,10 +250,12 @@ ideas = {
 				NOT = {
 					has_global_flag = kis_jauresassassination
 				}
+				has_completed_focus = FRA_ww1_memories_of_the_commune
 			}
 			ai_will_do = {
 				factor = 0
 			}
+			cost = 100
 		}
 	}
 	theorist = {
@@ -506,21 +700,7 @@ ideas = {
 				conscription = -0.003
 			}
 		}
-		FRA_disjointed_government = {
-			allowed = {
-				original_tag = FRA
-				always = no
-			}
-			allowed_civil_war = {
-				has_government = democratic
-			}
-			removal_cost = -1
-			picture = generic_disjointed_gov
-			modifier = {
-				political_power_cost = 0.8
-				stability_factor = -0.1
-			}
-		}
+
 		FRA_protected_by_the_maginot_line = {
 			allowed = {
 				always = no

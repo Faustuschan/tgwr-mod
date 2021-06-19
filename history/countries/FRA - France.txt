@@ -10,6 +10,71 @@ create_faction = entente
 add_to_faction = FRA
 add_to_faction = RUS
 
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "1910.4.30" 
+	election_frequency = 48 
+	elections_allowed = yes
+}	
+set_popularities = { #1906 parliament representation
+	fascism = 6 # 6% (nationnalists)
+	communism = 24 #50% of the radical socialists (14) + communists (10)
+	democratic = 61 # 50% of the radical socialists (14) + gauche (20) + 50% of the popular liberal action (7)
+	neutrality = 9 # 50% of the popular liberal action (7)
+
+	#Actual parties :
+	# SFIO - communists 10% 54 seats
+	# Republican, Radical and Radical-Socialist Party democratc/communists 28% 132 seats 
+	# Independent Radicals - democrats 8% 115 seats
+	# Democratic Republican Alliance 10% 90 seats
+	# Independent Socialists - democrats 2% 20 seats 
+	# Popular Liberal Action - democratc/authoritarians 15% 66 seats
+	# Nationalists - fascists 6% 30 seats
+	# Republican Federation - democrats 21% 78 seats
+}
+
+#init political parliament
+set_variable = { var = SFIO value = 54 } 
+set_variable = { var = independent_socialist value = 20 } 
+set_variable = { var = democratic_republican_alliance value = 90 }
+set_variable = { var = radical_party value = 132 } 
+set_variable = { var = republicain_federation value = 78 } 
+set_variable = { var = conservatives value = 0 } 
+set_variable = { var = independent_republicans value = 0 } 
+set_variable = { var = independent_radicals value = 115 } 
+set_variable = { var = popular_liberal_action value = 66 } 
+set_variable = { var = nationalists value = 30 } 
+set_variable = { var = vacant value = 15 }
+set_variable = { var = seatNumbers value = 585 }
+#SFIO + socialists (var used for socialist path)
+set_variable = { var = socialist_alliance value = 0 }
+add_to_variable = { var = socialist_alliance value = independent_socialist }
+add_to_variable = { var = socialist_alliance value = SFIO } 
+# the unified republican bloc value
+set_variable = { var = democrat_alliance value = 0 } 
+add_to_variable = { var = democrat_alliance value = independent_socialist }
+add_to_variable = { var = democrat_alliance value = democratic_republican_alliance }
+add_to_variable = { var = democrat_alliance value = radical_party }
+add_to_variable = { var = democrat_alliance value = republicain_federation }
+add_to_variable = { var = democrat_alliance value = conservatives }
+add_to_variable = { var = democrat_alliance value = independent_republicans }
+add_to_variable = { var = democrat_alliance value = independent_radicals }
+set_variable = { var = democrat_alliance_percent value = democrat_alliance } 
+set_variable = { var = FRA_player_alliance value = "Right_democract_coalition" }
+multiply_variable = { democrat_alliance_percent = 100 }
+divide_variable = { democrat_alliance_percent = seatNumbers }
+
+add_ideas = {
+	FRA_memories_of_1870
+	FRA_artisanal_industry
+	ww1_Scramble_for_Africa
+	FRA_disjointed_government
+	limited_conscription
+	FRA_wadai_war
+}
+
+
 1910.1.1 = {
 	declare_war_on = {
 		target = CHA
@@ -23,196 +88,8 @@ add_to_faction = RUS
 
 set_technology = { bicycle_infantry = 1 }
 give_guarantee = BEL # Treaty of London (1839)
-create_country_leader = { 
-	name = "Louis Frossard" 
-	picture = "gfx/leaders/FRA/FRA_louis_frossard.dds" 
-	expire = "1935.1.1" 
-	ideology = marxism
-	traits = { trait_marxism }  
-}
-create_country_leader = {
-	name = "Armand Fallières" 
-	picture = "gfx/leaders/FRA/FRA_armand_fallieres.dds" 
-	expire = "1935.1.1" 
-	ideology = conservatism
-	traits = { trait_conservatism }  
-}
-create_country_leader = {
-	name = "Georges Valois" 
-	picture = "gfx/leaders/FRA/FRA_georges_valois.dds" 
-	expire = "1935.1.1" 
-	ideology = national_syndicalism
-	traits = { trait_national_syndicalism }  
-}
-
-create_field_marshal = {
-	name = "Joseph Joffre" id=32007
-	portrait_path="gfx/leaders/FRA/FRA_joseph_joffre.dds"
-	traits={ offensive_doctrine old_guard }
-	skill=4
-	attack_skill = 4
-	defense_skill = 3
-	planning_skill = 3
-	logistics_skill = 3
-}
-
-create_field_marshal={
-	name = "Joseph Gallieni" id=32019
-	portrait_path="gfx/leaders/FRA/FRA_joseph_gallieni.dds"
-	traits={ defensive_doctrine old_guard }
-	skill=4
-	attack_skill = 3
-	defense_skill = 2
-	planning_skill = 4
-	logistics_skill = 4
-}
-
-create_field_marshal={
-	name = "Ferdinand Foch" id=32006
-	portrait_path="gfx/leaders/FRA/FRA_ferdinand_foch.dds"
-	traits={ offensive_doctrine }
-	skill=4
-	attack_skill = 3
-	defense_skill = 4
-	planning_skill = 3
-	logistics_skill = 3
-}
-
-create_corps_commander={
-	name = "Philippe Pétain" id=32009
-	portrait_path="gfx/leaders/FRA/FRA_philippe_petain.dds"
-	traits={ trickster }
-	skill=3
-	attack_skill = 3
-	defense_skill = 3
-	planning_skill = 2
-	logistics_skill = 2
-}
-
-create_corps_commander={
-	name = "Robert Nivelle" id=32031
-	portrait_path="gfx/leaders/FRA/FRA_robert_nivelle.dds"
-	traits={ }
-	skill=2
-	attack_skill = 3
-	defense_skill = 1
-	planning_skill = 2
-	logistics_skill = 2
-}
-
-create_corps_commander={
-    name = "Charles Lanrezac" id=3200
-    portrait_path="gfx/leaders/FRA/FRA_charles_lanrezac.dds"
-    traits={ inflexible_strategist war_hero career_officer }
-    skill=3
-    attack_skill = 2
-    defense_skill = 3
-    planning_skill = 1
-    logistics_skill = 1
-    }
-
-create_corps_commander={
-	name = "Louis Franchet d'Espèrey" id=32003
-	portrait_path="gfx/leaders/FRA/FRA_louis_franchet_d_esperey.dds"
-	traits={ }
-	skill=3
-	attack_skill = 1
-	defense_skill = 2
-	planning_skill = 1
-	logistics_skill = 1
-}
-
-create_corps_commander={
-	name = "Émile Fayolle" id=32293
-	portrait_path="gfx/leaders/FRA/FRA_emile_fayolle.dds"
-	traits={ }
-	skill=2
-	attack_skill = 1
-	defense_skill = 1
-	planning_skill = 2
-	logistics_skill = 1
-}
-
-create_corps_commander={
-	name = "Hubert Lyautey" id=32004
-	portrait_path="gfx/leaders/FRA/FRA_hubert_lyautey.dds"
-	traits={ }
-	skill=2
-	attack_skill = 1
-	defense_skill = 1
-	planning_skill = 1
-	logistics_skill = 2
-}
-
-create_corps_commander={
-	name = "Michel Maunoury" id=32033
-	portrait_path="gfx/leaders/FRA/FRA_michel_maunoury.dds"
-	traits={ }
-	skill=3
-	attack_skill = 2
-	defense_skill = 1
-	planning_skill = 1
-	logistics_skill = 2
-}
-create_corps_commander = {
-	name = "Paul Leblois"
-	portrait_path = "gfx/leaders/FRA/FRA_paul_leblois.dds"
-	traits = {
-		infantry_officer
-		inflexible_strategist
-		trait_mountaineer
-	}
-	skill = 2
-	attack_skill = 2
-	defense_skill = 1
-	planning_skill = 1
-	logistics_skill = 1
-}
-
-create_navy_leader={
-	name = "Auguste Boué de Lapeyrère" id=32302
-	portrait_path="gfx/leaders/FRA/FRA_de_lapeyrere.dds"
-	traits={ }
-	skill=3
-	attack_skill = 1
-	defense_skill = 2
-}
-
-create_navy_leader={
-	name = "Jean Merveilleux du Vignaux" id=32306
-	portrait_path="gfx/leaders/FRA/FRA_du_vignaux.dds"
-	traits={ old_guard }
-	skill=2
-	attack_skill = 1
-	defense_skill = 2
-}
-
-create_navy_leader={
-	name = "Lucien Lacaze" id=32329
-	portrait_path="gfx/leaders/FRA/FRA_lucien_lacaze.dds"
-	traits={ }
-	skill=3
-	attack_skill = 1
-	defense_skill = 2
-}
-
-create_navy_leader={
-	name = "Pierre-Alexis Ronarc'h" id=32341
-	portrait_path="gfx/leaders/FRA/FRA_ronarc_h.dds"
-	traits={ }
-	skill=3
-	attack_skill = 1
-	defense_skill = 1
-}
-
 oob = "FRA_1910"
 
-#Army
-complete_national_focus = FRA_ww1_army_effort
-complete_national_focus = FRA_ww1_industrial_effort
-complete_national_focus = FRA_ww1_naval_effort
-
-complete_national_focus = FRA_ww1_diplomatic_effort
 
 set_technology = {
 	#infantry
@@ -247,26 +124,6 @@ set_technology = {
 	generator_battery = 1
 }
 
-set_politics = {
-	ruling_party = democratic
-	last_election = "1910.4.30" 
-	election_frequency = 48 
-	elections_allowed = yes
-}	
-set_popularities = {
-	fascism = 2
-	communism = 24
-	democratic = 64
-	neutrality = 10
-}
-
-add_ideas = {
-	FRA_ww1_Revanchism
-	ww1_Scramble_for_Africa
-	FRA_disjointed_government
-	limited_conscription
-	FRA_wadai_war
-}
 
 if = {
 	limit = {
@@ -1425,4 +1282,188 @@ if = {
 		obsolete = yes
 	}
 }
+
+
+create_country_leader = { 
+	name = "Louis Frossard" 
+	picture = "gfx/leaders/FRA/FRA_louis_frossard.dds" 
+	expire = "1935.1.1" 
+	ideology = marxism
+	traits = { trait_marxism }  
+}
+create_country_leader = {
+	name = "Armand Fallières" 
+	picture = "gfx/leaders/FRA/FRA_armand_fallieres.dds" 
+	expire = "1935.1.1" 
+	ideology = conservatism
+	traits = { trait_conservatism }  
+}
+create_country_leader = {
+	name = "Georges Valois" 
+	picture = "gfx/leaders/FRA/FRA_georges_valois.dds" 
+	expire = "1935.1.1" 
+	ideology = national_syndicalism
+	traits = { trait_national_syndicalism }  
+}
+
+create_field_marshal = {
+	name = "Joseph Joffre" id=32007
+	portrait_path="gfx/leaders/FRA/FRA_joseph_joffre.dds"
+	traits={ offensive_doctrine old_guard }
+	skill=4
+	attack_skill = 4
+	defense_skill = 3
+	planning_skill = 3
+	logistics_skill = 3
+}
+
+create_field_marshal={
+	name = "Joseph Gallieni" id=32019
+	portrait_path="gfx/leaders/FRA/FRA_joseph_gallieni.dds"
+	traits={ defensive_doctrine old_guard }
+	skill=4
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 4
+	logistics_skill = 4
+}
+
+create_field_marshal={
+	name = "Ferdinand Foch" id=32006
+	portrait_path="gfx/leaders/FRA/FRA_ferdinand_foch.dds"
+	traits={ offensive_doctrine }
+	skill=4
+	attack_skill = 3
+	defense_skill = 4
+	planning_skill = 3
+	logistics_skill = 3
+}
+
+create_corps_commander={
+	name = "Philippe Pétain" id=32009
+	portrait_path="gfx/leaders/FRA/FRA_philippe_petain.dds"
+	traits={ trickster }
+	skill=3
+	attack_skill = 3
+	defense_skill = 3
+	planning_skill = 2
+	logistics_skill = 2
+}
+
+create_corps_commander={
+	name = "Robert Nivelle" id=32031
+	portrait_path="gfx/leaders/FRA/FRA_robert_nivelle.dds"
+	traits={ }
+	skill=2
+	attack_skill = 3
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
+}
+
+create_corps_commander={
+    name = "Charles Lanrezac" id=3200
+    portrait_path="gfx/leaders/FRA/FRA_charles_lanrezac.dds"
+    traits={ inflexible_strategist war_hero career_officer }
+    skill=3
+    attack_skill = 2
+    defense_skill = 3
+    planning_skill = 1
+    logistics_skill = 1
+    }
+
+create_corps_commander={
+	name = "Louis Franchet d'Espèrey" id=32003
+	portrait_path="gfx/leaders/FRA/FRA_louis_franchet_d_esperey.dds"
+	traits={ }
+	skill=3
+	attack_skill = 1
+	defense_skill = 2
+	planning_skill = 1
+	logistics_skill = 1
+}
+
+create_corps_commander={
+	name = "Émile Fayolle" id=32293
+	portrait_path="gfx/leaders/FRA/FRA_emile_fayolle.dds"
+	traits={ }
+	skill=2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
+}
+
+create_corps_commander={
+	name = "Hubert Lyautey" id=32004
+	portrait_path="gfx/leaders/FRA/FRA_hubert_lyautey.dds"
+	traits={ }
+	skill=2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 2
+}
+
+create_corps_commander={
+	name = "Michel Maunoury" id=32033
+	portrait_path="gfx/leaders/FRA/FRA_michel_maunoury.dds"
+	traits={ }
+	skill=3
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 2
+}
+create_corps_commander = {
+	name = "Paul Leblois"
+	portrait_path = "gfx/leaders/FRA/FRA_paul_leblois.dds"
+	traits = {
+		infantry_officer
+		inflexible_strategist
+		trait_mountaineer
+	}
+	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+}
+
+create_navy_leader={
+	name = "Auguste Boué de Lapeyrère" id=32302
+	portrait_path="gfx/leaders/FRA/FRA_de_lapeyrere.dds"
+	traits={ }
+	skill=3
+	attack_skill = 1
+	defense_skill = 2
+}
+
+create_navy_leader={
+	name = "Jean Merveilleux du Vignaux" id=32306
+	portrait_path="gfx/leaders/FRA/FRA_du_vignaux.dds"
+	traits={ old_guard }
+	skill=2
+	attack_skill = 1
+	defense_skill = 2
+}
+
+create_navy_leader={
+	name = "Lucien Lacaze" id=32329
+	portrait_path="gfx/leaders/FRA/FRA_lucien_lacaze.dds"
+	traits={ }
+	skill=3
+	attack_skill = 1
+	defense_skill = 2
+}
+
+create_navy_leader={
+	name = "Pierre-Alexis Ronarc'h" id=32341
+	portrait_path="gfx/leaders/FRA/FRA_ronarc_h.dds"
+	traits={ }
+	skill=3
+	attack_skill = 1
+	defense_skill = 1
+}
+
 

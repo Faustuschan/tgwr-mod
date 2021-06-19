@@ -26,8 +26,8 @@ bookmarks = {
 			history = "FRA_POWDERKEG_DESC"
 			ideology = democratic
 			ideas = {
-				FRA_ww1_Revanchism
-				FRA_disjointed_government
+				FRA_memories_of_1870
+				FRA_artisanal_industry
 				ww1_Scramble_for_Africa
 			}
 			focuses = {

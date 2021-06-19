@@ -1,0 +1,42 @@
+spriteTypes = {	
+
+	#### Canadian Goals
+	
+	##### exonerate dreyfus
+	SpriteType = {
+		name = "GFX_goal_FRA_democraty"
+		texturefile = "gfx/interface/goals/FRA/FRA_democraty.dds"
+	}	
+	
+	##### artisanal economy
+	SpriteType = {
+		name = "GFX_idea_FRA_artisanal_industry"
+		texturefile = "gfx/interface/ideas/FRA/artisanal_economy.dds"
+	}	
+
+	##### memories of 1870
+	SpriteType = {
+		name = "GFX_idea_FRA_memories_of_1870"
+		texturefile = "gfx/interface/ideas/FRA/memories_of_1870.dds"
+	}
+
+	##### expanded duty
+	SpriteType = {
+		name = "GFX_idea_FRA_expanded_duty"
+		texturefile = "gfx/interface/ideas/FRA/marx_trash.dds"
+	}
+
+	##### expanded duty
+	SpriteType = {
+		name = "GFX_goal_FRA_expanded_duty"
+		texturefile = "gfx/interface/goals/FRA/FRA_expanded_duty.dds"
+	}
+
+	##### expanded duty 2
+	SpriteType = {
+		name = "GFX_goal_FRA_expanded_duty2"
+		texturefile = "gfx/interface/goals/FRA/FRA_çexpanded_duty2.dds"
+	}
+
+	
+}

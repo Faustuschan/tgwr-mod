@@ -20,8 +20,9 @@ country_event = {
 			}
 		}
 		OR = {
-			has_stability < 0.05
-			communism > 0.5
+			### correcting the trigger to avoid event on communist focus path
+			#has_stability < 0.05
+			#communism > 0.5
 			has_country_flag = great_war_loser 
 		}
 	}

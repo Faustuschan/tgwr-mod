@@ -2990,8 +2990,41 @@ Australia_disestablish_the_cmf_desc:0 ""
  
  
  
- 
- 
+ FRA_ww1_dreyfus_exoneration:0 "Dreyfus exoneration"
+ FRA_ww1_save_the_republic:0 "Save the republic"
+ FRA_ww1_memories_of_the_commune:0 "Memories of the commune"
+ FRA_ww1_form_the_popular_labor_service:0 "Form the Popular labor service"
+ FRA_ww1_extend_the_duty:0 "Expand the duty"
+ FRA_ww1_popular_brigades:0 "Popular brigades"
+ FRA_ww1_the_social_democrat_compromise:0 "The social democrat compromise"
+ FRA_ww1_form_the_proudhon_circle:0 "Form the proudhon circle"
+ FRA_ww1_support_paul_deroulede:0 "Support Paul Deroulede"
+ FRA_ww1_support_the_suffragettes:0 "Support the suffragettes"
+ FRA_ww1_affiliation_with_the_CGT:0 "Affiliation with the CGT"
+ FRA_ww1_labor_reform:0 "Labor reform"
+ FRA_ww1_ally_the_republican_alliance:0 "Ally the republican alliance"
+ FRA_ww1_socialist_mentality:0 "Socialist mentality"
+ FRA_ww1_support_for_universities:0 "Support for universities"
+ FRA_ww1_mention_de_censure:0 "Motion de censure"
+ FRA_ww1_socialist_reality:0 "Socialist reality"
+ FRA_ww1_nationalize_war_industry:0 "Nationalize war industry"
+ FRA_ww1_collectivisation:0 "Collectivisation"
+ FRA_ww1_support_worldwide_revolution:0 "Support the worldwide revolution"
+ FRA_ww1_over_influence_europe:0 "French influence over Europe"
+ FRA_ww1_guards_of_the_motherland:0 "Guards of the motherland"
+
+
+ FRA_join_socialists:0 "\nSelecting §Ythis focus§! will place us in the role of §Rthe SFIO§!. \n\n§ROur alliance will combine socialists seats!§!"
+ FRA_get_socialists_seats:0 "Socialists represents [?socialist_alliance|Y0] seats."
+ FRA_ally_democratic_republican_alliance:0 "The §Ydemocratic republican alliance§! will join our §Ysocialist alliance§!, allowing us to gain [?democratic_republican_alliance|Y0]§Y seats.§!"
+ FRA_fuze_the_fronts:0 "The §Ydemocratic republican alliance§! and §Yindependents socialists§! will join §Rthe SFIO§!."
+ FRA_mention_de_censure:0 "§YThe French government§! will be removed from office by the §Yassembly§!. To do this, we need at least §Y150 seats.§!"
+ FRA_mention_de_censure_socialist:0 "\n§RA Radical-Socialist§! government will be formed."
+ FRA_150_seats:0 "Control 150 seats"
+ in_europe:0 "Produces this effect in §YEurope§! :"
+ FRA_national_assembly_dissolved:0 "§YThe national assembly will be dissolved. Allowing us to rule with §Rno opposition.§!§!"
+ FRA_ww1_form_peasant_council:0 "Form the peasant council"
+
 FRA_ww1_army_effort:0 "Armée de Terre Effort"
 FRA_ww1_army_effort_desc:0 "Germany's army is larger, and worse, more experienced than our own, which is still stocked mostly with veterans from the last war we had against them. If France is to pose a serious threat to German interests, we must reverse this scenario, modernize our army, and hopefully modernize our leadership!"
 
