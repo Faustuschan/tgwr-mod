@@ -11,7 +11,7 @@ focus_tree = {
 
 	focus = {
 		id = FRA_ww1_dreyfus_exoneration
-		icon = GFX_goal_tripartite_pact
+		icon = GFX_goal_FRA_democraty
 		completion_reward = {
 			add_political_power = 120
 		}
