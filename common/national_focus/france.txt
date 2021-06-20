@@ -966,7 +966,7 @@ focus = {
 		}
 		FRA = {
 			check_variable = {
-				democrat_alliance > 300
+				democrat_alliance > 250
 			}
 		}
 	}
