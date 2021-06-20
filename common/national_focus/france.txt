@@ -11,7 +11,7 @@ focus_tree = {
 
 	focus = {
 		id = FRA_ww1_dreyfus_exoneration
-		icon = GFX_goal_FRA_democraty
+		icon = GFX_goal_FRA_democraty_shine
 		completion_reward = {
 			add_political_power = 120
 		}
@@ -591,6 +591,8 @@ focus = {
 	}
 	completion_reward = {
 		add_stability = 0.05
+		custom_effect_tooltip = FRA_join_democrats_socialists
+		custom_effect_tooltip = FRA_get_democrats_socialists_seats
 	}
 	ai_will_do = {
 		factor = 1

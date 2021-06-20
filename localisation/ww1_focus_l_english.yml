@@ -3015,6 +3015,9 @@ Australia_disestablish_the_cmf_desc:0 ""
 
 
  FRA_join_socialists:0 "\nSelecting §Ythis focus§! will place us in the role of §Rthe SFIO§!. \n\n§ROur alliance will combine socialists seats!§!"
+ FRA_join_democrats_socialists:0 "\nSelecting §Ythis focus§! will place us in the role of §Ythe Democratic Republican Alliance§!. \n\n§ROur alliance will combine moderate socialists and radicals seats!§!"
+ FRA_get_democrats_socialists_seats:0 "Socialists-democrats represents [?democrat_socialist_alliance|Y0] seats."
+
  FRA_get_socialists_seats:0 "Socialists represents [?socialist_alliance|Y0] seats."
  FRA_ally_democratic_republican_alliance:0 "The §Ydemocratic republican alliance§! will join our §Ysocialist alliance§!, allowing us to gain [?democratic_republican_alliance|Y0]§Y seats.§!"
  FRA_fuze_the_fronts:0 "The §Ydemocratic republican alliance§! and §Yindependents socialists§! will join §Rthe SFIO§!."
@@ -3024,6 +3027,7 @@ Australia_disestablish_the_cmf_desc:0 ""
  in_europe:0 "Produces this effect in §YEurope§! :"
  FRA_national_assembly_dissolved:0 "§YThe national assembly will be dissolved. Allowing us to rule with §Rno opposition.§!§!"
  FRA_ww1_form_peasant_council:0 "Form the peasant council"
+ 
 
 FRA_ww1_army_effort:0 "Armée de Terre Effort"
 FRA_ww1_army_effort_desc:0 "Germany's army is larger, and worse, more experienced than our own, which is still stocked mostly with veterans from the last war we had against them. If France is to pose a serious threat to German interests, we must reverse this scenario, modernize our army, and hopefully modernize our leadership!"

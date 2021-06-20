@@ -4,7 +4,7 @@ spriteTypes = {
 	
 	##### exonerate dreyfus
 	SpriteType = {
-		name = "GFX_goal_FRA_democraty"
+		name = "GFX_goal_FRA_democraty_shine"
 		texturefile = "gfx/interface/goals/FRA/FRA_dreyfus.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
