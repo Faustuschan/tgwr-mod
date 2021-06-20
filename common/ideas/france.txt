@@ -34,6 +34,39 @@ ideas = {
 			}
 		}
 
+		FRA_disjointed_government2 = {
+			allowed = {
+				original_tag = FRA
+				always = no
+			}
+			allowed_civil_war = {
+				has_government = democratic
+			}
+			removal_cost = -1
+			picture = generic_disjointed_gov
+			modifier = {
+				political_power_cost = 0.25
+				stability_factor = -0.1
+			}
+		}
+
+		FRA_ww1_government_reform = {
+			allowed = {
+				original_tag = FRA
+				always = no
+			}
+			allowed_civil_war = {
+				has_government = democratic
+			}
+			removal_cost = -1
+			picture = neutrality_idea
+			modifier = {
+				political_power_cost = 0.10
+				consumer_goods_factor = 0.05
+				stability_weekly_factor = 0.0025
+			}
+		}
+
 		FRA_artisanal_industry = {
 			allowed = {
 				original_tag = FRA
@@ -168,6 +201,60 @@ ideas = {
 			}
 		}
 
+		FRA_interventionism = {
+			picture = generic_intel_bonus
+			allowed = {
+				always = no
+			}
+			modifier = {
+				send_volunteer_divisions_required = -0.5
+				send_volunteers_tension = -0.5
+			}
+		}
+
+		FRA_ww1_social_investments = {
+			picture = generic_flexible_foreign_policy2
+			allowed = {
+				TAG = FRA
+			}
+			research_bonus = {
+				industry = 0.10
+				electronics = 0.10
+			}
+		}
+
+		FRA_ww1_overseas_economy = {
+			picture = generic_navy_bonus
+			allowed = {
+				TAG = FRA
+			}
+			modifier = {
+				trade_opinion_factor = 0.10
+				convoy_escort_efficiency = 0.10
+				convoy_retreat_speed = 0.10
+			}
+		}
+
+		FRA_ww1_colonial_volunteers = {
+			picture = generic_manpower_bonus
+			allowed = {
+				TAG = FRA
+			}
+			modifier = {
+				non_core_manpower = 0.05
+			}
+		}
+
+		FRA_ww1_colonial_resources = {
+			picture = generic_manpower_bonus
+			allowed = {
+				TAG = FRA
+			}
+			modifier = {
+				local_resources_factor = 0.15
+			}
+		}
+
 
 
 
@@ -187,6 +274,28 @@ ideas = {
 				modifier = {
 					ROOT = {
 						has_completed_focus = FRA_ww1_memories_of_the_commune
+					}
+					factor = 100
+				}
+			}
+		}
+		FRA_aristide_briand = {
+			allowed = {
+				original_tag = FRA
+			}
+			available = {
+				ROOT = {
+					has_completed_focus = FRA_ww1_political_coherence
+				}
+			}
+			traits = {
+				economic_reformer
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					ROOT = {
+						has_completed_focus = FRA_ww1_political_coherence
 					}
 					factor = 100
 				}

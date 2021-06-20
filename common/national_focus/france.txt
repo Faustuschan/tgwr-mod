@@ -9,6 +9,7 @@ focus_tree = {
 		}
 	}
 
+	
 	focus = {
 		id = FRA_ww1_dreyfus_exoneration
 		icon = GFX_goal_FRA_democraty_shine
@@ -28,7 +29,7 @@ focus_tree = {
 ###############################################################
 	focus = {
 		id = FRA_ww1_save_the_republic
-		icon = GFX_focus_chi_reach_out_to_france
+		icon = GFX_goal_FRA_democraty_shine
 		relative_position_id = FRA_ww1_dreyfus_exoneration
 		prerequisite = { focus = FRA_ww1_dreyfus_exoneration }
 		mutually_exclusive = {
@@ -46,7 +47,7 @@ focus_tree = {
 		
 		cost = 10
 		x = 0
-		y = 2
+		y = 1
 	}
 
 ###############################################################
@@ -87,7 +88,7 @@ focus = {
 	
 	cost = 10
 	x = -18
-	y = 2
+	y = 1
 }
 
 focus = {
@@ -600,7 +601,7 @@ focus = {
 	
 	cost = 10
 	x = -8
-	y = 2
+	y = 1
 }
 
 focus = {
@@ -611,31 +612,425 @@ focus = {
 		focus = FRA_ww1_the_social_democrat_compromise 
 		focus = FRA_ww1_save_the_republic 
 	}
-
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = FRA_350_seats
+		}
+		FRA = {
+			check_variable = {
+				democrat_alliance > 350
+			}
+		}
+	}
 	completion_reward = {
 		FRA = {
-			BEL = {
-				add_opinion_modifier = { target = ROOT modifier = medium_increase }
+			if = {
+				limit = {
+					country_exists = BEL
+					NOT = { 
+						BEL = {
+							OR = {
+								has_offensive_war = yes
+								is_guaranteed_by = FRA
+							}
+						}
+					}
+				}
+				BEL = {
+					add_opinion_modifier = { target = ROOT modifier = medium_increase }
+				}
+				give_guarantee = BEL
 			}
-			give_guarantee = BEL
 		}
 		FRA = {
-			SWI = {
-				add_opinion_modifier = { target = ROOT modifier = medium_increase }
+			if = {
+				limit = {
+					country_exists = SWI
+					NOT = { 
+						SWI = {
+							OR = {
+								has_offensive_war = yes
+								is_guaranteed_by = FRA
+							}
+						}
+					}
+				}
+				SWI = {
+					add_opinion_modifier = { target = ROOT modifier = medium_increase }
+				}
+				give_guarantee = SWI
 			}
-			give_guarantee = SWI
 		}
 		FRA = {
-			HOL = {
-				add_opinion_modifier = { target = ROOT modifier = medium_increase }
+			if = {
+				limit = {
+					country_exists = HOL
+					NOT = { 
+						HOL = {
+							OR = {
+								has_offensive_war = yes
+								is_guaranteed_by = FRA
+							}
+						}
+					}
+				}
+				HOL = {
+					add_opinion_modifier = { target = ROOT modifier = medium_increase }
+				}
+				give_guarantee = HOL
 			}
-			give_guarantee = HOL
 		}
 		FRA = {
-			DEN = {
-				add_opinion_modifier = { target = ROOT modifier = medium_increase }
+			if = {
+				limit = {
+					country_exists = DEN
+					NOT = { 
+						DEN = {
+							OR = {
+								has_offensive_war = yes
+								is_guaranteed_by = FRA
+							}
+						}
+					}
+				}
+				DEN = {
+					add_opinion_modifier = { target = ROOT modifier = medium_increase }
+				}
+				give_guarantee = DEN
 			}
-			give_guarantee = DEN
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 2
+	y = 1
+}
+
+focus = {
+	id = FRA_ww1_french_interventionism
+	icon = GFX_focus_generic_manpower
+	relative_position_id = FRA_ww1_the_social_democrat_compromise
+	prerequisite = { 
+		focus = FRA_ww1_the_social_democrat_compromise 
+		focus = FRA_ww1_memories_of_the_commune 
+	}
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = FRA_250_seats
+		}
+		FRA = {
+			check_variable = {
+				democrat_alliance > 250
+			}
+		}
+	}
+	completion_reward = {
+		add_ideas = FRA_interventionism
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = -6
+	y = 1
+}
+
+focus = {
+	id = FRA_ww1_colonial_volunteers
+	icon = GFX_focus_army_is_ready
+	relative_position_id = FRA_ww1_the_social_democrat_compromise
+	prerequisite = { 
+		focus = FRA_ww1_the_social_democrat_compromise 
+		focus = FRA_ww1_memories_of_the_commune 
+	}
+
+	completion_reward = {
+		add_ideas = FRA_ww1_colonial_volunteers
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = -4
+	y = 1
+}
+
+
+focus = {
+	id = FRA_ww1_ministerial_reform
+	icon = GFX_goal_generic_national_unity
+	relative_position_id = FRA_ww1_the_social_democrat_compromise
+	prerequisite = { 
+		focus = FRA_ww1_the_social_democrat_compromise 
+	}
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = FRA_250_seats
+		}
+		FRA = {
+			check_variable = {
+				democrat_alliance > 250
+			}
+		}
+	}
+	completion_reward = {
+		swap_ideas = {
+			remove_idea = FRA_disjointed_government
+			add_idea = FRA_disjointed_government2
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = -2
+	y = 1
+}
+
+
+focus = {
+	id = FRA_ww1_government_reform
+	icon = GFX_focus_eng_concessions_to_the_trade_unions
+	relative_position_id = FRA_ww1_ministerial_reform
+	prerequisite = { 
+		focus = FRA_ww1_ministerial_reform 
+	}
+
+	completion_reward = {
+		add_timed_idea = {
+			idea = FRA_ww1_government_reform
+			days = 180
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 0
+	y = 1
+}
+
+focus = {
+	id = FRA_ww1_political_coherence
+	icon = GFX_idea_SOV_scientist_defect
+	relative_position_id = FRA_ww1_government_reform
+	prerequisite = { 
+		focus = FRA_ww1_government_reform 
+	}
+	available = {
+		NOT = {
+			has_idea = FRA_ww1_government_reform
+		}
+	}
+	completion_reward = {
+		add_political_power = 120
+		custom_effect_tooltip = available_political_advisor
+		show_ideas_tooltip = FRA_aristide_briand
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 0
+	y = 1
+}
+
+focus = {
+	id = FRA_ww1_social_investments
+	icon = GFX_focus_generic_concessions
+	relative_position_id = FRA_ww1_the_social_democrat_compromise
+	prerequisite = { 
+		focus = FRA_ww1_the_social_democrat_compromise 
+	}
+	completion_reward = {
+		add_ideas = FRA_ww1_social_investments
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 0
+	y = 1
+}
+
+focus = {
+	id = FRA_ww1_improve_the_railways
+	icon = GFX_focus_train_railroads
+	relative_position_id = FRA_ww1_social_investments
+	prerequisite = { 
+		focus = FRA_ww1_social_investments 
+	}
+	completion_reward = {
+		FRA = {
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = FRA
+					is_in_home_area = yes
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = FRA
+					is_in_home_area = yes
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = FRA
+					is_in_home_area = yes
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = FRA
+					is_in_home_area = yes
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 0
+	y = 1
+}
+
+focus = {
+	id = FRA_ww1_overseas_economy
+	icon = GFX_focus_otto_naval_train
+	relative_position_id = FRA_ww1_improve_the_railways
+	prerequisite = { 
+		focus = FRA_ww1_improve_the_railways 
+	}
+	completion_reward = {
+		add_equipment_to_stockpile = {
+			type = convoy
+			amount = 50
+		}
+		add_ideas = FRA_ww1_overseas_economy
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 0
+	y = 1
+}
+
+focus = {
+	id = FRA_ww1_research_budget
+	icon = GFX_goal_continuous_research
+	relative_position_id = FRA_ww1_overseas_economy
+	prerequisite = { 
+		focus = FRA_ww1_overseas_economy 
+	}
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = FRA_300_seats
+		}
+		FRA = {
+			check_variable = {
+				democrat_alliance > 300
+			}
+		}
+	}
+	completion_reward = {
+		add_research_slot = 1
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 0
+	y = 1
+}
+
+focus = {
+	id = FRA_ww1_social_democrat_bloc_united
+	icon = GFX_focus_fra_french_union
+	relative_position_id = FRA_ww1_political_coherence
+	prerequisite = { 
+		focus = FRA_ww1_political_coherence 
+	}
+	completion_reward = {
+		remove_ideas = FRA_disjointed_government2
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 0
+	y = 1
+}
+
+focus = {
+	id = FRA_ww1_colonial_integration_program
+	icon = GFX_goal_generic_improve_relations
+	relative_position_id = FRA_ww1_the_social_democrat_compromise
+	prerequisite = { 
+		focus = FRA_ww1_the_social_democrat_compromise 
+		focus = FRA_ww1_save_the_republic
+	}
+	mutually_exclusive = {
+		focus = FRA_ww1_colonial_assimilation_program
+	}
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = FRA_250_seats
+		}
+		FRA = {
+			check_variable = {
+				democrat_alliance > 250
+			}
+		}
+	}
+	completion_reward = {
+		FRA = {
+			every_owned_state = {
+				limit = {
+					is_on_continent = africa
+					NOT = { is_core_of = ROOT }
+				}
+				add_compliance = 10
+			}
 		}
 	}
 	ai_will_do = {
@@ -648,25 +1043,189 @@ focus = {
 }
 
 focus = {
-	id = FRA_ww1_french_interventionism
-	icon = GFX_focus_generic_manpower
+	id = FRA_ww1_colonial_assimilation_program
+	icon = GFX_focus_eng_move_to_secure_the_dominions
 	relative_position_id = FRA_ww1_the_social_democrat_compromise
 	prerequisite = { 
 		focus = FRA_ww1_the_social_democrat_compromise 
-		focus = FRA_ww1_memories_of_the_commune 
+		focus = FRA_ww1_save_the_republic
 	}
-
+	mutually_exclusive = {
+		focus = FRA_ww1_colonial_integration_program
+	}
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = FRA_250_seats
+		}
+		FRA = {
+			check_variable = {
+				democrat_alliance > 250
+			}
+		}
+	}
 	completion_reward = {
+		add_stability = -0.10
+		FRA = {
+			every_owned_state = {
+				limit = {
+					is_on_continent = africa
+					NOT = { is_core_of = ROOT }
+				}
+				add_resistance = -25
+				add_collaboration = {
+					target = FRA
+					value = 0.10
+				}
+			}
+		}
 	}
 	ai_will_do = {
 		factor = 1
 	}
 	
 	cost = 10
-	x = -5
+	x = 6
 	y = 1
 }
 
+focus = {
+	id = FRA_ww1_algerian_france
+	icon = GFX_goal_continuous_non_factory_construct
+	relative_position_id = FRA_ww1_colonial_assimilation_program
+	prerequisite = { 
+		focus = FRA_ww1_colonial_assimilation_program 
+	}
+	available = {
+		459 = {
+			is_controlled_by = ROOT
+			free_building_slots = {
+				building = arms_factory
+				size > 2
+				include_locked = yes
+			}
+			free_building_slots = {
+				building = industrial_complex
+				size > 2
+				include_locked = yes
+			}
+		} 
+	}
+	completion_reward = {
+		FRA = {
+			459 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			459 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 0
+	y = 1
+}
+
+focus = {
+	id = FRA_ww1_toward_algerian_self_managment
+	icon = GFX_goal_generic_intelligence_exchange
+	relative_position_id = FRA_ww1_colonial_integration_program
+	prerequisite = { 
+		focus = FRA_ww1_colonial_integration_program 
+	}
+	available = {
+		459 = {
+			is_controlled_by = ROOT
+			free_building_slots = {
+				building = arms_factory
+				size > 2
+				include_locked = yes
+			}
+			free_building_slots = {
+				building = industrial_complex
+				size > 2
+				include_locked = yes
+			}
+		}
+		460 = {
+			is_controlled_by = ROOT
+		} 
+	}
+	completion_reward = {
+		FRA = {
+			release_puppet = ALG
+		}
+		ALG = {
+			459 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			459 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			460 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 0
+	y = 1
+}
+
+focus = {
+	id = FRA_ww1_take_advantage_of_colonial_resources
+	icon = GFX_focus_generic_africa_factory
+	relative_position_id = FRA_ww1_toward_algerian_self_managment
+	prerequisite = { 
+		focus = FRA_ww1_toward_algerian_self_managment 
+		focus = FRA_ww1_algerian_france
+	}
+	available = {
+	}
+	completion_reward = {
+		add_ideas = FRA_ww1_colonial_resources
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 1
+	y = 1
+}
 
 ###############################################################
 # Form the Cercle Proudhon - monarchist PATH
@@ -691,7 +1250,7 @@ focus = {
 	
 	cost = 10
 	x = 7
-	y = 2
+	y = 1
 }
 
 ###############################################################
@@ -717,7 +1276,7 @@ focus = {
 	
 	cost = 10
 	x = 14
-	y = 2
+	y = 1
 }
 
 
