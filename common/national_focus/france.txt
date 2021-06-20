@@ -8,7 +8,6 @@ focus_tree = {
 			tag = FRA
 		}
 	}
-
 	focus = {
 		id = FRA_ww1_dreyfus_exoneration
 		icon = GFX_goal_FRA_democraty
@@ -22,15 +21,16 @@ focus_tree = {
 		x = 15
 		y = 0
 	}
-
-###############################################################
-# SAVE THE REPUBLIC - DEMOCRATIC PATH
-###############################################################
+	###############################################################
+	# SAVE THE REPUBLIC - DEMOCRATIC PATH
+	###############################################################
 	focus = {
 		id = FRA_ww1_save_the_republic
 		icon = GFX_focus_chi_reach_out_to_france
 		relative_position_id = FRA_ww1_dreyfus_exoneration
-		prerequisite = { focus = FRA_ww1_dreyfus_exoneration }
+		prerequisite = {
+			focus = FRA_ww1_dreyfus_exoneration
+		}
 		mutually_exclusive = {
 			focus = FRA_ww1_memories_of_the_commune
 			focus = FRA_ww1_the_social_democrat_compromise
@@ -43,670 +43,712 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
-		
 		cost = 10
 		x = 0
 		y = 2
 	}
-
-###############################################################
-# memories of the commune - SOCIALIST PATH
-###############################################################
-focus = {
-	id = FRA_ww1_memories_of_the_commune
-	icon = GFX_focus_por_workers_of_iberia
-	relative_position_id = FRA_ww1_dreyfus_exoneration
-	prerequisite = { focus = FRA_ww1_dreyfus_exoneration }
-	mutually_exclusive = {
-		focus = FRA_ww1_save_the_republic
-		focus = FRA_ww1_the_social_democrat_compromise
-		focus = FRA_ww1_form_the_proudhon_circle
-		focus = FRA_ww1_support_paul_deroulede
-	}
-	completion_reward = {
-		add_popularity = {
-			ideology = communism
-			popularity = 0.10
+	###############################################################
+	# memories of the commune - SOCIALIST PATH
+	###############################################################
+	focus = {
+		id = FRA_ww1_memories_of_the_commune
+		icon = GFX_focus_por_workers_of_iberia
+		relative_position_id = FRA_ww1_dreyfus_exoneration
+		prerequisite = {
+			focus = FRA_ww1_dreyfus_exoneration
 		}
-		custom_effect_tooltip = available_political_advisor
-		show_ideas_tooltip = FRA_jean_jaures
-		custom_effect_tooltip = FRA_join_socialists
-		custom_effect_tooltip = FRA_get_socialists_seats
-		set_variable = { var = democrat_alliance value = 0 } 
-		add_to_variable = { var = democrat_alliance value = SFIO }
-		add_to_variable = { var = democrat_alliance value = independent_socialist }
-		set_variable = { var = democrat_alliance_percent value = democrat_alliance } 
-		multiply_variable = { democrat_alliance_percent = 100 }
-		divide_variable = { democrat_alliance_percent = seatNumbers }
-		reload_parliament_gui = yes
+		mutually_exclusive = {
+			focus = FRA_ww1_save_the_republic
+			focus = FRA_ww1_the_social_democrat_compromise
+			focus = FRA_ww1_form_the_proudhon_circle
+			focus = FRA_ww1_support_paul_deroulede
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = communism
+				popularity = 0.1
+			}
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = FRA_jean_jaures
+			custom_effect_tooltip = FRA_join_socialists
+			custom_effect_tooltip = FRA_get_socialists_seats
+			set_variable = {
+				var = democrat_alliance
+				value = 0
+			}
+			add_to_variable = {
+				var = democrat_alliance
+				value = SFIO
+			}
+			add_to_variable = {
+				var = democrat_alliance
+				value = independent_socialist
+			}
+			set_variable = {
+				var = democrat_alliance_percent
+				value = democrat_alliance
+			}
+			multiply_variable = {
+				democrat_alliance_percent = 100
+			}
+			divide_variable = {
+				democrat_alliance_percent = seatNumbers
+			}
+			reload_parliament_gui = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		cost = 10
+		x = -18
+		y = 2
 	}
-
-	ai_will_do = {
-		factor = 1
+	focus = {
+		id = FRA_ww1_form_the_popular_labor_service
+		icon = GFX_goal_FRA_expanded_duty
+		relative_position_id = FRA_ww1_memories_of_the_commune
+		prerequisite = {
+			focus = FRA_ww1_memories_of_the_commune
+		}
+		completion_reward = {
+			add_ideas = FRA_popular_labor_service
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		cost = 10
+		x = -2
+		y = 1
 	}
-	
-	cost = 10
-	x = -18
-	y = 2
-}
-
-focus = {
-	id = FRA_ww1_form_the_popular_labor_service
-	icon = GFX_goal_FRA_expanded_duty
-	relative_position_id = FRA_ww1_memories_of_the_commune
-	prerequisite = { focus = FRA_ww1_memories_of_the_commune }
-	completion_reward = {
-		add_ideas = FRA_popular_labor_service
-	}
-	ai_will_do = {
-		factor = 1
-	}
-	
-	cost = 10
-	x = -2
-	y = 1
-}
-
-focus = {
-	id = FRA_ww1_extend_the_duty
-	icon = GFX_focus_spr_the_anti_fascist_workers_revolution
-	relative_position_id = FRA_ww1_form_the_popular_labor_service
-	prerequisite = { focus = FRA_ww1_form_the_popular_labor_service }
-	completion_reward = {
-		swap_ideas = {
-			remove_idea = FRA_popular_labor_service
-			add_idea = FRA_popular_labor_service2
-		} 
-	}
-	ai_will_do = {
-		factor = 1
-	}
-	
-	cost = 10
-	x = 0
-	y = 1
-}
-
-focus = {
-	id = FRA_ww1_popular_brigades
-	icon = GFX_goal_FRA_expanded_duty2
-	relative_position_id = FRA_ww1_extend_the_duty
-	prerequisite = { focus = FRA_ww1_extend_the_duty }
-	completion_reward = {
-		swap_ideas = {
-			remove_idea = FRA_popular_labor_service2
-			add_idea = FRA_popular_labor_service3
-		} 
-	}
-	available = {
-		OR = {
-			has_government = communism
-			any_enemy_country = {
-				is_major = yes
-				has_war_with = ROOT
+	focus = {
+		id = FRA_ww1_extend_the_duty
+		icon = GFX_focus_spr_the_anti_fascist_workers_revolution
+		relative_position_id = FRA_ww1_form_the_popular_labor_service
+		prerequisite = {
+			focus = FRA_ww1_form_the_popular_labor_service
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = FRA_popular_labor_service
+				add_idea = FRA_popular_labor_service2
 			}
 		}
-	}
-	ai_will_do = {
-		factor = 1
-	}
-	
-	cost = 10
-	x = 0
-	y = 1
-}
-
-focus = {
-	id = FRA_ww1_support_the_suffragettes
-	icon = GFX_focus_hold_elections
-	relative_position_id = FRA_ww1_memories_of_the_commune
-	prerequisite = { focus = FRA_ww1_memories_of_the_commune }
-	completion_reward = {
-		add_popularity = {
-			ideology = communism
-			popularity = 0.10
+		ai_will_do = {
+			factor = 1
 		}
-		add_stability = 0.10
+		cost = 10
+		x = 0
+		y = 1
 	}
-	ai_will_do = {
-		factor = 1
-	}
-	
-	cost = 10
-	x = 0
-	y = 1
-}
-
-focus = {
-	id = FRA_ww1_affiliation_with_the_CGT
-	icon = GFX_focus_radical_engine
-	relative_position_id = FRA_ww1_support_the_suffragettes
-	prerequisite = { focus = FRA_ww1_support_the_suffragettes }
-	completion_reward = {
-		add_ideas = FRA_CGT_support
-	}
-	ai_will_do = {
-		factor = 1
-	}
-	
-	cost = 10
-	x = 0
-	y = 1
-}
-
-focus = {
-	id = FRA_ww1_labor_reform
-	icon = GFX_goal_ideology_syndicalist
-	relative_position_id = FRA_ww1_affiliation_with_the_CGT
-	prerequisite = { focus = FRA_ww1_affiliation_with_the_CGT }
-	completion_reward = {
-		swap_ideas = {
-			remove_idea = FRA_CGT_support
-			add_idea = FRA_CGT_support2
+	focus = {
+		id = FRA_ww1_popular_brigades
+		icon = GFX_goal_FRA_expanded_duty2
+		relative_position_id = FRA_ww1_extend_the_duty
+		prerequisite = {
+			focus = FRA_ww1_extend_the_duty
 		}
-	}
-	ai_will_do = {
-		factor = 1
-	}
-	
-	cost = 10
-	x = 0
-	y = 1
-}
-
-focus = {
-	id = FRA_ww1_ally_the_republican_alliance
-	icon = GFX_focus_generic_self_management
-	relative_position_id = FRA_ww1_memories_of_the_commune
-	prerequisite = { focus = FRA_ww1_memories_of_the_commune }
-	completion_reward = {
-		custom_effect_tooltip = FRA_ally_democratic_republican_alliance
-		set_variable = { var = democrat_alliance value = 0 } 
-		add_to_variable = { var = democrat_alliance value = SFIO }
-		add_to_variable = { var = democrat_alliance value = independent_socialist }
-		add_to_variable = { var = democrat_alliance value = democratic_republican_alliance }
-		set_variable = { var = democrat_alliance_percent value = democrat_alliance } 
-		multiply_variable = { democrat_alliance_percent = 100 }
-		divide_variable = { democrat_alliance_percent = seatNumbers }
-		reload_parliament_gui = yes
-	}
-	ai_will_do = {
-		factor = 1
-	}
-	
-	cost = 10
-	x = 2
-	y = 1
-}
-
-focus = {
-	id = FRA_ww1_socialist_mentality
-	icon = GFX_focus_spr_masters_of_our_own_fate
-	relative_position_id = FRA_ww1_ally_the_republican_alliance
-	prerequisite = { focus = FRA_ww1_ally_the_republican_alliance }
-	completion_reward = {
-		custom_effect_tooltip = FRA_fuze_the_fronts
-		add_to_variable = { var = SFIO value = independent_socialist }
-		add_to_variable = { var = SFIO value = democratic_republican_alliance }
-		set_variable = { var = independent_socialist value = 0 } 			# theses parties disapear
-		set_variable = { var = democratic_republican_alliance value = 0 }	# theses parties disapear
-		set_variable = { var = democrat_alliance value = SFIO } 
-		set_variable = { parliament_seat_array^0 = SFIO }
-		set_variable = { parliament_seat_array^1 = independent_socialist }
-		set_variable = { parliament_seat_array^2 = democratic_republican_alliance }
-		set_variable = { var = democrat_alliance_percent value = democrat_alliance } 
-		multiply_variable = { democrat_alliance_percent = 100 }
-		divide_variable = { democrat_alliance_percent = seatNumbers }
-		reload_parliament_gui = yes
-		set_country_flag = FRA_independent_socialist_fuzed_with_SFIO
-		set_country_flag = FRA_democratic_republican_alliance_fuzed_with_SFIO
-	}
-	ai_will_do = {
-		factor = 1
-	}
-	
-	cost = 10
-	x = 0
-	y = 1
-}
-
-focus = {
-	id = FRA_ww1_support_for_universities
-	icon = GFX_focus_generic_socialist_science
-	relative_position_id = FRA_ww1_socialist_mentality
-	prerequisite = { focus = FRA_ww1_socialist_mentality }
-	completion_reward = {
-		add_research_slot = 1
-	}
-	ai_will_do = {
-		factor = 1
-	}
-	
-	cost = 10
-	x = 0
-	y = 1
-}
-
-focus = {
-	id = FRA_ww1_mention_de_censure
-	icon = GFX_focus_generic_treaty
-	relative_position_id = FRA_ww1_support_for_universities
-	prerequisite = { focus = FRA_ww1_support_for_universities }
-	prerequisite = { focus = FRA_ww1_labor_reform focus = FRA_ww1_popular_brigades }
-	available = {
-		custom_trigger_tooltip = {
-			tooltip = FRA_150_seats
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = FRA_popular_labor_service2
+				add_idea = FRA_popular_labor_service3
+			}
 		}
-		hidden_trigger = {
-			FRA = {
-				check_variable = {
-					democrat_alliance > 150
+		available = {
+			OR = {
+				has_government = communism
+				any_enemy_country = {
+					is_major = yes
+					has_war_with = ROOT
 				}
 			}
 		}
-		ROOT = {
-			communism > 0.50
+		ai_will_do = {
+			factor = 1
 		}
+		cost = 10
+		x = 0
+		y = 1
 	}
-	completion_reward = {
-		custom_effect_tooltip = FRA_mention_de_censure
-		custom_effect_tooltip = FRA_mention_de_censure_socialist
-
-		create_country_leader = {
-			name = "Ludovic-Oscar Frossard" 
-			picture = "gfx/leaders/FRA/FRA_louis_frossard.dds" 
-			ideology = anarchist_communism 
+	focus = {
+		id = FRA_ww1_support_the_suffragettes
+		icon = GFX_focus_hold_elections
+		relative_position_id = FRA_ww1_memories_of_the_commune
+		prerequisite = {
+			focus = FRA_ww1_memories_of_the_commune
 		}
-		set_politics = {
-			ruling_party = communism 
-			elections_allowed = yes
-		}
-	}
-	ai_will_do = {
-		factor = 1
-	}
-	
-	cost = 10
-	x = -2
-	y = 1
-}
-
-focus = {
-	id = FRA_ww1_socialist_reality
-	icon = GFX_focus_istirak_mukavemeti
-	relative_position_id = FRA_ww1_mention_de_censure
-	prerequisite = { focus = FRA_ww1_mention_de_censure }
-	completion_reward = {
-		remove_ideas = FRA_disjointed_government
-		add_political_power = 120
-	}
-	ai_will_do = {
-		factor = 1
-	}
-	
-	cost = 10
-	x = 0
-	y = 1
-}
-
-focus = {
-	id = FRA_ww1_nationalize_war_industry
-	icon = GFX_focus_generic_combined_arms
-	relative_position_id = FRA_ww1_mention_de_censure
-	prerequisite = { focus = FRA_ww1_mention_de_censure }
-	available_if_capitulated = no
-	available = {
-		ROOT = {
-			NOT = {
-				is_puppet = yes
+		completion_reward = {
+			add_popularity = {
+				ideology = communism
+				popularity = 0.1
 			}
-			has_war_support > 0.20
+			add_stability = 0.1
 		}
+		ai_will_do = {
+			factor = 1
+		}
+		cost = 10
+		x = 0
+		y = 1
 	}
-	completion_reward = {
-		FRA = {
-			random_owned_controlled_state = {
-				limit = {
-					is_core_of = FRA
-					is_in_home_area = yes
-				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-			}
-			random_owned_controlled_state = {
-				limit = {
-					is_core_of = FRA
-					is_in_home_area = yes
-				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-			}
-			random_owned_controlled_state = {
-				limit = {
-					is_core_of = FRA
-					is_in_home_area = yes
-				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
+	focus = {
+		id = FRA_ww1_affiliation_with_the_CGT
+		icon = GFX_focus_radical_engine
+		relative_position_id = FRA_ww1_support_the_suffragettes
+		prerequisite = {
+			focus = FRA_ww1_support_the_suffragettes
+		}
+		completion_reward = {
+			add_ideas = FRA_CGT_support
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		cost = 10
+		x = 0
+		y = 1
+	}
+	focus = {
+		id = FRA_ww1_labor_reform
+		icon = GFX_goal_ideology_syndicalist
+		relative_position_id = FRA_ww1_affiliation_with_the_CGT
+		prerequisite = {
+			focus = FRA_ww1_affiliation_with_the_CGT
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = FRA_CGT_support
+				add_idea = FRA_CGT_support2
 			}
 		}
-	}
-	ai_will_do = {
-		factor = 1
-	}
-	
-	cost = 10
-	x = 2
-	y = 1
-}
-
-focus = {
-	id = FRA_ww1_collectivisation
-	icon = GFX_focus_prc_agrarian_socialism
-	relative_position_id = FRA_ww1_mention_de_censure
-	prerequisite = { focus = FRA_ww1_mention_de_censure }
-	completion_reward = {
-		FRA = {
-			random_owned_controlled_state = {
-				limit = {
-					is_core_of = FRA
-					is_in_home_area = yes
-				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
-				}
-			}
-			random_owned_controlled_state = {
-				limit = {
-					is_core_of = FRA
-					is_in_home_area = yes
-				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = infrastructure
-					level = 2
-					instant_build = yes
-				}
-			}
-			random_owned_controlled_state = {
-				limit = {
-					is_core_of = FRA
-					is_in_home_area = yes
-					is_coastal = yes
-				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = dockyard
-					level = 2
-					instant_build = yes
-				}
-			}
+		ai_will_do = {
+			factor = 1
 		}
+		cost = 10
+		x = 0
+		y = 1
 	}
-	ai_will_do = {
-		factor = 1
+	focus = {
+		id = FRA_ww1_ally_the_republican_alliance
+		icon = GFX_focus_generic_self_management
+		relative_position_id = FRA_ww1_memories_of_the_commune
+		prerequisite = {
+			focus = FRA_ww1_memories_of_the_commune
+		}
+		completion_reward = {
+			custom_effect_tooltip = FRA_ally_democratic_republican_alliance
+			set_variable = {
+				var = democrat_alliance
+				value = 0
+			}
+			add_to_variable = {
+				var = democrat_alliance
+				value = SFIO
+			}
+			add_to_variable = {
+				var = democrat_alliance
+				value = independent_socialist
+			}
+			add_to_variable = {
+				var = democrat_alliance
+				value = democratic_republican_alliance
+			}
+			set_variable = {
+				var = democrat_alliance_percent
+				value = democrat_alliance
+			}
+			multiply_variable = {
+				democrat_alliance_percent = 100
+			}
+			divide_variable = {
+				democrat_alliance_percent = seatNumbers
+			}
+			reload_parliament_gui = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		cost = 10
+		x = 2
+		y = 1
 	}
-	
-	cost = 10
-	x = -2
-	y = 1
-}
-
-focus = {
-	id = FRA_ww1_support_worldwide_revolution
-	icon = GFX_focus_ger_great_red_menace
-	relative_position_id = FRA_ww1_nationalize_war_industry
-	prerequisite = { focus = FRA_ww1_nationalize_war_industry }
-	completion_reward = {
-		add_ideas = FRA_idea_world_revolution
+	focus = {
+		id = FRA_ww1_socialist_mentality
+		icon = GFX_focus_spr_masters_of_our_own_fate
+		relative_position_id = FRA_ww1_ally_the_republican_alliance
+		prerequisite = {
+			focus = FRA_ww1_ally_the_republican_alliance
+		}
+		completion_reward = {
+			custom_effect_tooltip = FRA_fuze_the_fronts
+			add_to_variable = {
+				var = SFIO
+				value = independent_socialist
+			}
+			add_to_variable = {
+				var = SFIO
+				value = democratic_republican_alliance
+			}
+			set_variable = {
+				var = independent_socialist
+				value = 0
+			}			# theses parties disapear
+			set_variable = {
+				var = democratic_republican_alliance
+				value = 0
+			}			# theses parties disapear
+			set_variable = {
+				var = democrat_alliance
+				value = SFIO
+			}
+			set_variable = {
+				parliament_seat_array^0 = SFIO
+			}
+			set_variable = {
+				parliament_seat_array^1 = independent_socialist
+			}
+			set_variable = {
+				parliament_seat_array^2 = democratic_republican_alliance
+			}
+			set_variable = {
+				var = democrat_alliance_percent
+				value = democrat_alliance
+			}
+			multiply_variable = {
+				democrat_alliance_percent = 100
+			}
+			divide_variable = {
+				democrat_alliance_percent = seatNumbers
+			}
+			reload_parliament_gui = yes
+			set_country_flag = FRA_independent_socialist_fuzed_with_SFIO
+			set_country_flag = FRA_democratic_republican_alliance_fuzed_with_SFIO
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		cost = 10
+		x = 0
+		y = 1
 	}
-	ai_will_do = {
-		factor = 1
+	focus = {
+		id = FRA_ww1_support_for_universities
+		icon = GFX_focus_generic_socialist_science
+		relative_position_id = FRA_ww1_socialist_mentality
+		prerequisite = {
+			focus = FRA_ww1_socialist_mentality
+		}
+		completion_reward = {
+			add_research_slot = 1
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		cost = 10
+		x = 0
+		y = 1
 	}
-	
-	cost = 10
-	x = 0
-	y = 1
-}
-
-focus = {
-	id = FRA_ww1_over_influence_europe
-	icon = GFX_focus_spr_anarchism_knows_no_borders
-	relative_position_id = FRA_ww1_collectivisation
-	prerequisite = { focus = FRA_ww1_collectivisation }
-	completion_reward = {
-		custom_effect_tooltip = in_europe
-		every_country = {
-			if = {
-				limit = {
-					NOT = { original_tag = FRA }
-					any_owned_state = {
-						is_core_of = PREV
-						is_on_continent = europe
+	focus = {
+		id = FRA_ww1_mention_de_censure
+		icon = GFX_focus_generic_treaty
+		relative_position_id = FRA_ww1_support_for_universities
+		prerequisite = {
+			focus = FRA_ww1_support_for_universities
+		}
+		prerequisite = {
+			focus = FRA_ww1_labor_reform
+			focus = FRA_ww1_popular_brigades
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = FRA_150_seats
+			}
+			hidden_trigger = {
+				FRA = {
+					check_variable = {
+						democrat_alliance > 150
 					}
 				}
-				add_timed_idea = {
-					idea = communist_influence
-					days = 180
+			}
+			ROOT = {
+				communism > 0.5
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip = FRA_mention_de_censure
+			custom_effect_tooltip = FRA_mention_de_censure_socialist
+			create_country_leader = {
+				name = "Ludovic-Oscar Frossard"
+				picture = "gfx/leaders/FRA/FRA_louis_frossard.dds"
+				ideology = anarchist_communism
+			}
+			set_politics = {
+				ruling_party = communism
+				elections_allowed = yes
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		cost = 10
+		x = -2
+		y = 1
+	}
+	focus = {
+		id = FRA_ww1_socialist_reality
+		icon = GFX_focus_istirak_mukavemeti
+		relative_position_id = FRA_ww1_mention_de_censure
+		prerequisite = {
+			focus = FRA_ww1_mention_de_censure
+		}
+		completion_reward = {
+			remove_ideas = FRA_disjointed_government
+			add_political_power = 120
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		cost = 10
+		x = 0
+		y = 1
+	}
+	focus = {
+		id = FRA_ww1_nationalize_war_industry
+		icon = GFX_focus_generic_combined_arms
+		relative_position_id = FRA_ww1_mention_de_censure
+		prerequisite = {
+			focus = FRA_ww1_mention_de_censure
+		}
+		available_if_capitulated = no
+		available = {
+			ROOT = {
+				NOT = {
+					is_puppet = yes
+				}
+				has_war_support > 0.2
+			}
+		}
+		completion_reward = {
+			FRA = {
+				random_owned_controlled_state = {
+					limit = {
+						is_core_of = FRA
+						is_in_home_area = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						is_core_of = FRA
+						is_in_home_area = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						is_core_of = FRA
+						is_in_home_area = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
 				}
 			}
 		}
-	}
-	ai_will_do = {
-		factor = 1
-	}
-	
-	cost = 10
-	x = 0
-	y = 1
-}
-
-focus = {
-	id = FRA_ww1_guards_of_the_motherland
-	icon = GFX_goal_generic_war_with_comintern
-	relative_position_id = FRA_ww1_socialist_reality
-	prerequisite = { focus = FRA_ww1_socialist_reality }
-	completion_reward = {
-		add_ideas = FRA_guards_of_the_motherland
-	}
-	ai_will_do = {
-		factor = 1
-	}
-	
-	cost = 10
-	x = 0
-	y = 2
-}
-
-
-focus = {
-	id = FRA_ww1_form_peasant_council
-	icon = GFX_goal_generic_war_with_comintern
-	relative_position_id = FRA_ww1_mention_de_censure
-	prerequisite = { focus = FRA_ww1_mention_de_censure }
-	completion_reward = {
-		set_variable = { var = seatNumbers value = 600 } 
-		set_country_flag = FRA_peasant_council_formed
-		set_country_flag = FRA_parliament_dissolved
-		custom_effect_tooltip = FRA_national_assembly_dissolved
-		set_variable = { parliament_seat_array^0 = seatNumbers }
-		set_variable = { parliament_seat_array^1 = 0 }
-		set_variable = { parliament_seat_array^2 = 0 }
-		set_variable = { parliament_seat_array^3 = 0 }
-		set_variable = { parliament_seat_array^4 = 0 }
-		set_variable = { parliament_seat_array^5 = 0 }
-		set_variable = { parliament_seat_array^6 = 0 }
-		set_variable = { parliament_seat_array^7 = 0 }
-		set_variable = { parliament_seat_array^8 = 0 }
-		set_variable = { parliament_seat_array^9 = 0 }
-		set_variable = { parliament_seat_array^10 = 0 }
-		set_variable = { var = democrat_alliance value = seatNumbers } 
-		set_variable = { var = democrat_alliance_percent value = democrat_alliance } 
-		multiply_variable = { democrat_alliance_percent = 100 }
-		divide_variable = { democrat_alliance_percent = seatNumbers }
-		reload_parliament_gui = yes 
-	}
-	available = {
-		NOT = {
-			has_idea = FRA_disjointed_government
+		ai_will_do = {
+			factor = 1
 		}
+		cost = 10
+		x = 2
+		y = 1
 	}
-	ai_will_do = {
-		factor = 1
+	focus = {
+		id = FRA_ww1_collectivisation
+		icon = GFX_focus_prc_agrarian_socialism
+		relative_position_id = FRA_ww1_mention_de_censure
+		prerequisite = {
+			focus = FRA_ww1_mention_de_censure
+		}
+		completion_reward = {
+			FRA = {
+				random_owned_controlled_state = {
+					limit = {
+						is_core_of = FRA
+						is_in_home_area = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						is_core_of = FRA
+						is_in_home_area = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						is_core_of = FRA
+						is_in_home_area = yes
+						is_coastal = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = dockyard
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		cost = 10
+		x = -2
+		y = 1
 	}
-	
-	cost = 10
-	x = 4
-	y = 1
-}
-
-###############################################################
-# The Social-democrat compromise - alternatve democratic PATH
-###############################################################
-focus = {
-	id = FRA_ww1_the_social_democrat_compromise
-	icon = GFX_focus_GRE_metaxism
-	relative_position_id = FRA_ww1_dreyfus_exoneration
-	prerequisite = { focus = FRA_ww1_dreyfus_exoneration }
-	mutually_exclusive = {
-		focus = FRA_ww1_memories_of_the_commune
-		focus = FRA_ww1_save_the_republic
-		focus = FRA_ww1_form_the_proudhon_circle
-		focus = FRA_ww1_support_paul_deroulede
+	focus = {
+		id = FRA_ww1_support_worldwide_revolution
+		icon = GFX_focus_ger_great_red_menace
+		relative_position_id = FRA_ww1_nationalize_war_industry
+		prerequisite = {
+			focus = FRA_ww1_nationalize_war_industry
+		}
+		completion_reward = {
+			add_ideas = FRA_idea_world_revolution
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		cost = 10
+		x = 0
+		y = 1
 	}
-	completion_reward = {
-		add_stability = 0.05
+	focus = {
+		id = FRA_ww1_over_influence_europe
+		icon = GFX_focus_spr_anarchism_knows_no_borders
+		relative_position_id = FRA_ww1_collectivisation
+		prerequisite = {
+			focus = FRA_ww1_collectivisation
+		}
+		completion_reward = {
+			custom_effect_tooltip = in_europe
+			every_country = {
+				if = {
+					limit = {
+						NOT = {
+							original_tag = FRA
+						}
+						any_owned_state = {
+							is_core_of = PREV
+							is_on_continent = europe
+						}
+					}
+					add_timed_idea = {
+						idea = communist_influence
+						days = 180
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		cost = 10
+		x = 0
+		y = 1
 	}
-	ai_will_do = {
-		factor = 1
+	focus = {
+		id = FRA_ww1_guards_of_the_motherland
+		icon = GFX_goal_generic_war_with_comintern
+		relative_position_id = FRA_ww1_socialist_reality
+		prerequisite = {
+			focus = FRA_ww1_socialist_reality
+		}
+		completion_reward = {
+			add_ideas = FRA_guards_of_the_motherland
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		cost = 10
+		x = 0
+		y = 2
 	}
-	
-	cost = 10
-	x = -7
-	y = 2
-}
-
-
-###############################################################
-# Form the Cercle Proudhon - monarchist PATH
-###############################################################
-focus = {
-	id = FRA_ww1_form_the_proudhon_circle
-	icon = GFX_focus_rom_royal_dictatorship
-	relative_position_id = FRA_ww1_dreyfus_exoneration
-	prerequisite = { focus = FRA_ww1_dreyfus_exoneration }
-	mutually_exclusive = {
-		focus = FRA_ww1_save_the_republic
-		focus = FRA_ww1_support_paul_deroulede
-		focus = FRA_ww1_memories_of_the_commune
-		focus = FRA_ww1_the_social_democrat_compromise
+	focus = {
+		id = FRA_ww1_form_peasant_council
+		icon = GFX_goal_generic_war_with_comintern
+		relative_position_id = FRA_ww1_mention_de_censure
+		prerequisite = {
+			focus = FRA_ww1_mention_de_censure
+		}
+		completion_reward = {
+			set_variable = {
+				var = seatNumbers
+				value = 600
+			}
+			set_country_flag = FRA_peasant_council_formed
+			set_country_flag = FRA_parliament_dissolved
+			custom_effect_tooltip = FRA_national_assembly_dissolved
+			set_variable = {
+				parliament_seat_array^0 = seatNumbers
+			}
+			set_variable = {
+				parliament_seat_array^1 = 0
+			}
+			set_variable = {
+				parliament_seat_array^2 = 0
+			}
+			set_variable = {
+				parliament_seat_array^3 = 0
+			}
+			set_variable = {
+				parliament_seat_array^4 = 0
+			}
+			set_variable = {
+				parliament_seat_array^5 = 0
+			}
+			set_variable = {
+				parliament_seat_array^6 = 0
+			}
+			set_variable = {
+				parliament_seat_array^7 = 0
+			}
+			set_variable = {
+				parliament_seat_array^8 = 0
+			}
+			set_variable = {
+				parliament_seat_array^9 = 0
+			}
+			set_variable = {
+				parliament_seat_array^10 = 0
+			}
+			set_variable = {
+				var = democrat_alliance
+				value = seatNumbers
+			}
+			set_variable = {
+				var = democrat_alliance_percent
+				value = democrat_alliance
+			}
+			multiply_variable = {
+				democrat_alliance_percent = 100
+			}
+			divide_variable = {
+				democrat_alliance_percent = seatNumbers
+			}
+			reload_parliament_gui = yes
+		}
+		available = {
+			NOT = {
+				has_idea = FRA_disjointed_government
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		cost = 10
+		x = 4
+		y = 1
 	}
-	completion_reward = {
-		add_stability = 0.05
+	###############################################################
+	# The Social-democrat compromise - alternatve democratic PATH
+	###############################################################
+	focus = {
+		id = FRA_ww1_the_social_democrat_compromise
+		icon = GFX_focus_GRE_metaxism
+		relative_position_id = FRA_ww1_dreyfus_exoneration
+		prerequisite = {
+			focus = FRA_ww1_dreyfus_exoneration
+		}
+		mutually_exclusive = {
+			focus = FRA_ww1_memories_of_the_commune
+			focus = FRA_ww1_save_the_republic
+			focus = FRA_ww1_form_the_proudhon_circle
+			focus = FRA_ww1_support_paul_deroulede
+		}
+		completion_reward = {
+			add_stability = 0.05
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		cost = 10
+		x = -7
+		y = 2
 	}
-	ai_will_do = {
-		factor = 1
+	###############################################################
+	# Form the Cercle Proudhon - monarchist PATH
+	###############################################################
+	focus = {
+		id = FRA_ww1_form_the_proudhon_circle
+		icon = GFX_focus_rom_royal_dictatorship
+		relative_position_id = FRA_ww1_dreyfus_exoneration
+		prerequisite = {
+			focus = FRA_ww1_dreyfus_exoneration
+		}
+		mutually_exclusive = {
+			focus = FRA_ww1_save_the_republic
+			focus = FRA_ww1_support_paul_deroulede
+			focus = FRA_ww1_memories_of_the_commune
+			focus = FRA_ww1_the_social_democrat_compromise
+		}
+		completion_reward = {
+			add_stability = 0.05
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		cost = 10
+		x = 7
+		y = 2
 	}
-	
-	cost = 10
-	x = 7
-	y = 2
-}
-
-###############################################################
-# Support Paul Déroulède - fascist PATH
-###############################################################
-focus = {
-	id = FRA_ww1_support_paul_deroulede
-	icon = GFX_focus_BUL_the_return_of_ferdinand
-	relative_position_id = FRA_ww1_dreyfus_exoneration
-	prerequisite = { focus = FRA_ww1_dreyfus_exoneration }
-	mutually_exclusive = {
-		focus = FRA_ww1_save_the_republic
-		focus = FRA_ww1_memories_of_the_commune
-		focus = FRA_ww1_form_the_proudhon_circle
-		focus = FRA_ww1_the_social_democrat_compromise
+	###############################################################
+	# Support Paul Déroulède - fascist PATH
+	###############################################################
+	focus = {
+		id = FRA_ww1_support_paul_deroulede
+		icon = GFX_focus_BUL_the_return_of_ferdinand
+		relative_position_id = FRA_ww1_dreyfus_exoneration
+		prerequisite = {
+			focus = FRA_ww1_dreyfus_exoneration
+		}
+		mutually_exclusive = {
+			focus = FRA_ww1_save_the_republic
+			focus = FRA_ww1_memories_of_the_commune
+			focus = FRA_ww1_form_the_proudhon_circle
+			focus = FRA_ww1_the_social_democrat_compromise
+		}
+		completion_reward = {
+			add_stability = 0.05
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		cost = 10
+		x = 14
+		y = 2
 	}
-	completion_reward = {
-		add_stability = 0.05
-	}
-	ai_will_do = {
-		factor = 1
-	}
-	
-	cost = 10
-	x = 14
-	y = 2
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
