@@ -19,7 +19,7 @@ focus_tree = {
 			factor = 1
 		}
 		cost = 10
-		x = 15
+		x = 16
 		y = 0
 	}
 
@@ -599,8 +599,72 @@ focus = {
 	}
 	
 	cost = 10
-	x = -7
+	x = -8
 	y = 2
+}
+
+focus = {
+	id = FRA_ww1_protect_european_minorities
+	icon = GFX_focus_stabilize_democracy
+	relative_position_id = FRA_ww1_the_social_democrat_compromise
+	prerequisite = { 
+		focus = FRA_ww1_the_social_democrat_compromise 
+		focus = FRA_ww1_save_the_republic 
+	}
+
+	completion_reward = {
+		FRA = {
+			BEL = {
+				add_opinion_modifier = { target = ROOT modifier = medium_increase }
+			}
+			give_guarantee = BEL
+		}
+		FRA = {
+			SWI = {
+				add_opinion_modifier = { target = ROOT modifier = medium_increase }
+			}
+			give_guarantee = SWI
+		}
+		FRA = {
+			HOL = {
+				add_opinion_modifier = { target = ROOT modifier = medium_increase }
+			}
+			give_guarantee = HOL
+		}
+		FRA = {
+			DEN = {
+				add_opinion_modifier = { target = ROOT modifier = medium_increase }
+			}
+			give_guarantee = DEN
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 4
+	y = 1
+}
+
+focus = {
+	id = FRA_ww1_french_interventionism
+	icon = GFX_focus_generic_manpower
+	relative_position_id = FRA_ww1_the_social_democrat_compromise
+	prerequisite = { 
+		focus = FRA_ww1_the_social_democrat_compromise 
+		focus = FRA_ww1_memories_of_the_commune 
+	}
+
+	completion_reward = {
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = -5
+	y = 1
 }
 
 
