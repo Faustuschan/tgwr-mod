@@ -20,7 +20,7 @@ focus_tree = {
 			factor = 1
 		}
 		cost = 10
-		x = 16
+		x = 18
 		y = 0
 	}
 
@@ -40,6 +40,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_stability = 0.05
+			add_war_support = -0.10
 		}
 		ai_will_do = {
 			factor = 1
@@ -49,6 +50,352 @@ focus_tree = {
 		x = 0
 		y = 1
 	}
+
+	focus = {
+		id = FRA_ww1_end_champagne_riots
+		icon = GFX_goal_demand_sudetenland
+		relative_position_id = FRA_ww1_save_the_republic
+		prerequisite = { focus = FRA_ww1_save_the_republic }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = FRA_150_seats
+			}
+			FRA = {
+				check_variable = {
+					democrat_alliance > 150
+				}
+			}
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = FRA_ww1_agricultural_sector_strike
+				days = 360
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		cost = 10
+		x = -2
+		y = 1
+	}
+
+	focus = {
+		id = FRA_ww1_rebuild_vineyard_production
+		icon = GFX_goal_generic_positive_trade_relations
+		relative_position_id = FRA_ww1_end_champagne_riots
+		prerequisite = { focus = FRA_ww1_end_champagne_riots }
+		available = {
+			18 = {
+				is_core_of = FRA
+					is_in_home_area = yes
+					is_controlled_by = FRA
+			}
+			27 = {
+				is_core_of = FRA
+					is_in_home_area = yes
+					is_controlled_by = FRA
+			}
+		}
+		completion_reward = {
+			18 = {
+				remove_building = {
+					type = industrial_complex
+					level = 1
+				}
+			}
+			27 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		cost = 10
+		x = 0
+		y = 1
+	}
+
+	focus = {
+		id = FRA_ww1_market_dynamism
+		icon = GFX_goal_generic_consumer_goods
+		relative_position_id = FRA_ww1_rebuild_vineyard_production
+		prerequisite = { focus = FRA_ww1_rebuild_vineyard_production }
+		completion_reward = {
+			add_ideas = FRA_market_dynamism
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		cost = 10
+		x = 0
+		y = 1
+	}
+
+	focus = {
+		id = FRA_ww1_salon_de_lagriculture
+		icon = GFX_focus_research
+		relative_position_id = FRA_ww1_market_dynamism
+		prerequisite = { focus = FRA_ww1_market_dynamism }
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_help
+				bonus = 1.0
+				category = industry
+				uses = 2
+			}
+			add_research_slot = 1
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		cost = 10
+		x = 0
+		y = 1
+	}
+
+	focus = {
+		id = FRA_ww1_strict_policy
+		icon = GFX_goal_generic_neutrality_focus
+		relative_position_id = FRA_ww1_save_the_republic
+		prerequisite = { focus = FRA_ww1_save_the_republic }
+		completion_reward = {
+			add_stability = -0.1
+			swap_ideas = {
+				remove_idea = FRA_disjointed_government
+				add_idea = FRA_disjointed_government3
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		cost = 10
+		x = 0
+		y = 1
+	}
+
+	focus = {
+		id = FRA_ww1_develop_germanophobia
+		icon = GFX_focus_destroy_parliament
+		relative_position_id = FRA_ww1_strict_policy
+		prerequisite = { focus = FRA_ww1_strict_policy }
+		completion_reward = {
+			add_war_support = 0.05
+			add_opinion_modifier = {
+				target = GER
+				modifier = large_decrease
+			}
+			add_opinion_modifier = {
+				target = AUH
+				modifier = large_decrease
+			}
+			add_opinion_modifier = { target = GER modifier = sanctions }
+			add_opinion_modifier = { target = AUH modifier = sanctions }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		cost = 10
+		x = 0
+		y = 1
+	}
+
+	focus = {
+		id = FRA_ww1_ils_ne_passeront_pas
+		icon = GFX_goal_generic_propaganda
+		relative_position_id = FRA_ww1_develop_germanophobia
+		prerequisite = { focus = FRA_ww1_develop_germanophobia }
+		completion_reward = {
+			add_ideas = FRA_idea_ils_ne_passeront_pas
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		cost = 10
+		x = 0
+		y = 1
+	}
+
+	focus = {
+		id = FRA_ww1_franco_italian_ties
+		icon = GFX_focus_befriend_italy
+		relative_position_id = FRA_ww1_save_the_republic
+		prerequisite = { focus = FRA_ww1_save_the_republic }
+		available = {
+			FRA = {
+				NOT = { has_war_with = ITA }
+			}
+		}
+		completion_reward = {
+			add_opinion_modifier = {
+				target = ITA
+				modifier = huge_increase
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		cost = 10
+		x = 2
+		y = 1
+	}
+
+	focus = {
+		id = FRA_ww1_form_the_regiments_alpins
+		icon = GFX_goal_generic_axis_build_infantry
+		relative_position_id = FRA_ww1_franco_italian_ties
+		prerequisite = { focus = FRA_ww1_franco_italian_ties }
+		completion_reward = {
+			division_template = {
+				name = "Régiment alpin"
+				priority = 2
+				division_names_group = FRA_MNT_01
+				regiments = { 
+					mountaineers = {
+						x = 0
+						y = 0
+					}
+					mountaineers = {
+						x = 0
+						y = 1
+					}
+					mountaineers = {
+						x = 0
+						y = 2
+					}
+					mountaineers = {
+						x = 0
+						y = 3
+					}
+					mountaineers = {
+						x = 1
+						y = 0
+					}
+					mountaineers = {
+						x = 1
+						y = 1
+					}
+					mountaineers = {
+						x = 1
+						y = 2
+					}
+					mountaineers = {
+						x = 1
+						y = 3
+					}
+					mountaineers = {
+						x = 2
+						y = 0
+					}
+					mountaineers = {
+						x = 2
+						y = 1
+					}
+					mountaineers = {
+						x = 2
+						y = 2
+					}
+					mountaineers = {
+						x = 2
+						y = 3
+					}
+				}
+			}
+			set_technology = {
+				tech_mountaineers = 1
+			}
+			army_experience = 10
+			add_tech_bonus = {
+				name = FRA_ww1_form_the_regiments_alpins
+				bonus = 1.0
+				category = mountaineers_tech
+				uses = 1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		cost = 10
+		x = 0
+		y = 1
+	}
+
+	focus = {
+		id = FRA_ww1_help_italy
+		icon = GFX_focus_chi_army_reform
+		relative_position_id = FRA_ww1_form_the_regiments_alpins
+		prerequisite = { focus = FRA_ww1_form_the_regiments_alpins }
+		completion_reward = {
+			32 = {
+				create_unit = {
+					division = "name = \"1ère division alpine\" division_template = \"Régiment alpin\" start_experience_factor = 0.2"
+					owner = FRA
+				}
+				create_unit = {
+					division = "name = \"2ème division alpine\" division_template = \"Régiment alpin\" start_experience_factor = 0.2"
+					owner = FRA
+				}
+				create_unit = {
+					division = "name = \"3ème division alpine\" division_template = \"Régiment alpin\" start_experience_factor = 0.2"
+					owner = FRA
+				}
+			}
+
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		cost = 10
+		x = 0
+		y = 1
+	}
+
+	focus = {
+		id = FRA_ww1_forced_conscription_in_colonies
+		icon = GFX_goal_generic_attack_allies
+		relative_position_id = FRA_ww1_save_the_republic
+		prerequisite = { 
+			focus = FRA_ww1_save_the_republic
+			focus = FRA_ww1_form_the_proudhon_circle
+		}
+		available = {
+			OR = {
+				any_owned_state = {
+					NOT = { is_on_continent = europe is_core_of = ROOT }
+				}
+				any_country = {
+					is_puppet_of = ROOT
+				}
+			}
+			
+		}
+		completion_reward = {
+			add_ideas = FRA_ww1_forced_conscription_in_colonies
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		cost = 10
+		x = 4
+		y = 1
+	}
+
 
 ###############################################################
 # memories of the commune - SOCIALIST PATH
@@ -87,7 +434,7 @@ focus = {
 	}
 	
 	cost = 10
-	x = -18
+	x = -20
 	y = 1
 }
 
@@ -591,7 +938,7 @@ focus = {
 		focus = FRA_ww1_support_paul_deroulede
 	}
 	completion_reward = {
-		add_stability = 0.05
+		add_stability = -0.05
 		custom_effect_tooltip = FRA_join_democrats_socialists
 		custom_effect_tooltip = FRA_get_democrats_socialists_seats
 	}
@@ -600,7 +947,7 @@ focus = {
 	}
 	
 	cost = 10
-	x = -8
+	x = -10
 	y = 1
 }
 
@@ -620,6 +967,8 @@ focus = {
 			check_variable = {
 				democrat_alliance > 350
 			}
+			has_war = no
+			is_puppet = no
 		}
 	}
 	completion_reward = {
@@ -747,7 +1096,17 @@ focus = {
 		focus = FRA_ww1_the_social_democrat_compromise 
 		focus = FRA_ww1_memories_of_the_commune 
 	}
-
+	available = {
+		OR = {
+			any_owned_state = {
+				NOT = { is_on_continent = europe is_core_of = ROOT }
+			}
+			any_country = {
+				is_puppet_of = ROOT
+			}
+		}
+		
+	}
 	completion_reward = {
 		add_ideas = FRA_ww1_colonial_volunteers
 	}
@@ -868,6 +1227,16 @@ focus = {
 	relative_position_id = FRA_ww1_social_investments
 	prerequisite = { 
 		focus = FRA_ww1_social_investments 
+	}
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = FRA_150_seats
+		}
+		FRA = {
+			check_variable = {
+				democrat_alliance > 150
+			}
+		}
 	}
 	completion_reward = {
 		FRA = {
@@ -1021,6 +1390,14 @@ focus = {
 				democrat_alliance > 250
 			}
 		}
+		OR = {
+			any_owned_state = {
+				NOT = { is_on_continent = europe is_core_of = ROOT }
+			}
+			any_country = {
+				is_puppet_of = ROOT
+			}
+		}
 	}
 	completion_reward = {
 		FRA = {
@@ -1060,6 +1437,14 @@ focus = {
 		FRA = {
 			check_variable = {
 				democrat_alliance > 250
+			}
+		}
+		OR = {
+			any_owned_state = {
+				NOT = { is_on_continent = europe is_core_of = ROOT }
+			}
+			any_country = {
+				is_puppet_of = ROOT
 			}
 		}
 	}
@@ -1249,7 +1634,7 @@ focus = {
 	}
 	
 	cost = 10
-	x = 7
+	x = 8
 	y = 1
 }
 
@@ -1275,7 +1660,7 @@ focus = {
 	}
 	
 	cost = 10
-	x = 14
+	x = 15
 	y = 1
 }
 
@@ -1285,8 +1670,125 @@ focus = {
 
 
 
+###############################################################################
+#	ARMY FOCUS
+###################################################
 
+focus = {
+	id = FRA_ww1_revision_de_larmee_de_terre
+	icon = GFX_goal_generic_army_doctrines
+	completion_reward = {
+		add_tech_bonus = {
+			name = FRA_ww1_revision_de_larmee_de_terre
+			bonus = 1.0	
+			category = land_doctrine
+			uses = 2.0
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 10
+	y = 7
+}
 
+focus = {
+	id = FRA_ww1_fund_berthier
+	icon = GFX_goal_generic_small_arms
+	relative_position_id = FRA_ww1_revision_de_larmee_de_terre
+	prerequisite = { focus = FRA_ww1_revision_de_larmee_de_terre }
+	completion_reward = {
+		army_experience = 10
+		add_tech_bonus = {
+			name = FRA_ww1_fund_berthier
+			bonus = 1.0	
+			category = infantry_weapons
+			uses = 1.0
+		}
+		add_tech_bonus = {
+			name = FRA_ww1_fund_berthier
+			bonus = 1.0	
+			category = support_tech
+			uses = 1.0
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 2
+	y = 1
+}
+
+focus = {
+	id = FRA_ww1_fund_schneider
+	icon = GFX_goal_generic_army_artillery
+	relative_position_id = FRA_ww1_revision_de_larmee_de_terre
+	prerequisite = { focus = FRA_ww1_revision_de_larmee_de_terre }
+	completion_reward = {
+		army_experience = 10
+		add_tech_bonus = {
+			name = FRA_ww1_fund_berthier
+			bonus = 1.0	
+			category = artillery
+			uses = 1.0
+		}
+		custom_effect_tooltip = materiel_manufacturer
+		show_ideas_tooltip = schneider
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = -2
+	y = 1
+}
+
+focus = {
+	id = FRA_ww1_motorization
+	icon = GFX_goal_generic_army_motorized
+	relative_position_id = FRA_ww1_revision_de_larmee_de_terre
+	prerequisite = { focus = FRA_ww1_revision_de_larmee_de_terre }
+	completion_reward = {
+		army_experience = 10
+		add_tech_bonus = {
+			name = FRA_ww1_motorization
+			bonus = 1.0	
+			category = motorized_equipment
+			uses = 1.0
+		}
+		custom_effect_tooltip = motorized_equipment_manufacturer
+		show_ideas_tooltip = berliet
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 0
+	y = 1
+}
+
+focus = {
+	id = FRA_ww1_prepare_fortifications_buildup
+	icon = GFX_goal_generic_construct_military
+	relative_position_id = FRA_ww1_revision_de_larmee_de_terre
+	prerequisite = { focus = FRA_ww1_revision_de_larmee_de_terre }
+	completion_reward = {
+		add_ideas = idea_fortification
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = -4
+	y = 1
+}
 
 
 

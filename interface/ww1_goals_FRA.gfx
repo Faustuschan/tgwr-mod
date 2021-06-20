@@ -65,5 +65,12 @@ spriteTypes = {
 		texturefile = "gfx/interface/goals/FRA/FRA_çexpanded_duty2.dds"
 	}
 
+	##### berlet trucks
+	SpriteType = {
+		name = "GFX_idea_berliet"
+		texturefile = "gfx/interface/ideas/FRA/berliet.dds"
+	}
+	
+
 	
 }

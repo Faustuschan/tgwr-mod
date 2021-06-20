@@ -35,6 +35,7 @@ ideas = {
 		}
 
 		FRA_disjointed_government2 = {
+			name = FRA_disjointed_government
 			allowed = {
 				original_tag = FRA
 				always = no
@@ -46,6 +47,23 @@ ideas = {
 			picture = generic_disjointed_gov
 			modifier = {
 				political_power_cost = 0.25
+				stability_factor = -0.1
+			}
+		}
+
+		FRA_disjointed_government3 = {
+			name = FRA_disjointed_government
+			allowed = {
+				original_tag = FRA
+				always = no
+			}
+			allowed_civil_war = {
+				has_government = democratic
+			}
+			removal_cost = -1
+			picture = generic_disjointed_gov
+			modifier = {
+				political_power_cost = 0.1
 				stability_factor = -0.1
 			}
 		}
@@ -255,8 +273,47 @@ ideas = {
 			}
 		}
 
+		FRA_ww1_agricultural_sector_strike = {
+			picture = generic_manpower_bonus
+			allowed = {
+				TAG = FRA
+			}
+			modifier = {
+				stability_factor = -0.1
+				consumer_goods_factor = 0.1
+			}
+		}
 
+		FRA_market_dynamism = {
+			
+			allowed = {
+				original_tag = FRA
+				always = no
+			}
 
+			allowed_civil_war = {
+				has_government = democratic
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				production_factory_max_efficiency_factor = 0.1
+				production_factory_efficiency_gain_factor = 0.1
+			}
+			research_bonus = { industry = 0.05}
+		}
+
+		FRA_ww1_forced_conscription_in_colonies = {
+			picture = generic_manpower_bonus
+			allowed = {
+				TAG = FRA
+			}
+			modifier = {
+				non_core_manpower = 0.1
+				resistance_growth = 0.1
+			}
+		}
 
 
 
@@ -562,6 +619,25 @@ ideas = {
 				motorized_equipment_manufacturer
 			}
 		}
+		berliet = {
+			allowed = {
+				original_tag = FRA
+			}
+			available = {
+				has_completed_focus = FRA_ww1_motorization
+			}
+			research_bonus = {
+				motorized_equipment = 0.1
+			}
+			equipment_bonus = {
+				motorized_equipment = {
+					build_cost_ic = -0.1 instant = yes
+				}
+			}
+			traits = {
+				motorized_equipment_manufacturer
+			}
+		}
 		mas = {
 			allowed = {
 				original_tag = FRA
@@ -577,8 +653,15 @@ ideas = {
 			allowed = {
 				original_tag = FRA
 			}
+			available = {
+				has_completed_focus = FRA_ww1_fund_scheinder
+			}
 			research_bonus = {
-				artillery = 0.1
+				artillery = 0.15
+			}
+			modifier = {
+				army_artillery_defence_factor = 0.05
+				army_artillery_attack_factor = 0.05
 			}
 			traits = {
 				artillery_manufacturer
