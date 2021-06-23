@@ -70,6 +70,36 @@ spriteTypes = {
 		name = "GFX_idea_berliet"
 		texturefile = "gfx/interface/ideas/FRA/berliet.dds"
 	}
+
+	##### armored cars
+	SpriteType = {
+		name = "GFX_idea_peugeot"
+		texturefile = "gfx/interface/ideas/FRA/peugeot.dds"
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_FRA_ww1_dreyfus_exoneration"
+		texturefile = "gfx/interface/goals/FRA/focus_FRA_alliance.dds"
+	}
+
+
+	SpriteType = {
+		name = "GFX_goal_FRA_fortress"
+		texturefile = "gfx/interface/goals/FRA/focus_fra_preserve_france.dds"
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_FRA_gold"
+		texturefile = "gfx/interface/goals/FRA/focus_francefirst.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_goal_FRA_ENG_alliance"
+		texturefile = "gfx/interface/goals/FRA/focus_ENG_alliance.dds"
+	}
+	
+
+	
 	
 
 	

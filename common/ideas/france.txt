@@ -18,6 +18,21 @@ ideas = {
 			}
 		}
 
+		FRA_propaganda = {
+			allowed = {
+				original_tag = FRA
+				always = no
+			}
+			allowed_civil_war = {
+				has_government = democratic
+			}
+			removal_cost = -1
+			picture = French_staff
+			modifier = {
+				war_support_weekly = 0.005
+			}
+		}
+
 		FRA_disjointed_government = {
 			allowed = {
 				original_tag = FRA
@@ -312,6 +327,52 @@ ideas = {
 			modifier = {
 				non_core_manpower = 0.1
 				resistance_growth = 0.1
+			}
+		}
+
+		FRA_speed_cult = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+
+			picture = generic_acquire_tanks
+	
+			modifier = {
+				army_speed_factor = 0.10
+			}
+		}
+
+		FRA_firepower = {
+			picture = generic_artillery_regiments
+			allowed = {
+				original_tag = FRA
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			equipment_bonus = {
+				artillery_equipment = {
+					build_cost_ic = -0.1
+					breakthrough = 0.1
+					instant = yes
+				}
+			}
+
+			modifier = {
+				GER = {
+					defense_bonus_against = 0.10
+				}
 			}
 		}
 
@@ -654,7 +715,7 @@ ideas = {
 				original_tag = FRA
 			}
 			available = {
-				has_completed_focus = FRA_ww1_fund_scheinder
+				has_completed_focus = FRA_ww1_fund_schneider
 			}
 			research_bonus = {
 				artillery = 0.15
@@ -709,15 +770,47 @@ ideas = {
 	tank_manufacturer = {
 		designer = yes
 		renault_fra = {
+			picture = idea_renault
 			allowed = {
 				original_tag = FRA
+			}
+			available = {
+				has_completed_focus = FRA_ww1_the_french_miracle
 			}
 			research_bonus = {
 				armor = 0.1
 			}
-			traits = {
-				fast_tank_manufacturer
+
+			modifier = {
+				custom_modifier_tooltip = FRA_renault_miracle
 			}
+			
+			equipment_bonus = {
+				light_tank_equipment_1 = {
+					breakthrough = 0.20
+					soft_attack = 0.20
+				}
+			}
+
+			equipment_bonus = {
+				light_tank_equipment_2 = {
+					breakthrough = 0.20
+					soft_attack = 0.20
+				}
+			}
+		}
+		peugeot = {
+			allowed = {
+				original_tag = FRA
+			}
+			available = {
+				has_completed_focus = FRA_ww1_fund_peugeot
+			}
+			research_bonus = {
+				armor = 0.05
+				motorized_equipment = 0.05
+			}
+			traits = { armored_car_manufacturer }
 		}
 	}
 	country = {
@@ -851,8 +944,8 @@ ideas = {
 			removal_cost = -1
 			picture = generic_victors_of_ww1
 			modifier = {
-				justify_war_goal_time = -0.05
-				conscription = 0.01
+				justify_war_goal_time = -0.25
+				conscription = 0.025
 			}
 		}
 		FRA_interwar_Revanchism = {
@@ -1022,7 +1115,7 @@ ideas = {
 				has_government = communism
 			}
 			modifier = {
-				conscription = 0.01
+				mobilization_speed = 0.10
 				army_morale_factor = 0.1
 			}
 		}

@@ -3040,8 +3040,24 @@ Australia_disestablish_the_cmf_desc:0 ""
  FRA_ww1_fund_berthier:0 "Fund Berthier"
  FRA_ww1_fund_schneider:0 "Fund Schneider"
  FRA_ww1_motorization:0 "Motorisation"
-
-
+ FRA_ww1_howitzer_development:0 "Hotwitzer Development"
+ FRA_ww1_chauchat_mass_production:0 "Chauchat mass Production"
+ FRA_ww1_fund_peugeot:0 "Fund Peugeot"
+ FRA_ww1_fuhrer_innovation:0 "Fuhrer Innovation"
+ FRA_ww1_world_breakout:0 "World Breakout"
+ FRA_ww1_war_economy:0 "War Economy"
+ FRA_ww1_emergency_measures:0 "Emergency Measures"
+ FRA_ww1_anti_air_positions:0 "Anti-Air Positions"
+ FRA_ww1_mechanized_effort:0 "Mechanized Effort"
+ FRA_ww1_the_french_miracle:0 "The French Miracle"
+ FRA_ww1_beyond_fear:0 "Beyond Fear"
+ FRA_ww1_revanchist_propaganda:0 "Revanchist Propaganda"
+ FRA_ww1_french_revenchism:0 "French Revenchism"
+ FRA_ww1_mobile_warfare_focus:0 "Mobile Warfare Focus"
+ FRA_ww1_static_warfare_focus:0 "Static Warfare Focus"
+ FRA_ww1_speed_cult:0 "Speed Cult"
+ FRA_ww1_defensive_stratagems:0 "Defensive Stratagems"
+ 
  
 
  FRA_join_socialists:0 "\nSelecting §Ythis focus§! will place us in the role of §Rthe SFIO§!. \n\n§ROur alliance will combine socialists seats!§!"
