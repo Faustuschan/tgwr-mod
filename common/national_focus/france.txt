@@ -57,12 +57,13 @@ focus_tree = {
 		relative_position_id = FRA_ww1_save_the_republic
 		prerequisite = { focus = FRA_ww1_save_the_republic }
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = FRA_150_seats
-			}
+			
 			FRA = {
 				check_variable = {
 					democrat_alliance > 150
+				}
+				custom_trigger_tooltip = {
+					tooltip = FRA_150_seats
 				}
 			}
 		}
@@ -232,7 +233,10 @@ focus_tree = {
 		id = FRA_ww1_franco_italian_ties
 		icon = GFX_focus_befriend_italy
 		relative_position_id = FRA_ww1_save_the_republic
-		prerequisite = { focus = FRA_ww1_save_the_republic }
+		prerequisite = {
+			focus = FRA_ww1_save_the_republic 
+			focus = FRA_ww1_form_the_proudhon_circle 
+		}
 		available = {
 			FRA = {
 				NOT = { has_war_with = ITA }
@@ -242,6 +246,11 @@ focus_tree = {
 			add_opinion_modifier = {
 				target = ITA
 				modifier = huge_increase
+			}
+			add_ai_strategy = {
+				type = alliance
+				id = ITA
+				value = 200
 			}
 		}
 		ai_will_do = {
@@ -642,14 +651,13 @@ focus = {
 	prerequisite = { focus = FRA_ww1_support_for_universities }
 	prerequisite = { focus = FRA_ww1_labor_reform focus = FRA_ww1_popular_brigades }
 	available = {
-		custom_trigger_tooltip = {
-			tooltip = FRA_150_seats
-		}
-		hidden_trigger = {
-			FRA = {
-				check_variable = {
-					democrat_alliance > 150
-				}
+		
+		FRA = {
+			check_variable = {
+				democrat_alliance > 150
+			}
+			custom_trigger_tooltip = {
+				tooltip = FRA_150_seats
 			}
 		}
 		ROOT = {
@@ -960,12 +968,13 @@ focus = {
 		focus = FRA_ww1_save_the_republic 
 	}
 	available = {
-		custom_trigger_tooltip = {
-			tooltip = FRA_350_seats
-		}
+		
 		FRA = {
 			check_variable = {
 				democrat_alliance > 350
+			}
+			custom_trigger_tooltip = {
+				tooltip = FRA_350_seats
 			}
 			has_war = no
 			is_puppet = no
@@ -1059,6 +1068,38 @@ focus = {
 }
 
 focus = {
+	id = FRA_ww1_british_friendship
+	icon = GFX_focus_chi_british_cooperation
+	relative_position_id = FRA_ww1_protect_european_minorities
+	prerequisite = { 
+		focus = FRA_ww1_protect_european_minorities 
+	}
+	available = {
+		FRA = {
+			NOT = { has_war_with = ENG }
+		}
+	}
+	completion_reward = {
+		add_opinion_modifier = {
+			target = ITA
+			modifier = huge_increase
+		}
+		add_ai_strategy = {
+			type = alliance
+			id = ITA
+			value = 200
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 0
+	y = 1
+}
+
+focus = {
 	id = FRA_ww1_french_interventionism
 	icon = GFX_focus_generic_manpower
 	relative_position_id = FRA_ww1_the_social_democrat_compromise
@@ -1067,12 +1108,12 @@ focus = {
 		focus = FRA_ww1_memories_of_the_commune 
 	}
 	available = {
-		custom_trigger_tooltip = {
-			tooltip = FRA_250_seats
-		}
 		FRA = {
 			check_variable = {
 				democrat_alliance > 250
+			}
+			custom_trigger_tooltip = {
+				tooltip = FRA_250_seats
 			}
 		}
 	}
@@ -1128,12 +1169,13 @@ focus = {
 		focus = FRA_ww1_the_social_democrat_compromise 
 	}
 	available = {
-		custom_trigger_tooltip = {
-			tooltip = FRA_250_seats
-		}
+		
 		FRA = {
 			check_variable = {
 				democrat_alliance > 250
+			}
+			custom_trigger_tooltip = {
+				tooltip = FRA_250_seats
 			}
 		}
 	}
@@ -1229,12 +1271,13 @@ focus = {
 		focus = FRA_ww1_social_investments 
 	}
 	available = {
-		custom_trigger_tooltip = {
-			tooltip = FRA_150_seats
-		}
+		
 		FRA = {
 			check_variable = {
 				democrat_alliance > 150
+			}
+			custom_trigger_tooltip = {
+				tooltip = FRA_150_seats
 			}
 		}
 	}
@@ -1330,12 +1373,13 @@ focus = {
 		focus = FRA_ww1_overseas_economy 
 	}
 	available = {
-		custom_trigger_tooltip = {
-			tooltip = FRA_300_seats
-		}
+		
 		FRA = {
 			check_variable = {
 				democrat_alliance > 250
+			}
+			custom_trigger_tooltip = {
+				tooltip = FRA_250_seats
 			}
 		}
 	}
@@ -1382,12 +1426,13 @@ focus = {
 		focus = FRA_ww1_colonial_assimilation_program
 	}
 	available = {
-		custom_trigger_tooltip = {
-			tooltip = FRA_250_seats
-		}
+		
 		FRA = {
 			check_variable = {
 				democrat_alliance > 250
+			}
+			custom_trigger_tooltip = {
+				tooltip = FRA_250_seats
 			}
 		}
 		OR = {
@@ -1431,12 +1476,13 @@ focus = {
 		focus = FRA_ww1_colonial_integration_program
 	}
 	available = {
-		custom_trigger_tooltip = {
-			tooltip = FRA_250_seats
-		}
+		
 		FRA = {
 			check_variable = {
 				democrat_alliance > 250
+			}
+			custom_trigger_tooltip = {
+				tooltip = FRA_250_seats
 			}
 		}
 		OR = {
@@ -1627,14 +1673,631 @@ focus = {
 		focus = FRA_ww1_the_social_democrat_compromise
 	}
 	completion_reward = {
-		add_stability = 0.05
+		custom_effect_tooltip = FRA_join_popular_liberal_action
+		custom_effect_tooltip = FRA_get_popular_liberal_action_seats
+		add_popularity = {
+			ideology = neutrality
+			popularity = 0.10
+		}
+		custom_effect_tooltip = available_political_advisor
+		show_ideas_tooltip = FRA_charles_maurras
+
+		set_variable = { var = democrat_alliance value = 0 } 
+		add_to_variable = { var = democrat_alliance value = popular_liberal_action }
+		set_variable = { var = democrat_alliance_percent value = democrat_alliance } 
+		multiply_variable = { democrat_alliance_percent = 100 }
+		divide_variable = { democrat_alliance_percent = seatNumbers }
+		reload_parliament_gui = yes
+
 	}
 	ai_will_do = {
 		factor = 1
 	}
 	
 	cost = 10
-	x = 8
+	x = 14
+	y = 1
+}
+
+focus = {
+	id = FRA_ww1_support_valois
+	icon = GFX_focus_generic_monarchy_2
+	relative_position_id = FRA_ww1_form_the_proudhon_circle
+	prerequisite = { focus = FRA_ww1_form_the_proudhon_circle }
+	mutually_exclusive = {
+		focus = FRA_ww1_rappeal_the_law_of_exile
+	}
+	completion_reward = {
+		add_political_power = 120
+		create_country_leader = {
+			name = "Georges Valois"
+			ideology = despotism
+			picture = "gfx/leaders/FRA/FRA_georges_valois.dds"
+			traits = {
+				monarchist_media_mogul
+			}
+		}
+
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 0
+	y = 1
+}
+
+focus = {
+	id = FRA_ww1_restaure_monarchist_sentiment
+	icon = GFX_goal_FRA_monarchism1
+	relative_position_id = FRA_ww1_support_valois
+	prerequisite = { focus = FRA_ww1_support_valois }
+	completion_reward = {
+		add_timed_idea = {
+			idea = authoritarianism
+			days = 180
+		}
+
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 0
+	y = 1
+}
+
+focus = {
+	id = FRA_ww1_return_of_the_king
+	icon = GFX_goal_FRA_jean_III
+	relative_position_id = FRA_ww1_restaure_monarchist_sentiment
+	prerequisite = { focus = FRA_ww1_restaure_monarchist_sentiment }
+	available = {
+		has_government = neutrality
+		FRA = {
+			custom_trigger_tooltip = {
+				tooltip = FRA_350_seats
+			}
+			check_variable = {
+				democrat_alliance > 350
+			}
+			
+		}
+		
+	}
+	completion_reward = {
+		retire_country_leader = yes
+		create_country_leader = {
+			name = "Jean III d'Orléans"
+			ideology = despotism
+			picture = "gfx/leaders/FRA/FRA_jean_duke_of_guise.dds"
+			traits = {
+				the_sacred_king
+				anti_communist
+			}
+		}
+		set_party_name = { 
+			ideology = neutrality 
+			long_name = FRA_orleanists_long
+			name = FRA_orleanists 
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 0
+	y = 1
+}
+
+focus = {
+	id = FRA_ww1_camelots_du_roi
+	icon = GFX_goal_FRA_camelots_du_roi
+	relative_position_id = FRA_ww1_return_of_the_king
+	prerequisite = { focus = FRA_ww1_return_of_the_king }
+	available = {
+		has_government = neutrality
+	}
+	completion_reward = {
+		add_ideas = FRA_camelots_du_roi
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 0
+	y = 1
+}
+
+focus = {
+	id = FRA_ww1_seek_rapprochement_with_spain
+	icon = GFX_focus_intervention_spain_nationalists
+	relative_position_id = FRA_ww1_return_of_the_king
+	prerequisite = { focus = FRA_ww1_return_of_the_king }
+	available = {
+		has_government = neutrality
+		FRA = {
+			NOT = { has_war_with = SPR }
+		}
+	}
+	completion_reward = {
+		add_opinion_modifier = {
+			target = SPR
+			modifier = huge_increase
+		}
+		add_ai_strategy = {
+			type = alliance
+			id = SPR
+			value = 200
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 2
+	y = 1
+}
+
+focus = {
+	id = FRA_ww1_buy_army_loyalty
+	icon = GFX_focus_generic_military_mission
+	relative_position_id = FRA_ww1_form_the_proudhon_circle
+	prerequisite = { focus = FRA_ww1_form_the_proudhon_circle }
+	completion_reward = {
+		add_political_power = -100
+	}
+	available = {
+		has_political_power > 100
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = -2
+	y = 2
+}
+
+focus = {
+	id = FRA_ww1_divert_national_production
+	icon = GFX_goal_generic_build_tank
+	relative_position_id = FRA_ww1_buy_army_loyalty
+	prerequisite = { 
+		focus = FRA_ww1_buy_army_loyalty 
+	}
+	prerequisite = {
+		focus = FRA_ww1_restaure_monarchist_sentiment
+		focus = FRA_ww1_renember_1812
+	}
+	completion_reward = {
+		add_timed_idea = {
+			idea = FRA_diverted_national_production
+			days = 180
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 0
+	y = 1
+}
+
+focus = {
+	id = FRA_ww1_force_the_issue
+	icon = GFX_focus_focus_fra_revolution_utmost_shine
+	relative_position_id = FRA_ww1_divert_national_production
+	prerequisite = { focus = FRA_ww1_divert_national_production }
+	available = {
+		NOT = {
+			has_idea = FRA_diverted_national_production
+		}
+		neutrality > 0.40
+	}
+	completion_reward = {
+		remove_ideas = FRA_disjointed_government
+		start_civil_war = {
+			ideology = democratic
+			ruling_party = neutrality
+			size = 0.30
+			states = {
+				19
+				29
+				17
+				18
+				31
+				22
+				25
+				23
+			}
+			
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 0
+	y = 1
+}
+
+focus = {
+	id = FRA_ww1_withdraw_the_law_of_1905
+	icon = GFX_goal_FRA_catholic_relations
+	relative_position_id = FRA_ww1_force_the_issue
+	prerequisite = { focus = FRA_ww1_force_the_issue }
+	available = {
+		
+		FRA = {
+			check_variable = {
+				democrat_alliance > 350
+			}
+			custom_trigger_tooltip = {
+				tooltip = FRA_350_seats
+			}
+		}
+	}
+	completion_reward = {
+		add_ideas = FRA_catholic_support
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = -2
+	y = 1
+}
+
+focus = {
+	id = FRA_ww1_unlimited_budget
+	icon = GFX_focus_research
+	relative_position_id = FRA_ww1_force_the_issue
+	prerequisite = { focus = FRA_ww1_force_the_issue }
+	available = {
+		
+		FRA = {
+			check_variable = {
+				democrat_alliance > 350
+			}
+			custom_trigger_tooltip = {
+				tooltip = FRA_350_seats
+			}
+		}
+	}
+	completion_reward = {
+		add_research_slot = 1
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 2
+	y = 1
+}
+
+focus = {
+	id = FRA_ww1_royal_prerogatives
+	icon = GFX_goal_FRA_royal_prerogatives
+	relative_position_id = FRA_ww1_force_the_issue
+	prerequisite = { focus = FRA_ww1_force_the_issue }
+	available = {
+	}
+	completion_reward = {
+		set_variable = { var = seatNumbers value = 600 } 
+		set_country_flag = FRA_royal_prerogatives
+		set_country_flag = FRA_parliament_dissolved
+		custom_effect_tooltip = FRA_national_assembly_dissolved
+		set_variable = { parliament_seat_array^0 = 0 }
+		set_variable = { parliament_seat_array^1 = 0 }
+		set_variable = { parliament_seat_array^2 = 0 }
+		set_variable = { parliament_seat_array^3 = 0 }
+		set_variable = { parliament_seat_array^4 = 0 }
+		set_variable = { parliament_seat_array^5 = 0 }
+		set_variable = { parliament_seat_array^6 = 0 }
+		set_variable = { parliament_seat_array^7 = 0 }
+		set_variable = { parliament_seat_array^8 = seatNumbers }
+		set_variable = { parliament_seat_array^9 = 0 }
+		set_variable = { parliament_seat_array^10 = 0 }
+		set_variable = { var = democrat_alliance value = seatNumbers } 
+		set_variable = { var = democrat_alliance_percent value = democrat_alliance } 
+		multiply_variable = { democrat_alliance_percent = 100 }
+		divide_variable = { democrat_alliance_percent = seatNumbers }
+		reload_parliament_gui = yes 
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 0
+	y = 1
+}
+
+focus = {
+	id = FRA_ww1_rappeal_the_law_of_exile
+	icon = GFX_goal_FRA_monarchism3
+	relative_position_id = FRA_ww1_form_the_proudhon_circle
+	prerequisite = { focus = FRA_ww1_form_the_proudhon_circle }
+	mutually_exclusive = {
+		focus = FRA_ww1_support_valois
+	}
+	completion_reward = {
+		add_popularity = {
+			ideology = neutrality
+			popularity = 0.10
+		}
+		create_country_leader = {
+			name = "Napoleon V"
+			ideology = despotism
+			picture = "gfx/leaders/FRA/FRA_Napoleon_V.dds"
+			traits = {
+				dislikes_russia
+				empire_builder
+			}
+		}
+		set_party_name = { 
+			ideology = neutrality 
+			long_name = FRA_bonapartists_long
+			name = FRA_bonapartists 
+		}
+			
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = -4
+	y = 1
+}
+
+focus = {
+	id = FRA_ww1_renember_1812
+	icon = GFX_goal_FRA_monarchism4
+	relative_position_id = FRA_ww1_rappeal_the_law_of_exile
+	prerequisite = { focus = FRA_ww1_rappeal_the_law_of_exile }
+	completion_reward = {
+		add_ideas = FRA_memories_of_1812
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 0
+	y = 1
+}
+
+
+focus = {
+	id = FRA_ww1_broken_ties
+	icon = GFX_focus_generic_anti_fascist_diplomacy
+	relative_position_id = FRA_ww1_renember_1812
+	prerequisite = { focus = FRA_ww1_renember_1812 }
+	available = {
+		FRA = {
+			OR = {
+				is_in_faction_with = RUS
+				has_guaranteed = RUS
+			}
+			has_government = neutrality
+		}
+	}
+	completion_reward = {
+		dismantle_faction = yes
+		create_faction = "French Empire"
+		add_opinion_modifier = {
+			target = RUS
+			modifier = large_decrease
+		}
+		reverse_add_opinion_modifier = {
+			target = RUS
+			modifier = large_decrease
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 0
+	y = 1
+}
+
+focus = {
+	id = FRA_ww1_restore_the_empire
+	icon = GFX_focus_focus_fra_border
+	relative_position_id = FRA_ww1_broken_ties
+	prerequisite = { focus = FRA_ww1_broken_ties }
+	available = {
+		has_government = neutrality
+		is_puppet = no
+	}
+	completion_reward = {
+		add_state_claim = 34
+		add_state_claim = 6
+		add_state_claim = 8
+		add_state_claim = 28
+		add_state_claim = 851
+		add_state_claim = 165
+		add_state_claim = 162
+		add_state_claim = 158
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 0
+	y = 1
+}
+
+focus = {
+	id = FRA_ww1_napoleonic_pride
+	icon = GFX_goal_FRA_napoleonic_pride
+	relative_position_id = FRA_ww1_broken_ties
+	prerequisite = { focus = FRA_ww1_broken_ties }
+	available = {
+		has_government = neutrality
+	}
+	completion_reward = {
+		add_ideas = FRA_napoleonic_pride
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = -2
+	y = 1
+}
+
+focus = {
+	id = FRA_ww1_ottoman_historic_friendship
+	icon = GFX_focus_generic_befriend_turkey
+	relative_position_id = FRA_ww1_form_the_proudhon_circle
+	prerequisite = { 
+		focus = FRA_ww1_form_the_proudhon_circle 
+		focus = FRA_save_the_republic 
+	}
+	available = {
+		FRA = {
+			NOT = { has_war_with = TUR }
+			is_puppet = no
+		}
+	}
+	completion_reward = {
+		add_opinion_modifier = {
+			target = TUR
+			modifier = huge_increase
+		}
+		add_ai_strategy = {
+			type = alliance
+			id = TUR
+			value = 200
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = -6
+	y = 1
+}
+
+focus = {
+	id = FRA_ww1_form_camel_cavalry
+	icon = GFX_goal_generic_cavalry
+	relative_position_id = FRA_ww1_ottoman_historic_friendship
+	prerequisite = { focus = FRA_ww1_ottoman_historic_friendship }
+	available = {
+		FRA = {
+			NOT = { has_war_with = TUR }
+		}
+	}
+	completion_reward = {
+		set_technology = {
+			camelry = 1
+		}
+		army_experience = 10
+		add_tech_bonus = {
+			name = FRA_ww1_form_camel_cavalry
+			category = infantry_tech
+			uses = 1.0
+			bonus = 1.0
+		}
+		division_template = {
+			name = "Brigade d'occupation nord-Africaine"
+			priority = 0
+			division_names_group = FRA_COL_01
+			regiments = { 
+				camelry = {
+					x = 0
+					y = 0
+				}
+				camelry = {
+					x = 0
+					y = 1
+				}
+				camelry = {
+					x = 0
+					y = 2
+				}
+				camelry = {
+					x = 1
+					y = 0
+				}
+				camelry = {
+					x = 1
+					y = 1
+				}
+				camelry = {
+					x = 1
+					y = 2
+				}
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 0
+	y = 1
+}
+
+focus = {
+	id = FRA_ww1_assume_north_africa_protection
+	icon = GFX_goal_generic_air_doctrine
+	relative_position_id = FRA_ww1_form_camel_cavalry
+	prerequisite = { focus = FRA_ww1_form_camel_cavalry }
+	available = {
+		is_puppet = no
+	}
+	completion_reward = {
+		459 = {
+			create_unit = {
+				division = "name = \"1ère Brigade coloniale mobile d'Alger\" division_template = \"Brigade d'occupation nord-Africaine\" start_experience_factor = 0.1"
+				owner = FRA
+			}
+			create_unit = {
+				division = "name = \"2ème Brigade coloniale mobile d'Alger\" division_template = \"Brigade d'occupation nord-Africaine\" start_experience_factor = 0.1"
+				owner = FRA
+			}
+			create_unit = {
+				division = "name = \"3ème Brigade coloniale mobile d'Alger\" division_template = \"Brigade d'occupation nord-Africaine\" start_experience_factor = 0.1"
+				owner = FRA
+			}
+		}
+		458 = {
+			create_unit = {
+				division = "name = \"1ère Brigade coloniale mobile de Bizerte\" division_template = \"Brigade d'occupation nord-Africaine\" start_experience_factor = 0.1"
+				owner = FRA
+			}
+			create_unit = {
+				division = "name = \"1ère Brigade coloniale mobile de Tunis\" division_template = \"Brigade d'occupation nord-Africaine\" start_experience_factor = 0.1"
+				owner = FRA
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 0
 	y = 1
 }
 
@@ -1660,7 +2323,7 @@ focus = {
 	}
 	
 	cost = 10
-	x = 15
+	x = 22
 	y = 1
 }
 
@@ -1700,12 +2363,13 @@ focus = {
 	relative_position_id = FRA_ww1_revision_de_larmee_de_terre
 	prerequisite = { focus = FRA_ww1_revision_de_larmee_de_terre }
 	available = {
-		custom_trigger_tooltip = {
-			tooltip = FRA_150_seats
-		}
+		
 		FRA = {
 			check_variable = {
 				democrat_alliance > 150
+			}
+			custom_trigger_tooltip = {
+				tooltip = FRA_150_seats
 			}
 		}
 	}
@@ -1739,12 +2403,13 @@ focus = {
 	relative_position_id = FRA_ww1_revision_de_larmee_de_terre
 	prerequisite = { focus = FRA_ww1_revision_de_larmee_de_terre }
 	available = {
-		custom_trigger_tooltip = {
-			tooltip = FRA_150_seats
-		}
+		
 		FRA = {
 			check_variable = {
 				democrat_alliance > 150
+			}
+			custom_trigger_tooltip = {
+				tooltip = FRA_150_seats
 			}
 		}
 	}
@@ -1803,12 +2468,13 @@ focus = {
 	prerequisite = { focus = FRA_ww1_revision_de_larmee_de_terre }
 	available = {
 		date > 1914.1.1
-		custom_trigger_tooltip = {
-			tooltip = FRA_250_seats
-		}
+		
 		FRA = {
 			check_variable = {
 				democrat_alliance > 250
+			}
+			custom_trigger_tooltip = {
+				tooltip = FRA_250_seats
 			}
 		}
 	}
@@ -1881,12 +2547,13 @@ focus = {
 	relative_position_id = FRA_ww1_revision_de_larmee_de_terre
 	prerequisite = { focus = FRA_ww1_revision_de_larmee_de_terre }
 	available = {
-		custom_trigger_tooltip = {
-			tooltip = FRA_150_seats
-		}
+		
 		FRA = {
 			check_variable = {
 				democrat_alliance > 150
+			}
+			custom_trigger_tooltip = {
+				tooltip = FRA_150_seats
 			}
 		}
 	}
@@ -2050,12 +2717,13 @@ focus = {
 		focus = FRA_ww1_war_economy
 	}
 	available = {
-		custom_trigger_tooltip = {
-			tooltip = FRA_150_seats
-		}
+		
 		FRA = {
 			check_variable = {
 				democrat_alliance > 150
+			}
+			custom_trigger_tooltip = {
+				tooltip = FRA_150_seats
 			}
 		}
 	}
@@ -2085,12 +2753,13 @@ focus = {
 		focus = FRA_ww1_mechanized_effort
 	}
 	available = {
-		custom_trigger_tooltip = {
-			tooltip = FRA_250_seats
-		}
+		
 		FRA = {
 			check_variable = {
 				democrat_alliance > 250
+			}
+			custom_trigger_tooltip = {
+				tooltip = FRA_250_seats
 			}
 		}
 	}
@@ -2175,6 +2844,11 @@ focus = {
 		create_wargoal = {
 			type = puppet_wargoal_focus
 			target = GER
+		}
+		add_ai_strategy = {
+			type = antagonize
+			id = GER
+			value = 200
 		}
 	}
 	ai_will_do = {
@@ -2274,10 +2948,216 @@ focus = {
 
 
 
+########################################################
+#
+#	AIR FOCUS
+#
+#################################################
+
+focus = {
+	id = FRA_ww1_french_air_force
+	icon = GFX_goal_generic_air_fighter2
+	completion_reward = {
+		add_tech_bonus = {
+			name = FRA_ww1_french_air_force
+			category = air_doctrine
+			uses = 2.0
+			bonus = 1.0
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 22
+	y = 7
+}
+
+focus = {
+	id = FRA_ww1_old_school
+	icon = GFX_hoi4tgw_zeppelin
+	relative_position_id = FRA_ww1_french_air_force
+	prerequisite = { focus = FRA_ww1_french_air_force }
+	mutually_exclusive = {
+		focus = FRA_ww1_new_school
+	}
+	completion_reward = {
+		add_tech_bonus = {
+			name = FRA_ww1_french_air_force
+			technology = airship_bomber2
+			uses = 1.0
+			bonus = 1.0
+			ahead_reduction = 1.0
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 2
+	y = 1
+}
+
+focus = {
+	id = FRA_ww1_air_fortress
+	icon = GFX_goal_generic_air_naval_bomber
+	relative_position_id = FRA_ww1_old_school
+	prerequisite = { focus = FRA_ww1_old_school }
+	completion_reward = {
+		add_ideas = FRA_air_fortress
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 2
+	y = 1
+}
 
 
+focus = {
+	id = FRA_ww1_zeppelin_focus
+	icon = GFX_goal_generic_air_production
+	relative_position_id = FRA_ww1_old_school
+	prerequisite = { focus = FRA_ww1_old_school }
+	completion_reward = {
+		add_tech_bonus = {
+			name = FRA_ww1_french_air_force
+			category = cat_strategic_bomber
+			uses = 2.0
+			bonus = 1.0
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 0
+	y = 1
+}
 
+focus = {
+	id = FRA_ww1_new_school
+	icon = GFX_goal_generic_air_fighter
+	relative_position_id = FRA_ww1_french_air_force
+	prerequisite = { focus = FRA_ww1_french_air_force }
+	mutually_exclusive = {
+		focus = FRA_ww1_old_school
+	}
+	available = {
+		
+		FRA = {
+			check_variable = {
+				democrat_alliance > 150
+			}
+			custom_trigger_tooltip = {
+				tooltip = FRA_150_seats
+			}
+		}
+	}
+	completion_reward = {
+		add_tech_bonus = {
+			name = FRA_ww1_french_air_force
+			technology = fighter1
+			technology = fighter2
+			uses = 1.0
+			bonus = 1.0
+			ahead_reduction = 1.0
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = -2
+	y = 1
+}
 
+focus = {
+	id = FRA_ww1_bomber_focus
+	icon = GFX_goal_generic_air_bomber
+	relative_position_id = FRA_ww1_new_school
+	prerequisite = { focus = FRA_ww1_new_school }
+	completion_reward = {
+		add_tech_bonus = {
+			name = FRA_ww1_french_air_force
+			technology = early_bomber
+			technology = tactical_bomber1
+			uses = 1.0
+			bonus = 1.0
+			ahead_reduction = 1.0
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = -2
+	y = 1
+}
+
+focus = {
+	id = FRA_ww1_close_air_support
+	icon = GFX_focus_usa_escort_fighters
+	relative_position_id = FRA_ww1_new_school
+	prerequisite = { focus = FRA_ww1_new_school }
+	completion_reward = {
+		add_tech_bonus = {
+			name = FRA_ww1_french_air_force
+			category = cas_bomber
+			uses = 2.0
+			bonus = 1.0
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 0
+	y = 1
+}
+
+focus = {
+	id = FRA_ww1_fund_nieuport
+	icon = GFX_goal_continuous_repairments
+	relative_position_id = FRA_ww1_new_school
+	prerequisite = { focus = FRA_ww1_new_school }
+	available = {
+		
+		FRA = {
+			check_variable = {
+				democrat_alliance > 250
+			}
+			custom_trigger_tooltip = {
+				tooltip = FRA_250_seats
+			}
+		}
+	}
+	completion_reward = {
+		add_tech_bonus = {
+			name = FRA_ww1_fund_nieuport
+			category = light_fighter
+			uses = 1.0
+			bonus = 1.0
+		}
+		custom_effect_tooltip = light_aircraft_manufacturer
+		show_ideas_tooltip = nieuport
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 2
+	y = 1
+}
 
 
 

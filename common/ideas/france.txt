@@ -368,18 +368,143 @@ ideas = {
 					instant = yes
 				}
 			}
+		}
 
-			modifier = {
-				GER = {
-					defense_bonus_against = 0.10
+		FRA_air_fortress = {
+			picture = generic_air_bonus
+			allowed = {
+				original_tag = FRA
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			equipment_bonus = {
+				airship_bomber_equipment_1 = {
+					air_bombing =  0.1
+					air_defence = 0.1
+					instant = yes
+				}
+				airship_bomber_equipment_2 = {
+					air_bombing =  0.1
+					air_defence = 0.1
+					instant = yes
+				}
+				airship_bomber_equipment_3 = {
+					air_bombing =  0.1
+					air_defence = 0.1
+					instant = yes
 				}
 			}
 		}
 
+		FRA_diverted_national_production = {
+			picture = generic_air_bonus
+			allowed = {
+				original_tag = FRA
+				always = no
+			}
 
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_factory = -0.30
+				industrial_capacity_dockyard = -0.30
+			}
+		}
+
+		FRA_memories_of_1812 = {
+			allowed = {
+				original_tag = FRA
+				always = no
+			}
+			allowed_civil_war = {
+				has_government = neutrality
+			}
+			removal_cost = -1
+			picture = FRA_undividable
+			modifier = {
+				surrender_limit = 0.25
+				recruitable_population_factor = 0.10
+			}
+		}
+
+		FRA_napoleonic_pride = {
+			allowed = {
+				original_tag = FRA
+				always = no
+			}
+			allowed_civil_war = {
+				has_government = neutrality
+			}
+			removal_cost = -1
+			picture = FRA_napoleonic_pride
+			modifier = {
+				planning_speed = 0.10
+				army_org_Factor = 0.10
+			}
+		}
+
+		FRA_catholic_support = {
+			allowed = {
+				original_tag = FRA
+				always = no
+			}
+			allowed_civil_war = {
+				has_government = neutrality
+			}
+			removal_cost = -1
+			picture = FRA_catholic_relations
+			modifier = {
+				political_power_gain = 0.15
+			}
+		}
+
+		FRA_camelots_du_roi = {
+			allowed = {
+				original_tag = FRA
+				always = no
+			}
+			allowed_civil_war = {
+				has_government = neutrality
+			}
+			removal_cost = -1
+			picture = FRA_catholic_relations
+			modifier = {
+				recruitable_population_factor = 0.10
+				mobilization_speed = 0.10
+			}
+		}
 
 	}
 	political_advisor = {
+		FRA_charles_maurras = {
+			allowed = {
+				original_tag = FRA
+			}
+			traits = {
+				staunch_monarchist
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					ROOT = {
+						has_completed_focus = FRA_ww1_form_the_proudhon_circle
+					}
+					factor = 100
+				}
+			}
+			available = {
+				has_completed_focus = FRA_ww1_form_the_proudhon_circle
+			}
+		}
 		FRA_marcel_cachin = {
 			allowed = {
 				original_tag = FRA
@@ -644,8 +769,16 @@ ideas = {
 			allowed = {
 				original_tag = FRA
 			}
+			available = {
+				has_completed_focus = FRA_ww1_fund_nieuport
+			}
 			research_bonus = {
-				air_equipment = 0.1
+				air_equipment = 0.10
+			}
+			equipment_bonus = {
+				fighter_equipment = {
+					build_cost_ic = -0.1
+				}
 			}
 			traits = {
 				light_aircraft_manufacturer

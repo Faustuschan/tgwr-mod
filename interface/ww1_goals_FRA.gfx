@@ -97,7 +97,69 @@ spriteTypes = {
 		name = "GFX_goal_FRA_ENG_alliance"
 		texturefile = "gfx/interface/goals/FRA/focus_ENG_alliance.dds"
 	}
+
+	SpriteType = {
+		name = "GFX_goal_FRA_monarchism1"
+		texturefile = "gfx/interface/goals/FRA/France_Monarchy.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_goal_FRA_monarchism2"
+		texturefile = "gfx/interface/goals/FRA/France_Monarchy_2.dds"
+	}
 	
+	SpriteType = {
+		name = "GFX_goal_FRA_monarchism3"
+		texturefile = "gfx/interface/goals/FRA/law_of_exile.dds"
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_FRA_monarchism4"
+		texturefile = "gfx/interface/goals/FRA/monarchist_france.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_goal_FRA_napoleonic_pride"
+		texturefile = "gfx/interface/goals/FRA/napoleonic_pride.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_idea_FRA_napoleonic_pride"
+		texturefile = "gfx/interface/ideas/FRA/napoleonic_pride.dds"
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_FRA_catholic_relations"
+		texturefile = "gfx/interface/goals/FRA/Catholic_Relations.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_idea_FRA_catholic_relations"
+		texturefile = "gfx/interface/ideas/FRA/church_ideas.dds"
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_FRA_royal_prerogatives"
+		texturefile = "gfx/interface/goals/FRA/royal_prerogatives.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_goal_FRA_action_francaise"
+		texturefile = "gfx/interface/goals/FRA/action_francaise.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_goal_FRA_jean_III"
+		texturefile = "gfx/interface/goals/FRA/jean_III.dds"
+	}
+
+
+	SpriteType = {
+		name = "GFX_goal_FRA_camelots_du_roi"
+		texturefile = "gfx/interface/goals/FRA/camelots_du_roi.dds"
+	}
+
+
 
 	
 	
