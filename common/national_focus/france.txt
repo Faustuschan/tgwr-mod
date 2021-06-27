@@ -9,10 +9,9 @@ focus_tree = {
 		}
 	}
 
-	
 	focus = {
 		id = FRA_ww1_dreyfus_exoneration
-		icon = GFX_goal_FRA_democraty_shine
+		icon = GFX_focus_chi_reach_out_to_france
 		completion_reward = {
 			add_political_power = 120
 		}
@@ -348,6 +347,14 @@ focus_tree = {
 		icon = GFX_focus_chi_army_reform
 		relative_position_id = FRA_ww1_form_the_regiments_alpins
 		prerequisite = { focus = FRA_ww1_form_the_regiments_alpins }
+		available = {
+			32 = {
+				is_controlled_by = FRA
+			}
+			ITA = {
+				has_war = yes
+			}
+		}
 		completion_reward = {
 			32 = {
 				create_unit = {
@@ -402,6 +409,122 @@ focus_tree = {
 		
 		cost = 10
 		x = 4
+		y = 1
+	}
+
+	focus = {
+		id = FRA_ww1_support_serbia
+		icon = GFX_focus_AUH_serbian_protectorate
+		relative_position_id = FRA_ww1_save_the_republic
+		prerequisite = { 
+			focus = FRA_ww1_save_the_republic 
+			focus = FRA_ww1_form_the_proudhon_circle
+		}
+		available = {
+			FRA = {
+				NOT = { has_war_with = SER }
+			}
+		}
+		completion_reward = {
+			add_opinion_modifier = {
+				target = SER
+				modifier = huge_increase
+			}
+			add_ai_strategy = {
+				type = alliance
+				id = SER
+				value = 200
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		cost = 10
+		x = 6
+		y = 1
+	}
+
+	focus = {
+		id = FRA_ww1_serbian_exiled_force
+		icon = GFX_focus_rus_volunteer_army
+		relative_position_id = FRA_ww1_support_serbia
+		prerequisite = { 
+			focus = FRA_ww1_support_serbia 
+		}
+		available = {
+			FRA = {
+				NOT = { has_war_with = SER }
+			}
+			SER = {
+				has_capitulated = yes
+			}
+			16 = {
+				is_controlled_by = FRA
+			}
+		}
+		completion_reward = {
+			division_template = {
+				name = "Division de volontaires Serbes"
+				is_locked = yes
+				priority = 1
+				division_names_group = SER_ARM_01
+				regiments = { 
+					infantry = {
+						x = 0
+						y = 0
+					}
+					infantry = {
+						x = 0
+						y = 1
+					}
+					infantry = {
+						x = 0
+						y = 2
+					}
+					infantry = {
+						x = 1
+						y = 0
+					}
+					infantry = {
+						x = 1
+						y = 1
+					}
+					infantry = {
+						x = 1
+						y = 2
+					}
+					infantry = {
+						x = 2
+						y = 0
+					}
+					infantry = {
+						x = 2
+						y = 1
+					}
+					infantry = {
+						x = 2
+						y = 2
+					}
+				}
+			}
+			16 = {
+				create_unit = {
+					division = "name = \"Division Sloboda\" division_template = \"Division de volontaires Serbes\" start_experience_factor = 0.2"
+					owner = FRA
+				}
+				create_unit = {
+					division = "name = \"Division hrabrost\" division_template = \"Division de volontaires Serbes\" start_experience_factor = 0.2"
+					owner = FRA
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		cost = 10
+		x = 0
 		y = 1
 	}
 
@@ -1710,9 +1833,9 @@ focus = {
 	completion_reward = {
 		add_political_power = 120
 		create_country_leader = {
-			name = "Georges Valois"
+			name = "Maurice Pujo"
 			ideology = despotism
-			picture = "gfx/leaders/FRA/FRA_georges_valois.dds"
+			picture = "gfx/leaders/FRA/FRA_Maurice_Pujo.dds"
 			traits = {
 				monarchist_media_mogul
 			}
@@ -1763,7 +1886,9 @@ focus = {
 			check_variable = {
 				democrat_alliance > 350
 			}
-			
+		}
+		FRA = {
+			has_country_flag = FRA_law_of_exile_retired
 		}
 		
 	}
@@ -1850,10 +1975,7 @@ focus = {
 	relative_position_id = FRA_ww1_form_the_proudhon_circle
 	prerequisite = { focus = FRA_ww1_form_the_proudhon_circle }
 	completion_reward = {
-		add_political_power = -100
-	}
-	available = {
-		has_political_power > 100
+		add_war_support = 0.10
 	}
 	ai_will_do = {
 		factor = 1
@@ -1865,14 +1987,42 @@ focus = {
 }
 
 focus = {
-	id = FRA_ww1_divert_national_production
-	icon = GFX_goal_generic_build_tank
+	id = FRA_ww1_rapeal_the_law_of_exile
+	icon = GFX_goal_FRA_monarchism3
 	relative_position_id = FRA_ww1_buy_army_loyalty
 	prerequisite = { 
 		focus = FRA_ww1_buy_army_loyalty 
 	}
 	prerequisite = {
 		focus = FRA_ww1_restaure_monarchist_sentiment
+		focus = FRA_ww1_renember_1812
+	}
+	completion_reward = {
+		add_political_power = 120
+		set_country_flag = FRA_law_of_exile_retired
+		custom_effect_tooltip = FRA_law_of_exile_retired_desc
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 0
+	y = 1
+}
+
+focus = {
+	id = FRA_ww1_divert_national_production
+	icon = GFX_goal_generic_build_tank
+	relative_position_id = FRA_ww1_rapeal_the_law_of_exile
+	prerequisite = { 
+		focus = FRA_ww1_rapeal_the_law_of_exile 
+	}
+	bypass = {
+		has_government = neutrality
+	}
+	prerequisite = {
+		focus = FRA_ww1_rapeal_the_law_of_exile
 		focus = FRA_ww1_renember_1812
 	}
 	completion_reward = {
@@ -1895,6 +2045,9 @@ focus = {
 	icon = GFX_focus_focus_fra_revolution_utmost_shine
 	relative_position_id = FRA_ww1_divert_national_production
 	prerequisite = { focus = FRA_ww1_divert_national_production }
+	bypass = {
+		has_government = neutrality
+	}
 	available = {
 		NOT = {
 			has_idea = FRA_diverted_national_production
@@ -2024,8 +2177,8 @@ focus = {
 }
 
 focus = {
-	id = FRA_ww1_rappeal_the_law_of_exile
-	icon = GFX_goal_FRA_monarchism3
+	id = FRA_ww1_support_napoleon_V
+	icon = GFX_focus_focus_fra_third_empire
 	relative_position_id = FRA_ww1_form_the_proudhon_circle
 	prerequisite = { focus = FRA_ww1_form_the_proudhon_circle }
 	mutually_exclusive = {
@@ -2064,8 +2217,8 @@ focus = {
 focus = {
 	id = FRA_ww1_renember_1812
 	icon = GFX_goal_FRA_monarchism4
-	relative_position_id = FRA_ww1_rappeal_the_law_of_exile
-	prerequisite = { focus = FRA_ww1_rappeal_the_law_of_exile }
+	relative_position_id = FRA_ww1_support_napoleon_V
+	prerequisite = { focus = FRA_ww1_support_napoleon_V }
 	completion_reward = {
 		add_ideas = FRA_memories_of_1812
 	}
@@ -2091,6 +2244,9 @@ focus = {
 				has_guaranteed = RUS
 			}
 			has_government = neutrality
+		}
+		FRA = {
+			has_country_flag = FRA_law_of_exile_retired
 		}
 	}
 	completion_reward = {
@@ -2265,7 +2421,14 @@ focus = {
 	prerequisite = { focus = FRA_ww1_form_camel_cavalry }
 	available = {
 		is_puppet = no
+		459 = {
+			is_controlled_by = FRA
+		}
+		458 = {
+			is_controlled_by = FRA
+		}
 	}
+	
 	completion_reward = {
 		459 = {
 			create_unit = {
@@ -2314,6 +2477,9 @@ focus = {
 		focus = FRA_ww1_memories_of_the_commune
 		focus = FRA_ww1_form_the_proudhon_circle
 		focus = FRA_ww1_the_social_democrat_compromise
+	}
+	available = {
+		always = no
 	}
 	completion_reward = {
 		add_stability = 0.05
@@ -2421,7 +2587,7 @@ focus = {
 			category = artillery
 			uses = 1.0
 		}
-		custom_effect_tooltip = materiel_manufacturer
+		custom_effect_tooltip = available_designer
 		show_ideas_tooltip = schneider
 	}
 	ai_will_do = {
@@ -2486,7 +2652,7 @@ focus = {
 			category = motorized_equipment
 			uses = 1.0
 		}
-		custom_effect_tooltip = motorized_equipment_manufacturer
+		custom_effect_tooltip = available_designer
 		show_ideas_tooltip = berliet
 	}
 	ai_will_do = {
@@ -2566,7 +2732,7 @@ focus = {
 			technology = early_armored_car
 			uses = 1.0
 		}
-		custom_effect_tooltip = materiel_manufacturer
+		custom_effect_tooltip = available_designer
 		show_ideas_tooltip = peugeot
 	}
 	ai_will_do = {
@@ -2772,7 +2938,7 @@ focus = {
 			ahead_reduction = 2.0
 			technology = basic_light_tank
 		}
-		custom_effect_tooltip = tank_manufacturer
+		custom_effect_tooltip = available_designer
 		show_ideas_tooltip = renault_fra
 		
 	}
@@ -3147,7 +3313,7 @@ focus = {
 			uses = 1.0
 			bonus = 1.0
 		}
-		custom_effect_tooltip = light_aircraft_manufacturer
+		custom_effect_tooltip = available_designer
 		show_ideas_tooltip = nieuport
 	}
 	ai_will_do = {
@@ -3159,14 +3325,343 @@ focus = {
 	y = 1
 }
 
+#####################################################################
+#
+#	NAVAL FOCUSES
+#
+###################################################
 
 
 
 
 
+focus = {
+	id = FRA_ww1_naval_experience
+	icon = GFX_goal_generic_navy_cruiser
+	available = {
+	}
+	completion_reward = {
+		add_tech_bonus = {
+			name = FRA_ww1_naval_experience
+			category = cat_fleet_in_being
+			uses = 2.0
+			bonus = 1.0
+		}
+		navy_experience = 25
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 22
+	y = 11
+}
+
+focus = {
+	id = FRA_ww1_doctrine_effort
+	icon = GFX_goal_generic_navy_doctrines_tactics
+	available = {
+	}
+	prerequisite = {
+		focus = FRA_ww1_naval_experience
+	}
+	relative_position_id = FRA_ww1_naval_experience
+	completion_reward = {
+		add_tech_bonus = {
+			name = FRA_ww1_doctrine_effort
+			category = naval_doctrine
+			uses = 2.0
+			bonus = 1.0
+		}
+		navy_experience = 25
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = -4
+	y = 1
+}
+
+focus = {
+	id = FRA_ww1_submarines_experiments
+	icon = GFX_goal_generic_navy_submarine
+	available = {
+	}
+	prerequisite = {
+		focus = FRA_ww1_naval_experience
+	}
+	mutually_exclusive = {
+		focus = FRA_ww1_improve_destroyers_flottila
+	}
+	relative_position_id = FRA_ww1_naval_experience
+	completion_reward = {
+		add_tech_bonus = {
+			name = FRA_ww1_submarines_experiments
+			technology = basic_submarine
+			technology = improved_submarine
+			technology = advanced_submarine
+			uses = 1.0
+			bonus = 1.0
+			ahead_reduction = 1.0
+		}
+		navy_experience = 25
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = -2
+	y = 1
+}
+
+focus = {
+	id = FRA_ww1_heavy_submarine_project
+	icon = GFX_goal_generic_navy_anti_submarine
+	available = {
+	}
+	prerequisite = {
+		focus = FRA_ww1_submarines_experiments
+	}
+	relative_position_id = FRA_ww1_submarines_experiments
+	completion_reward = {
+		set_technology = {
+			cruiser_submarines = 1
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 0
+	y = 1
+}
+
+focus = {
+	id = FRA_ww1_improve_destroyers_flottila
+	icon = GFX_focus_generic_destroyer
+	available = {
+	}
+	prerequisite = {
+		focus = FRA_ww1_naval_experience
+	}
+	mutually_exclusive = {
+		focus = FRA_ww1_submarines_experiments
+	}
+	relative_position_id = FRA_ww1_naval_experience
+	completion_reward = {
+		add_tech_bonus = {
+			name = FRA_ww1_improve_destroyers_flottila
+			technology = basic_destroyer
+			technology = improved_destroyer
+			technology = advanced_destroyer
+			uses = 1.0
+			bonus = 1.0
+			ahead_reduction = 1.0
+		}
+		navy_experience = 25
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 0
+	y = 1
+}
 
 
+focus = {
+	id = FRA_ww1_equipment_innovations
+	icon = GFX_focus_generic_cryptologic_bomb
+	available = {
+	}
+	prerequisite = {
+		focus = FRA_ww1_improve_destroyers_flottila
+	}
+	relative_position_id = FRA_ww1_improve_destroyers_flottila
+	completion_reward = {
+		add_tech_bonus = {
+			name = FRA_ww1_equipment_innovations
+			category = naval_equipment
+			uses = 2.0
+			bonus = 1.0
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 0
+	y = 1
+}
 
+focus = {
+	id = FRA_ww1_small_caliber_guns
+	icon = GFX_focus_generic_cruiser2
+	available = {
+	}
+	prerequisite = {
+		focus = FRA_ww1_naval_experience
+	}
+	relative_position_id = FRA_ww1_naval_experience
+	completion_reward = {
+		add_tech_bonus = {
+			name = FRA_ww1_equipment_innovations
+			technology = improved_light_battery
+			technology = advanced_light_battery
+			technology = dp_secondary_battery
+			technology = basic_light_shell
+			technology = improved_light_shell
+			uses = 2.0
+			bonus = 1.0
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 2
+	y = 1
+}
+
+focus = {
+	id = FRA_ww1_heavier_assets
+	icon = GFX_focus_generic_navy_battleship2
+	available = {
+	}
+	prerequisite = {
+		focus = FRA_ww1_small_caliber_guns
+	}
+	relative_position_id = FRA_ww1_small_caliber_guns
+	completion_reward = {
+		add_tech_bonus = {
+			name = FRA_ww1_equipment_innovations
+			technology = improved_heavy_battery
+			technology = advanced_heavy_battery
+			technology = basic_heavy_shell
+			technology = improved_heavy_shell
+			uses = 2.0
+			bonus = 1.0
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 0
+	y = 1
+}
+
+
+focus = {
+	id = FRA_ww1_expand_penhoet_dockyards
+	icon = GFX_goal_generic_construct_naval_dockyard
+	available = {
+		14 ={
+			is_owned_and_controlled_by = FRA
+		}
+	}
+	prerequisite = {
+		focus = FRA_ww1_naval_experience
+	}
+	relative_position_id = FRA_ww1_naval_experience
+	completion_reward = {
+		14 = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = dockyard
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = naval_base
+				level = 2
+				province = 9510
+				instant_build = yes
+			}
+		}
+		custom_effect_tooltip = available_designer
+		show_ideas_tooltip = chantiers_de_penhoet
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 4
+	y = 1
+}
+
+focus = {
+	id = FRA_ww1_toulon_naval_base
+	icon = GFX_goal_generic_construct_naval_dockyard
+	available = {
+		14 ={
+			is_owned_and_controlled_by = FRA
+		}
+	}
+	prerequisite = {
+		focus = FRA_ww1_expand_penhoet_dockyards
+	}
+	relative_position_id = FRA_ww1_expand_penhoet_dockyards
+	completion_reward = {
+		21 = {
+			add_extra_state_shared_building_slots = 3
+			add_building_construction = {
+				type = dockyard
+				level = 3
+				instant_build = yes
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 0
+	y = 1
+}
+
+focus = {
+	id = FRA_ww1_battleship_competition
+	icon = GFX_goal_generic_navy_battleship
+	available = {
+		
+	}
+	prerequisite = {
+		focus = FRA_ww1_toulon_naval_base
+	}
+	prerequisite = {
+		focus = FRA_ww1_heavier_assets
+	}
+	relative_position_id = FRA_ww1_toulon_naval_base
+	completion_reward = {
+		add_tech_bonus = {
+			name = FRA_ww1_battleship_competition
+			technology = basic_battleship
+			technology = improved_battleship
+			technology = advanced_battleship
+			uses = 2.0
+			bonus = 2.0
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = -1
+	y = 1
+}
 
 
 
