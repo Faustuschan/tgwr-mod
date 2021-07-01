@@ -164,6 +164,36 @@ spriteTypes = {
 		texturefile = "gfx/interface/goals/FRA/goal_indochina.dds"
 	}
 	
+	SpriteType = {
+		name = "GFX_goal_FRA_mention_de_censure_focus"
+		texturefile = "gfx/interface/goals/FRA/mention_de_censure.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_goal_FRA_colonial_volunteers_focus"
+		texturefile = "gfx/interface/goals/FRA/colonial_volunteers.dds"
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_FRA_popular_brigades_focus"
+		texturefile = "gfx/interface/goals/FRA/popular_brigades.dds"
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_FRA_french_interventionism_focus"
+		texturefile = "gfx/interface/goals/FRA/french_interventionism.dds"
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_FRA_Memories_of_the_Commune_focus"
+		texturefile = "gfx/interface/goals/FRA/Memories_of_the_Commune.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_goal_FRA_support_the_suffragettes_focus"
+		texturefile = "gfx/interface/goals/FRA/support_for_surfragettes.dds"
+	}
+	
 	
 
 

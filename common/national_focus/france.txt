@@ -14,6 +14,7 @@ focus_tree = {
 		icon = GFX_focus_chi_reach_out_to_france
 		completion_reward = {
 			add_political_power = 120
+			news_event = ww1_france.40
 		}
 		ai_will_do = {
 			factor = 1
@@ -534,7 +535,7 @@ focus_tree = {
 ###############################################################
 focus = {
 	id = FRA_ww1_memories_of_the_commune
-	icon = GFX_focus_por_workers_of_iberia
+	icon = GFX_goal_FRA_Memories_of_the_Commune_focus
 	relative_position_id = FRA_ww1_dreyfus_exoneration
 	prerequisite = { focus = FRA_ww1_dreyfus_exoneration }
 	mutually_exclusive = {
@@ -609,7 +610,7 @@ focus = {
 
 focus = {
 	id = FRA_ww1_popular_brigades
-	icon = GFX_goal_FRA_expanded_duty2
+	icon = GFX_goal_FRA_popular_brigades_focus
 	relative_position_id = FRA_ww1_extend_the_duty
 	prerequisite = { focus = FRA_ww1_extend_the_duty }
 	completion_reward = {
@@ -638,7 +639,7 @@ focus = {
 
 focus = {
 	id = FRA_ww1_support_the_suffragettes
-	icon = GFX_focus_hold_elections
+	icon = GFX_goal_FRA_support_the_suffragettes_focus
 	relative_position_id = FRA_ww1_memories_of_the_commune
 	prerequisite = { focus = FRA_ww1_memories_of_the_commune }
 	completion_reward = {
@@ -769,7 +770,7 @@ focus = {
 
 focus = {
 	id = FRA_ww1_mention_de_censure
-	icon = GFX_focus_generic_treaty
+	icon = GFX_goal_FRA_mention_de_censure_focus
 	relative_position_id = FRA_ww1_support_for_universities
 	prerequisite = { focus = FRA_ww1_support_for_universities }
 	prerequisite = { focus = FRA_ww1_labor_reform focus = FRA_ww1_popular_brigades }
@@ -800,6 +801,7 @@ focus = {
 			ruling_party = communism 
 			elections_allowed = yes
 		}
+		news_event = ww1_france.41
 	}
 	ai_will_do = {
 		factor = 1
@@ -1224,7 +1226,7 @@ focus = {
 
 focus = {
 	id = FRA_ww1_french_interventionism
-	icon = GFX_focus_generic_manpower
+	icon = GFX_goal_FRA_french_interventionism_focus
 	relative_position_id = FRA_ww1_the_social_democrat_compromise
 	prerequisite = { 
 		focus = FRA_ww1_the_social_democrat_compromise 
@@ -1254,7 +1256,7 @@ focus = {
 
 focus = {
 	id = FRA_ww1_colonial_volunteers
-	icon = GFX_focus_army_is_ready
+	icon = GFX_goal_FRA_colonial_volunteers_focus
 	relative_position_id = FRA_ww1_the_social_democrat_compromise
 	prerequisite = { 
 		focus = FRA_ww1_the_social_democrat_compromise 
@@ -2949,7 +2951,7 @@ focus = {
 
 focus = {
 	id = FRA_ww1_form_the_armored_spearhead
-	icon = GFX_focus_early_tank
+	icon = GFX_focus_generic_tank_production
 	relative_position_id = FRA_ww1_the_french_miracle
 	prerequisite = { 
 		focus = FRA_ww1_the_french_miracle

@@ -391,7 +391,16 @@
  ww1_france.200.d:0 "Now that the region of Alsace-Lorraine belongs to us again, we can expunge the affront of 1870 and call again our beloved cities by their former French appelations!"
  ww1_france.200.a:0 "Avec Plaisir!"
  ww1_france.200.b:0 "We have other things to do"
- 
+
+ ww1_france.40.t:0 "Dreyfus Exoneration"
+ ww1_france.40.d:0 "Lieutenant-Colonel Dreyfus has today been exonerated from the charges brought against him. The Jewish soldier had been accused since 1894 of espionage for the benefit of Germany. Of Alsatian and Jewish origin, the officer has been wrongly convicted until today. A specialized military commission reconsidered the Dreyfus case, authorizing him to resume service in the army at the rank of major."
+ generic_ok:0 "Ok"
+ ww1_france.40.a:0 "It was time !"
+
+ww1_france.41.t:0 "Socialist takeover in France"
+ww1_france.41.d:0 "Following an alliance of the various-left parties and a portion of the radical party, the socialist movements led by the SFIO succeeded in passing the motion of censure. This procedure of the National Assembly makes it possible, with the majority of votes, to force the resignation of the government and to provoke a new election. In large superiority, the deputies of the extreme left thus succeeded in electing Jean Jaurès as President of the Republic."
+
+
  #BELGIUM
  ww1_belgium.1.a:0 "Never forget Belgium"
  ww1_belgium.1.d:0 "Reports have come in describing outright barbaric, if not genocidal, treatment of Belgian civilians by those bastard Germans! Of course, some weak-willed members of Parliament have denounced these reports as exaggerated, but if nothing else, this gives us the perfect excuse to enter the war against Germany, and, more importantly, take their colonies for their rightful British masters."

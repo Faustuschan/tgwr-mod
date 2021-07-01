@@ -2,6 +2,69 @@
 # French Events
 ###########################
 add_namespace = ww1_france
+
+
+
+
+
+#____________________________________________________________
+# New events (late 2021)
+#____________________________________________________________
+
+# Dreyfus exoneration
+news_event = {
+	title = ww1_france.40.t	
+	desc = ww1_france.40.d
+	id = ww1_france.40
+	picture = ww1_france_40
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+	}
+	immediate = {
+		set_global_flag = dreyfus_exoneration
+	}
+	option = {
+		name = ww1_france.40.a
+	}
+}
+
+#France become socialist -> mention de censure focus
+news_event = {
+	title = ww1_france.41.t	
+	desc = ww1_france.41.d
+	id = ww1_france.41
+	picture = ww1_france_41
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+	}
+	immediate = {
+		set_global_flag = socialist_france
+	}
+	option = {
+		name = generic_ok
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#____________________________________________________________
+# End of new events
+#____________________________________________________________
+
 # PACIFIST STRIKE
 country_event = {
 	id = ww1_france.1
