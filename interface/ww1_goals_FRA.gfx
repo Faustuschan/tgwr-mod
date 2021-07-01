@@ -4,8 +4,8 @@ spriteTypes = {
 	
 	##### exonerate dreyfus
 	SpriteType = {
-		name = "GFX_goal_FRA_democraty"
-		texturefile = "gfx/interface/ideas/FRA/FRA_dreyfus.dds"
+		name = "GFX_goal_FRA_democracy"
+		texturefile = "gfx/interface/goals/FRA/FRA_dreyfus.dds"
 	}
 	
 	##### artisanal economy

@@ -29,7 +29,7 @@ focus_tree = {
 ###############################################################
 	focus = {
 		id = FRA_ww1_save_the_republic
-		icon = GFX_goal_FRA_democraty
+		icon = GFX_goal_FRA_democracy
 		relative_position_id = FRA_ww1_dreyfus_exoneration
 		prerequisite = { focus = FRA_ww1_dreyfus_exoneration }
 		mutually_exclusive = {
