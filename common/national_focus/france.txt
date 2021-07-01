@@ -2040,7 +2040,7 @@ focus = {
 
 focus = {
 	id = FRA_ww1_force_the_issue
-	icon = GFX_focus_focus_fra_revolution_utmost_shine
+	icon = GFX_focus_focus_fra_revolution_utmost
 	relative_position_id = FRA_ww1_divert_national_production
 	prerequisite = { focus = FRA_ww1_divert_national_production }
 	bypass = {
@@ -3936,7 +3936,7 @@ focus = {
 
 focus = {
 	id = FRA_ww1_franco-british-competition
-	icon = GFX_goal_generic_radar_shine
+	icon = GFX_goal_generic_radar
 	prerequisite = {
 		focus = FRA_ww1_electronic_effort
 	}
