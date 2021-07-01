@@ -159,6 +159,12 @@ spriteTypes = {
 		texturefile = "gfx/interface/goals/FRA/camelots_du_roi.dds"
 	}
 
+	SpriteType = {
+		name = "GFX_goal_FRA_indochina_focus"
+		texturefile = "gfx/interface/goals/FRA/goal_indochina.dds"
+	}
+	
+	
 
 
 	

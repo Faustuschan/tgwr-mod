@@ -31,9 +31,9 @@ bookmarks = {
 				ww1_Scramble_for_Africa
 			}
 			focuses = {
-				FRA_ww1_triple_alliance
-				FRA_ww1_agadir_crisis
-				FRA_ww1_ready_country
+				FRA_ww1_beyond_fear
+				FRA_ww1_french_revenchism
+				FRA_ww1_the_french_miracle
 			}
 		}
 		"RUS"={

@@ -289,7 +289,7 @@ ideas = {
 		}
 
 		FRA_ww1_agricultural_sector_strike = {
-			picture = generic_manpower_bonus
+			picture = FRA_matignon_agreements
 			allowed = {
 				TAG = FRA
 			}
@@ -775,6 +775,15 @@ ideas = {
 			available = {
 				has_completed_focus = FRA_ww1_fund_nieuport
 			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					ROOT = {
+						has_completed_focus = FRA_ww1_fund_nieuport
+					}
+					factor = 100
+				}
+			}
 			research_bonus = {
 				air_equipment = 0.10
 			}
@@ -823,6 +832,15 @@ ideas = {
 			available = {
 				has_completed_focus = FRA_ww1_motorization
 			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					ROOT = {
+						has_completed_focus = FRA_ww1_motorization
+					}
+					factor = 100
+				}
+			}
 			research_bonus = {
 				motorized_equipment = 0.1
 			}
@@ -852,6 +870,15 @@ ideas = {
 			}
 			available = {
 				has_completed_focus = FRA_ww1_fund_schneider
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					ROOT = {
+						has_completed_focus = FRA_ww1_fund_schneider
+					}
+					factor = 100
+				}
 			}
 			research_bonus = {
 				artillery = 0.15
@@ -913,6 +940,15 @@ ideas = {
 			available = {
 				has_completed_focus = FRA_ww1_the_french_miracle
 			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					ROOT = {
+						has_completed_focus = FRA_ww1_the_french_miracle
+					}
+					factor = 1000	# the holy must
+				}
+			}
 			research_bonus = {
 				armor = 0.1
 			}
@@ -941,6 +977,15 @@ ideas = {
 			}
 			available = {
 				has_completed_focus = FRA_ww1_fund_peugeot
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					ROOT = {
+						has_completed_focus = FRA_ww1_fund_peugeot
+					}
+					factor = 100	# the holy must
+				}
 			}
 			research_bonus = {
 				armor = 0.05

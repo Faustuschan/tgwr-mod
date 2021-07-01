@@ -1626,10 +1626,6 @@ focus = {
 					NOT = { is_core_of = ROOT }
 				}
 				add_resistance = -25
-				add_collaboration = {
-					target = FRA
-					value = 0.10
-				}
 			}
 		}
 	}
@@ -2951,6 +2947,90 @@ focus = {
 	y = 1
 }
 
+focus = {
+	id = FRA_ww1_form_the_armored_spearhead
+	icon = GFX_focus_early_tank
+	relative_position_id = FRA_ww1_the_french_miracle
+	prerequisite = { 
+		focus = FRA_ww1_the_french_miracle
+	}
+	available = {
+		
+		FRA = {
+			check_variable = {
+				democrat_alliance > 250
+			}
+			custom_trigger_tooltip = {
+				tooltip = FRA_250_seats
+			}
+		}
+	}
+	completion_reward = {
+
+		division_template = {
+			name = "Brigade de cavalerie blindée"
+			regiments = {
+				light_armor = {
+					x = 0
+					y = 0
+				}
+				light_armor = {
+					x = 0
+					y = 1
+				}
+				light_armor = {
+					x = 0
+					y = 1
+				}
+				light_armor = {
+					x = 0
+					y = 3
+				}
+				cavalry = {
+					x = 1
+					y = 0
+				}
+				cavalry = {
+					x = 1
+					y = 1
+				}
+			}
+		}
+		random_owned_controlled_state = {
+			limit = {
+				is_core_of = FRA
+				is_on_continent = europe
+			}
+			create_unit = {
+				division = "name = \"1ère brigade de chars légers\" division_template = \"Brigade de cavalerie blindée\" start_equipment_factor = 0.2"
+				owner = FRA
+			}
+			create_unit = {
+				division = "name = \"2ème brigade de chars légers\" division_template = \"Brigade de cavalerie blindée\" start_equipment_factor = 0.2"
+				owner = FRA
+			}
+			create_unit = {
+				division = "name = \"3ème brigade de chars légers\" division_template = \"Brigade de cavalerie blindée\" start_equipment_factor = 0.2"
+				owner = FRA
+			}
+			create_unit = {
+				division = "name = \"4ème brigade de chars légers\" division_template = \"Brigade de cavalerie blindée\" start_equipment_factor = 0.2"
+				owner = FRA
+			}
+		}
+		
+		custom_effect_tooltip = FRA_form_renault_tank_brigades
+		
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 0
+	y = 1
+}
+
 
 focus = {
 	id = FRA_ww1_beyond_fear
@@ -3664,13 +3744,692 @@ focus = {
 }
 
 
+#######################################################################
+#
+#	Industrial tree
+#
+##########################################################
+
+
+focus = {
+	id = FRA_ww1_industrial_innovation
+	icon = GFX_goal_generic_production
+	available = {
+	}
+	completion_reward = {
+		add_tech_bonus = {
+			name = FRA_ww1_industrial_innovation
+			category = industry
+			uses = 2.0
+			bonus = 1.0
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 10
+	y = 12
+}
+
+focus = {
+	id = FRA_ww1_metropolitan_investments
+	icon = GFX_goal_generic_consumer_goods
+	prerequisite = {
+		focus = FRA_ww1_industrial_innovation
+	}
+	available = {
+		FRA = {
+			check_variable = {
+				democrat_alliance > 150
+			}
+			custom_trigger_tooltip = {
+				tooltip = FRA_150_seats
+			}
+		}
+	}
+	relative_position_id = FRA_ww1_industrial_innovation
+	completion_reward = {
+		random_owned_controlled_state = {
+			limit = {
+				is_core_of = FRA
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+			}
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+			}
+		}
+		random_owned_controlled_state = {
+			limit = {
+				is_core_of = FRA
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+			}
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+			}
+		}
+		random_owned_controlled_state = {
+			limit = {
+				is_core_of = FRA
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+			}
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+			}
+		}
+		random_owned_controlled_state = {
+			limit = {
+				is_core_of = FRA
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+			}
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 4
+	y = 1
+}
+
+focus = {
+	id = FRA_ww1_britany_industrialization
+	icon = GFX_goal_generic_construct_civilian
+	prerequisite = {
+		focus = FRA_ww1_metropolitan_investments
+	}
+	relative_position_id = FRA_ww1_metropolitan_investments
+	available = {
+		14 = {
+			is_owned_and_controlled_by = FRA
+		}
+		FRA = {
+			check_variable = {
+				democrat_alliance > 150
+			}
+			custom_trigger_tooltip = {
+				tooltip = FRA_150_seats
+			}
+		}
+	}
+	bypass = {
+		14 = {
+			NOT = { is_owned_and_controlled_by = FRA }
+		}
+	}
+	completion_reward = {
+		14 = {
+			add_extra_state_shared_building_slots = 3
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+			}
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+			}
+			add_building_construction = {
+				type = dockyard
+				level = 1
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 0
+	y = 1
+}
+
+focus = {
+	id = FRA_ww1_electronic_effort
+	icon = GFX_goal_generic_scientific_exchange
+	prerequisite = {
+		focus = FRA_ww1_industrial_innovation
+	}
+	relative_position_id = FRA_ww1_industrial_innovation
+	completion_reward = {
+		add_tech_bonus = {
+			name = FRA_ww1_industrial_innovation
+			category = electronics
+			uses = 2.0
+			bonus = 1.0
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = -4
+	y = 1
+}
+
+focus = {
+	id = FRA_ww1_franco-british-competition
+	icon = GFX_goal_generic_radar_shine
+	prerequisite = {
+		focus = FRA_ww1_electronic_effort
+	}
+	available = {
+		FRA = {
+			check_variable = {
+				democrat_alliance > 150
+			}
+			custom_trigger_tooltip = {
+				tooltip = FRA_150_seats
+			}
+		}
+	}
+	relative_position_id = FRA_ww1_electronic_effort
+	completion_reward = {
+		add_tech_bonus = {
+			name = FRA_ww1_industrial_innovation
+			category = electronics
+			category = industry
+			uses = 3.0
+			bonus = 1.0
+			ahead_reduction = 1.0
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 0
+	y = 1
+}
+
+focus = {
+	id = FRA_ww1_invest_in_indochina
+	icon = GFX_goal_FRA_indochina_focus
+	available = {
+		671 = {
+			is_owned_and_controlled_by = FRA
+		}
+		286 = {
+			is_owned_and_controlled_by = FRA
+		}
+		820 = {
+			is_owned_and_controlled_by = FRA
+		}
+		819 = {
+			is_owned_and_controlled_by = FRA
+		}
+		FRA = {
+			check_variable = {
+				democrat_alliance > 250
+			}
+			custom_trigger_tooltip = {
+				tooltip = FRA_250_seats
+			}
+		}
+	}
+	bypass = {
+		671 = {
+			NOT = { is_owned_and_controlled_by = FRA }
+		}
+		286 = {
+			NOT = { is_owned_and_controlled_by = FRA }
+		}
+		820 = {
+			NOT = { is_owned_and_controlled_by = FRA }
+		}
+		819 = {
+			NOT = { is_owned_and_controlled_by = FRA }
+		}
+	}
+	prerequisite = {
+		focus = FRA_ww1_industrial_innovation
+	}
+	relative_position_id = FRA_ww1_industrial_innovation
+	completion_reward = {
+		671 = {
+			add_extra_state_shared_building_slots = 3
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+			}
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+			}
+		}
+		286 = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+			}
+			add_resource = {
+				type = rubber
+				amount = 12
+				state = THIS
+			}
+		}
+		820 = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = naval_base
+				level = 1
+				province = 4401
+			}
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+			}
+		}
+		819 = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+			}
+		}			
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 0
+	y = 1
+}
+
+focus = {
+	id = FRA_ww1_madagascar_development
+	icon = GFX_focus_generic_rubber
+	available = {
+		543 = {
+			is_owned_and_controlled_by = FRA
+		}
+		FRA = {
+			check_variable = {
+				democrat_alliance > 150
+			}
+			custom_trigger_tooltip = {
+				tooltip = FRA_150_seats
+			}
+		}
+	}
+	bypass = {
+		543 = {
+			NOT = { is_owned_and_controlled_by = FRA }
+		}
+	}
+	prerequisite = {
+		focus = FRA_ww1_invest_in_indochina
+	}
+	relative_position_id = FRA_ww1_invest_in_indochina
+	completion_reward = {
+		543 = {
+			add_extra_state_shared_building_slots = 3
+			add_building_construction = {
+				type = infrastructure
+				level = 2
+			}
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+			}
+			add_resource = {
+				type = rubber
+				amount = 8
+				state = THIS
+			}
+			
+		}	
+		add_tech_bonus = {
+			name = FRA_ww1_algerian_modernisation
+			technology = excavation1
+			technology = excavation2
+			technology = excavation3
+			technology = excavation4
+			technology = excavation5
+			bonus = 1.0
+			uses = 1.0
+		}			
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 0
+	y = 1
+}
+
+focus = {
+	id = FRA_ww1_algerian_modernisation
+	icon = GFX_goal_generic_construct_civ_factory
+	available = {
+		459 = {
+			is_owned_and_controlled_by = FRA
+		}
+		460 = {
+			is_owned_and_controlled_by = FRA
+		}
+		FRA = {
+			check_variable = {
+				democrat_alliance > 150
+			}
+			custom_trigger_tooltip = {
+				tooltip = FRA_150_seats
+			}
+		}
+	}
+	bypass = {
+		459 = {
+			NOT = { is_owned_and_controlled_by = FRA }
+		}
+		460 = {
+			NOT = { is_owned_and_controlled_by = FRA }
+		}
+	}
+	prerequisite = {
+		focus = FRA_ww1_industrial_innovation
+	}
+	relative_position_id = FRA_ww1_industrial_innovation
+	completion_reward = {
+		459 = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+			}
+			add_resource = {
+				type = steel
+				amount = 12
+				state = THIS
+			}
+		}
+		add_tech_bonus = {
+			name = FRA_ww1_algerian_modernisation
+			technology = excavation1
+			technology = excavation2
+			technology = excavation3
+			technology = excavation4
+			technology = excavation5
+			bonus = 1.0
+			uses = 1.0
+		}	
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = -2
+	y = 1
+}
+
+focus = {
+	id = FRA_ww1_north_african_arms_complexes
+	icon = GFX_goal_generic_construct_mil_factory
+	available = {
+		459 = {
+			is_owned_and_controlled_by = FRA
+		}
+		460 = {
+			is_owned_and_controlled_by = FRA
+		}
+		FRA = {
+			check_variable = {
+				democrat_alliance > 150
+			}
+			custom_trigger_tooltip = {
+				tooltip = FRA_150_seats
+			}
+		}
+	}
+	bypass = {
+		459 = {
+			NOT = { is_owned_and_controlled_by = FRA }
+		}
+		460 = {
+			NOT = { is_owned_and_controlled_by = FRA }
+		}
+	}
+	prerequisite = {
+		focus = FRA_ww1_algerian_modernisation
+	}
+	relative_position_id = FRA_ww1_algerian_modernisation
+	completion_reward = {
+		459 = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+			}
+		}	
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 0
+	y = 1
+}
+
+focus = {
+	id = FRA_ww1_nord_pas_de_calais_iron_excavation
+	icon = GFX_focus_generic_steel
+	available = {
+		29 = {
+			is_owned_and_controlled_by = FRA
+		}
+		FRA = {
+			check_variable = {
+				democrat_alliance > 150
+			}
+			custom_trigger_tooltip = {
+				tooltip = FRA_150_seats
+			}
+		}
+	}
+	bypass = {
+		29 = {
+			NOT = { is_owned_and_controlled_by = FRA }
+		}
+	}
+	prerequisite = {
+		focus = FRA_ww1_industrial_innovation
+	}
+	relative_position_id = FRA_ww1_industrial_innovation
+	completion_reward = {
+		29 = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+			}
+			add_resource = {
+				type = steel
+				amount = 22
+				state = THIS
+			}
+		}	
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 2
+	y = 1
+}
+
+focus = {
+	id = FRA_ww1_southern_industrialization
+	icon = GFX_goal_generic_construct_infrastructure
+	available = {
+		26 = {
+			is_owned_and_controlled_by = FRA
+		}
+		22 = {
+			is_owned_and_controlled_by = FRA
+		}
+		FRA = {
+			check_variable = {
+				democrat_alliance > 150
+			}
+			custom_trigger_tooltip = {
+				tooltip = FRA_150_seats
+			}
+		}
+	}
+	bypass = {
+		26 = {
+			NOT = { is_owned_and_controlled_by = FRA }
+		}
+		22 = {
+			NOT = { is_owned_and_controlled_by = FRA }
+		}
+	}
+	prerequisite = {
+		focus = FRA_ww1_industrial_innovation
+	}
+	relative_position_id = FRA_ww1_nord_pas_de_calais_iron_excavation
+	completion_reward = {
+		26 = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+			}
+			add_resource = {
+				type = tungsten
+				amount = 6
+				state = THIS
+			}
+		}
+		22 = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+			}
+			add_resource = {
+				type = aluminium
+				amount = 12
+				state = THIS
+			}
+		}		
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 0
+	y = 1
+}
 
 
 
 
-
-
-
+focus = {
+	id = FRA_ww1_factories_mobilization
+	icon = GFX_goal_generic_construct_mil_factory
+	prerequisite = {
+		focus = FRA_ww1_southern_industrialization
+		focus = FRA_ww1_north_african_arms_complexes
+		focus = FRA_ww1_madagascar_development
+		focus = FRA_ww1_franco-british-competition
+		focus = FRA_ww1_britany_industrialization
+	}
+	available = {
+		FRA = {
+			check_variable = {
+				democrat_alliance > 300
+			}
+			custom_trigger_tooltip = {
+				tooltip = FRA_300_seats
+			}
+			has_war_support > 0.35
+		}
+	}
+	relative_position_id = FRA_ww1_southern_industrialization
+	completion_reward = {
+		remove_ideas = FRA_artisanal_industry
+		random_owned_controlled_state = {
+			limit = {
+				is_core_of = FRA
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+			}
+		}
+		random_owned_controlled_state = {
+			limit = {
+				is_core_of = FRA
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+			}
+		}
+		random_owned_controlled_state = {
+			limit = {
+				is_core_of = FRA
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+			}
+		}
+		random_owned_controlled_state = {
+			limit = {
+				is_core_of = FRA
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = -2
+	y = 1
+}
 
 
 
