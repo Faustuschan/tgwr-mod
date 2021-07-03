@@ -296,15 +296,27 @@ FRA_ai_behavior = {
 		allow_achievements = yes
 	}
 	option = {
+		name = DEMOCRATIC_ALTERNATE
+		text = "RULE_OPTION_DEMOCRATIC_ALTERNATE"
+		desc = "RULE_OPTION_DEMOCRATIC_ALTERNATE_FRA_AI_DESC"
+		allow_achievements = no
+	}
+	option = {
 		name = SOCIALIST
 		text = "RULE_OPTION_SOCIALIST_FRA"
-		desc = "RULE_OPTION_SOCIALIST_FRA_AI_desc"
+		desc = "RULE_OPTION_SOCIALIST_FRA_AI_DESC"
 		allow_achievements = no
 	}
 	option = {
 		name = NEUTRALITY
 		text = "RULE_OPTION_NEUTRALITY_NAPOLEON_FRA"
-		desc = "RULE_OPTION_NEUTRALITY_NAPOLEON_FRA_AI_desc"
+		desc = "RULE_OPTION_NEUTRALITY_NAPOLEON_FRA_AI_DESC"
+		allow_achievements = no
+	}
+	option = {
+		name = NEUTRALITY_MONARCHIST
+		text = "RULE_OPTION_NEUTRALITY_MONARCHIST_FRA"
+		desc = "RULE_OPTION_NEUTRALITY_MONARCHIST_FRA_AI_DESC"
 		allow_achievements = no
 	}
 }
