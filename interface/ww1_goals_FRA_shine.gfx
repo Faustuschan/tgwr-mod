@@ -4,7 +4,7 @@ spriteTypes = {
 	
 	##### exonerate dreyfus
 	SpriteType = {
-		name = "GFX_goal_FRA_democraty_shine"
+		name = "GFX_goal_FRA_democracy_shine"
 		texturefile = "gfx/interface/goals/FRA/FRA_dreyfus.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
@@ -22,105 +22,6 @@ spriteTypes = {
 
 		animation = {
 			animationmaskfile = "gfx/interface/goals/FRA/FRA_dreyfus.dds"
-			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
-			animationrotation = 90.0		# -90 clockwise 90 counterclockwise(by default)
-			animationlooping = no			# yes or no ;)
-			animationtime = 0.75			# in seconds
-			animationdelay = 0				# in seconds
-			animationblendmode = "add"		#add, multiply, overlay
-			animationtype = "scrolling"		#scrolling, rotating, pulsing
-			animationrotationoffset = { x = 0.0 y = 0.0 }
-			animationtexturescale = { x = 1.0 y = 1.0 } 
-		}
-		legacy_lazy_load = no
-	}
-	
-	##### artisanal economy
-	SpriteType = {
-		name = "GFX_idea_FRA_artisanal_industry_shine"
-		texturefile = "gfx/interface/ideas/FRA/artisanal_economy.dds"
-		effectFile = "gfx/FX/buttonstate.lua"
-		animation = {
-			animationmaskfile = "gfx/interface/goals/FRA/artisanal_economy.dds"
-			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
-			animationrotation = -90.0		# -90 clockwise 90 counterclockwise(by default)
-			animationlooping = no			# yes or no ;)
-			animationtime = 0.75			# in seconds
-			animationdelay = 0				# in seconds
-			animationblendmode = "add"		#add, multiply, overlay
-			animationtype = "scrolling"		#scrolling, rotating, pulsing
-			animationrotationoffset = { x = 0.0 y = 0.0 }
-			animationtexturescale = { x = 1.0 y = 1.0 } 
-		}
-
-		animation = {
-			animationmaskfile = "gfx/interface/goals/FRA/artisanal_economy.dds"
-			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
-			animationrotation = 90.0		# -90 clockwise 90 counterclockwise(by default)
-			animationlooping = no			# yes or no ;)
-			animationtime = 0.75			# in seconds
-			animationdelay = 0				# in seconds
-			animationblendmode = "add"		#add, multiply, overlay
-			animationtype = "scrolling"		#scrolling, rotating, pulsing
-			animationrotationoffset = { x = 0.0 y = 0.0 }
-			animationtexturescale = { x = 1.0 y = 1.0 } 
-		}
-		legacy_lazy_load = no
-	}
-
-	##### memories of 1870
-	SpriteType = {
-		name = "GFX_idea_FRA_memories_of_1870_shine"
-		texturefile = "gfx/interface/ideas/FRA/memories_of_1870.dds"
-		effectFile = "gfx/FX/buttonstate.lua"
-		animation = {
-			animationmaskfile = "gfx/interface/goals/FRA/memories_of_1870.dds"
-			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
-			animationrotation = -90.0		# -90 clockwise 90 counterclockwise(by default)
-			animationlooping = no			# yes or no ;)
-			animationtime = 0.75			# in seconds
-			animationdelay = 0				# in seconds
-			animationblendmode = "add"		#add, multiply, overlay
-			animationtype = "scrolling"		#scrolling, rotating, pulsing
-			animationrotationoffset = { x = 0.0 y = 0.0 }
-			animationtexturescale = { x = 1.0 y = 1.0 } 
-		}
-
-		animation = {
-			animationmaskfile = "gfx/interface/goals/FRA/memories_of_1870.dds"
-			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
-			animationrotation = 90.0		# -90 clockwise 90 counterclockwise(by default)
-			animationlooping = no			# yes or no ;)
-			animationtime = 0.75			# in seconds
-			animationdelay = 0				# in seconds
-			animationblendmode = "add"		#add, multiply, overlay
-			animationtype = "scrolling"		#scrolling, rotating, pulsing
-			animationrotationoffset = { x = 0.0 y = 0.0 }
-			animationtexturescale = { x = 1.0 y = 1.0 } 
-		}
-		legacy_lazy_load = no
-	}
-
-	##### expanded duty
-	SpriteType = {
-		name = "GFX_idea_FRA_expanded_duty_shine"
-		texturefile = "gfx/interface/ideas/FRA/marx_trash.dds"
-		effectFile = "gfx/FX/buttonstate.lua"
-		animation = {
-			animationmaskfile = "gfx/interface/goals/FRA/marx_trash.dds"
-			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
-			animationrotation = -90.0		# -90 clockwise 90 counterclockwise(by default)
-			animationlooping = no			# yes or no ;)
-			animationtime = 0.75			# in seconds
-			animationdelay = 0				# in seconds
-			animationblendmode = "add"		#add, multiply, overlay
-			animationtype = "scrolling"		#scrolling, rotating, pulsing
-			animationrotationoffset = { x = 0.0 y = 0.0 }
-			animationtexturescale = { x = 1.0 y = 1.0 } 
-		}
-
-		animation = {
-			animationmaskfile = "gfx/interface/goals/FRA/marx_trash.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
 			animationrotation = 90.0		# -90 clockwise 90 counterclockwise(by default)
 			animationlooping = no			# yes or no ;)
