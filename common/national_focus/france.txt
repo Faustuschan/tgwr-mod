@@ -2053,6 +2053,9 @@ focus = {
 		neutrality > 0.40
 	}
 	completion_reward = {
+		hidden_effect = {
+			dismantle_faction = yes
+		}
 		remove_ideas = FRA_disjointed_government
 		start_civil_war = {
 			ideology = democratic
@@ -2070,6 +2073,9 @@ focus = {
 			}
 			
 		}
+		custom_effect_tooltip = FRA_entente_dissolved_during_civil_war
+		set_global_flag = entente_dissolved_due_to_civil_war
+		
 	}
 	ai_will_do = {
 		factor = 1
