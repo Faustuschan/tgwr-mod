@@ -3040,7 +3040,7 @@ Australia_disestablish_the_cmf_desc:0 ""
  FRA_ww1_forced_conscription_in_colonies:0 "Forced Conscription in the Colonies"
  FRA_ww1_revision_de_larmee_de_terre:0 "Révision de l'armée de terre"
  FRA_ww1_fund_berthier:0 "Fund Berthier Rifles"
- FRA_ww1_fund_schneider:0 "Fund Schneider-Creusot Tanks"
+ FRA_ww1_fund_schneider:0 "Fund Schneider-Creusot"
  FRA_ww1_motorization:0 "Motorize the Army"
  FRA_ww1_howitzer_development:0 "Hotwitzer Development"
  FRA_ww1_chauchat_mass_production:0 "Mass Produce the Chauchat"
@@ -3140,6 +3140,7 @@ Australia_disestablish_the_cmf_desc:0 ""
  FRA_ww1_factories_mobilization:0 "Factories Mobilization"
  FRA_ww1_form_the_armored_spearhead:0 "Form the armored spearhead"
  FRA_form_renault_tank_brigades:0 "These §YFrench§! armored units will spawn with 20% of their equipment."
+ FRA_entente_dissolved_during_civil_war:0 "\nOur faction, §Y[FRA.getFactionName]§!, will be dissolved during civil war !"
  
  
 
