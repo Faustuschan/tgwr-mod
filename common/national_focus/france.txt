@@ -2071,15 +2071,12 @@ focus = {
 			}
 			
 		}
-		custom_effect_tooltip = FRA_entente_dissolved_during_civil_war
-		set_global_flag = entente_dissolved_due_to_civil_war
 		FRA = {
 			if=  {
 				limit={ has_government = neutrality }
 				RUS = {
 					add_to_faction = PREV
 				}
-				
 				set_faction_leader = PREV
 			}
 		}
@@ -2979,6 +2976,7 @@ focus = {
 			custom_trigger_tooltip = {
 				tooltip = FRA_250_seats
 			}
+			has_tech = basic_light_tank
 		}
 	}
 	completion_reward = {

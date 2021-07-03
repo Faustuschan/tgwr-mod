@@ -37,13 +37,11 @@ news_event = {
 	picture = ww1_france_41
 	is_triggered_only = yes
 	fire_only_once = yes
-	trigger = {
-	}
 	immediate = {
 		set_global_flag = socialist_france
 	}
 	option = {
-		name = sadge_suck
+		name = generic_ok
 	}
 }
 
@@ -64,34 +62,6 @@ news_event = {
 		name = generic_ok
 	}
 }
-
-### entente is rebuilt
-country_event = {
-	title = ww1_france.43.t
-	desc = ww1_france.43.d
-	id = ww1_france.43
-	picture = GFX_report_event_generic_sign_treaty1
-	trigger = {
-		AND = {
-			has_civil_war = no
-			has_global_flag = entente_dissolved_due_to_civil_war
-			is_in_faction = no
-			has_war = no
-			tag = FRA
-		}
-		
-	}
-	mean_time_to_happen = {
-		days = 2
-	}
-	option = {
-		name = generic_ok
-		create_faction = "Entente"
-		add_to_faction = RUS
-		clr_global_flag = entente_dissolved_due_to_civil_war
-	}
-}
-
 
 
 

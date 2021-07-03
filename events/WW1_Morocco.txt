@@ -11,8 +11,8 @@ country_event = {
     fire_only_once = yes
     is_triggered_only = yes
 	trigger = {
-		date > 1911.4.1
-		ROOT = {
+		AND = {
+			date > 1911.4.1
 			original_tag = MOR
 		}
 	}

@@ -27,23 +27,23 @@ French_historical = {
 		FRA_ww1_ally_the_republican_alliance
 		FRA_ww1_affiliation_with_the_CGT
 		#01/05/1911
-		FRA_ww1_southern_industrialization
+		FRA_ww1_industrial_innovation
 		FRA_ww1_labor_reform
-		FRA_ww1_electronic_effort
+		FRA_ww1_southern_industrialization
 		FRA_ww1_revision_de_larmee_de_terre
 		FRA_ww1_fund_berthier
 		#01/05/1912
 		FRA_ww1_beyond_fear
-		FRA_ww1_fund_schneider
-		FRA_ww1_form_the_popular_labor_service
 		FRA_ww1_socialist_mentality
-		FRA_ww1_naval_experience
-		#01/05/1913
-		FRA_ww1_expand_penhoet_dockyards
 		FRA_ww1_support_for_universities
+		FRA_ww1_mention_de_censure
+		FRA_ww1_form_the_popular_labor_service
+		#01/05/1913
+		FRA_ww1_naval_experience
+		FRA_ww1_expand_penhoet_dockyards
 		FRA_ww1_static_warfare_focus
 		FRA_ww1_defensive_stratagems
-		FRA_ww1_mention_de_censure
+		FRA_ww1_fund_schneider
 		#01/05/1914
 		FRA_ww1_socialist_reality
 		FRA_ww1_nationalize_war_industry
