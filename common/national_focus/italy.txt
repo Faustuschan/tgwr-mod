@@ -444,6 +444,11 @@ focus_tree = {
 						state = 158
 					}
 				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
 			}
 		}
 		ai_will_do = {
@@ -1494,6 +1499,7 @@ focus_tree = {
 		x = 34
 		y = 0
 		available = {
+			is_subject = no
 			has_country_flag = great_war_winner
 			OR = {
 				has_global_flag = frankfurt_treaty
