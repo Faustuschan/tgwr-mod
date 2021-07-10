@@ -7,19 +7,15 @@ parliament_gui_decision_category = {
 			original_tag = FRA
 		}
 		available = {
-			hidden_trigger= {
-				AND = {
-					NOT = { has_country_flag = FRA_1910_legislative_elections_done }
-					NOT = { has_country_flag = FRA_1910_election_supported }
-				}
+			AND = {
+				NOT = { has_country_flag = FRA_1910_legislative_elections_done }
+				NOT = { has_country_flag = FRA_1910_election_supported }
 			}
 		}
 		visible = {
-			hidden_trigger= {
-				AND = {
-					NOT = { has_country_flag = FRA_1910_legislative_elections_done }
-					NOT = { has_country_flag = FRA_1910_election_supported }
-				}
+			AND = {
+				NOT = { has_country_flag = FRA_1910_legislative_elections_done }
+				NOT = { has_country_flag = FRA_1910_election_supported }
 			}
 		}
 		complete_effect = {
@@ -40,19 +36,15 @@ parliament_gui_decision_category = {
 			original_tag = FRA
 		}
 		available = {
-			hidden_trigger= {
-				AND = {
-					NOT = { has_country_flag = FRA_1910_legislative_elections_done }
-					NOT = { has_country_flag = FRA_1910_election_supported }
-				}
+			AND = {
+				NOT = { has_country_flag = FRA_1910_legislative_elections_done }
+				NOT = { has_country_flag = FRA_1910_election_supported }
 			}
 		}
 		visible = {
-			hidden_trigger= {
-				AND = {
-					NOT = { has_country_flag = FRA_1910_legislative_elections_done }
-					NOT = { has_country_flag = FRA_1910_election_supported }
-				}
+			AND = {
+				NOT = { has_country_flag = FRA_1910_legislative_elections_done }
+				NOT = { has_country_flag = FRA_1910_election_supported }
 			}
 		}
 		complete_effect = {
@@ -73,19 +65,15 @@ parliament_gui_decision_category = {
 			original_tag = FRA
 		}
 		available = {
-			hidden_trigger= {
-				AND = {
-					NOT = { has_country_flag = FRA_1910_legislative_elections_done }
-					NOT = { has_country_flag = FRA_1910_election_supported }
-				}
+			AND = {
+				NOT = { has_country_flag = FRA_1910_legislative_elections_done }
+				NOT = { has_country_flag = FRA_1910_election_supported }
 			}
 		}
 		visible = {
-			hidden_trigger= {
-				AND = {
-					NOT = { has_country_flag = FRA_1910_legislative_elections_done }
-					NOT = { has_country_flag = FRA_1910_election_supported }
-				}
+			AND = {
+				NOT = { has_country_flag = FRA_1910_legislative_elections_done }
+				NOT = { has_country_flag = FRA_1910_election_supported }
 			}
 		}
 		complete_effect = {
@@ -103,26 +91,20 @@ parliament_gui_decision_category = {
 		icon = GFX_autonomy_free_icon
 		desc = FRA_1910_disposition_desc
 		allowed = {
-			hidden_trigger= {
-				original_tag = FRA
-				NOT = { has_country_flag =  FRA_parliament_dissolved }
-				NOT = { has_country_flag =  FRA_1910_legislative_elections_done }
-			}
+			original_tag = FRA
+			NOT = { has_country_flag =  FRA_parliament_dissolved }
+			NOT = { has_country_flag =  FRA_1910_legislative_elections_done }
 		}
 		available = {
-			hidden_trigger= {
-				AND = { 
-					original_tag = FRA
-					has_country_flag = FRA_1910_legislative_elections_done
-				}
+			AND = { 
+				original_tag = FRA
+				has_country_flag = FRA_1910_legislative_elections_done
 			}
 		}
 		visible = {
-			hidden_trigger= {
-				original_tag = FRA
-				NOT = { has_country_flag =  FRA_parliament_dissolved }
-				NOT = { has_country_flag =  FRA_1910_legislative_elections_done }
-			}
+			original_tag = FRA
+			NOT = { has_country_flag =  FRA_parliament_dissolved }
+			NOT = { has_country_flag =  FRA_1910_legislative_elections_done }
 		}
 		cancel_if_not_visible = yes
 		days_mission_timeout = 7
@@ -319,12 +301,6 @@ parliament_gui_decision_category = {
 				set_variable = { var = independent_socialist value = 0 } 
 			}
 
-
-
-
-
-
-
 			set_variable = { var = democrat_alliance_percent value = democrat_alliance} 
 			multiply_variable = { democrat_alliance_percent = 100 }
 			divide_variable = { democrat_alliance_percent = seatNumbers }
@@ -343,6 +319,197 @@ parliament_gui_decision_category = {
 			set_country_flag = FRA_1914_legislative_elections_done
 		}
 	}
+
+	FRA_1918_disposition = {
+		icon = GFX_autonomy_free_icon
+		desc = FRA_1910_disposition_desc
+		allowed = {
+			hidden_trigger= {
+				original_tag = FRA
+				has_country_flag =  FRA_1918_legislative_elections_start
+				NOT = { has_country_flag =  FRA_parliament_dissolved }
+				NOT = { has_country_flag =  FRA_1918_legislative_elections_done }
+			}
+		}
+		available = {
+			hidden_trigger= {
+				AND = { 
+					has_country_flag =  FRA_1918_legislative_elections_start
+					original_tag = FRA
+				}
+			}
+		}
+		visible = {
+			hidden_trigger= {
+				original_tag = FRA
+				NOT = { has_country_flag =  FRA_parliament_dissolved }
+				NOT = { has_country_flag =  FRA_1918_legislative_elections_done }
+				has_country_flag = FRA_1918_legislative_elections_start
+			}
+		}
+		cancel_if_not_visible = yes
+		days_mission_timeout = 50
+		is_good = yes
+		fire_only_once = yes
+		timeout_effect = {
+			## historical disposition
+			set_variable = { var = SFIO value = 68 } 
+			set_variable = { var = independent_socialist value = 26 } 
+			set_variable = { var = democratic_republican_alliance value = 86 }
+			set_variable = { var = radical_party value = 93 } 
+			set_variable = { var = independent_radicals value = 46 } 
+			set_variable = { var = republicain_federation value = 61 } 
+			set_variable = { var = popular_liberal_action value = 0 } 
+			set_variable = { var = nationalists value = 0 }
+			set_variable = { var = vacant value = 0 }
+			set_variable = { var = conservatives value = 183 }
+			set_variable = { var = independent_republicans value = 29 }
+
+			set_variable = { var = seatNumbers value = 600 }
+
+
+			#SFIO + socialists (var used for socialist path)
+			set_variable = { var = socialist_alliance value = 0 }
+			add_to_variable = { var = socialist_alliance value = independent_socialist }
+			add_to_variable = { var = socialist_alliance value = SFIO } 
+			#Social-democrat alliance (left bloc)
+			set_variable = { var = democrat_socialist_alliance value = 0 }
+			add_to_variable = { var = democrat_socialist_alliance value = independent_socialist }
+			add_to_variable = { var = democrat_socialist_alliance value = independent_radicals } 
+			add_to_variable = { var = democrat_socialist_alliance value = democratic_republican_alliance } 
+			add_to_variable = { var = democrat_socialist_alliance value = radical_party } 
+			
+			## democrat bloc
+			set_variable = { var = democrat_alliance value = 0 } 
+			add_to_variable = { var = democrat_alliance value = republicain_federation }
+			add_to_variable = { var = democrat_alliance value = democratic_republican_alliance }
+			add_to_variable = { var = democrat_alliance value = independent_radicals }
+			add_to_variable = { var = democrat_alliance value = radical_party }
+
+			########################################################################################
+			#
+			#	THIS PART IS COVERING PLAYER FOCUS CONSEQUENCES
+			#
+			###############################################
+
+			## we know that the player is ahistorical and socialist-aligned
+			## we gonna add a bonus socialist support based on his political support
+			if = {
+				limit = {
+					FRA = {
+						is_puppet = no
+						has_completed_focus = FRA_ww1_memories_of_the_commune
+					}
+				}
+				## player is in the earliest socialist focus part
+				add_to_variable = { var = SFIO value = 100 }		#bonus 
+				add_to_variable = { var = conservatives value = -100 }	#malus for democrats
+
+				set_variable = { var = democrat_alliance value = 0 } ## socialist alliance
+				add_to_variable = { var = democrat_alliance value = SFIO }
+				add_to_variable = { var = democrat_alliance value = independent_socialist }
+			}
+			## player has choose the commune and is already in alliance with the socialists-republican
+			if = {
+				limit = {
+					FRA = {
+						is_puppet = no
+						has_completed_focus = FRA_ww1_ally_the_republican_alliance
+						NOT = { has_completed_focus = FRA_ww1_socialist_mentality }
+					}
+				}
+				## add the socialists-republicans to the player alliance 
+				add_to_variable = { var = democrat_alliance value = democratic_republican_alliance }
+			}
+
+			if = {
+				limit = {
+					FRA = {
+						is_puppet = no
+						has_completed_focus = FRA_ww1_socialist_mentality
+						NOT = { has_completed_focus = FRA_ww1_form_peasant_council }
+					}
+				}
+				## BIG SFIO, but the parliament still fully democratic ruled
+				add_to_variable = { var = SFIO value = democratic_republican_alliance }
+				add_to_variable = { var = SFIO value = independent_socialist }
+				set_variable = { var = democratic_republican_alliance value = 0 } 
+				set_variable = { var = independent_socialist value = 0 } 
+			}
+
+			set_variable = { var = democrat_alliance_percent value = democrat_alliance} 
+			multiply_variable = { democrat_alliance_percent = 100 }
+			divide_variable = { democrat_alliance_percent = seatNumbers }
+			set_variable = { parliament_seat_array^0 = SFIO }
+			set_variable = { parliament_seat_array^1 = independent_socialist }
+			set_variable = { parliament_seat_array^2 = democratic_republican_alliance }
+			set_variable = { parliament_seat_array^3 = radical_party }
+			set_variable = { parliament_seat_array^4 = independent_radicals }
+			set_variable = { parliament_seat_array^5 = republicain_federation }
+			set_variable = { parliament_seat_array^6 = conservatives } #new !
+			set_variable = { parliament_seat_array^7 = independent_republicans } #new
+			set_variable = { parliament_seat_array^8 = popular_liberal_action }
+			set_variable = { parliament_seat_array^9 = nationalists }
+			set_variable = { parliament_seat_array^10 = vacant }
+			reload_parliament_gui = yes 
+			set_country_flag = FRA_1918_legislative_elections_done
+		}
+	}
+}
+
+FRA_defense_of_france = {
+
+	FRA_battle_of_verdun = {
+		icon = generic_civil_support
+
+		allowed = {
+			original_tag = FRA
+		}
+
+		#Fail trigger
+		available = {
+				custom_trigger_tooltip = {
+					tooltip = FRA_not_hold_verdun
+					NOT = { controls_state = 17 }
+				}
+		}
+
+		days_mission_timeout = 12
+
+
+		is_good = yes
+
+		activation = {
+			has_war = yes
+			has_civil_war = no
+			17 = {
+				is_controlled_by = ROOT
+				OR = {
+					any_neighbor_state = {
+						CONTROLLER = {
+							has_war_with = ROOT
+						}
+						OWNER = { tag = ROOT }
+					}
+					NOT = { is_fully_controlled_by = ROOT }
+				}
+			}
+		}
+
+		#Success
+		timeout_effect = {
+			hidden_effect = { 
+				play_song = "SE_fra_battle_of_verdun"
+				set_country_flag = SE_battle_of_verdun
+			}
+		}
+		#Fail
+		complete_effect = {
+			add_stability = -0.10
+			add_war_support = -0.10
+		}
+	}
+
 }
 
 FRA_wadai_war = {

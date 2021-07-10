@@ -84,8 +84,26 @@ country_event = {
 	}
 }
 
-
-
+## new new french legislative elections (1918)
+country_event = {
+	title = ww1_france.44.t	
+	desc = ww1_france.43.d
+	id = ww1_france.44
+	picture = GFX_report_event_election_vote
+	fire_only_once = yes
+	trigger = {
+		original_tag = FRA
+		date > 1918.1.1
+		NOT = { has_country_flag =  FRA_1918_elections_start }
+	}
+	mean_time_to_happen = {
+		days = 2
+	}
+	option = {
+		name = generic_ok
+		set_country_flag = FRA_1918_elections_start
+	}
+}
 
 
 
