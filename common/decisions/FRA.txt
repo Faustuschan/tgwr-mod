@@ -473,7 +473,7 @@ FRA_defense_of_france = {
 				}
 		}
 
-		days_mission_timeout = 12
+		days_mission_timeout = 120
 
 
 		is_good = yes
