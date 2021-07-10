@@ -466,7 +466,6 @@ FRA_defense_of_france = {
 			original_tag = FRA
 		}
 
-		#Fail trigger
 		available = {
 				custom_trigger_tooltip = {
 					tooltip = FRA_not_hold_verdun
@@ -496,14 +495,11 @@ FRA_defense_of_france = {
 			}
 		}
 
-		#Success
+
 		timeout_effect = {
-			hidden_effect = { 
-				play_song = "SE_fra_battle_of_verdun"
-				set_country_flag = SE_battle_of_verdun
-			}
+			news_event = ww1_france.18
 		}
-		#Fail
+
 		complete_effect = {
 			add_stability = -0.10
 			add_war_support = -0.10

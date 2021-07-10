@@ -831,6 +831,7 @@ country_event = {
 
 # BATTLE OF VERDUN
 ####################
+
 news_event = {
 	id = ww1_france.18
 	title = ww1_france.18.t
@@ -839,17 +840,7 @@ news_event = {
 	fire_only_once = yes
 	major = yes
 	fire_only_once = yes
-	trigger = {
-		FRA = {
-			has_war_with = GER
-			has_full_control_of_state = 16
-			casualties > 450000
-			owns_state = 17
-		}
-		GER = {
-			controls_state = 17
-		}
-	}
+	is_triggered_only = yes
 	mean_time_to_happen = {
 		days = 2
 	}
@@ -867,6 +858,18 @@ news_event = {
 		ai_chance = {
 			factor = 100
 		}
+		if = {
+            limit = {
+                has_game_rule = {
+                    rule = rule_superevent
+                    option = DEFAULT
+                }
+                is_ai = no
+            }
+			hidden_effect = { 
+				play_song = "SE_fra_battle_of_verdun"
+				set_country_flag = SE_battle_of_verdun
+			}
 	}
 }
 
