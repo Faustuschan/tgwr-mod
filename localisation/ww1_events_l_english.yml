@@ -403,6 +403,9 @@ ww1_france.41.d:0 "Following an alliance of the various-left parties and a porti
 ww1_france.42.t:0 "[GetYear] French Revolution"
 ww1_france.42.d:0 " The pro-royalist movements launched a series of demonstrations last Monday across France against the Radical party of Raymond Pointcarré. The show of force quickly turned into a riot after a small group of Action Française infiltrated the National Assembly and then the Senate. Taking control of the buildings, the demonstrators demanded the fair return of the authoritarian system. Numerous fights broke out in Paris in favor of the rioters. After 3 days of insurgency, the police forces surrendered, largely outnumbered. Aware of the danger looming, the SFIO and the radical party were forced to form democratic militias against this decadent authoritarian revolution."
 
+ww1_france.43.t:0 "1914 Legislative elections"
+ww1_france.43.d:0 "Despite global tensions, legislative elections are fundamental to the life of the Republic. In less than two months, the national assembly will be reelected, redistributing the seats of power."
+
 
  #BELGIUM
  ww1_belgium.1.a:0 "Never forget Belgium"

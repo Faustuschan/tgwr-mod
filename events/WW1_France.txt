@@ -63,9 +63,26 @@ news_event = {
 	}
 }
 
-
-
-
+### new french legislative elections
+country_event = {
+	title = ww1_france.43.t	
+	desc = ww1_france.43.d
+	id = ww1_france.43
+	picture = GFX_report_event_election_vote
+	fire_only_once = yes
+	trigger = {
+		original_tag = FRA
+		date > 1914.1.1
+		NOT = { has_country_flag =  FRA_1914_elections_start }
+	}
+	mean_time_to_happen = {
+		days = 2
+	}
+	option = {
+		name = generic_ok
+		set_country_flag = FRA_1914_elections_start
+	}
+}
 
 
 

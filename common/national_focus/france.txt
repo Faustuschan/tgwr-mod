@@ -4330,7 +4330,7 @@ focus = {
 		}
 	}
 	prerequisite = {
-		focus = FRA_ww1_industrial_innovation
+		focus = FRA_ww1_nord_pas_de_calais_iron_excavation
 	}
 	relative_position_id = FRA_ww1_nord_pas_de_calais_iron_excavation
 	completion_reward = {

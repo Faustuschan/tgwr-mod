@@ -243,6 +243,11 @@ ideas = {
 				send_volunteer_divisions_required = -0.5
 				send_volunteers_tension = -0.5
 			}
+			
+			rule = { 
+				can_force_government = yes
+				can_send_volunteers = yes
+			}
 		}
 
 		FRA_ww1_social_investments = {
@@ -1092,8 +1097,11 @@ ideas = {
 				is_subject = no
 				has_war = no
 				FRA = {
-					has_war = no
-					exists = yes
+					NOT = { 
+						any_enemy_country = {
+							is_major = yes
+						}
+					}
 				}
 			}
 			removal_cost = -1
