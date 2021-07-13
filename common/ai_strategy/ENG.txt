@@ -168,11 +168,12 @@ commonwealth_allied_base_in_france = {
 		
 		# Il-De-Frans
 		states = {
-			785
 			16
-			29
 			18
-			27
+			785
+			17
+			29
+			15
 		}
 		ratio = 0.22
 		area = europe
@@ -209,6 +210,7 @@ commonwealth_france_has_huge_problems = {
 			15
 			785
 			27
+			18
 		}
 		ratio = 0.5
 		area = europe
@@ -251,7 +253,7 @@ ENG_area_priority = {
 		id = europe
 		value = 250
 	}
-	ai_strategy = {
+	ai_strategy = { 
 		type = area_priority
 		id = middle_east
 		value = 50

@@ -166,6 +166,23 @@ spriteTypes = {
 		name = "GFX_goal_FRA_support_the_suffragettes_focus"
 		texturefile = "gfx/interface/goals/FRA/support_for_surfragettes.dds"
 	}
+
+	SpriteType = {
+		name = "GFX_FRA_ww1_affiliation_with_the_CGT_focus"
+		texturefile = "gfx/interface/goals/FRA/alliance_with_CGT.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_FRA_ww1_extend_the_duty_focus"
+		texturefile = "gfx/interface/goals/FRA/expand_factory_duty.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_FRA_ww1_labor_reform_focus"
+		texturefile = "gfx/interface/goals/FRA/labour_reform.dds"
+	}
+	
+	
 	
 	
 

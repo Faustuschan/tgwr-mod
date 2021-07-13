@@ -488,6 +488,24 @@ ideas = {
 			}
 		}
 
+		FRA_wadai_war = {
+			allowed = {
+				original_tag = FRA
+				always = no
+			}
+			available = {
+				has_war_with = CHA
+			}
+			removal_cost = -1
+			picture = generic_oppression
+			modifier = {
+				hidden_modifier = {
+					experience_gain_army_factor = -0.5
+				}
+				stability_factor = -0.05
+			}
+		}
+
 	}
 	political_advisor = {
 		FRA_charles_maurras = {

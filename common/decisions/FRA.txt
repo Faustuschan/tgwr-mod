@@ -7,9 +7,11 @@ parliament_gui_decision_category = {
 			original_tag = FRA
 		}
 		available = {
-			AND = {
-				NOT = { has_country_flag = FRA_1910_legislative_elections_done }
-				NOT = { has_country_flag = FRA_1910_election_supported }
+			hidden_trigger = {
+				AND = {
+					NOT = { has_country_flag = FRA_1910_legislative_elections_done }
+					NOT = { has_country_flag = FRA_1910_election_supported }
+				}
 			}
 		}
 		visible = {
@@ -36,9 +38,11 @@ parliament_gui_decision_category = {
 			original_tag = FRA
 		}
 		available = {
-			AND = {
-				NOT = { has_country_flag = FRA_1910_legislative_elections_done }
-				NOT = { has_country_flag = FRA_1910_election_supported }
+			hidden_trigger = {
+				AND = {
+					NOT = { has_country_flag = FRA_1910_legislative_elections_done }
+					NOT = { has_country_flag = FRA_1910_election_supported }
+				}
 			}
 		}
 		visible = {
@@ -65,9 +69,11 @@ parliament_gui_decision_category = {
 			original_tag = FRA
 		}
 		available = {
-			AND = {
-				NOT = { has_country_flag = FRA_1910_legislative_elections_done }
-				NOT = { has_country_flag = FRA_1910_election_supported }
+			hidden_trigger = {
+				AND = {
+					NOT = { has_country_flag = FRA_1910_legislative_elections_done }
+					NOT = { has_country_flag = FRA_1910_election_supported }
+				}
 			}
 		}
 		visible = {
@@ -96,9 +102,11 @@ parliament_gui_decision_category = {
 			NOT = { has_country_flag =  FRA_1910_legislative_elections_done }
 		}
 		available = {
-			AND = { 
-				original_tag = FRA
-				has_country_flag = FRA_1910_legislative_elections_done
+			hidden_trigger = {
+				AND = { 
+					original_tag = FRA
+					has_country_flag = FRA_1910_legislative_elections_done
+				}
 			}
 		}
 		visible = {
@@ -194,15 +202,14 @@ parliament_gui_decision_category = {
 		icon = GFX_autonomy_free_icon
 		desc = FRA_1914_disposition_desc
 		allowed = {
-			hidden_trigger = {
-				has_country_flag =  FRA_1914_elections_start
-			} 
+			original_tag = FRA
 		}	
 		available = {
 			hidden_trigger = {
 				original_tag = FRA
 				has_country_flag = FRA_1914_legislative_elections_done
 			}
+			
 		}
 		visible = {
 			hidden_trigger = {
@@ -220,7 +227,7 @@ parliament_gui_decision_category = {
 			set_variable = { var = SFIO value = 140 } 
 			set_variable = { var = independent_socialist value = 5 } 
 			set_variable = { var = democratic_republican_alliance value = 77 }
-			set_variable = { var = radical_party value = 192 } 
+			set_variable = { var = radical_party value = 174 } 
 			set_variable = { var = independent_radicals value = 66 } 
 			set_variable = { var = republicain_federation value = 88 } 
 			set_variable = { var = popular_liberal_action value = 38 } 
@@ -324,15 +331,10 @@ parliament_gui_decision_category = {
 		icon = GFX_autonomy_free_icon
 		desc = FRA_1910_disposition_desc
 		allowed = {
-			hidden_trigger= {
 				original_tag = FRA
-				has_country_flag =  FRA_1918_legislative_elections_start
-				NOT = { has_country_flag =  FRA_parliament_dissolved }
-				NOT = { has_country_flag =  FRA_1918_legislative_elections_done }
-			}
 		}
 		available = {
-			hidden_trigger= {
+			hidden_trigger = {
 				AND = { 
 					has_country_flag =  FRA_1918_legislative_elections_start
 					original_tag = FRA
@@ -474,7 +476,7 @@ FRA_defense_of_france = {
 		}
 
 		days_mission_timeout = 120
-
+		fire_only_once = yes
 
 		is_good = yes
 
