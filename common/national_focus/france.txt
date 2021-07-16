@@ -722,7 +722,7 @@ focus = {
 
 focus = {
 	id = FRA_ww1_socialist_mentality
-	icon = GFX_focus_spr_masters_of_our_own_fate
+	icon = GFX_FRA_ww1_socialist_mentality_focus
 	relative_position_id = FRA_ww1_ally_the_republican_alliance
 	prerequisite = { focus = FRA_ww1_ally_the_republican_alliance }
 	completion_reward = {
@@ -1225,6 +1225,29 @@ focus = {
 }
 
 focus = {
+	id = FRA_ww1_protector_of_the_weakests
+	icon = GFX_FRA_ww1_protector_of_the_weakests_focus
+	relative_position_id = FRA_ww1_british_friendship
+	prerequisite = { 
+		focus = FRA_ww1_british_friendship 
+	}
+	available = {
+		is_puppet = no
+		has_war = no
+	}
+	completion_reward = {
+		add_ideas = FRA_protector_of_the_weakests
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 0
+	y = 1
+}
+
+focus = {
 	id = FRA_ww1_french_interventionism
 	icon = GFX_goal_FRA_french_interventionism_focus
 	relative_position_id = FRA_ww1_the_social_democrat_compromise
@@ -1282,6 +1305,30 @@ focus = {
 	
 	cost = 10
 	x = -4
+	y = 1
+}
+
+focus = {
+	id = FRA_ww1_arms_export
+	icon = GFX_FRA_ww1_arms_export_focus
+	relative_position_id = FRA_ww1_colonial_volunteers
+	prerequisite = { 
+		focus = FRA_ww1_colonial_volunteers
+		focus = FRA_ww1_french_interventionism 
+	}
+	available = {
+		is_puppet = no
+		has_war = no
+	}
+	completion_reward = {
+		add_ideas = FRA_ww1_arms_export
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = -1
 	y = 1
 }
 

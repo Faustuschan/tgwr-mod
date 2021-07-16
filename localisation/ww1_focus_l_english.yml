@@ -3076,8 +3076,9 @@ TUR_invite_balkan_economy_sphere_tt:0 "Invites §YBalkan countries§! into an §
  FRA_ww1_bomber_focus:0 "Bomber Focus"
  FRA_ww1_close_air_support:0 "Close Air Support Focus"
  FRA_ww1_fund_nieuport:0 "Fund Nieuport Air Company"
- 
- 
+ FRA_ww1_protector_of_the_weakests:0 "Protector of the weakests"
+ FRA_protector_of_the_weakests:0 "Protector of the weakests"
+ FRA_ww1_arms_export:0 "Arms export"
  
 
  FRA_join_socialists:0 "\nSelecting §Ythis focus§! will place us in the role of §Rthe SFIO§!. \n\n§ROur alliance will combine socialists seats!§!"

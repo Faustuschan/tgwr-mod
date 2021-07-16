@@ -308,7 +308,7 @@ FRA_ai_behavior = {
 		allow_achievements = no
 	}
 	option = {
-		name = NEUTRALITY
+		name = NEUTRALITY_BONARPARTIST
 		text = "RULE_OPTION_NEUTRALITY_NAPOLEON_FRA"
 		desc = "RULE_OPTION_NEUTRALITY_NAPOLEON_FRA_AI_DESC"
 		allow_achievements = no

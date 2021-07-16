@@ -500,9 +500,35 @@ ideas = {
 			picture = generic_oppression
 			modifier = {
 				hidden_modifier = {
-					experience_gain_army_factor = -0.5
+					experience_gain_army_factor = -0.9
 				}
 				stability_factor = -0.05
+			}
+		}
+
+		FRA_protector_of_the_weakests = {
+			allowed = {
+				original_tag = FRA
+				always = no
+			}
+			removal_cost = -1
+			picture = generic_morale_bonus
+			modifier = {
+				guarantee_cost = -0.5
+				guarantee_tension = -0.5
+			}
+		}
+
+		FRA_ww1_arms_export = {
+			allowed = {
+				original_tag = FRA
+				always = no
+			}
+			removal_cost = -1
+			picture = generic_morale_bonus
+			modifier = {
+				lend_lease_tension = -0.5
+				trade_opinion_factor = 0.25
 			}
 		}
 

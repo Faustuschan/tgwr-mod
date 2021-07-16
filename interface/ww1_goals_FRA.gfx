@@ -29,7 +29,7 @@ spriteTypes = {
 	##### expanded duty
 	SpriteType = {
 		name = "GFX_goal_FRA_expanded_duty"
-		texturefile = "gfx/interface/goals/FRA/FRA_expanded_duty.dds"
+		texturefile = "gfx/interface/goals/FRA/Form_the_popular_labour_service.dds"
 	}
 
 	##### expanded duty 2
@@ -172,6 +172,7 @@ spriteTypes = {
 		texturefile = "gfx/interface/goals/FRA/alliance_with_CGT.dds"
 	}
 
+
 	SpriteType = {
 		name = "GFX_FRA_ww1_extend_the_duty_focus"
 		texturefile = "gfx/interface/goals/FRA/expand_factory_duty.dds"
@@ -181,6 +182,24 @@ spriteTypes = {
 		name = "GFX_FRA_ww1_labor_reform_focus"
 		texturefile = "gfx/interface/goals/FRA/labour_reform.dds"
 	}
+	
+	SpriteType = {
+		name = "GFX_FRA_ww1_socialist_mentality_focus"
+		texturefile = "gfx/interface/goals/FRA/socialist_mentality.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_FRA_ww1_protector_of_the_weakests_focus"
+		texturefile = "gfx/interface/goals/FRA/focus_generic_france_triumphant.dds"
+	}
+	
+	SpriteType = {
+		name = "GFX_FRA_ww1_arms_export_focus"
+		texturefile = "gfx/interface/goals/FRA/FRA_ww1_arms_export.dds"
+	}
+	
+
+	
 	
 	
 	

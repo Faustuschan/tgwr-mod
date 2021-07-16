@@ -104,7 +104,7 @@ spriteTypes = {
 		texturefile = "gfx/interface/technologies/armor/advanced_armored_car.dds"
 	}
 
-	#Tanks / Armors 
+	#French Tanks / Armors / Amored cars
 
 	SpriteType = {
 		name = "GFX_FRA_gwtank_medium"
@@ -163,12 +163,17 @@ spriteTypes = {
 		texturefile = "gfx/interface/technologies/armor/FRA_ww1_armored_car_4.dds"
 	}
 
+	#French planes
 
+	SpriteType = {
+		name = "GFX_FRA_fighter1_medium"
+		texturefile = "gfx/interface/technologies/air/FRA_fighter2.dds"
+	}	
 	
 	
 	#Infantry Techs
 	
-	#Helmets
+	#Helmets 
 	SpriteType = {
 		name = "GFX_ww1_infantry2_equip_medium"
 		texturefile = "gfx/interface/technologies/hoi4tgw/helmets/ww1_infantry2_equip.dds"
