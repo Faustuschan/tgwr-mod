@@ -673,6 +673,7 @@ FRA_not_hold_verdun:0 "Verdun fall into Germans hands."
  TUR_reactionary_plot_mission:0 "Reactionary plot"
  TUR_rename_kostantiniyye:0 "Rename Kostantiniyye"
  TUR_rename_constantinople:0 "Rename Constantinople"
+ TUR_dissolve_meclis_saviour_officers:0 "Dissolve Meclis-i Mebusan"
  
  
  USA_statehood_for_arizona:0 "Grant Statehood to Arizona"
