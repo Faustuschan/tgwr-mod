@@ -284,6 +284,7 @@ country_event = {
 				ideology = autocracy
 				traits = {
 					hero_of_CUP_trials
+					legitimate_heir
 					trait_autocracy
 				}
 			}
@@ -900,7 +901,7 @@ country_event = {
 		}
 	}
 	option = {
-		name = ww1_ottoman.28.d
+		name = ww1_ottoman.28.b
 		hidden_effect = {
 			country_event = {
 				id = ww1_ottoman.119
@@ -991,7 +992,6 @@ country_event = {
 			expire = "1935.1.1"
 			ideology = autocracy
 			traits = {
-				legitimate_heir
 				inexperienced_imperialist
 				trait_autocracy
 			}

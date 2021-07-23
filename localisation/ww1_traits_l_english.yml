@@ -24,12 +24,12 @@
  trait_stratocracy:0 "Stratocrat"
  trait_fundamentalism:0 "Fundamentalist"
  trait_falangism:0 "Falangist"
- trait_despotism:0 "Despotist"
+ trait_despotism:0 "Despotic"
  trait_oligarchism:0 "Oligarchic"
  trait_authoritarian_democracy:0 "Authoritarian-Democrat"
  trait_autocracy:0 "Autocrat"
  trait_theocracy:0 "Theocrat"
- trait_anarcho_primitivism:0 "Anarcho-primitivist"
+ trait_anarcho_primitivism:0 "Anarcho-Primitivist"
 ##########################
  
 
@@ -158,7 +158,7 @@
  mehmed_v:0 "Mehmed V Reşât"
  mehmed_vi:0 "Mehmed VI Vahideddin"
  hero_of_CUP_trials:0 "Hero of the CUP trials"
- muhtar:0 "Saviour Officer"
+ muhtar:0 "The Victorious"
  ENG_interim_ruler:0 "Interim Ruler"
  ENG_warhawk:0 "Warhawk"
  ENG_true_prince_of_wales:0 "A True Prince of Wales"
