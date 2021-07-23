@@ -861,6 +861,7 @@ news_event = {
 				play_song = "SE_fra_battle_of_verdun"
 				set_country_flag = SE_battle_of_verdun
 			}
+		}	
 	}
 }
 
