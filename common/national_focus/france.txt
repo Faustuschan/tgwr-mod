@@ -791,12 +791,6 @@ focus = {
 	completion_reward = {
 		custom_effect_tooltip = FRA_mention_de_censure
 		custom_effect_tooltip = FRA_mention_de_censure_socialist
-
-		create_country_leader = {
-			name = "Ludovic-Oscar Frossard" 
-			picture = "gfx/leaders/FRA/FRA_louis_frossard.dds" 
-			ideology = anarchist_communism 
-		}
 		set_politics = {
 			ruling_party = communism 
 			elections_allowed = yes
@@ -1877,15 +1871,6 @@ focus = {
 	}
 	completion_reward = {
 		add_political_power = 120
-		create_country_leader = {
-			name = "Maurice Pujo"
-			ideology = despotism
-			picture = "gfx/leaders/FRA/FRA_Maurice_Pujo.dds"
-			traits = {
-				monarchist_media_mogul
-			}
-		}
-
 	}
 	ai_will_do = {
 		factor = 1
@@ -1941,11 +1926,12 @@ focus = {
 		retire_country_leader = yes
 		create_country_leader = {
 			name = "Jean III d'Orléans"
-			ideology = despotism
+			ideology = autocracy
 			picture = "gfx/leaders/FRA/FRA_jean_duke_of_guise.dds"
 			traits = {
 				the_sacred_king
 				anti_communist
+				trait_autocracy
 			}
 		}
 		set_party_name = { 
@@ -2247,11 +2233,12 @@ focus = {
 		}
 		create_country_leader = {
 			name = "Napoleon V"
-			ideology = despotism
+			ideology = autocracy
 			picture = "gfx/leaders/FRA/FRA_Napoleon_V.dds"
 			traits = {
 				dislikes_russia
 				empire_builder
+				trait_autocracy
 			}
 		}
 		set_party_name = { 
