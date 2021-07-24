@@ -130,11 +130,6 @@ country_event = {
 				has_country_flag = FRA_nationalist_france_flag
 				has_war_with = FRA
 			}
-		}
-		OR = {
-			### correcting the trigger to avoid event on communist focus path
-			#has_stability < 0.05
-			#communism > 0.5
 			has_country_flag = great_war_loser 
 		}
 	}
@@ -375,12 +370,6 @@ country_event = {
 					}
 					remove_ideas = FRA_idea_pacifist_strike
 				}
-				if = {
-					limit = {
-						has_idea = idea_army_restrictions
-					}
-					remove_ideas = idea_army_restrictions
-				}
 				set_rule = {
 					can_join_factions = no
 				}
@@ -449,9 +438,11 @@ country_event = {
 	trigger = {
 		tag = FRA
 		has_civil_war = no
-		has_stability < 0.5
 		has_global_flag = frankfurt_treaty
 		is_subject = no
+		NOT = {
+			has_government = communism
+		}	
 	}
 	mean_time_to_happen = {
 		days = 60
@@ -870,6 +861,7 @@ news_event = {
 				play_song = "SE_fra_battle_of_verdun"
 				set_country_flag = SE_battle_of_verdun
 			}
+		}	
 	}
 }
 
@@ -1097,16 +1089,6 @@ country_event = {
 				}
 				FRA = {
 					transfer_state = PREV
-				}
-			}
-			every_state = {
-				limit = {
-					is_owned_by = FRA
-				}
-				teleport_armies = {
-					limit = {
-						has_country_flag = FRA_nationalist_france_flag
-					}
 				}
 			}
 		}

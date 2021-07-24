@@ -2748,6 +2748,7 @@ focus_tree = {
 					}
 				}
 				set_country_flag = king_william_v
+				clr_country_flag = king_edward_viii
 			}
 		}
 		ai_will_do = {
@@ -3182,36 +3183,14 @@ focus_tree = {
 				ruling_party = communism
 				elections_allowed = yes
 			}
-			if = {
-				limit = {
-					CAN = {
-						has_country_leader = {
-							name = "Wilfrid Laurier"
-							ruling_only = yes
-						}
-					}
-				}
-				CAN = {
-					country_event = ww1_england.92
-				}
-				hidden_effect = {
-					AST = {
-						add_ideas = george_v
-					}
-				}
-				else = {
-					CAN = {
-						country_event = ww1_england.33
-						transfer_state = 332
-						transfer_state = 331
-					}
-				}
-			}
 			AST = {
-				country_event = ww1_england.33
+				country_event = { id = ww1_england.33 hours = 5} 
 			}
 			NZL = {
-				country_event = ww1_england.33
+				country_event = { id = ww1_england.33 hours = 10} 
+			}
+			CAN = {
+				country_event = { id = canada.70 hours = 15 } 
 			}
 		}
 	}
@@ -3644,6 +3623,12 @@ focus_tree = {
 		y = 5
 		available = {
 			has_war_with = TUR
+			HJZ = {
+				OR = {
+					is_subject_of = TUR
+					exists = no
+				}
+			}
 			any_state = {
 				is_core_of = HJZ
 				is_owned_by = TUR
@@ -3654,6 +3639,12 @@ focus_tree = {
 				TUR = {
 					has_country_flag = great_war_loser
 				}
+				NOT = {
+					any_state = {
+						is_core_of = HJZ
+						is_owned_by = TUR
+					}
+				}		
 				AND = {
 					HJZ = {
 						exists = yes
@@ -3671,10 +3662,7 @@ focus_tree = {
 			if = {
 				limit = {
 					HJZ = {
-						OR = {
-							is_in_faction_with = TUR
-							is_subject_of = TUR
-						}
+						is_subject_of = TUR
 					}
 				}
 				every_country = {

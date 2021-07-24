@@ -3,6 +3,11 @@ peace_deals = {
 		allowed = {
 			tag = TUR
 		}
+		target_trigger = {
+			FROM = {
+				tag = ITA
+			}
+		}
 		available = {
 			has_war_with = ITA
 			OR = {
@@ -428,8 +433,18 @@ crisis = {
 			OR = {
 				has_government = democratic
 				has_completed_focus = TUR_coup_of_savior_officers
+				focus_progress = {
+					focus = TUR_ittihadi_muhammedi
+					progress > 0
+				}
 				has_completed_focus = TUR_ittihadi_muhammedi
 				has_completed_focus = TUR_istirak_mukavemet
+				focus_progress = {
+					focus = TUR_istirak_mukavemet
+					progress > 0
+				}
+				has_completed_focus = TUR_yildiz_teskilati
+				has_completed_focus = TUR_depoliticize_the_army
 			}
 		}
 		activation = {
@@ -449,6 +464,31 @@ crisis = {
 				}
 				unlock_national_focus = TUR_weaken_the_sultans_power
 			}
+			if = {
+				limit = {
+					NOT = {
+						has_completed_focus = TUR_legacy_of_31_march
+					}
+				}
+				unlock_national_focus = TUR_legacy_of_31_march
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_completed_focus = TUR_harbiyeli
+					}
+				}
+				unlock_national_focus = TUR_harbiyeli
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_completed_focus = TUR_hurriyet_musavat_uhuvvet
+					}
+				}
+				unlock_national_focus = TUR_hurriyet_musavat_uhuvvet
+			}
+			country_event = generic.27
 		}
 		complete_effect = {
 			
@@ -539,27 +579,71 @@ crisis = {
 }
 
 political_actions = {
-	#	TUR_improve_vilayet_but_only_claim = {
-	#		allowed = {
-	#			original_tag = TUR
-	#		}	
-	#		icon = tur_unifying_the_country
-	##		cost = 200
-	#		fire_only_once = no
-	#		days_remove = 100
-	#		days_re_enable = 10
-	#		available = {
-	#			original_tag = TUR
-	#			has_completed_focus = TUR_spirit_of_the_suleyman
-	#		}
-	#		remove_effect = {
-	#			every_owned_state = {
-	#				limit = { is_claimed_by = TUR  }
-	#				add_core_of = TUR
-	#			}
-	#		}
-	#	}
+	TUR_ratify_the_treaty_of_daan = {
+		icon = GFX_decision_infiltrate_state
+		allowed = {
+			original_tag = TUR
+		}
+		available = {
+		    is_subject = no
+		}
+		visible = {
+			has_country_flag = daan_treaty_signed
+			YEM = {
+				exists = no
+			}
+			any_owned_state = {
+				is_core_of = YEM			
+			}	
+		}
+		cost = 20
+		fire_only_once = yes
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 1000
+				date > 1913.9.22
+			}
+		}
+		complete_effect = {
+			add_stability = 0.05
+			if = {
+				limit = {
+					owns_state = 293
+				}
+				YEM = {
+					transfer_state = 293
+				}
+				add_state_claim = PREV
+				else = {
+					random_owned_state = {
+						limit = {
+							is_core_of = YEM
+						}
+						YEM = { transfer_state = PREV }
+						ROOT = {
+							add_state_claim = PREV
+						}
+					}
+				}
+			}	
+			puppet = YEM
+			hidden_effect = {
+				YEM = {
+					set_politics = {
+						ruling_party = neutrality
+						elections_allowed = no
+					}
+					set_popularities = {
+						neutrality = 100
+					}
+					load_oob = "YEM_1910"
+				}
+			}
+		}
+	}
 	TUR_declare_jihad = {
+		icon = GFX_decision_generic_nationalism
 		allowed = {
 			original_tag = TUR
 		}

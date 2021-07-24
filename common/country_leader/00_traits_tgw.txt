@@ -384,6 +384,13 @@ leader_traits = {
 		conscription_factor = 0.1
 		mobilization_speed = 0.2
 	}
+	hero_of_CUP_trials = {
+		random = no
+		stability_factor = 0.05
+		political_power_factor = 0.05
+		war_support_factor = 0.05
+		economy_cost_factor = -0.1
+	}
 	abdulhamid = {
 		random = no
 		stability_factor = -0.1
@@ -397,6 +404,7 @@ leader_traits = {
 		random = no
 		war_support_factor = 0.1
 		root_out_resistance_effectiveness_factor = 0.1
+		conscription_factor = 0.15
 		ai_focus_aggressive_factor = 0.2
 		ai_strategy = {
 			type = antagonize
@@ -408,6 +416,7 @@ leader_traits = {
 		random = no
 		army_core_defence_factor = 0.1
 		army_core_attack_factor = 0.1
+		fascism_drift = 0.01
 		mobilization_speed = 0.1
 	}
 	tur_military_junta = {
