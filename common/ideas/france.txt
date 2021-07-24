@@ -534,7 +534,30 @@ ideas = {
 
 	}
 	political_advisor = {
+		FRA_paul_deroulede = {
+			picture = GFX_idea_FRA_generic_advisor_1
+			allowed = {
+				original_tag = FRA
+			}
+			traits = {
+				trait_proto_fascism
+				fascist_demagogue
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					ROOT = {
+						has_completed_focus = FRA_ww1_support_valois2
+					}
+					factor = 100
+				}
+			}
+			available = {
+				has_completed_focus = FRA_ww1_support_valois2
+			}
+		}
 		FRA_charles_maurras = {
+			picture = GFX_idea_FRA_charles_maurras
 			allowed = {
 				original_tag = FRA
 			}
@@ -555,6 +578,7 @@ ideas = {
 			}
 		}
 		FRA_marcel_cachin = {
+			picture = GFX_idea_FRA_marcel_cachin
 			allowed = {
 				original_tag = FRA
 			}

@@ -115,7 +115,7 @@ parliament_gui_decision_category = {
 			NOT = { has_country_flag =  FRA_1910_legislative_elections_done }
 		}
 		cancel_if_not_visible = yes
-		days_mission_timeout = 7
+		days_mission_timeout = 14
 		is_good = yes
 		fire_only_once = yes
 		timeout_effect = {
@@ -209,19 +209,16 @@ parliament_gui_decision_category = {
 				original_tag = FRA
 				has_country_flag = FRA_1914_legislative_elections_done
 			}
-			
 		}
 		visible = {
-			hidden_trigger = {
-				has_country_flag =  FRA_1914_elections_start 
-				NOT = { has_country_flag = FRA_1914_legislative_elections_done }
-				NOT = { has_country_flag = FRA_parliament_dissolved }
-			}
+			original_tag = FRA
 		}
-		cancel_if_not_visible = yes
+		activation = {
+			has_country_flag = FRA_1914_elections_start 
+			NOT = { has_country_flag = FRA_1914_legislative_elections_done }
+		}
 		days_mission_timeout = 50
 		is_good = yes
-		fire_only_once = yes
 		timeout_effect = {
 			## historical disposition
 			set_variable = { var = SFIO value = 140 } 
@@ -243,12 +240,6 @@ parliament_gui_decision_category = {
 			set_variable = { var = socialist_alliance value = 0 }
 			add_to_variable = { var = socialist_alliance value = independent_socialist }
 			add_to_variable = { var = socialist_alliance value = SFIO } 
-			#Social-democrat alliance (left bloc)
-			set_variable = { var = democrat_socialist_alliance value = 0 }
-			add_to_variable = { var = democrat_socialist_alliance value = independent_socialist }
-			add_to_variable = { var = democrat_socialist_alliance value = independent_radicals } 
-			add_to_variable = { var = democrat_socialist_alliance value = democratic_republican_alliance } 
-			add_to_variable = { var = democrat_socialist_alliance value = radical_party } 
 			
 			## democrat bloc
 			set_variable = { var = democrat_alliance value = 0 } 
@@ -307,6 +298,71 @@ parliament_gui_decision_category = {
 				set_variable = { var = democratic_republican_alliance value = 0 } 
 				set_variable = { var = independent_socialist value = 0 } 
 			}
+			##########################################################################
+			#
+			# MONARCHIST AND FASCIST PATHS
+			#
+			#########################################################################
+
+			##########################
+			# Player has completed proudhon circle
+			###################
+			if = {
+				limit = {
+					FRA = {
+						is_puppet = no
+						has_completed_focus = FRA_ww1_form_the_proudhon_circle
+					}
+				}
+				## only popular action
+				add_to_variable = { var = popular_liberal_action value = 50 } #little bonus
+				add_to_variable = { var = radical_party value = -50 } #striping from radical party
+
+				set_variable = { var = democrat_alliance value = 0 }
+				add_to_variable = { var = democrat_alliance value = popular_liberal_action }
+			}
+
+			##########################
+			# Player has completed either support Napoleon / Pujo or Valois
+			###################
+			if = {
+				limit = {
+					FRA = {
+						is_puppet = no
+						OR = { 
+							has_completed_focus = FRA_ww1_support_napoleon_v
+							has_completed_focus = FRA_ww1_support_valois
+							has_completed_focus = FRA_ww1_support_valois2
+						}
+					}
+				}
+				## only popular action
+				add_to_variable = { var = popular_liberal_action value = 50 } #little bonus
+				add_to_variable = { var = radical_party value = -50 } #striping from radical party
+
+				set_variable = { var = democrat_alliance value = 0 }
+				add_to_variable = { var = democrat_alliance value = popular_liberal_action }
+			}
+			#### fat right alliance
+			if = {
+				limit = {
+					FRA = {
+						is_puppet = no
+						has_completed_focus = FRA_ww1_prepare_the_next_elections
+					}
+				}
+				## only popular action
+				add_to_variable = { var = popular_liberal_action value = 50 } #little bonus 
+				add_to_variable = { var = democratic_republican_alliance value = -50 } #striping from democratic alliance
+
+				set_variable = { var = democrat_alliance value = 0 }
+				add_to_variable = { var = democrat_alliance value = conservatives }
+				add_to_variable = { var = democrat_alliance value = independent_republicans }
+				add_to_variable = { var = democrat_alliance value = popular_liberal_action }
+				add_to_variable = { var = democrat_alliance value = nationalists }
+
+				
+			}
 
 			set_variable = { var = democrat_alliance_percent value = democrat_alliance} 
 			multiply_variable = { democrat_alliance_percent = 100 }
@@ -331,28 +387,23 @@ parliament_gui_decision_category = {
 		icon = GFX_autonomy_free_icon
 		desc = FRA_1910_disposition_desc
 		allowed = {
-				original_tag = FRA
-		}
+			original_tag = FRA
+		}	
 		available = {
 			hidden_trigger = {
-				AND = { 
-					has_country_flag =  FRA_1918_legislative_elections_start
-					original_tag = FRA
-				}
-			}
+				original_tag = FRA
+				has_country_flag = FRA_1918_legislative_elections_done	
+			} 
 		}
 		visible = {
-			hidden_trigger= {
-				original_tag = FRA
-				NOT = { has_country_flag =  FRA_parliament_dissolved }
-				NOT = { has_country_flag =  FRA_1918_legislative_elections_done }
-				has_country_flag = FRA_1918_legislative_elections_start
-			}
+			original_tag = FRA
 		}
-		cancel_if_not_visible = yes
+		activation = {
+			has_country_flag = FRA_1918_elections_start 
+			NOT = { has_country_flag = FRA_1918_legislative_elections_done }
+		}
 		days_mission_timeout = 50
 		is_good = yes
-		fire_only_once = yes
 		timeout_effect = {
 			## historical disposition
 			set_variable = { var = SFIO value = 68 } 
@@ -361,7 +412,7 @@ parliament_gui_decision_category = {
 			set_variable = { var = radical_party value = 93 } 
 			set_variable = { var = independent_radicals value = 46 } 
 			set_variable = { var = republicain_federation value = 61 } 
-			set_variable = { var = popular_liberal_action value = 0 } 
+			set_variable = { var = popular_liberal_action value = 8 } 
 			set_variable = { var = nationalists value = 0 }
 			set_variable = { var = vacant value = 0 }
 			set_variable = { var = conservatives value = 183 }
@@ -439,6 +490,68 @@ parliament_gui_decision_category = {
 				set_variable = { var = independent_socialist value = 0 } 
 			}
 
+			##########################################################################
+			#
+			# MONARCHIST AND FASCIST PATHS
+			#
+			#########################################################################
+
+			##########################
+			# Player has completed proudhon circle
+			###################
+			if = {
+				limit = {
+					FRA = {
+						is_puppet = no
+						has_completed_focus = FRA_ww1_form_the_proudhon_circle
+					}
+				}
+				## only popular action
+				add_to_variable = { var = popular_liberal_action value = 50 } #little bonus
+				add_to_variable = { var = radical_party value = -50 } #striping from radical party
+
+				set_variable = { var = democrat_alliance value = 0 }
+				add_to_variable = { var = democrat_alliance value = popular_liberal_action }
+			}
+			if = {
+				limit = {
+					FRA = {
+						is_puppet = no
+						OR = { 
+							has_completed_focus = FRA_ww1_support_napoleon_v
+							has_completed_focus = FRA_ww1_support_valois
+							has_completed_focus = FRA_ww1_support_valois2
+						}
+					}
+				}
+				## only popular action
+				add_to_variable = { var = popular_liberal_action value = 50 } #little bonus
+				add_to_variable = { var = radical_party value = -50 } #striping from radical party
+
+				set_variable = { var = democrat_alliance value = 0 }
+				add_to_variable = { var = democrat_alliance value = popular_liberal_action }
+			}
+			#### fat right alliance
+			if = {
+				limit = {
+					FRA = {
+						is_puppet = no
+						has_completed_focus = FRA_ww1_prepare_the_next_elections
+					}
+				}
+				## only popular action
+				add_to_variable = { var = popular_liberal_action value = 50 } #little bonus 
+				add_to_variable = { var = radical_party value = -50 } #striping from radical party
+
+				set_variable = { var = democrat_alliance value = 0 }
+				add_to_variable = { var = democrat_alliance value = conservatives }
+				add_to_variable = { var = democrat_alliance value = independent_republicans }
+				add_to_variable = { var = democrat_alliance value = popular_liberal_action }
+				add_to_variable = { var = democrat_alliance value = nationalists }
+
+				
+			}
+
 			set_variable = { var = democrat_alliance_percent value = democrat_alliance} 
 			multiply_variable = { democrat_alliance_percent = 100 }
 			divide_variable = { democrat_alliance_percent = seatNumbers }
@@ -469,10 +582,10 @@ FRA_defense_of_france = {
 		}
 
 		available = {
-				custom_trigger_tooltip = {
-					tooltip = FRA_not_hold_verdun
-					NOT = { controls_state = 17 }
-				}
+			custom_trigger_tooltip = {
+				tooltip = FRA_not_hold_verdun
+				NOT = { controls_state = 17 }
+			}
 		}
 
 		days_mission_timeout = 120

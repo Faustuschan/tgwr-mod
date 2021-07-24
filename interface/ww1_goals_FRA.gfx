@@ -198,7 +198,11 @@ spriteTypes = {
 		texturefile = "gfx/interface/goals/FRA/FRA_ww1_arms_export.dds"
 	}
 	
-
+	SpriteType = {
+		name = "GFX_FRA_ww1_expand_army_budget_focus"
+		texturefile = "gfx/interface/goals/FRA/FRA_ww1_expand_army_budget.dds"
+	}
+	
 	
 	
 	

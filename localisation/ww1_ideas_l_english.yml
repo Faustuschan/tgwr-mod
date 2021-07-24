@@ -967,6 +967,8 @@
  FRA_orleanists_long:0 "Orléanistes"
  FRA_orleanists:0 "Orléanistes"
  FRA_camelots_du_roi:0 "Camelots du Roi"
+ FRA_proudhon_long:0 "Cercle Proudhon"
+ FRA_proudhon:0 "Cercle Proudhon"
 
 
  Franch_Staff:0 "French Staff"
@@ -988,6 +990,7 @@
  FRA_idea_expanded_citizenship:0 "Expanded Citizenship"
  FRA_idea_french_women:0 "French Women"
  FRA_womens_suffrage:0 "Women's Suffrage"
+ FRA_paul_deroulede:0 "Paul Déroulède"
 
  #Indochina
  si_electric:0 "Société Indochinoise d'Électricité"

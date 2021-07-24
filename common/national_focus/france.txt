@@ -36,7 +36,6 @@ focus_tree = {
 			focus = FRA_ww1_memories_of_the_commune
 			focus = FRA_ww1_the_social_democrat_compromise
 			focus = FRA_ww1_form_the_proudhon_circle
-			focus = FRA_ww1_support_paul_deroulede
 		}
 		completion_reward = {
 			add_stability = 0.05
@@ -542,7 +541,6 @@ focus = {
 		focus = FRA_ww1_save_the_republic
 		focus = FRA_ww1_the_social_democrat_compromise
 		focus = FRA_ww1_form_the_proudhon_circle
-		focus = FRA_ww1_support_paul_deroulede
 	}
 	completion_reward = {
 		add_popularity = {
@@ -1068,7 +1066,6 @@ focus = {
 		focus = FRA_ww1_memories_of_the_commune
 		focus = FRA_ww1_save_the_republic
 		focus = FRA_ww1_form_the_proudhon_circle
-		focus = FRA_ww1_support_paul_deroulede
 	}
 	completion_reward = {
 		add_stability = -0.05
@@ -1836,7 +1833,6 @@ focus = {
 	prerequisite = { focus = FRA_ww1_dreyfus_exoneration }
 	mutually_exclusive = {
 		focus = FRA_ww1_save_the_republic
-		focus = FRA_ww1_support_paul_deroulede
 		focus = FRA_ww1_memories_of_the_commune
 		focus = FRA_ww1_the_social_democrat_compromise
 	}
@@ -1846,6 +1842,11 @@ focus = {
 		add_popularity = {
 			ideology = neutrality
 			popularity = 0.10
+		}
+		set_party_name = { 
+			ideology = neutrality 
+			long_name = FRA_proudhon_long
+			name = FRA_proudhon_long 
 		}
 		custom_effect_tooltip = available_political_advisor
 		show_ideas_tooltip = FRA_charles_maurras
@@ -1873,7 +1874,8 @@ focus = {
 	relative_position_id = FRA_ww1_form_the_proudhon_circle
 	prerequisite = { focus = FRA_ww1_form_the_proudhon_circle }
 	mutually_exclusive = {
-		focus = FRA_ww1_rappeal_the_law_of_exile
+		focus = FRA_ww1_support_napoleon_V
+		focus = FRA_ww1_support_valois2
 	}
 	completion_reward = {
 		add_political_power = 120
@@ -2239,6 +2241,7 @@ focus = {
 	prerequisite = { focus = FRA_ww1_form_the_proudhon_circle }
 	mutually_exclusive = {
 		focus = FRA_ww1_support_valois
+		focus = FRA_ww1_support_valois2
 	}
 	completion_reward = {
 		add_popularity = {
@@ -2523,37 +2526,190 @@ focus = {
 ###############################################################
 # Support Paul Déroulède - fascist PATH
 ###############################################################
+
 focus = {
-	id = FRA_ww1_support_paul_deroulede
+	id = FRA_ww1_support_valois2
 	icon = GFX_focus_BUL_the_return_of_ferdinand
-	relative_position_id = FRA_ww1_dreyfus_exoneration
-	prerequisite = { focus = FRA_ww1_dreyfus_exoneration }
+	relative_position_id = FRA_ww1_form_the_proudhon_circle
+	prerequisite = { focus = FRA_ww1_form_the_proudhon_circle }
 	mutually_exclusive = {
-		focus = FRA_ww1_save_the_republic
-		focus = FRA_ww1_memories_of_the_commune
-		focus = FRA_ww1_form_the_proudhon_circle
-		focus = FRA_ww1_the_social_democrat_compromise
-	}
-	available = {
-		always = no
+		focus = FRA_ww1_support_valois
+		focus = FRA_ww1_support_napoleon_V
 	}
 	completion_reward = {
-		add_stability = 0.05
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.10
+		}
+		custom_effect_tooltip = available_political_advisor
+		show_ideas_tooltip = FRA_paul_deroulede
+			
+		create_country_leader = {
+			name = "Georges Valois"
+			ideology = despotism
+			picture = "gfx/leaders/FRA/FRA_georges_valois.dds"
+			traits = {
+				fascist_sympathies
+			}
+		}
+		set_party_name = { 
+			ideology = fascism 
+			long_name = FRA_proudhon_long
+			name = FRA_proudhon_long 
+		}
 	}
 	ai_will_do = {
 		factor = 1
 	}
 	
 	cost = 10
-	x = 22
+	x = 4
+	y = 1
+}
+
+focus = {
+	id = FRA_ww1_revive_national_spirit
+	icon = GFX_focus_fra_le_deluge
+	relative_position_id = FRA_ww1_support_valois2
+	prerequisite = { focus = FRA_ww1_support_valois2 }
+	completion_reward = {
+		add_timed_idea = {
+			idea = FRA_support_the_right_focus
+			days = 360
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = -2
+	y = 1
+}
+
+focus = {
+	id = FRA_ww1_expand_army_budget
+	icon = GFX_FRA_ww1_expand_army_budget_focus
+	relative_position_id = FRA_ww1_revive_national_spirit
+	prerequisite = { focus = FRA_ww1_revive_national_spirit }
+	available = {
+		
+		FRA = {
+			check_variable = {
+				democrat_alliance > 150
+			}
+			custom_trigger_tooltip = {
+				tooltip = FRA_150_seats
+			}
+		}
+	}
+	completion_reward = {
+		random_owned_controlled_state = {
+			limit = {
+				is_core_of = FRA
+				is_in_home_area = yes
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_controlled_state = {
+			limit = {
+				is_core_of = FRA
+				is_in_home_area = yes
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_controlled_state = {
+			limit = {
+				is_core_of = FRA
+				is_in_home_area = yes
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_controlled_state = {
+			limit = {
+				is_core_of = FRA
+				is_in_home_area = yes
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 0
+	y = 1
+}
+
+focus = {
+	id = FRA_ww1_prepare_the_next_elections
+	icon = GFX_goal_generic_dangerous_deal
+	relative_position_id = FRA_ww1_support_valois2
+	prerequisite = { focus = FRA_ww1_support_valois2 }
+	completion_reward = {
+		add_political_power = 120
+		custom_effect_tooltip = FRA_far_right_alliance
+		set_variable = { var = democrat_alliance value = 0 } 
+		add_to_variable = { var = democrat_alliance value = popular_liberal_action }
+		add_to_variable = { var = democrat_alliance value = nationalists }
+		add_to_variable = { var = democrat_alliance value = independent_radicals }
+		add_to_variable = { var = democrat_alliance value = independent_republicans }
+		add_to_variable = { var = democrat_alliance value = conservatives }
+		set_variable = { var = democrat_alliance_percent value = democrat_alliance } 
+		multiply_variable = { democrat_alliance_percent = 100 }
+		divide_variable = { democrat_alliance_percent = seatNumbers }
+		reload_parliament_gui = yes
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 0
 	y = 1
 }
 
 
-
-
-
-
+focus = {
+	id = FRA_ww1_ban_socialism
+	icon = GFX_focus_fra_le_deluge
+	relative_position_id = FRA_ww1_support_valois2
+	prerequisite = { focus = FRA_ww1_support_valois2 }
+	completion_reward = {
+		add_timed_idea = {
+			idea = FRA_support_the_right_focus
+			days = 360
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = -2
+	y = 1
+}
 
 ###############################################################################
 #	ARMY FOCUS
