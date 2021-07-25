@@ -164,6 +164,26 @@ FRA_armored_production = {
 	}
 }
 
+FRA_infantry_production = {
+	allowed = {
+		original_tag = FRA	
+	}
+	enable = {
+		date > 1912.1.1
+		original_tag = FRA
+		ai_wants_divisions > 130 #Decreasing the amount of tanks the AI wants
+	}
+	abort = {
+		ai_wants_divisions < 135 #Decreasing the amount of tanks the AI wants
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = infantry
+		value = 30
+	}
+}
+
 FRA_highered_armored_production = {
 	allowed = {
 		original_tag = FRA	
@@ -401,7 +421,6 @@ FRA_defensive_after_1915 = {
 		tag = FRA
 		has_war_with = GER
 		OR = {
-		
 			date > 1915.6.1
 			BEL = { has_capitulated = yes }
 			casualties > 300000
@@ -409,7 +428,7 @@ FRA_defensive_after_1915 = {
 	}
 	abort = {
 		OR = {
-			date > 1916.6.1
+			date > 1917.6.1
 			GER = { casualties > 1000000 }
 			NOT = { has_war_with = GER }
 		}

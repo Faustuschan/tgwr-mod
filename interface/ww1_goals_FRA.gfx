@@ -203,6 +203,13 @@ spriteTypes = {
 		texturefile = "gfx/interface/goals/FRA/FRA_ww1_expand_army_budget.dds"
 	}
 	
+	SpriteType = {
+		name = "GFX_FRA_ww1_ban_socialism_focus"
+		texturefile = "gfx/interface/goals/FRA/FRA_ban_socialism.dds"
+	}
+
+	
+	
 	
 	
 	

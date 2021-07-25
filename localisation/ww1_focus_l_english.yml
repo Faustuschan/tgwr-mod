@@ -3158,8 +3158,13 @@ TUR_invite_balkan_economy_sphere_tt:0 "Invites §YBalkan countries§! into an §
  FRA_ww1_form_the_armored_spearhead:0 "Form the armored spearhead"
  FRA_form_renault_tank_brigades:0 "These §YFrench§! armored units will spawn with 20% of their equipment."
  FRA_entente_dissolved_during_civil_war:0 "\nOur faction, §Y[FRA.getFactionName]§!, will be dissolved during civil war !"
- 
- 
+ FRA_ban_socialism:0 "§YThe socialism will be banned§! from the country, every §YSFIO seats will be taken by the popular action.§!"
+ FRA_ww1_ban_socialism:0 "Ban Socialism"
+ FRA_ww1_authoritarian_coup:0 "Authoritarian Coup"
+ FRA_ww1_persecute_minorities:0 "Persecute Minorities"
+ FRA_ww1_manipulate_the_mass:0 "Manipulate the mass"
+ FRA_ww1_french_superiority:0 "French Superiority"
+ FRA_ww1_french_expansionism:0 "French expansionism"
 
 
 

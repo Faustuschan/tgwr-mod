@@ -2087,6 +2087,9 @@ focus = {
 		}
 		neutrality > 0.40
 	}
+	mutually_exclusive = {
+		focus = FRA_ww1_authoritarian_coup
+	}
 	completion_reward = {
 		leave_faction = yes
 		remove_ideas = FRA_disjointed_government
@@ -2106,6 +2109,7 @@ focus = {
 			}
 			
 		}
+		set_cosmetic_tag = FRA_THIRD_EMPIRE
 		FRA = {
 			if=  {
 				limit={ has_government = neutrality }
@@ -2158,7 +2162,10 @@ focus = {
 	id = FRA_ww1_unlimited_budget
 	icon = GFX_focus_research
 	relative_position_id = FRA_ww1_force_the_issue
-	prerequisite = { focus = FRA_ww1_force_the_issue }
+	prerequisite = { 
+		focus = FRA_ww1_force_the_issue
+		focus = FRA_ww1_authoritarian_coup
+	}
 	available = {
 		
 		FRA = {
@@ -2326,6 +2333,7 @@ focus = {
 		is_puppet = no
 	}
 	completion_reward = {
+		add_threat = 5
 		add_state_claim = 34
 		add_state_claim = 6
 		add_state_claim = 8
@@ -2334,6 +2342,42 @@ focus = {
 		add_state_claim = 165
 		add_state_claim = 162
 		add_state_claim = 158
+		ENG = {
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = large_decrease
+			}
+		}
+		BEL = {
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = large_decrease
+			}
+		}
+		LUX = {
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = large_decrease
+			}
+		}
+		SPR = {
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = large_decrease
+			}
+		}
+		ITA = {
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = large_decrease
+			}
+		}
+		USA = {
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = large_decrease
+			}
+		}
 	}
 	ai_will_do = {
 		factor = 1
@@ -2680,12 +2724,48 @@ focus = {
 
 focus = {
 	id = FRA_ww1_ban_socialism
-	icon = GFX_focus_fra_le_deluge
+	icon = GFX_FRA_ww1_ban_socialism_focus
+	relative_position_id = FRA_ww1_prepare_the_next_elections
+	prerequisite = { focus = FRA_ww1_prepare_the_next_elections }
+	completion_reward = {
+		custom_effect_tooltip = FRA_ban_socialism
+		set_country_flag  = FRA_socialism_banned
+		add_to_variable = { var = popular_liberal_action value = SFIO } #gaining all communists seats
+		set_variable = { var = SFIO value = 0 }
+		set_variable = { parliament_seat_array^0 = SFIO }
+		set_variable = { parliament_seat_array^8 = popular_liberal_action }
+		set_variable = { var = democrat_alliance value = 0 }
+		add_to_variable = { var = democrat_alliance value = conservatives }
+		add_to_variable = { var = democrat_alliance value = independent_republicans }
+		add_to_variable = { var = democrat_alliance value = popular_liberal_action }
+		add_to_variable = { var = democrat_alliance value = nationalists }
+		add_to_variable = { var = democrat_alliance value = independent_radicals }
+		add_to_variable = { var = democrat_alliance value = independent_republicans }
+		set_variable = { var = democrat_alliance_percent value = democrat_alliance } 
+		multiply_variable = { democrat_alliance_percent = 100 }
+		divide_variable = { democrat_alliance_percent = seatNumbers }
+		reload_parliament_gui = yes
+
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 0
+	y = 1
+}
+
+
+focus = {
+	id = FRA_ww1_persecute_minorities
+	icon = GFX_goal_continuous_restrict_freedom
 	relative_position_id = FRA_ww1_support_valois2
 	prerequisite = { focus = FRA_ww1_support_valois2 }
 	completion_reward = {
+		add_stability = 0.10
 		add_timed_idea = {
-			idea = FRA_support_the_right_focus
+			idea = FRA_fascist_terror
 			days = 360
 		}
 	}
@@ -2694,9 +2774,208 @@ focus = {
 	}
 	
 	cost = 10
-	x = -2
+	x = 2
 	y = 1
 }
+
+
+focus = {
+	id = FRA_ww1_french_superiority
+	icon = GFX_goal_continuous_suppression
+	relative_position_id = FRA_ww1_persecute_minorities
+	prerequisite = { focus = FRA_ww1_persecute_minorities }
+	completion_reward = {
+		add_war_support = 0.10
+		add_threat = 5
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 0
+	y = 1
+}
+
+
+focus = {
+	id = FRA_ww1_authoritarian_coup
+	icon = GFX_focus_eng_move_to_secure_the_dominions
+	relative_position_id = FRA_ww1_ban_socialism
+	prerequisite = {
+		focus = FRA_ww1_ban_socialism 	
+	}
+	prerequisite = {
+		focus = FRA_ww1_french_superiority 	
+	}
+	mutually_exclusive = {
+		focus = FRA_ww1_force_the_issue
+	}
+	available = {
+		check_variable = {
+			democrat_alliance > 250
+		}
+		custom_trigger_tooltip = {
+			tooltip = FRA_250_seats
+		}
+		fascism > 0.4
+	}
+	completion_reward = {
+		remove_ideas = FRA_disjointed_government
+		set_politics = {
+			ruling_party = fascism 
+			elections_allowed = yes
+		}
+		news_event = ww1_france.45
+		set_cosmetic_tag = FRA_proto_fascism
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 1
+	y = 2
+}
+
+
+
+focus = {
+	id = FRA_ww1_manipulate_the_mass
+	icon = GFX_focus_generic_vichy_france_triumphant_focus
+	relative_position_id = FRA_ww1_authoritarian_coup
+	prerequisite = { focus = FRA_ww1_authoritarian_coup }
+	available = {
+		fascism > 0.5
+		is_puppet = no
+	}
+	completion_reward = {
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.10
+		}
+
+		set_party_name = { 
+			ideology = fascism 
+			long_name = FRA_national_syndicalist_long
+			name = FRA_national_syndicalist_long 
+		}
+
+		create_country_leader = {
+			name = "Georges Valois"
+			ideology = national_syndicalism
+			picture = "gfx/leaders/FRA/FRA_georges_valois.dds"
+			traits = {
+				fascist_sympathies
+				fra_dictator
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 0
+	y = 1
+}
+
+focus = {
+	id = FRA_army_of_aggression
+	icon = GFX_goal_generic_occupy_states_ongoing_war
+	 available = {
+		 OR = {
+			 has_government = fascism
+			 fascism > 0.4
+		 }
+	}
+	 prerequisite = { focus = FRA_ww1_authoritarian_coup }
+	x = -2
+	y = 1
+	relative_position_id = FRA_ww1_authoritarian_coup
+	cost = 10
+
+	available_if_capitulated = yes
+
+	ai_will_do = {
+		factor = 1
+	}
+	search_filters = { FOCUS_FILTER_POLITICAL }
+	completion_reward = {
+		add_ideas = FRA_army_of_aggression_focus_2
+		USA = {
+			set_country_flag = { flag = USA_army_of_aggression_window days = 60 value = 1 }
+		}
+		if = {
+			limit = {
+				ENG = { 
+					is_in_faction_with = FRA
+					is_faction_leader = yes
+				}
+			}
+			ENG = { remove_from_faction = FRA }
+		}			
+	}
+}
+
+focus = {
+	id = FRA_ww1_french_expansionism
+	icon = GFX_goal_support_fascism_shine
+	relative_position_id = FRA_ww1_manipulate_the_mass
+	prerequisite = { focus = FRA_ww1_manipulate_the_mass }
+	available = {
+		NOT = { has_idea = FRA_memories_of_1870 }
+		is_puppet = no
+	}
+	completion_reward = {
+		add_state_claim = 34
+		add_state_claim = 28
+		add_state_claim = 6
+		add_state_claim = 8
+		add_state_claim = 851
+		add_state_claim = 165
+
+		ENG = {
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = large_decrease
+			}
+		}
+		BEL = {
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = large_decrease
+			}
+		}
+		LUX = {
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = large_decrease
+			}
+		}
+		SPR = {
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = large_decrease
+			}
+		}
+		USA = {
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = large_decrease
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 0
+	y = 1
+}
+
+
 
 ###############################################################################
 #	ARMY FOCUS

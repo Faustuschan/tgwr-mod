@@ -263,7 +263,6 @@ create_corps_commander = {
 }
 
 
-
 create_navy_leader={
 	name = "Auguste Boué de Lapeyrère" id=32302
 	portrait_path="gfx/leaders/FRA/FRA_de_lapeyrere.dds"

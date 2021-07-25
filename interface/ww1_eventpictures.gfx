@@ -773,6 +773,11 @@ spriteTypes = {
 		texturefile = "gfx/event_pictures/ww1_france/ww1_france_41.dds"
 	}
 
+	spriteType = {
+		name = "ww1_france_45"
+		texturefile = "gfx/event_pictures/ww1_france/ww1_france_45.dds"
+	}
+
 	#RUSSIAN REVOLUTION
 	spriteType = {
 		name = "rusrevolt_1"

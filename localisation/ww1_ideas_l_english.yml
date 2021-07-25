@@ -966,6 +966,9 @@
  FRA_camelots_du_roi:0 "Camelots du Roi"
  FRA_proudhon_long:0 "Cercle Proudhon"
  FRA_proudhon:0 "Cercle Proudhon"
+ FRA_national_syndicalist_long:0 "Parti National Syndicaliste"
+ FRA_fascist_terror:0 "Fascist Terror"
+ fra_dictator:0 "Dictator"
 
 
  Franch_Staff:0 "French Staff"

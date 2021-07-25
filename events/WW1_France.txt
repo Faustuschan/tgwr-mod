@@ -105,8 +105,18 @@ country_event = {
 	}
 }
 
-
-
+### France become fascist
+news_event = {
+	title = ww1_france.45.t	
+	desc = ww1_france.45.d
+	id = ww1_france.45
+	picture = ww1_france_45
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = generic_ok
+	}
+}
 
 
 

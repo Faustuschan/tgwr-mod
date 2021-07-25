@@ -414,6 +414,9 @@ ww1_france.43.t:0 "1914 Legislative elections"
 ww1_france.43.d:0 "Despite global tensions, legislative elections are fundamental to the life of the Republic. In less than two months, the national assembly will be reelected, redistributing the seats of power."
 ww1_france.44.t:0 "1918 Legislative elections"
 
+ww1_france.45.t:0 "[FRA.getLeader] obtains full powers"
+ww1_france.45.d:0 "French President [FRA.getLeader] managed to get himself voted on full powers. Rewriting the constitution, the authoritarian leader announced that he had grandiose plans for France. Known as a fervent defender of National-Syndicalism, a movement close to National Socialism, the new dictator mentioned his views on neighboring Francophone minority territories."
+
 
  #BELGIUM
  ww1_belgium.1.a:0 "Never forget Belgium"
