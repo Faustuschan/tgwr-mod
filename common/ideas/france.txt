@@ -571,29 +571,28 @@ ideas = {
 	}
 	political_advisor = {
 		FRA_paul_deroulede = {
-			picture = GFX_idea_FRA_generic_advisor_1
+			picture = generic_political_advisor_europe_2
 			allowed = {
 				original_tag = FRA
 			}
-			traits = {
-				trait_proto_fascism
+			traits = {			
 				fascist_demagogue
+				trait_proto_fascism
 			}
 			ai_will_do = {
 				factor = 1
 				modifier = {
-					ROOT = {
-						has_completed_focus = FRA_ww1_support_valois2
-					}
+					has_completed_focus = FRA_ww1_support_valois2
 					factor = 100
 				}
 			}
 			available = {
 				has_completed_focus = FRA_ww1_support_valois2
+				date < 1914.1.30
 			}
 		}
 		FRA_charles_maurras = {
-			picture = GFX_idea_FRA_charles_maurras
+			picture = FRA_charles_maurras
 			allowed = {
 				original_tag = FRA
 			}
@@ -603,9 +602,7 @@ ideas = {
 			ai_will_do = {
 				factor = 1
 				modifier = {
-					ROOT = {
-						has_completed_focus = FRA_ww1_form_the_proudhon_circle
-					}
+					has_completed_focus = FRA_ww1_form_the_proudhon_circle
 					factor = 100
 				}
 			}
@@ -614,7 +611,7 @@ ideas = {
 			}
 		}
 		FRA_marcel_cachin = {
-			picture = GFX_idea_FRA_marcel_cachin
+			picture = FRA_marcel_cachin
 			allowed = {
 				original_tag = FRA
 			}
@@ -624,9 +621,7 @@ ideas = {
 			ai_will_do = {
 				factor = 1
 				modifier = {
-					ROOT = {
-						has_completed_focus = FRA_ww1_memories_of_the_commune
-					}
+					has_completed_focus = FRA_ww1_memories_of_the_commune
 					factor = 100
 				}
 			}
@@ -636,9 +631,7 @@ ideas = {
 				original_tag = FRA
 			}
 			available = {
-				ROOT = {
-					has_completed_focus = FRA_ww1_political_coherence
-				}
+				has_completed_focus = FRA_ww1_political_coherence
 			}
 			traits = {
 				economic_reformer
@@ -646,9 +639,7 @@ ideas = {
 			ai_will_do = {
 				factor = 1
 				modifier = {
-					ROOT = {
-						has_completed_focus = FRA_ww1_political_coherence
-					}
+					has_completed_focus = FRA_ww1_political_coherence
 					factor = 100
 				}
 			}

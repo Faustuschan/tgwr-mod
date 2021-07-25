@@ -1814,7 +1814,11 @@ country_event = {
 				133
 			}
 			keep_unit_leaders_trigger = {
-				has_trait = ENG_royalist
+				OR = {
+					has_trait = trait_royal
+					has_trait = ENG_royalist
+					has_trait = old_guard
+				}
 			}
 			hidden_effect = {
 				set_party_name = {
@@ -1890,7 +1894,11 @@ country_event = {
 				navy_ratio = 0
 				air_ratio = 0.1
 				keep_unit_leaders_trigger = {
-					has_trait = ENG_royalist
+					OR = {
+						has_trait = trait_royal
+						has_trait = ENG_royalist
+						has_trait = old_guard
+					}
 				}
 			}
 			if = {
@@ -4136,6 +4144,12 @@ country_event = {
 			target = KEN
 			type = annex_everything
 		}
+		every_state = {
+			limit = {
+				is_owned_by = KEN
+			}
+			add_claim_by = ENG
+		}
 		add_war_support = 0.01
 		hidden_effect = {
 			set_country_flag = eng_ken_revolt
@@ -4240,6 +4254,12 @@ country_event = {
 		name = ww1_england.96.e
 		ai_chance = {
 			factor = 0
+		}
+		every_state = {
+			limit = {
+				is_owned_by = KEN
+			}
+			add_claim_by = ENG
 		}
 		ENG = {
 			declare_war_on = {
@@ -8949,7 +8969,11 @@ country_event = {
 						navy_ratio = 0.2
 						air_ratio = 0.7
 						keep_unit_leaders_trigger = {
-							has_trait = ENG_royalist
+							OR = {
+								has_trait = trait_royal
+								has_trait = ENG_royalist
+								has_trait = old_guard
+							}
 						}
 					}
 				}
@@ -9083,7 +9107,11 @@ country_event = {
 						navy_ratio = 0.4
 						air_ratio = 0.1
 						keep_unit_leaders_trigger = {
-							has_trait = ENG_royalist
+							OR = {
+								has_trait = trait_royal
+								has_trait = ENG_royalist
+								has_trait = old_guard
+							}
 						}
 					}
 				}
@@ -9099,7 +9127,11 @@ country_event = {
 						navy_ratio = 0.8
 						air_ratio = 0.2
 						keep_unit_leaders_trigger = {
-							has_trait = ENG_royalist
+							OR = {
+								has_trait = trait_royal
+								has_trait = ENG_royalist
+								has_trait = old_guard
+							}
 						}
 					}
 				}
@@ -9173,7 +9205,11 @@ country_event = {
 						navy_ratio = 0.3
 						air_ratio = 0.1
 						keep_unit_leaders_trigger = {
-							has_trait = ENG_royalist
+							OR = {
+								has_trait = trait_royal
+								has_trait = ENG_royalist
+								has_trait = old_guard
+							}
 						}
 					}
 				}
@@ -9237,7 +9273,11 @@ country_event = {
 						navy_ratio = 0.3
 						air_ratio = 0.1
 						keep_unit_leaders_trigger = {
-							has_trait = ENG_royalist
+							OR = {
+								has_trait = trait_royal
+								has_trait = ENG_royalist
+								has_trait = old_guard
+							}
 						}
 					}
 				}
@@ -9253,7 +9293,11 @@ country_event = {
 						navy_ratio = 0.4
 						air_ratio = 0.2
 						keep_unit_leaders_trigger = {
-							has_trait = ENG_royalist
+							OR = {
+								has_trait = trait_royal
+								has_trait = ENG_royalist
+								has_trait = old_guard
+							}
 						}
 					}
 				}
