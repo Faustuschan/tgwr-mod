@@ -468,7 +468,7 @@ focus_tree = {
 				name = "Division de volontaires Serbes"
 				is_locked = yes
 				priority = 1
-				division_names_group = SER_ARM_01
+				division_names_group = FRA_ARM_01
 				regiments = { 
 					infantry = {
 						x = 0
@@ -2572,8 +2572,16 @@ focus = {
 			ideology = fascism
 			popularity = 0.10
 		}
-		custom_effect_tooltip = available_political_advisor
-		show_ideas_tooltip = FRA_paul_deroulede
+		if = {
+			limit = {
+				NOT = {
+					has_country_flag = FRA_paul_deroulede_is_dead
+				}
+			}
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = FRA_paul_deroulede
+		}
+		
 			
 		create_country_leader = {
 			name = "Georges Valois"
@@ -2606,7 +2614,7 @@ focus = {
 	completion_reward = {
 		add_timed_idea = {
 			idea = FRA_support_the_right_focus
-			days = 360
+			days = 720
 		}
 	}
 	ai_will_do = {

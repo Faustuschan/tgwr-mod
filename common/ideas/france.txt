@@ -583,12 +583,14 @@ ideas = {
 				factor = 1
 				modifier = {
 					has_completed_focus = FRA_ww1_support_valois2
-					factor = 100
+					factor = 1000
 				}
 			}
 			available = {
 				has_completed_focus = FRA_ww1_support_valois2
-				date < 1914.1.30
+				NOT = {
+					has_country_flag = FRA_paul_deroulede_is_dead
+				}
 			}
 		}
 		FRA_charles_maurras = {
@@ -603,7 +605,7 @@ ideas = {
 				factor = 1
 				modifier = {
 					has_completed_focus = FRA_ww1_form_the_proudhon_circle
-					factor = 100
+					factor = 1000
 				}
 			}
 			available = {

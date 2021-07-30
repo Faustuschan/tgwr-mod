@@ -164,6 +164,29 @@ FRA_armored_production = {
 	}
 }
 
+#avoiding AI to spam infantry and getting colonial buildings destroyed by resistance
+FRA_infantry_production = {
+	allowed = {
+		original_tag = FRA	
+	}
+	enable = {
+		date < 1912.1.1
+		original_tag = FRA
+	}
+	abort = {
+		OR = {
+			date > 1912.1.1
+			has_war_with = GER
+		}
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = infantry
+		value = 1
+	}
+}
+
 FRA_infantry_production = {
 	allowed = {
 		original_tag = FRA	
@@ -171,10 +194,10 @@ FRA_infantry_production = {
 	enable = {
 		date > 1912.1.1
 		original_tag = FRA
-		ai_wants_divisions > 130 #Decreasing the amount of tanks the AI wants
+		ai_wants_divisions > 130
 	}
 	abort = {
-		ai_wants_divisions < 135 #Decreasing the amount of tanks the AI wants
+		ai_wants_divisions < 135
 	}
 
 	ai_strategy = {
@@ -190,18 +213,19 @@ FRA_highered_armored_production = {
 	}
 	enable = {
 		original_tag = FRA
-		num_of_military_factories > 109
+		num_of_military_factories > 50
 	}
 	abort = {
-		num_of_military_factories < 110
+		num_of_military_factories < 50
 	}
 
 	ai_strategy = {
 		type = role_ratio
 		id = armor
-		value = 20 #Removed from original production so increased from a bit to a f*** ton (in this case 10 to 20)
+		value = 15 #Removed from original production so increased from a bit to a f*** ton (in this case 10 to 20)
 	}
 }
+
 
 FRA_area_priority = {
 	allowed = {

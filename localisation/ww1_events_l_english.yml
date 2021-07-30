@@ -417,6 +417,12 @@ ww1_france.44.t:0 "1918 Legislative elections"
 ww1_france.45.t:0 "[FRA.getLeader] obtains full powers"
 ww1_france.45.d:0 "French President [FRA.getLeader] managed to get himself voted on full powers. Rewriting the constitution, the authoritarian leader announced that he had grandiose plans for France. Known as a fervent defender of National-Syndicalism, a movement close to National Socialism, the new dictator mentioned his views on neighboring Francophone minority territories."
 
+ww1_france.46.t:0 "Paul déroulède death"
+ww1_france.46.d:0 "Lieutenant Paul Déroulède died today at the age of 67. He was a prominent author of the French nationalist right and founder of the League of Patriots."
+
+ww1_france.47.t:0 "New uniforms in the army"
+ww1_france.47.d:0 "Since 1912, the Minister of War, General Brun, had instituted under the chairmanship of Mr Dubail a commission responsible for researching new, less visible uniforms for the whole army. This commission has completed its studies, established the new models and the Minister has approved these proposals."
+
 
  #BELGIUM
  ww1_belgium.1.a:0 "Never forget Belgium"
