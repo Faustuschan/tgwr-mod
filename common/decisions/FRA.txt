@@ -216,6 +216,7 @@ parliament_gui_decision_category = {
 		activation = {
 			has_country_flag = FRA_1914_elections_start 
 			NOT = { has_country_flag = FRA_1914_legislative_elections_done }
+			NOT = { has_country_flag = FRA_parliament_dissolved }
 		}
 		days_mission_timeout = 50
 		is_good = yes
@@ -422,6 +423,7 @@ parliament_gui_decision_category = {
 		activation = {
 			has_country_flag = FRA_1918_elections_start 
 			NOT = { has_country_flag = FRA_1918_legislative_elections_done }
+			NOT = { has_country_flag = FRA_parliament_dissolved }
 		}
 		days_mission_timeout = 50
 		is_good = yes

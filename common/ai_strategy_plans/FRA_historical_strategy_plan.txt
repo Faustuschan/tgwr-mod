@@ -5,13 +5,12 @@ French_historical = {
 	enable = {
 		original_tag = FRA
 		or = {
-			AND = {
+			OR = {
 				is_historical_focus_on = yes
-			}
-			has_country_flag = FRA_AI_RANDOM_HISTORICAL
-			has_game_rule = {
-				rule = FRA_ai_behavior
-				option = HISTORICAL
+				has_game_rule = {
+					rule = FRA_ai_behavior
+					option = HISTORICAL
+				}
 			}
 		}
 	}

@@ -2292,10 +2292,6 @@ focus = {
 	prerequisite = { focus = FRA_ww1_renember_1812 }
 	available = {
 		FRA = {
-			OR = {
-				is_in_faction_with = RUS
-				has_guaranteed = RUS
-			}
 			has_government = neutrality
 		}
 		FRA = {
@@ -2303,16 +2299,98 @@ focus = {
 		}
 	}
 	completion_reward = {
+		if = {
+			limit = {
+				RUS = {
+					NOT = {
+						has_government = neutrality
+					}
+				}
+			}
+			add_opinion_modifier = {
+				target = RUS
+				modifier = medium_decrease
+			}
+			reverse_add_opinion_modifier = {
+				target = RUS
+				modifier = medium_decrease
+			}
+		}
+		if = {
+			limit = {
+				ENG = {
+					NOT = {
+						has_government = neutrality
+					}
+				}
+			}
+			add_opinion_modifier = {
+				target = ENG
+				modifier = medium_decrease
+			}
+			reverse_add_opinion_modifier = {
+				target = ENG
+				modifier = medium_decrease
+			}
+		}
+		if = {
+			limit = {
+				ITA = {
+					NOT = {
+						has_government = neutrality
+					}
+				}
+			}
+			add_opinion_modifier = {
+				target = ITA
+				modifier = medium_decrease
+			}
+			reverse_add_opinion_modifier = {
+				target = ITA
+				modifier = medium_decrease
+			}
+		}
+		if = {
+			limit = {
+				USA = {
+					NOT = {
+						has_government = neutrality
+					}
+				}
+			}
+			add_opinion_modifier = {
+				target = USA
+				modifier = medium_decrease
+			}
+			reverse_add_opinion_modifier = {
+				target = USA
+				modifier = medium_decrease
+			}
+		}
+		every_country = {
+			limit = {
+				is_in_faction_with = ROOT
+				NOT = { has_government = neutrality }
+				NOT = {
+					AND = {
+						original_tag = RUS
+						original_tag = ENG
+						original_tag = USA
+						original_tag = ITA
+					}
+				}
+			}
+			add_opinion_modifier = {
+				target = PREV
+				modifier = medium_decrease
+			}
+			reverse_add_opinion_modifier = {
+				target = PREV
+				modifier = medium_decrease
+			}
+		}
 		dismantle_faction = yes
-		create_faction = "French Empire"
-		add_opinion_modifier = {
-			target = RUS
-			modifier = large_decrease
-		}
-		reverse_add_opinion_modifier = {
-			target = RUS
-			modifier = large_decrease
-		}
+		create_faction = "French Empire"	
 	}
 	ai_will_do = {
 		factor = 1
@@ -2320,6 +2398,51 @@ focus = {
 	
 	cost = 10
 	x = 0
+	y = 1
+}
+
+focus = {
+	id = FRA_ww1_restore_franco_russia_friendship
+	icon = GFX_focus_deal_with_russia_shine
+	relative_position_id = FRA_ww1_broken_ties
+	prerequisite = { focus = FRA_ww1_broken_ties }
+	available = {
+		FRA = {
+			has_government = neutrality
+			NOT = {
+				has_war_with = RUS
+			}
+		}
+	}
+	completion_reward = {
+		add_opinion_modifier = {
+			target = RUS
+			modifier = huge_increase
+		}
+		reverse_add_opinion_modifier = {
+			target = RUS
+			modifier = huge_increase
+		}
+		custom_effect_tooltip = FRA_Napoleon_love_russia
+		hidden_effect = {
+			create_country_leader = {
+				name = "Napoleon V"
+				ideology = autocracy
+				picture = "gfx/leaders/FRA/FRA_Napoleon_V.dds"
+				traits = {
+					empire_builder
+					trait_autocracy
+				}
+			}
+		}
+		
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = -4
 	y = 1
 }
 
@@ -2342,12 +2465,6 @@ focus = {
 		add_state_claim = 165
 		add_state_claim = 162
 		add_state_claim = 158
-		ENG = {
-			add_opinion_modifier = {
-				target = ROOT
-				modifier = large_decrease
-			}
-		}
 		BEL = {
 			add_opinion_modifier = {
 				target = ROOT
@@ -2361,18 +2478,6 @@ focus = {
 			}
 		}
 		SPR = {
-			add_opinion_modifier = {
-				target = ROOT
-				modifier = large_decrease
-			}
-		}
-		ITA = {
-			add_opinion_modifier = {
-				target = ROOT
-				modifier = large_decrease
-			}
-		}
-		USA = {
 			add_opinion_modifier = {
 				target = ROOT
 				modifier = large_decrease

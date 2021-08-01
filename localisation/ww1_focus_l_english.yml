@@ -3165,6 +3165,9 @@ TUR_invite_balkan_economy_sphere_tt:0 "Invites §YBalkan countries§! into an §
  FRA_ww1_french_superiority:0 "French Superiority"
  FRA_ww1_french_expansionism:0 "French expansionism"
 
+ FRA_ww1_restore_franco_russia_friendship:0 "Restore Franco-Russian Friendship"
+ FRA_Napoleon_love_russia:0 "§YNapoleon V§! will lose the §YDislake Russia§! trait."
+
 
 
 FRA_ww1_army_effort:0 "Armée de Terre Effort"
