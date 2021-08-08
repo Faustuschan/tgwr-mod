@@ -2268,12 +2268,12 @@ focus = {
 		}
 		create_country_leader = {
 			name = "Napoleon V"
-			ideology = autocracy
+			ideology = despotism
 			picture = "gfx/leaders/FRA/FRA_Napoleon_V.dds"
 			traits = {
 				dislikes_russia
 				empire_builder
-				trait_autocracy
+				trait_despotism
 			}
 		}
 		set_party_name = { 
