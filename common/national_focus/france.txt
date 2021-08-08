@@ -1987,10 +1987,24 @@ focus = {
 			target = SPR
 			modifier = huge_increase
 		}
+		reverse_add_opinion_modifier = {
+			target = SPR
+			modifier = huge_increase
+		}
 		add_ai_strategy = {
 			type = alliance
 			id = SPR
 			value = 200
+		}
+		SPR = {
+			add_ai_strategy = {
+				type = alliance
+				id = FRA
+				value = 200
+			}
+		}
+		SPR = {
+			remove_ideas = neutrality_idea
 		}
 	}
 	ai_will_do = {
@@ -2109,7 +2123,18 @@ focus = {
 			}
 			
 		}
-		set_cosmetic_tag = FRA_THIRD_EMPIRE
+		if = {
+			limit = {
+				has_completed_focus = FRA_ww1_support_valois
+			}
+			set_cosmetic_tag = FRA_KINGDOM
+		}
+		if = {
+			limit = {
+				has_completed_focus = FRA_ww1_support_napoleon_V
+			}
+			set_cosmetic_tag = FRA_THIRD_EMPIRE
+		}
 		FRA = {
 			if=  {
 				limit={ has_government = neutrality }
@@ -2119,7 +2144,7 @@ focus = {
 				set_faction_leader = PREV
 			}
 		}
-		
+
 	}
 	ai_will_do = {
 		factor = 1
@@ -2532,10 +2557,21 @@ focus = {
 			target = TUR
 			modifier = huge_increase
 		}
+		reverse_add_opinion_modifier = {
+			target = TUR
+			modifier = huge_increase
+		}
 		add_ai_strategy = {
 			type = alliance
 			id = TUR
 			value = 200
+		}
+		TUR = {
+			add_ai_strategy = {
+				type = alliance
+				id = FRA
+				value = 200
+			}
 		}
 	}
 	ai_will_do = {
@@ -3679,6 +3715,7 @@ focus = {
 	available = {
 		NOT = {
 			has_idea = FRA_propaganda
+			has_country_flag = great_war_winner
 		}
 	}
 	completion_reward = {

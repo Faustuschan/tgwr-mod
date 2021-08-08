@@ -538,6 +538,10 @@ FRA_THIRD_EMPIRE = {
 	color = rgb { 124 195 206 }
 	color_ui = rgb { 124 195 206 }
 }
+FRA_KINGDOM = {
+	color = rgb { 124 195 206 }
+	color_ui = rgb { 124 195 206 }
+}
 USA_FRA = {
 	color = rgb { 145 163 176  }
 	color_ui = rgb { 186 205 219 }
