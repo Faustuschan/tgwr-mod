@@ -571,6 +571,30 @@ ideas = {
 			}
 		}
 
+		FRA_army_restrictions = {
+			allowed = {
+				original_tag = FRA
+				has_war = no
+			}
+			removal_cost = -1
+			picture = generic_morale_bonus
+			modifier = {
+				industrial_capacity_factory = -0.50
+				industrial_capacity_dockyard = -0.50
+				
+			}
+			equipment_bonus = {
+				armor = {
+					build_cost_ic = -0.9
+				}
+			}
+
+			research_bonus = {
+				armor = -0.9
+			}
+		}
+		
+
 	}
 	political_advisor = {
 		FRA_paul_deroulede = {

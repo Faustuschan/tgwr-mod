@@ -159,7 +159,56 @@ country_event = {
 		add_war_support = 0.05
 	}
 }
+####
+#France lose is army
+####
+country_event = {
+	title = ww1_france.48.t	
+	desc = ww1.france.48.d
+	id = ww1_france.48
+	picture = GFX_report_event_german_parade_paris
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = FRA
+		has_civil_war = no
+		has_war = no
+		has_global_flag = frankfurt_treaty
+		is_subject = no
+	}
 
+	mean_time_to_happen = {
+		days = 35
+	}
+
+	immediate = {
+		set_global_flag = achievement_france_surrender
+	}
+
+	### We must surrender | ask separate peace with Germany
+
+	## -> Germany will get an event annoucing French capitulation
+	
+	## -> UK will get an event allowing peace with honors betwen them and germans
+
+	## --- If UK retire, all entente members THAT HAS NOT CAPITULATED will
+	## get a white peace
+	option = {
+		name = generic_ok
+		every_state = {
+			delete_unit = { state = PREV }
+		}
+		give_military_access = GER
+		add_idea = FRA_army_restrictions
+		
+	}
+
+	## the fight goes on !
+	option = {
+		name = no
+	}
+}
 #____________________________________________________________
 # End of new events
 #____________________________________________________________
@@ -183,7 +232,7 @@ country_event = {
 			has_country_flag = great_war_loser
 			has_completed_focus = FRA_ww1_memories_of_the_commune
 		}
-		OR = {
+		AND = {
             has_stability < 0.05
             communism > 0.5
         }
@@ -498,6 +547,7 @@ country_event = {
 		NOT = {
 			has_government = communism
 		}	
+		communism > 0.4
 	}
 	mean_time_to_happen = {
 		days = 60

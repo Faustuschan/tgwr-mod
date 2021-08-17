@@ -3168,7 +3168,8 @@ TUR_invite_balkan_economy_sphere_tt:0 "Invites §YBalkan countries§! into an §
  FRA_ww1_restore_franco_russia_friendship:0 "Restore Franco-Russian Friendship"
  FRA_Napoleon_love_russia:0 "§YNapoleon V§! will lose the §YDislake Russia§! trait."
 
-
+FRA_ww1_break_the_german_lines:0 "Break the German Lines"
+FRA_ww1_char2c:0 "The Char 2C"
 
 FRA_ww1_army_effort:0 "Armée de Terre Effort"
 FRA_ww1_army_effort_desc:0 "Germany's army is larger, and worse, more experienced than our own, which is still stocked mostly with veterans from the last war we had against them. If France is to pose a serious threat to German interests, we must reverse this scenario, modernize our army, and hopefully modernize our leadership!"
