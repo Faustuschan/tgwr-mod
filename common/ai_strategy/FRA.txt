@@ -759,9 +759,11 @@ FRA_put_a_end_to_the_great_war = {
 		date > 1918.1.1
 	}
 	abort = {
-		date > 1920.1.1
-		FRA = {
-			has_war = no
+		OR = {
+			date > 1920.1.1
+			FRA = {
+				has_war = no
+			}
 		}
 	}
 	
