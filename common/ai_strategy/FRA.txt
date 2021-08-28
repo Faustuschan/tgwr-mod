@@ -482,9 +482,6 @@ FRA_dont_help_luxembourg = {
 		is_in_faction_with = LUX
 		LUX = { has_capitulated = no }
 		date < 1915.6.1
-		GER = {
-			is_ai = yes
-		}	
 	}
 	abort = {
 		OR = {
@@ -534,7 +531,7 @@ FRA_dont_help_italy_or_serbia = {
 	ai_strategy = {
 		type = dont_defend_ally_borders
 		id = "ITA"
-		value = 100
+		value = 1000
 	}
 }
 
@@ -653,22 +650,6 @@ FRA_dont_ruin_your_economy = {
 		execute_order = no
 	}
 
-	ai_strategy = {
-		type = conquer
-		id = GER
-		value = -1000
-	}
-	ai_strategy = {
-		type = invade
-		id = GER
-		value = -1000
-	}
-
-	ai_strategy = {
-		type = antagonize
-		id = GER
-		value = -1000
-	}
 }
 
 FRA_full_force_on_france_when_russia_falled = {
@@ -779,6 +760,9 @@ FRA_put_a_end_to_the_great_war = {
 	}
 	abort = {
 		date > 1920.1.1
+		FRA = {
+			has_war = no
+		}
 	}
 	
 	ai_strategy = {

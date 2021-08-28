@@ -420,6 +420,7 @@ country_event = {
 		}
 	}
 }
+
 #fall of Schollaert
 country_event = {
 	id = ww1_belgium.9
@@ -462,6 +463,38 @@ country_event = {
 				ideology = conservatism
 				traits = { trait_conservatism }    
 			}
+		}
+	}
+}
+
+country_event = {
+	id = ww1_belgium.10
+	title = ww1_belgium.10.t
+	desc = ww1_belgium.10.d
+	trigger = {
+		tag = BEL
+		date < 1916.1.1
+		has_capitulated = no
+		has_war_with = GER
+		GER = {
+			has_war_with = FRA
+		}
+	}
+	fire_only_once = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	immediate = {
+		add_timed_idea = {
+			idea = BEL_outnumbered_army
+			days = 180
+		}
+	}
+	
+	option = {
+		name = ww1_belgium.10.a
+		ai_chance = {
+			factor = 100
 		}
 	}
 }

@@ -1904,7 +1904,7 @@ GER_great_war = {
 				set_global_flag = versallies_treaty
 				add_named_threat = {
 					name = versallies_treaty
-					threat = -20
+					threat = -100
 				}
 				hidden_effect = {
 					#technical hidden event
