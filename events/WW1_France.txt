@@ -11,6 +11,8 @@ add_namespace = ww1_france
 # New events (late 2021)
 #____________________________________________________________
 
+
+
 # Dreyfus exoneration
 news_event = {
 	title = ww1_france.40.t	
@@ -160,11 +162,11 @@ country_event = {
 	}
 }
 ####
-#France lose is army
+#France lose his army, and is economy
 ####
 country_event = {
 	title = ww1_france.48.t	
-	desc = ww1.france.48.d
+	desc = ww1_france.48.d
 	id = ww1_france.48
 	picture = GFX_report_event_german_parade_paris
 	
@@ -184,31 +186,354 @@ country_event = {
 
 	immediate = {
 		set_global_flag = achievement_france_surrender
-	}
-
-	### We must surrender | ask separate peace with Germany
-
-	## -> Germany will get an event annoucing French capitulation
-	
-	## -> UK will get an event allowing peace with honors betwen them and germans
-
-	## --- If UK retire, all entente members THAT HAS NOT CAPITULATED will
-	## get a white peace
-	option = {
-		name = generic_ok
-		every_state = {
-			delete_unit = { state = PREV }
-		}
-		give_military_access = GER
-		add_idea = FRA_army_restrictions
 		
 	}
 
-	## the fight goes on !
 	option = {
-		name = no
+		name = generic_ok
+			hidden_effect = {
+				every_state = {
+				FRA = {
+					delete_unit = { state = PREV }
+				}
+			}
+			every_owned_state = {
+				if = {
+					limit = {
+						PREV = {
+							arms_factory > 0
+						}
+					}
+					remove_building = {
+						type = arms_factory
+						level = 10
+					}
+				}
+			}
+			16 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+				}
+			}
+			14 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+				}
+			}
+			19 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+				}
+			}
+			FRA = {
+				remove_ideas = idea_army_restrictions
+				add_ideas = FRA_land_army_restrictions
+				add_ideas = FRA_naval_army_restrictions
+				country_lock_all_division_template = yes
+			}
+			load_focus_tree = france_democratic_defeated_focus
+		}
+		custom_effect_tooltip = FRA_disband_army
+		custom_effect_tooltip = FRA_disband_factories
+		custom_effect_tooltip = FRA_military_restrictions_event
+		
+
 	}
 }
+
+
+### MittleEuropa help France
+news_event = {
+	title = ww1_france.49.t	
+	desc = ww1_france.49.d
+	id = ww1_france.49
+	picture = ww1_france_45
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = generic_ok
+	}
+}
+
+# a communist uprising is coming
+country_event = {
+	title = ww1_france.50.t	
+	desc = ww1_france.50.d
+	id = ww1_france.50
+	picture = GFX_report_event_german_parade_paris
+	
+	fire_only_once = yes
+	
+	trigger = {
+		original_tag = FRA
+		has_global_flag = frankfurt_treaty
+		has_global_flag = achievement_france_surrender
+	}
+
+	mean_time_to_happen = {
+		days = 90
+	}
+
+	option = {
+		name = generic_ok
+		set_country_flag = FRA_communist_uprising
+	}
+}
+
+country_event = {
+	title = ww1_france.52.t	
+	desc = ww1_france.52.d
+	id = ww1_france.52
+	picture = GFX_report_event_german_parade_paris
+	
+	is_triggered_only = yes
+
+	mean_time_to_happen = {
+		days = 2
+	}
+
+	option = {
+		name = generic_ok
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = -1000
+		}
+	}
+}
+
+country_event = {
+	title = ww1_france.53.t	
+	desc = ww1_france.53.d
+	id = ww1_france.53
+	picture = GFX_report_event_german_parade_paris
+	
+	is_triggered_only = yes
+
+	mean_time_to_happen = {
+		days = 2
+	}
+
+	option = {
+		name = generic_ok
+		add_popularity = {
+			ideology = communism
+			popularity = 0.05
+		}
+	}
+} 
+
+country_event = {
+	title = ww1_france.54.t	
+	desc = ww1_france.54.d
+	id = ww1_france.54
+	picture = GFX_report_event_german_parade_paris
+	
+	is_triggered_only = yes
+
+	mean_time_to_happen = {
+		days = 2
+	}
+
+	option = {
+		name = generic_ok
+		random_owned_controlled_state = {
+			limit = {
+				is_core_of = ROOT
+				is_on_continent = europe
+				NOT = {
+					has_state_flag = communard_presence
+				}
+				any_neighbor_state = {
+					has_state_flag = communard_presence
+				}
+			}
+			set_state_flag = communard_presence
+			custom_effect_tooltip = FRA_state_join_socialists
+		}
+	}
+} 
+
+country_event = {
+	title = ww1_france.55.t	
+	desc = ww1_france.55.d
+	id = ww1_france.55
+	picture = GFX_report_event_german_parade_paris
+	is_triggered_only = yes
+
+	mean_time_to_happen = {
+		days = 2
+	}
+
+	option = {
+		name = generic_ok
+		add_days_mission_timeout = {
+			mission = communist_uprising
+			days = -30
+		}
+	}
+} 
+
+country_event = {
+	title = ww1_france.56.t	
+	desc = ww1_france.56.d
+	id = ww1_france.56
+	picture = GFX_report_event_german_parade_paris
+	
+	trigger = {
+		has_country_flag = FRA_communist_civil_war_begun
+		has_civil_war = yes
+		has_government = democratic
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+	fire_only_once = yes
+	option = {
+		name = generic_ok
+		division_template = {
+			name = "patriotes"
+			priority = 0
+			regiments = { 
+				infantry = {
+					x = 0
+					y = 0
+				}
+				infantry = {
+					x = 0
+					y = 1
+				}
+				infantry = {
+					x = 0
+					y = 2
+				}
+			}
+		}
+		21 = {
+			create_unit = {
+				division = "division_template = \"patriotes\" start_experience_factor = 0.1 start_equipment_factor = 0.75"
+				owner = ROOT
+			}
+			create_unit = {
+				division = "division_template = \"patriotes\" start_experience_factor = 0.1 start_equipment_factor = 0.75"
+				owner = ROOT
+			}
+			create_unit = {
+				division = "division_template = \"patriotes\" start_experience_factor = 0.1 start_equipment_factor = 0.75"
+				owner = ROOT
+			}
+			create_unit = {
+				division = "division_template = \"patriotes\" start_experience_factor = 0.1 start_equipment_factor = 0.75"
+				owner = ROOT
+			}
+			create_unit = {
+				division = "division_template = \"patriotes\" start_experience_factor = 0.1 start_equipment_factor = 0.75"
+				owner = ROOT
+			}
+			create_unit = {
+				division = "division_template = \"patriotes\" start_experience_factor = 0.1 start_equipment_factor = 0.75"
+				owner = ROOT
+			}
+			create_unit = {
+				division = "division_template = \"patriotes\" start_experience_factor = 0.1 start_equipment_factor = 0.75"
+				owner = ROOT
+			}
+			create_unit = {
+				division = "division_template = \"patriotes\" start_experience_factor = 0.1 start_equipment_factor = 0.75"
+				owner = ROOT
+			}
+			create_unit = {
+				division = "division_template = \"patriotes\" start_experience_factor = 0.1 start_equipment_factor = 0.75"
+				owner = ROOT
+			}
+			create_unit = {
+				division = "division_template = \"patriotes\" start_experience_factor = 0.1 start_equipment_factor = 0.75"
+				owner = ROOT
+			}
+			
+		}
+	}
+} 
+
+#together to victory
+#last push before ww1 lose for France
+#massive bonuses to assure historical victory
+country_event = {
+	title = ww1_france.57.t	
+	desc = ww1_france.57.d
+	id = ww1_france.57
+	picture = GFX_report_event_german_parade_paris
+	fire_only_once = yes
+
+	trigger = {
+		original_tag = FRA
+		USA = {
+			is_in_faction_with = FRA
+		}
+		ENG = {
+			is_in_faction_with = FRA
+		}
+		has_war_with = GER
+		date > 1917.12.12
+
+	}
+
+	mean_time_to_happen = {
+		days = 2
+	}
+
+	option = {
+		name = generic_ok
+		set_global_flag = entente_last_attack
+		every_country = {
+			limit = {
+				OR = {
+					is_in_faction_with = FRA
+					tag = FRA
+				}
+			}
+			add_timed_idea = {
+				idea = ALL_together_to_victory
+				days = 360
+			}
+		}
+		if = {
+			limit = {
+				has_tech = basic_light_tank
+			}
+			add_equipment_to_stockpile = {
+				type = light_tank_equipment_1
+				amount = 750
+			}
+		}
+		
+	}
+} 
+
+#France surrender after missing the last chance to attack
+country_event = {
+	title = ww1_france.58.t	
+	desc = ww1_france.58.d
+	id = ww1_france.58
+	picture = GFX_report_event_german_parade_paris
+	is_triggered_only = yes
+
+	trigger = {
+		has_war_with = GER
+		date > 1919.2.2
+		has_global_flag = entente_last_attack
+	}
+
+	option = {
+		name = generic_ok
+		activate_decision = FRA_armistice
+	}
+} 
+
+
 #____________________________________________________________
 # End of new events
 #____________________________________________________________
@@ -220,6 +545,7 @@ country_event = {
 	desc = ww1_france.1.d
 	picture = GFX_report_event_german_reichstag_gathering
 	fire_only_once = yes
+	is_triggered_only = yes
 	trigger = {
 		original_tag = FRA
 		has_government = democratic
@@ -238,7 +564,7 @@ country_event = {
         }
 	}
 	mean_time_to_happen = {
-		days = 90
+		days = 2
 	}
 	immediate = {
 		set_global_flag = french_pacifist_strikes
@@ -342,6 +668,142 @@ country_event = {
 	is_triggered_only = yes
 	immediate = {
 		hidden_effect = {
+			if = {
+				limit = {
+					FRA = {
+						has_army_size = {
+							size < 24
+						}
+					}
+				}
+					division_template = {
+					name = "Division d'Infanterie légère"
+					is_locked = yes
+					priority = 0
+					division_names_group = FRA_ARM_01
+					regiments = { 
+						infantry = {
+							x = 0
+							y = 0
+						}
+						infantry = {
+							x = 0
+							y = 1
+						}
+						infantry = {
+							x = 0
+							y = 2
+						}
+						infantry = {
+							x = 1
+							y = 0
+						}
+						infantry = {
+							x = 1
+							y = 1
+						}
+						infantry = {
+							x = 1
+							y = 2
+						}
+						infantry = {
+							x = 2
+							y = 0
+						}
+						infantry = {
+							x = 2
+							y = 1
+						}
+						infantry = {
+							x = 2
+							y = 2
+						}
+					}
+				}
+				16 = {
+					create_unit = {
+						division = "division_template = \"Division d'Infanterie légère\" start_experience_factor = 0.2"
+						owner = FRA
+					}
+					create_unit = {
+						division = "division_template = \"Division d'Infanterie légère\" start_experience_factor = 0.2"
+						owner = FRA
+					}
+					create_unit = {
+						division = "division_template = \"Division d'Infanterie légère\" start_experience_factor = 0.2"
+						owner = FRA
+					}
+					create_unit = {
+						division = "division_template = \"Division d'Infanterie légère\" start_experience_factor = 0.2"
+						owner = FRA
+					}
+					create_unit = {
+						division = "division_template = \"Division d'Infanterie légère\" start_experience_factor = 0.2"
+						owner = FRA
+					}
+					create_unit = {
+						division = "division_template = \"Division d'Infanterie légère\" start_experience_factor = 0.2"
+						owner = FRA
+					}
+					create_unit = {
+						division = "division_template = \"Division d'Infanterie légère\" start_experience_factor = 0.2"
+						owner = FRA
+					}
+					create_unit = {
+						division = "division_template = \"Division d'Infanterie légère\" start_experience_factor = 0.2"
+						owner = FRA
+					}
+					create_unit = {
+						division = "division_template = \"Division d'Infanterie légère\" start_experience_factor = 0.2"
+						owner = FRA
+					}
+					create_unit = {
+						division = "division_template = \"Division d'Infanterie légère\" start_experience_factor = 0.2"
+						owner = FRA
+					}
+					create_unit = {
+						division = "division_template = \"Division d'Infanterie légère\" start_experience_factor = 0.2"
+						owner = FRA
+					}
+					create_unit = {
+						division = "division_template = \"Division d'Infanterie légère\" start_experience_factor = 0.2"
+						owner = FRA
+					}
+					create_unit = {
+						division = "division_template = \"Division d'Infanterie légère\" start_experience_factor = 0.2"
+						owner = FRA
+					}
+					create_unit = {
+						division = "division_template = \"Division d'Infanterie légère\" start_experience_factor = 0.2"
+						owner = FRA
+					}
+					create_unit = {
+						division = "division_template = \"Division d'Infanterie légère\" start_experience_factor = 0.2"
+						owner = FRA
+					}
+					create_unit = {
+						division = "division_template = \"Division d'Infanterie légère\" start_experience_factor = 0.2"
+						owner = FRA
+					}
+					create_unit = {
+						division = "division_template = \"Division d'Infanterie légère\" start_experience_factor = 0.2"
+						owner = FRA
+					}
+					create_unit = {
+						division = "division_template = \"Division d'Infanterie légère\" start_experience_factor = 0.2"
+						owner = FRA
+					}
+					create_unit = {
+						division = "division_template = \"Division d'Infanterie légère\" start_experience_factor = 0.2"
+						owner = FRA
+					}
+					create_unit = {
+						division = "division_template = \"Division d'Infanterie légère\" start_experience_factor = 0.2"
+						owner = FRA
+					}
+				}
+			}
+
 			create_dynamic_country = {
 				original_tag = FRA
 				every_state = {
@@ -539,21 +1001,157 @@ country_event = {
 	desc = ww1_france.5.d
 	picture = GFX_report_event_german_reichstag_gathering
 	fire_only_once = yes
-	trigger = {
-		tag = FRA
-		has_civil_war = no
-		has_global_flag = frankfurt_treaty
-		is_subject = no
-		NOT = {
-			has_government = communism
-		}	
-		communism > 0.4
-	}
-	mean_time_to_happen = {
-		days = 60
-	}
+	is_triggered_only = yes
+	# trigger = {
+	# 	tag = FRA
+	# 	has_civil_war = no
+	# 	has_global_flag = frankfurt_treaty
+	# 	is_subject = no
+	# 	NOT = {
+	# 		has_government = communism
+	# 	}	
+	# 	communism > 0.4
+	# }
+	# mean_time_to_happen = {
+	# 	days = 60
+	# }
 	immediate = {
 		hidden_effect = {
+			if = {
+				limit = {
+					FRA = {
+						has_army_size = {
+							size < 24
+						}
+					}
+				}
+					division_template = {
+					name = "Division d'Infanterie légère"
+					is_locked = yes
+					priority = 0
+					division_names_group = FRA_ARM_01
+					regiments = { 
+						infantry = {
+							x = 0
+							y = 0
+						}
+						infantry = {
+							x = 0
+							y = 1
+						}
+						infantry = {
+							x = 0
+							y = 2
+						}
+						infantry = {
+							x = 1
+							y = 0
+						}
+						infantry = {
+							x = 1
+							y = 1
+						}
+						infantry = {
+							x = 1
+							y = 2
+						}
+						infantry = {
+							x = 2
+							y = 0
+						}
+						infantry = {
+							x = 2
+							y = 1
+						}
+						infantry = {
+							x = 2
+							y = 2
+						}
+					}
+				}
+				16 = {
+					create_unit = {
+						division = "division_template = \"Division d'Infanterie légère\" start_experience_factor = 0.2"
+						owner = FRA
+					}
+					create_unit = {
+						division = "division_template = \"Division d'Infanterie légère\" start_experience_factor = 0.2"
+						owner = FRA
+					}
+					create_unit = {
+						division = "division_template = \"Division d'Infanterie légère\" start_experience_factor = 0.2"
+						owner = FRA
+					}
+					create_unit = {
+						division = "division_template = \"Division d'Infanterie légère\" start_experience_factor = 0.2"
+						owner = FRA
+					}
+					create_unit = {
+						division = "division_template = \"Division d'Infanterie légère\" start_experience_factor = 0.2"
+						owner = FRA
+					}
+					create_unit = {
+						division = "division_template = \"Division d'Infanterie légère\" start_experience_factor = 0.2"
+						owner = FRA
+					}
+					create_unit = {
+						division = "division_template = \"Division d'Infanterie légère\" start_experience_factor = 0.2"
+						owner = FRA
+					}
+					create_unit = {
+						division = "division_template = \"Division d'Infanterie légère\" start_experience_factor = 0.2"
+						owner = FRA
+					}
+					create_unit = {
+						division = "division_template = \"Division d'Infanterie légère\" start_experience_factor = 0.2"
+						owner = FRA
+					}
+					create_unit = {
+						division = "division_template = \"Division d'Infanterie légère\" start_experience_factor = 0.2"
+						owner = FRA
+					}
+					create_unit = {
+						division = "division_template = \"Division d'Infanterie légère\" start_experience_factor = 0.2"
+						owner = FRA
+					}
+					create_unit = {
+						division = "division_template = \"Division d'Infanterie légère\" start_experience_factor = 0.2"
+						owner = FRA
+					}
+					create_unit = {
+						division = "division_template = \"Division d'Infanterie légère\" start_experience_factor = 0.2"
+						owner = FRA
+					}
+					create_unit = {
+						division = "division_template = \"Division d'Infanterie légère\" start_experience_factor = 0.2"
+						owner = FRA
+					}
+					create_unit = {
+						division = "division_template = \"Division d'Infanterie légère\" start_experience_factor = 0.2"
+						owner = FRA
+					}
+					create_unit = {
+						division = "division_template = \"Division d'Infanterie légère\" start_experience_factor = 0.2"
+						owner = FRA
+					}
+					create_unit = {
+						division = "division_template = \"Division d'Infanterie légère\" start_experience_factor = 0.2"
+						owner = FRA
+					}
+					create_unit = {
+						division = "division_template = \"Division d'Infanterie légère\" start_experience_factor = 0.2"
+						owner = FRA
+					}
+					create_unit = {
+						division = "division_template = \"Division d'Infanterie légère\" start_experience_factor = 0.2"
+						owner = FRA
+					}
+					create_unit = {
+						division = "division_template = \"Division d'Infanterie légère\" start_experience_factor = 0.2"
+						owner = FRA
+					}
+				}
+			}
 			news_event = {
 				id = ww1_france.26
 				days = 1

@@ -26,3 +26,17 @@ FRA_defense_of_france = {
 		has_war_with = GER
 	}
 }
+
+
+FRA_the_next_revolution = {
+	icon = border_conflicts
+
+	allowed = {
+		original_tag = FRA
+	}
+
+	priority = 1000
+
+	visible = {
+	}
+}

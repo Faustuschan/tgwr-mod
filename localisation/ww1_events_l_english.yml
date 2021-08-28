@@ -424,10 +424,19 @@ ww1_france.47.t:0 "New uniforms in the army"
 ww1_france.47.d:0 "Since 1912, the Minister of War, General Brun, had instituted under the chairmanship of Mr Dubail a commission responsible for researching new, less visible uniforms for the whole army. This commission has completed its studies, established the new models and the Minister has approved these proposals."
 
  ww1_france.48.t:0 "Defeat"
- ww1_france.48.d:0 "The battle is lost. Paris has fallen into German hands, and it is only a matter of time before the rest of the country is occupied. We must now think to the future. Elements within the government want an armistice with Germany, but many officers wish to continue the struggle from Britain.\n\nCertain members of the British War Cabinet have suggested another option - a merger of France and Great Britain into a single nation, which will fight on until all of France has been liberated."
+ww1_france.48.d:0 "Our defeat against Germany is total and our nation is consequently martyred by drastic military restrictions. Our army is dissolved and all of our heavy industry has been confiscated. Civilian war loans cannot be repaid, causing further anger among the population."
 
+ww1_france.49.t:0 "German humanitarian aid in France"
+ww1_france.49.d:0 "The dire economic and social situation in France has caused an unprecedented agricultural crisis. Plunged into an intense famine, the French people suffer in silence as the government tries to revive growth in vain. With his back to the wall, the president [FRA.getleader] went to Berlin to ask for the express help of [GER.getLeader]. Responding favorably, Germany and its allies sent rationing supplies for the population."
 
+ww1_france.50.t:0 "Expansion of communal sentiment"
+ww1_france.50.d:0 "The Communists led by the perfidious Ludovic-Oscar Frossard are gaining popularity among the population. Because of our defeat following the great war, the various opposition parties accuse us of having delivered Paris to the Germans. This feeling affects our popularity and puts us in a terribly difficult situation. If we don't take radical action immediately, the enraged crowds of the SFIO will surround Paris like the Bolsheviks did in Moscow."
 
+ww1_france.57.t:0 "General Foch appointed supreme allied commander"
+ww1_france.57.d:0 "Following the arrival of American forces on French soil, it is now possible to relaunch an offensive phase against Germany. In order to complete this final assault, General Foch was appointed Supreme Allied Commander. He will supervise an assault comprising 6 million infantry and nearly 1,500 tanks. If the war does not end during this year 1918, the morale of the troops will then be too low to allow the continuation of the fighting."
+
+ww1_france.58.t:0 "Defeat"
+ww1_france.58.d:0 "We weren't able to push back the Germans. Defeat was inevitable and our soldiers mutinied en masse, making further fighting impossible. We have no choice but to surrender immediately to avoid a savage revolution."
 
  #BELGIUM
  ww1_belgium.1.a:0 "Never forget Belgium"
@@ -460,7 +469,10 @@ ww1_france.47.d:0 "Since 1912, the Minister of War, General Brun, had instituted
  ww1_belgium.8.d:0 "Following the 10th of June the lease of Lado Enclave ended, what should we do now?"
  ww1_belgium.8.a:0 "Pay to continue the lease"
  ww1_belgium.8.b:0 "Transfer Lado to bri'ish"
- 
+
+ww1_belgium.9.t:0 "Surprising German attack"
+ww1_belgium.9.d:0 "Unprepared, the Belgian army is totally overwhelmed by the arrival of the Kaiser's forces. Problems in the inventory of our equipment limit our mobilization. The soldiers are totally demotivated at the idea of ​​confronting the most powerful empires in Europe. Our ability to resist is greatly reduced!"
+
  #BRAZIL
  ww1_brazil.1.t:0 "Election of 1910: Hermes da Fonseca vs Rui Barbosa"
  ww1_brazil.1.d:0 "Among presidential candidates is that of the military Hermes da Fonseca, who runs for the Conservative Republican Party and is supported by President Nilo Peçanha, and main candidate of the opposition is the writer Ruy Barbosa, a former member of the Liberal Party of the monarchical period and who running for the so-called Liberal Republican Party, launched with the support of the Republican Party of São Paulo."

@@ -238,6 +238,10 @@ spriteTypes = {
 		name = "GFX_focus_rus_volunteer_army"
 		texturefile = "gfx/interface/goals/focus_rus_volunteer_army.dds"
 	}
+	SpriteType = {
+		name = "GFX_focus_manage_industries"
+		texturefile = "gfx/interface/goals/FRA/manage_industries.dds"
+	}
 	
 	#### BULGARIA UPDATE
 	

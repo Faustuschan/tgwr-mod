@@ -30,7 +30,7 @@ big_army_after_moroccan_crisis = {
 	}
 	ai_strategy = {
 		type = force_build_armies
-		value = 200
+		value = 2000
 	}
 	ai_strategy = {
 		type = role_ratio
@@ -46,6 +46,12 @@ big_army_after_moroccan_crisis = {
 		type = role_ratio
 		id = garrison
 		value = -10
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = artillery_equipment
+		value = 90
 	}
 }
 big_navy_after_moroccan_crisis = {
@@ -176,19 +182,6 @@ invading_france_through_benelux = {
 		value = 1000
 	}
 	ai_strategy = {
-		type = put_unit_buffers
-		
-		order_id = 1
-		
-		# Thourgh Belgium-Luxembourg
-		states = {
-			6
-		}
-		ratio = 0.10
-		area = europe
-		subtract_invasions_from_need = no
-	}
-	ai_strategy = {
 		type = front_unit_request
 		tag = BEL
 		value = 100
@@ -230,6 +223,8 @@ invading_france_through_benelux = {
 	}
 
 }
+
+
 GER_agressive_after_1914 = {
 	enable = {
 		tag = GER
@@ -342,21 +337,29 @@ GER_defensive_after_1915 = {
 		value = 200
 	}
 }
-GER_agressive_after_1916 = {
+
+crush_FRA_while_USA_are_sleeping = {
 	enable = {
 		tag = GER
 		has_war_with = FRA
 		GER = { casualties < 1500000 }
-		OR = {
-			BEL = { has_capitulated = yes }
-			date > 1916.6.1
-			NOT = { has_war_with = FRA }
+		RUS = {
+			OR = {
+				NOT = { has_war_with = GER }
+				has_capitulated = yes
+				has_civil_war = yes
+			}
+		}
+		USA = {
+			NOT = {
+				has_war_with = GER
+			}
 		}
 	}
 	abort = {
-		OR = {
-			date > 1917.6.1
-			GER = { casualties > 1500000 }
+		USA = {
+			has_war_with = GER
+			casualties > 15000 #make sure USA is fighting
 		}
 	}
 	
@@ -383,14 +386,129 @@ GER_agressive_after_1916 = {
 	ai_strategy = {
 		type = front_control
 		tag = FRA
-		ratio = 0.7
+		ratio = 0.8
+		
+		priority = 1
+		ordertype = front
+		execution_type = rush_weak
+		execute_order = yes
+	}
+}
+
+GER_offensive_in_1917 = {
+	enable = {
+		tag = GER
+		has_war_with = FRA
+		date > 1917.2.2
+	}
+	abort = {
+		OR = {
+			date > 1917.10.10
+			NOT = { has_war_with = FRA }
+		}
+	}
+	
+	ai_strategy = {
+		type =invade
+		id = FRA
+		value = 200
+	}
+
+	ai_strategy = {
+		type =invade
+		id = RUS
+		value = -200
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = armor
+		value = 50 
+	}
+	ai_strategy = {
+		type = role_ratio
+		id = infantry
+		value = -10 
+	}
+	ai_strategy = {
+		type = front_control
+		tag = GER
+		ratio = 0.9
 		
 		priority = 50
 		ordertype = front
 		execution_type = rush_weak
-		#execute_order = yes
+		execute_order = yes
+	}
+	ai_strategy = {
+		type = front_unit_request
+		tag = FRA
+		value = 400
+	}
+	ai_strategy = {
+		type = front_unit_request
+		tag = RUS
+		value = 50
 	}
 }
+
+GER_offensive_in_1918 = {
+	enable = {
+		tag = GER
+		has_war_with = FRA
+		date > 1918.2.2
+	}
+	abort = {
+		OR = {
+			date > 1918.10.10
+			NOT = { has_war_with = FRA }
+		}
+	}
+	
+	ai_strategy = {
+		type =invade
+		id = FRA
+		value = 200
+	}
+
+	ai_strategy = {
+		type =invade
+		id = RUS
+		value = -200
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = armor
+		value = 50 
+	}
+	ai_strategy = {
+		type = role_ratio
+		id = infantry
+		value = -10 
+	}
+	ai_strategy = {
+		type = front_control
+		tag = GER
+		ratio = 0.9
+		
+		priority = 50
+		ordertype = front
+		execution_type = rush_weak
+		execute_order = yes
+	}
+	ai_strategy = {
+		type = front_unit_request
+		tag = FRA
+		value = 400
+	}
+	ai_strategy = {
+		type = front_unit_request
+		tag = RUS
+		value = 50
+	}
+}
+
 GER_dont_help_AUH = {
 	enable = {
 		tag = GER

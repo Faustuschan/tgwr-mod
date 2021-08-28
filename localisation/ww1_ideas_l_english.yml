@@ -971,7 +971,11 @@
  FRA_fascist_terror:0 "Fascist Terror"
  fra_dictator:0 "Dictator"
  FRA_paul_deroulede_is_dead:0 "Paul Déroulède is dead"
-
+ FRA_german_debt_supervision:0 "German supervision"
+ FRA_debt_council:0 "French Debt Council"
+ the_council_on_the_management_of_french_debt:0 "The french debt management council"
+ ALL_together_to_victory:0 "Together To Victory"
+ FRA_must_won_before_1919:0 "§RIf Germany is not defeated before the start of 1919, the entente will surrender§!"
 
  Franch_Staff:0 "French Staff"
  Franch_Staff_desc:0 "In times of war, the army chief of staff took charge of general headquarters (GQG: Grand Quartier Général). During the First World War, the leader of the French armies was variously referred to as supreme general (generalissimo) or commander-in-chief. In the closing years of the war, the establishment of the Supreme War Council in 1917 led to overall command being held by French general Ferdinand Foch, and by mid-1918 French army chief Pétain was subordinate to Foch. Although the war essentially ended with the armistice in November 1918, the war-time organisation persisted until 1920."

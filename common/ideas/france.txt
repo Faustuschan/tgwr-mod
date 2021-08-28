@@ -17,6 +17,7 @@ ideas = {
 				recruitable_population_factor = -0.25
 			}
 		}
+		
 
 		FRA_propaganda = {
 			allowed = {
@@ -571,26 +572,158 @@ ideas = {
 			}
 		}
 
-		FRA_army_restrictions = {
+		FRA_land_army_restrictions = {
 			allowed = {
 				original_tag = FRA
 				has_war = no
 			}
-			removal_cost = -1
-			picture = generic_morale_bonus
+			allowed_civil_war = { always = yes }
+			cancel = {
+				any_country = {
+					is_major = yes
+					has_war_with = ROOT
+					NOT = {
+						original_tag = FRA
+					}
+				}
+			}
+			on_remove = {
+				country_lock_all_division_template = no
+				random_country = {
+					limit = { is_faction_leader = yes has_country_flag = great_war_winner }
+					country_event = ww1_generic.28
+				}
+			}
+			picture = FRA_factory_strikes
 			modifier = {
-				industrial_capacity_factory = -0.50
-				industrial_capacity_dockyard = -0.50
+				ai_desired_divisions_factor = -1.0
+				industrial_capacity_factory = -0.75
+				production_speed_arms_factory_factor = -0.75
+				custom_modifier_tooltip = idea_army_restrictions_tt
+				army_leader_cost_factor = 0.9
+				mobilization_laws_cost_factor = 9
 				
 			}
 			equipment_bonus = {
 				armor = {
-					build_cost_ic = -0.9
+					build_cost_ic = 0.9
 				}
 			}
 
 			research_bonus = {
 				armor = -0.9
+			}
+		}
+
+		FRA_naval_army_restrictions = {
+			allowed = {
+				original_tag = FRA
+				has_war = no
+			}
+			allowed_civil_war = { always = yes }
+			cancel = {
+				any_country = {
+					is_major = yes
+					has_war_with = ROOT
+					NOT = {
+						original_tag = FRA
+					}
+				}
+			}
+			picture = generic_naval_manufacturer_3
+			modifier = {
+				industrial_capacity_dockyard = -0.75
+				navy_chief_cost_factor = 0.9
+			}
+			equipment_bonus = {
+				battle_cruiser = {
+					build_cost_ic = 0.9
+				}
+				battleship = {
+					build_cost_ic = 0.9
+				}
+				carrier = {
+					build_cost_ic = 0.9
+				}
+			}
+
+			research_bonus = {
+				naval_equipment = -0.9
+				
+			}
+		}
+		
+		FRA_disorganised_partisans = {
+			allowed = {
+				original_tag = FRA
+			}
+			allowed_civil_war = { 
+				has_government = communism
+			}
+			picture = generic_naval_manufacturer_1
+			modifier = {
+				army_attack_factor = -0.25
+				army_defence_factor = -0.25
+			}
+		}
+
+		FRA_privatized_banks = {
+			allowed = {
+				original_tag = FRA
+				has_war = no
+			}
+			allowed_civil_war = { 
+				has_government = democratic
+			}
+			picture = generic_naval_manufacturer_1
+			modifier = {
+				consumer_goods_factor = -0.10
+			}
+		}
+
+		FRA_idea_restore_the_nation = {
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = generic_production_bonus
+			available = {
+			}
+			modifier = {
+				industry_repair_factor = 0.50
+			}
+		}
+
+		FRA_extreme_austerity_measures = {
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = generic_production_bonus
+			available = {
+			}
+			modifier = {
+				consumer_goods_factor = -0.05
+			}
+		}
+
+		ALL_together_to_victory = {
+			removal_cost = -1
+			picture = generic_morale_bonus
+			modifier = {
+				hidden_modifier = {
+					attrition = -0.8
+					offence = 0.50
+					army_org_Factor = 0.8
+					supply_consumption_factor = -0.8	
+				}
+				custom_modifier_tooltip = FRA_must_won_before_1919
+				
+				
+			}
+			targeted_modifier = {
+				tag = GER
+				hidden_modifier = {
+					attack_bonus_against = 1
+					breakthrough_bonus_against = 1
+				}
+				
 			}
 		}
 		
@@ -1039,6 +1172,14 @@ ideas = {
 			allowed = {
 				original_tag = FRA
 			}
+			available = {
+				NOT = {
+					OR = {
+						has_idea = FRA_debt_council
+						has_idea = FRA_german_debt_supervision
+					}
+				}
+			}
 			research_bonus = {
 				industry = 0.1
 			}
@@ -1051,12 +1192,82 @@ ideas = {
 			allowed = {
 				original_tag = FRA
 			}
+			available = {
+				NOT = {
+					OR = {
+						has_idea = FRA_debt_council
+						has_idea = FRA_german_debt_supervision
+					}
+				}
+			}
 			research_bonus = {
 				industry = 0.1
 			}
 			traits = {
 				industrial_concern
 			}
+		}
+		FRA_debt_council = {
+				
+			picture = tur_odpa
+		
+			allowed = {
+				original_tag = FRA
+			}
+			available = { 
+				always = no
+			}	
+			visible = {
+				has_country_flag = great_war_loser
+			}			
+			
+			research_bonus = {
+				industry = 0.05
+			}
+
+			allowed_to_remove = {
+				OR = {
+					has_war_with = GER
+				}
+			}
+
+			removal_cost = -1
+
+			cost= 0
+			
+			traits = { the_council_on_the_management_of_french_debt }
+		}
+
+
+		FRA_german_debt_supervision = {
+				
+			picture = tur_odpa
+		
+			allowed = {
+				original_tag = FRA
+			}
+			available = { 
+				always = no
+			}	
+			visible = {
+				has_country_flag = great_war_loser
+			}			
+			
+			research_bonus = {
+				industry = 0.05
+			}
+
+			allowed_to_remove = {
+				OR = {
+					has_war_with = GER
+				}
+			}
+
+			removal_cost = -1
+
+			cost= 0
+			
+			traits = { german_civil_supervision }
 		}
 	}
 	tank_manufacturer = {

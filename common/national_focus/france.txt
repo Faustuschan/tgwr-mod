@@ -1817,6 +1817,158 @@ focus = {
 	y = 1
 }
 
+focus = {
+	id = FRA_ww1_develop_morocco
+	icon = GFX_focus_manage_industries
+	relative_position_id = FRA_ww1_algerian_france
+	prerequisite = { 
+		focus = FRA_ww1_algerian_france 
+		focus = FRA_ww1_toward_algerian_self_managment 
+	}
+	available = {
+		NOT = {
+			has_war_with = MOR
+		}
+		OR = {
+			any_country = {
+				limit = {
+					is_puppet_of = FRA
+				}
+				owns_state = 461
+			}
+			461 = {
+				is_controlled_by = ROOT
+			}
+		}
+		OR = {
+			any_country = {
+				limit = {
+					is_puppet_of = FRA
+				}
+				owns_state = 462
+			}
+			462 = {
+				is_controlled_by = ROOT
+			}
+		}
+	}
+	completion_reward = {
+		FRA = {
+			461 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			461 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			462 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			462 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = 0
+	y = 2
+}
+
+focus = {
+	id = FRA_ww1_invest_in_congo
+	icon = GFX_focus_por_luso_tropicalism
+	relative_position_id = FRA_ww1_algerian_france
+	prerequisite = { 
+		focus = FRA_ww1_algerian_france 
+		focus = FRA_ww1_toward_algerian_self_managment 
+	}
+	available = {
+		OR = {
+			any_country = {
+				limit = {
+					is_puppet_of = FRA
+				}
+				owns_state = 772
+			}
+			772 = {
+				is_controlled_by = ROOT
+			}
+		}
+		OR = {
+			any_country = {
+				limit = {
+					is_puppet_of = FRA
+				}
+				owns_state = 660
+			}
+			660 = {
+				is_controlled_by = ROOT
+			}
+		}
+	}
+	completion_reward = {
+		FRA = {
+			772 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_resource = {
+					type = rubber
+					amount = 4
+					state = THIS
+				}
+			}
+			662 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_resource = {
+					type = rubber
+					amount = 4
+					state = THIS
+				}
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	
+	cost = 10
+	x = -2
+	y = 2
+}
+
+
 ###############################################################
 # Form the Cercle Proudhon - monarchist PATH
 ###############################################################
@@ -3431,7 +3583,10 @@ focus = {
 	prerequisite = { focus = FRA_ww1_world_breakout }
 	available = {
 		NOT = {
-			has_idea = tot_economic_mobilisation
+			AND = {
+				has_idea = tot_economic_mobilisation
+				has_idea = war_economy
+			}
 		}
 	}
 	completion_reward = {
@@ -3634,19 +3789,19 @@ focus = {
 				is_on_continent = europe
 			}
 			create_unit = {
-				division = "name = \"1ère brigade de chars légers\" division_template = \"Brigade de cavalerie blindée\" start_equipment_factor = 0.2"
+				division = "name = \"1ère brigade de chars légers\" division_template = \"Brigade de cavalerie blindée\" start_equipment_factor = 0.6"
 				owner = FRA
 			}
 			create_unit = {
-				division = "name = \"2ème brigade de chars légers\" division_template = \"Brigade de cavalerie blindée\" start_equipment_factor = 0.2"
+				division = "name = \"2ème brigade de chars légers\" division_template = \"Brigade de cavalerie blindée\" start_equipment_factor = 0.6"
 				owner = FRA
 			}
 			create_unit = {
-				division = "name = \"3ème brigade de chars légers\" division_template = \"Brigade de cavalerie blindée\" start_equipment_factor = 0.2"
+				division = "name = \"3ème brigade de chars légers\" division_template = \"Brigade de cavalerie blindée\" start_equipment_factor = 0.6"
 				owner = FRA
 			}
 			create_unit = {
-				division = "name = \"4ème brigade de chars légers\" division_template = \"Brigade de cavalerie blindée\" start_equipment_factor = 0.2"
+				division = "name = \"4ème brigade de chars légers\" division_template = \"Brigade de cavalerie blindée\" start_equipment_factor = 0.6"
 				owner = FRA
 			}
 		}
