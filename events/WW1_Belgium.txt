@@ -420,41 +420,11 @@ country_event = {
 		}
 	}
 }
-<<<<<<< HEAD
-
-=======
 #fall of Schollaert
->>>>>>> 727be70469af6979fb7b24c2311454cc4f503af4
 country_event = {
 	id = ww1_belgium.9
 	title = ww1_belgium.9.t
 	desc = ww1_belgium.9.d
-<<<<<<< HEAD
-	trigger = {
-		tag = BEL
-		date < 1916.1.1
-		has_capitulated = no
-		has_war_with = GER
-		GER = {
-			has_war_with = FRA
-		}
-	}
-	fire_only_once = yes
-	immediate = {
-		add_timed_idea = {
-			idea = BEL_outnumbered_army
-			days = 180
-		} 
-	}
-	
-	option = {
-		name = ww1_belgium.9.a
-		ai_chance = {
-			factor = 100
-		}
-	}
-}
-=======
 	fire_only_once = yes
 	trigger = {
 		original_tag = BEL
@@ -495,4 +465,3 @@ country_event = {
 		}
 	}
 }
->>>>>>> 727be70469af6979fb7b24c2311454cc4f503af4
