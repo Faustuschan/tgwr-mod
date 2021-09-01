@@ -509,6 +509,7 @@ country_event = {
 				amount = 750
 			}
 		}
+		add_manpower = 250000
 		
 	}
 } 
@@ -519,7 +520,10 @@ country_event = {
 	desc = ww1_france.58.d
 	id = ww1_france.58
 	picture = GFX_report_event_german_parade_paris
-	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 2
+	}
 
 	trigger = {
 		has_war_with = GER

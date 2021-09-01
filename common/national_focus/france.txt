@@ -4658,6 +4658,7 @@ focus = {
 		random_owned_controlled_state = {
 			limit = {
 				is_core_of = FRA
+				is_on_continent = europe
 			}
 			add_extra_state_shared_building_slots = 1
 			add_building_construction = {
@@ -4672,6 +4673,7 @@ focus = {
 		random_owned_controlled_state = {
 			limit = {
 				is_core_of = FRA
+				is_on_continent = europe
 			}
 			add_extra_state_shared_building_slots = 1
 			add_building_construction = {
@@ -4686,6 +4688,7 @@ focus = {
 		random_owned_controlled_state = {
 			limit = {
 				is_core_of = FRA
+				is_on_continent = europe
 			}
 			add_extra_state_shared_building_slots = 1
 			add_building_construction = {
@@ -4700,6 +4703,7 @@ focus = {
 		random_owned_controlled_state = {
 			limit = {
 				is_core_of = FRA
+				is_on_continent = europe
 			}
 			add_extra_state_shared_building_slots = 1
 			add_building_construction = {

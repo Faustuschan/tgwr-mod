@@ -707,11 +707,13 @@ ideas = {
 			removal_cost = -1
 			picture = generic_morale_bonus
 			modifier = {
+				out_of_supply_factor = -0.5
 				hidden_modifier = {
-					attrition = -0.8
-					offence = 0.50
-					army_org_Factor = 0.8
-					supply_consumption_factor = -0.8	
+					attrition = -0.5
+					offence = 0.5
+					army_org_Factor = 0.5
+					supply_consumption_factor = -0.5
+					
 				}
 				custom_modifier_tooltip = FRA_must_won_before_1919
 				

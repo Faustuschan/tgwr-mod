@@ -722,6 +722,8 @@ FRA_full_force_on_france_when_russia_falled = {
 		priority = 100
 		ordertype = front
 		execution_type = balanced
+		manual_attack = yes
+		execute_order = no
 	}
 
 
@@ -870,7 +872,7 @@ FRA_defensive_after_multiples_failures = {
 		tag = GER
 		ratio = 0.9
 		
-		priority = 100
+		priority = 1
 		ordertype = front
 		execution_type = careful
 		manual_attack = yes

@@ -1050,6 +1050,9 @@ crisis = {
 					has_war_support < 0.9
 				}
 			}
+			NOT = {
+				has_global_flag = entente_last_attack
+			}
 		}
 		available = {
 			OR = {
