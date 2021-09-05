@@ -169,82 +169,37 @@ invading_france_through_benelux = {
 			has_capitulated = yes
 		}
 	}
-	ai_strategy = {
-		type = invade
-		id = LUX			
-		value = 1000
-	}
 	
 	ai_strategy = {
 		type = conquer
 		id = BEL
-		value = 1000
+		value = 99999
 	}
 	ai_strategy = {
 		type = invade
 		id = BEL
-		value = 1000
+		value = 99999
 	}
 	ai_strategy = {
-		type = conquer
-		id = LUX
-		value = 1000
+		type = consider_weak
+		id = BEL
+		value = 99999
 	}
 	ai_strategy = {
 		type = front_unit_request
 		tag = BEL
-		value = 100
+		value = 200
 	}
 	ai_strategy = {
 		type = front_control
-		tag = BEL
-		ratio = 0.4 # 0.35 to 0.7
+		tag = FRA
+		ratio = 0.6 # 0.35 to 0.7
 		
 		priority = 1000
 		ordertype = front
 		execution_type = rush
 		execute_order = yes
-	}
-
-	ai_strategy = {
-		type = put_unit_buffers
-		
-		order_id = 1000
-		
-		states = {
-			34
-			6
-		}
-		ratio = 0.3
-		area = europe
-		subtract_invasions_from_need = no
-	}
-
-
-	ai_strategy = {
-		type = front_unit_request
-		tag = RUS
-		value = -30
-	}
-	ai_strategy = {
-		type = consider_weak
-		id = RUS
-		value = -200
-	}
-	ai_strategy = {
-		type = conquer
-		id = RUS
-		value = -200
-	}
-	ai_strategy = {
-		type = invade
-		id = RUS
-		value = -200
-	}
-	ai_strategy = {
-		type = ignore
-		id = RUS
-		value = 30
+		manual_attack = yes
 	}
 
 }
@@ -268,6 +223,7 @@ crush_FRA_while_USA_are_sleeping = {
 				
 			}
 		}
+		surrender_progress < 0.02
 	}
 	abort = {
 		USA = {
@@ -276,8 +232,10 @@ crush_FRA_while_USA_are_sleeping = {
 				casualties > 30000
 			}
 		}
+		surrender_progress > 0.02
 	}
 	
+
 	ai_strategy = {
 		type = antagonize
 		id = FRA
@@ -301,9 +259,9 @@ crush_FRA_while_USA_are_sleeping = {
 	ai_strategy = {
 		type = front_control
 		tag = FRA
-		ratio = 0.8
+		ratio = 0.5
 		
-		priority = 9999
+		priority = 100
 		ordertype = front
 		execution_type = rush
 		execute_order = yes
@@ -340,11 +298,6 @@ GER_attack_if_france_is_weak = {
 		tag = FRA
 		value = 400
 	}
-	ai_strategy = {
-		type = front_unit_request
-		tag = RUS
-		value = 50
-	}
 }
 
 GER_dont_help_AUH = {
@@ -358,12 +311,88 @@ GER_dont_help_AUH = {
 	ai_strategy = {
 		type = ignore
 		id = "AUH"			
-		value = 150 
+		value = 500 
 	}
 	ai_strategy = {
 		type = dont_defend_ally_borders
 		id = "AUH"			
 		value = 500 
+	}
+	ai_strategy = {
+		type = front_unit_request
+		tag = "AUH"
+		value = -500
+	}
+
+	ai_strategy = {
+		type = protect
+		tag = "AUH"
+		value = -500
+	}
+	ai_strategy = {
+		type = spare_unit_factor
+		value = -500
+	}
+	 
+}
+
+GER_dont_help_ITA = {
+	enable = {
+		tag = GER
+		is_in_faction_with = AUH
+	}
+	abort = {
+		AUH = { surrender_progress > 0.5 }	
+	}
+	ai_strategy = {
+		type = ignore
+		id = "ITA"			
+		value = 99999
+	}
+	ai_strategy = {
+		type = front_unit_request
+		tag = "ITA"
+		value = -99999
+	}
+	ai_strategy = {
+		type = invade
+		tag = "ITA"
+		value = -99999
+	}
+	ai_strategy = {
+		type = conquer
+		tag = "ITA"
+		value = -99999
+	}
+}
+
+GER_ignore_romania = {
+	enable = {
+		tag = GER
+		is_in_faction_with = AUH
+	}
+	abort = {
+		AUH = { surrender_progress > 0.5 }	
+	}
+	ai_strategy = {
+		type = ignore
+		id = ROM			
+		value = 99999
+	}
+	ai_strategy = {
+		type = front_unit_request
+		tag = ROM
+		value = -99999
+	}
+	ai_strategy = {
+		type = invade
+		tag = ROM
+		value = -99999
+	}
+	ai_strategy = {
+		type = conquer
+		tag = ROM
+		value = -99999
 	}
 }
 
@@ -372,17 +401,47 @@ GER_ignore_serbia = {
 		tag = GER
 		is_in_faction_with = AUH
 	}
-	abort_when_not_enabled = yes
+	abort = {
+		AUH = { surrender_progress > 0.5 }	
+	}
 	ai_strategy = {
 		type = ignore
-		id = SER			
-		value = 9999
+		id = "SER"			
+		value = 99999
 	}
 	ai_strategy = {
 		type = front_unit_request
-		tag = SER
-		value = -9999
+		tag = "SER"
+		value = -99999
 	}
+	ai_strategy = {
+		type = invade
+		tag = "SER"
+		value = -99999
+	}
+	ai_strategy = {
+		type = conquer
+		tag = "SER"
+		value = -99999
+	}
+	ai_strategy = {
+		type = consider_weak
+		tag = "SER"
+		value = 99999
+	}
+	ai_strategy = {
+		type = ignore_claim
+		tag = "SER"
+		value = 1
+	}
+	ai_strategy = {
+		type = protect
+		tag = "SER"
+		value = -99999
+	}
+	
+
+	
 }
 
 GER_dont_help_TUR = {
@@ -418,7 +477,8 @@ GER_dont_help_TUR = {
 GER_protect_prussia_while_invading_BEL = {
 	enable = {
 		original_tag = GER
-		date > 1914.1.1
+		has_war_with = RUS
+		has_war_with = BEL
 		BEL = {
 			OR = {
 				has_capitulated = no
@@ -427,6 +487,15 @@ GER_protect_prussia_while_invading_BEL = {
 				}
 			}
 		}
+		OR = {
+			surrender_progress > 0.1
+			763 = {
+				NOT = {
+					is_controlled_by = GER
+				}
+			}
+		}
+
 	}
 	abort_when_not_enabled = yes
 	ai_strategy = {

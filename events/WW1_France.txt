@@ -540,6 +540,47 @@ country_event = {
 	}
 } 
 
+#France claim syria if at war with turkey
+country_event = {
+	title = ww1_france.59.t	
+	desc = ww1_france.59.d
+	id = ww1_france.59
+	picture = GFX_report_event_generic_read_write
+	
+	mean_time_to_happen = {
+		days = 24
+	}
+
+	trigger = {
+		has_war_with = TUR
+	}
+	fire_only_once = yes
+	option = {
+		name = generic_ok
+		553 = {
+			add_claim_by = FRA
+		}
+		554 = {
+			add_claim_by = FRA
+		}
+		831 = {
+			add_claim_by = FRA
+		}
+		677 = {
+			add_claim_by = FRA
+		}
+		680 = {
+			add_claim_by = FRA
+		}
+		TUR = {
+			add_opinion_modifier = {
+				target = FRA
+				modifier = small_decrease
+			}
+		}
+	}
+} 
+
 
 #____________________________________________________________
 # End of new events

@@ -503,18 +503,14 @@ FRA_dont_help_italy_or_serbia = {
 	enable = {
 		tag = FRA
 		has_war_with = GER
-		date < 1918.1.1
-		OR = {
-			ITA = { has_capitulated = no }
-			SER = { has_capitulated = no }
-		}
 	}
 	
 	abort = {
 		OR = {
 			date > 1918.1.1
-			ITA = { has_capitulated = yes }
-			SER = { has_capitulated = yes }
+			ITA = {
+				surrender_progress > 0.5
+			}
 		}
 	}
 	
