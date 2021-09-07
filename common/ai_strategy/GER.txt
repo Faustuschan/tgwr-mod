@@ -7,7 +7,7 @@ no_one_gets_our_troops = {
 	abort = {
 		OR = {
 			is_historical_focus_on = no
-			date > 1915.2.2
+			date > 1916.2.2
 		}
 	}
 	
@@ -36,78 +36,60 @@ no_one_gets_our_troops = {
 	ai_strategy = {
 		type = build_army
 		id = garrison
-		value = 100
-	}
-}
-
-GER_dont_ruin_your_economy_against_FRA = {
-	allowed = {
-		original_tag = GER	
-	}
-
-	enable = {
-		tag = GER
-		has_war_with = FRA
-		stockpile_ratio = {	## 5% of the armies equipment must be in reserves
-			archetype = infantry_equipment
-			ratio < 0.050
-		}
-		NOT = {
-			strength_ratio = {
-				tag = FRA
-				ratio > 2
-			}
-		}
-	}
-	abort_when_not_enabled = yes
-	
-	ai_strategy = {
-		type = front_control
-		tag = FRA
-		ratio = 0.5
-		
-		priority = 100
-		ordertype = front
-		execution_type = careful
-		manual_attack = no
-		execute_order = no
+		value = 25
 	}
 
 }
 
-GER_dont_ruin_your_economy_against_RUS = {
-	allowed = {
-		original_tag = GER	
+GER_big_army_before_ww1 = {
+	allowed = { 
+		original_tag = GER 
 	}
 
 	enable = {
-		tag = GER
-		has_war_with = RUS
-		stockpile_ratio = {	## 5% of the armies equipment must be in reserves
-			archetype = infantry_equipment
-			ratio < 0.050
-		}
-		NOT = {
-			strength_ratio = {
-				tag = RUS
-				ratio > 2
-			}
-		}
+		date < 1914.6.6
+		date > 1913.6.6
 	}
 	abort_when_not_enabled = yes
-	
+
 	ai_strategy = {
-		type = front_control
-		tag = RUS
-		ratio = 0.5
-		
-		priority = 100
-		ordertype = front
-		execution_type = careful
-		manual_attack = no
-		execute_order = no
+		type = build_army
+		id = infantry
+		value = 99999
 	}
 
+	ai_strategy = {
+		type = force_build_armies
+		value = 99999
+	}
+
+	ai_strategy = {
+		type = build_army
+		id = garrison
+		value = 500
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = infantry
+		value = 88
+	}
+}
+
+GER_stockpile_less_early_game = {
+	allowed = { 
+		original_tag = GER 
+	}
+
+	enable = {
+		date < 1914.1.1
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_stockpile_surplus_ratio
+		value = -50 # reduce while we build up troops for africa etc
+	}
 }
 
 ready_to_invade_france = {
@@ -311,27 +293,27 @@ GER_dont_help_AUH = {
 	ai_strategy = {
 		type = ignore
 		id = "AUH"			
-		value = 500 
+		value = 99999 
 	}
 	ai_strategy = {
 		type = dont_defend_ally_borders
 		id = "AUH"			
-		value = 500 
+		value = 99999 
 	}
 	ai_strategy = {
 		type = front_unit_request
 		tag = "AUH"
-		value = -500
+		value = -99999
 	}
 
 	ai_strategy = {
 		type = protect
 		tag = "AUH"
-		value = -500
+		value = -99999
 	}
 	ai_strategy = {
 		type = spare_unit_factor
-		value = -500
+		value = -99999
 	}
 	 
 }

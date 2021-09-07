@@ -37,7 +37,6 @@ GER_great_war = {
 					type = puppet_wargoal_focus
 				}
 				if = {
-					limit = { has_completed_focus = GER_focus_on_true_enemy }
 					add_timed_idea = {
 						idea = schlieffenmoltke
 						days = 60
@@ -55,7 +54,7 @@ GER_great_war = {
 			}	
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 10000
 		}
 	}
 	#Conference timer moved to TGWR_peace_conference_decisions

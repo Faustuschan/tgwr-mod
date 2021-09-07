@@ -268,9 +268,14 @@ country_event = {
 	fire_only_once = yes
 	
 	trigger = {
-		original_tag = FRA
-		has_global_flag = frankfurt_treaty
-		has_global_flag = achievement_france_surrender
+		OR = {
+			AND = {
+				original_tag = FRA
+				has_global_flag = frankfurt_treaty
+				has_global_flag = achievement_france_surrender
+			}
+			has_completed_focus = FRA_ww1_emergency_council
+		}
 	}
 
 	mean_time_to_happen = {

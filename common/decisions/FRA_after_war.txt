@@ -212,7 +212,7 @@ FRA_the_next_revolution = {
 			}      
 		}
 		is_good = no                    
-		days_mission_timeout = 30        
+		days_mission_timeout = 35        
 		timeout_effect = {              
 			if = {
 				limit = { 
