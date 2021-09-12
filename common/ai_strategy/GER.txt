@@ -22,23 +22,6 @@ no_one_gets_our_troops = {
 		value = -100
 	}
 
-	ai_strategy = {
-		type = build_army
-		id = infantry
-		value = 99999
-	}
-
-	ai_strategy = {
-		type = force_build_armies
-		value = 99999
-	}
-
-	ai_strategy = {
-		type = build_army
-		id = garrison
-		value = 25
-	}
-
 }
 
 GER_big_army_before_ww1 = {
@@ -47,8 +30,8 @@ GER_big_army_before_ww1 = {
 	}
 
 	enable = {
-		date < 1914.6.6
-		date > 1913.6.6
+		date > 1911.1.1
+		has_war = no
 	}
 	abort_when_not_enabled = yes
 
@@ -60,19 +43,13 @@ GER_big_army_before_ww1 = {
 
 	ai_strategy = {
 		type = force_build_armies
-		value = 99999
+		value = 9999
 	}
 
 	ai_strategy = {
 		type = build_army
 		id = garrison
-		value = 500
-	}
-
-	ai_strategy = {
-		type = role_ratio
-		id = infantry
-		value = 88
+		value = 9999
 	}
 }
 

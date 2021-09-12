@@ -377,8 +377,12 @@ news_event = {
 	trigger = {
 		date > 1914.7.31
 		NOT = { has_global_flag = kis_jauresassassination }
-		
 		FRA = {	has_war = yes }
+		NOT = {
+			has_country_leader = {
+				name = "Jean Jaurès"
+			}
+		}
 	}
 	
 	mean_time_to_happen = {

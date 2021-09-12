@@ -202,15 +202,25 @@ spriteTypes = {
 		name = "GFX_FRA_ww1_expand_army_budget_focus"
 		texturefile = "gfx/interface/goals/FRA/FRA_ww1_expand_army_budget.dds"
 	}
-	
+
 	SpriteType = {
 		name = "GFX_FRA_ww1_ban_socialism_focus"
 		texturefile = "gfx/interface/goals/FRA/FRA_ban_socialism.dds"
 	}
 
+	SpriteType = {
+		name = "GFX_FRA_ww1_The_wheat_of_the_victors_focus"
+		texturefile = "gfx/interface/goals/FRA/FRA_wheat.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_FRA_ww1_privatise_banks_focus"
+		texturefile = "gfx/interface/goals/FRA/FRA_privatize_banks.dds"
+	}
+
+
 	
-	
-	
+
 	
 	
 	

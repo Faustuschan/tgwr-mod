@@ -227,7 +227,7 @@ FRA_armored_production = {
 }
 
 #avoiding AI to spam infantry and getting colonial buildings destroyed by resistance
-FRA_infantry_production = {
+FRA_low_infantry_production = {
 	allowed = {
 		original_tag = FRA	
 	}
@@ -296,26 +296,6 @@ FRA_stockpile_more_early_game = {
 	ai_strategy = {
 		type = force_build_armies
 		value = -9999
-	}
-}
-
-FRA_infantry_production = {
-	allowed = {
-		original_tag = FRA	
-	}
-	enable = {
-		date > 1912.1.1
-		original_tag = FRA
-		ai_wants_divisions > 130
-	}
-	abort = {
-		ai_wants_divisions < 135
-	}
-
-	ai_strategy = {
-		type = role_ratio
-		id = infantry
-		value = 30
 	}
 }
 
@@ -931,6 +911,31 @@ plan_xvii = {
 		execute_order = yes
 	}
 }
+
+
+FRA_fight_hostile_FRA = {
+	allowed = {
+		always = yes
+	}
+	enable = {
+		original_tag = FRA
+		OR = {
+			has_war_with = FRA
+			has_civil_war = yes
+		}
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = front_control
+		ratio = 0.8
+		tag = FRA
+		priority = 999999
+		ordertype = front
+		execution_type = rush
+		execute_order = yes
+	}
+}
+
 dont_join_wadai_war = {
 	allowed = {
 		is_in_faction_with = FRA 

@@ -66,6 +66,9 @@
  idea_sell_weapons:0 "Sell Weapons"
  idea_naval_treaty_adherent:0 "Naval Treaty Signatory"
  idea_naval_treaty_adherent_desc:0 "We have signed the Naval Treaty and accordingly are restricted in the size of our capital ships."
+ FRA_land_army_restrictions:0 "French Army Restrictions"
+ FRA_naval_army_restrictions:0 "French Naval Restrictions"
+ FRA_idea_restore_the_nation:0 "Restore the Nation"
 
  superior_enemy:0 "Superior Enemy"
  superior_enemy_desc:0 "Army experience and equipment of our enemies are far ahead of ours."
@@ -1009,6 +1012,7 @@
  FRA_idea_french_women:0 "French Women"
  FRA_womens_suffrage:0 "Women's Suffrage"
  FRA_paul_deroulede:0 "Paul Déroulède"
+FRA_privatized_banks:0 "Privatized Banks"
 
  #Indochina
  si_electric:0 "Société Indochinoise d'Électricité"

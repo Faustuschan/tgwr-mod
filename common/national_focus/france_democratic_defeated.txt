@@ -13,7 +13,7 @@ focus_tree = {
 
 	focus = {
 		id = FRA_ww1_emergency_council
-		icon = GFX_goal_generic_demand_territory
+		icon = GFX_focus_chi_reach_out_to_france
 		completion_reward = {
 			add_political_power = 120
 		}
@@ -75,7 +75,7 @@ focus_tree = {
 
 	focus = {
 		id = FRA_ww1_privatise_banks
-		icon = GFX_goal_generic_dangerous_deal
+		icon = GFX_FRA_ww1_privatise_banks_focus
 		relative_position_id = FRA_ww1_deal_with_the_germans
 		completion_reward = {
 			add_ideas = FRA_privatized_banks
@@ -93,7 +93,7 @@ focus_tree = {
 
 	focus = {
 		id = FRA_ww1_negociate_anti_communist_force
-		icon = GFX_goal_generic_dangerous_deal
+		icon = GFX_goal_FRA_french_interventionism_focus
 		relative_position_id = FRA_ww1_The_wheat_of_the_victors
 		completion_reward = {
 			custom_effect_tooltip = FRA_deploy_occupation_army
@@ -202,7 +202,7 @@ focus_tree = {
 
 	focus = {
 		id = FRA_ww1_The_wheat_of_the_victors
-		icon = GFX_goal_generic_dangerous_deal
+		icon = GFX_FRA_ww1_The_wheat_of_the_victors_focus
 		relative_position_id = FRA_ww1_deal_with_the_germans
 		completion_reward = {
 			swap_ideas = {
@@ -237,7 +237,7 @@ focus_tree = {
 
 	focus = {
 		id = FRA_ww1_focus_on_reparation
-		icon = GFX_goal_generic_dangerous_deal
+		icon = GFX_goal_generic_construct_civilian
 		relative_position_id = FRA_ww1_deal_with_the_germans
 		completion_reward = {
 			add_timed_idea = {
@@ -261,7 +261,7 @@ focus_tree = {
 
 	focus = {
 		id = FRA_ww1_extreme_austerity_measures
-		icon = GFX_goal_generic_dangerous_deal
+		icon = GFX_goal_generic_forceful_treaty
 		relative_position_id = FRA_ww1_confront_the_debt
 		completion_reward = {
 			add_stability = -0.10
@@ -280,7 +280,7 @@ focus_tree = {
 
 	focus = {
 		id = FRA_ww1_rationing_population
-		icon = GFX_goal_generic_dangerous_deal
+		icon = GFX_focus_CZE_german_puppet
 		relative_position_id = FRA_ww1_confront_the_debt
 		completion_reward = {
 			add_popularity = {
@@ -305,7 +305,7 @@ focus_tree = {
 
 	focus = {
 		id = FRA_ww1_armee_des_volontaires
-		icon = GFX_goal_generic_dangerous_deal
+		icon = GFX_goal_FRA_colonial_volunteers_focus
 		relative_position_id = FRA_ww1_rationing_population
 		completion_reward = {
 			custom_effect_tooltip = FRA_ww1_8_div_army
@@ -370,7 +370,7 @@ focus_tree = {
 
 	focus = {
 		id = FRA_ww1_communard_sentiment
-		icon = GFX_goal_generic_dangerous_deal
+		icon = GFX_focus_generic_soviet_politics
 		relative_position_id = FRA_ww1_armee_des_volontaires
 		completion_reward = {
 			if = {
@@ -400,7 +400,7 @@ focus_tree = {
 
 	focus = {
 		id = FRA_ww1_maintain_the_republicains
-		icon = GFX_goal_generic_dangerous_deal
+		icon = GFX_goal_FRA_gold
 		relative_position_id = FRA_ww1_negociate_anti_communist_force
 		completion_reward = {
 			add_stability = 0.05
@@ -422,7 +422,7 @@ focus_tree = {
 
 	focus = {
 		id = FRA_ww1_repress_socialists
-		icon = GFX_goal_generic_dangerous_deal
+		icon = GFX_goal_anti_comintern_pact
 		relative_position_id = FRA_ww1_maintain_the_republicains
 		completion_reward = {
 			add_popularity = {
@@ -444,7 +444,7 @@ focus_tree = {
 
 	focus = {
 		id = FRA_ww1_fight_the_communards
-		icon = GFX_goal_generic_dangerous_deal
+		icon = GFX_goal_generic_propaganda
 		relative_position_id = FRA_ww1_repress_socialists
 		completion_reward = {
 			custom_effect_tooltip = FRA_fight_the_communists
@@ -484,7 +484,7 @@ focus_tree = {
 
 	focus = {
 		id = FRA_ww1_cheat_on_rearmament
-		icon = GFX_goal_generic_dangerous_deal
+		icon = GFX_goal_generic_construct_mil_factory
 		relative_position_id = FRA_ww1_fight_the_communards
 		bypass = {
 			NOT = {
@@ -508,14 +508,6 @@ focus_tree = {
 						instant_build = yes
 					}
 				}
-				459 = {
-					add_extra_state_shared_building_slots = 2
-					add_building_construction = {
-						type = industrial_complex
-						level = 2
-						instant_build = yes
-					}
-				}
 			}
 		}
 		prerequisite = {
@@ -529,6 +521,80 @@ focus_tree = {
 		y = 1
 	}
 
+	focus = {
+		id = FRA_ww1_expand_police_forces
+		icon = GFX_focus_generic_military_academy
+		relative_position_id = FRA_ww1_fight_the_communards
+		bypass = {
+		}
+		available = {
+			
+		}
+		completion_reward = {
+			custom_effect_tooltip = FRA_4_cavalry_units
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					is_on_continent = europe
+				}
+				create_unit = {
+					division = "division_template = \"Division de Cavalerie\" start_experience_factor = 0.35 start_equipment_factor = 0.2"
+					owner = ROOT
+				}
+				create_unit = {
+					division = "division_template = \"Division de Cavalerie\" start_experience_factor = 0.35 start_equipment_factor = 0.2"
+					owner = ROOT
+				}
+				create_unit = {
+					division = "division_template = \"Division de Cavalerie\" start_experience_factor = 0.35 start_equipment_factor = 0.2"
+					owner = ROOT
+				}
+				create_unit = {
+					division = "division_template = \"Division de Cavalerie\" start_experience_factor = 0.35 start_equipment_factor = 0.2"
+					owner = ROOT
+				}
+			}
+		}
+		prerequisite = {
+			focus = FRA_ww1_fight_the_communards
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		cost = 10
+		x = 0
+		y = 1
+	}
+
+	focus = {
+		id = FRA_ww1_secret_reserves
+		icon = GFX_goal_CAN_british_rifle_lease
+		relative_position_id = FRA_ww1_fight_the_communards
+		bypass = {
+		}
+		available = {
+			
+		}
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 5000
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 500
+			}
+		}
+		prerequisite = {
+			focus = FRA_ww1_fight_the_communards
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		cost = 10
+		x = 2
+		y = 1
+	}
 	
 
 }

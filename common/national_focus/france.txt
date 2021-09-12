@@ -794,6 +794,21 @@ focus = {
 			elections_allowed = yes
 		}
 		news_event = ww1_france.41
+
+		if = {
+			limit = {
+				NOT = { has_global_flag = kis_jauresassassination }
+			}
+			create_country_leader = {
+				name = "Jean Jaurès"
+				ideology = anarchist_communism
+				picture = "gfx/leaders/FRA/jean_jaures.dds"
+				traits = {
+					communist_revolutionary
+					trait_syndicalism
+				}
+			}
+		}
 	}
 	ai_will_do = {
 		factor = 1

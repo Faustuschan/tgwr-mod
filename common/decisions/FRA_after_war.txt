@@ -17,11 +17,20 @@ FRA_the_next_revolution = {
 		}
 		is_good = no            
 		fire_only_once = yes        
-		days_mission_timeout = 540        
+		days_mission_timeout = 400        
 		timeout_effect = {
-			
-		
 			custom_effect_tooltip = FRA_communist_uprising_start
+			if = {
+				limit = {
+					has_equipment = {
+						infantry_equipment < 10
+					}
+					add_equipment_to_stockpile = {		##avoid republicains to fight with no guns
+						type = infantry_equipment
+						amount = 10000
+					}
+				}
+			}
 			if = {
 				limit = {
 					has_country_flag = FRA_fight_the_communists_title
@@ -45,6 +54,7 @@ FRA_the_next_revolution = {
 					add_ideas = FRA_land_army_restrictions
 					add_ideas = FRA_naval_army_restrictions
 					add_ideas = FRA_disorganised_partisans
+					add_ideas = interwar_recovery
 				}
 				every_state = {
 					limit = {
@@ -81,15 +91,15 @@ FRA_the_next_revolution = {
 						every_state = {
 							limit = { has_state_flag = communard_presence }
 							create_unit = {
-								division = "division_template = \"Troupe de communards\" start_experience_factor = 0.1 start_equipment_factor = 0.75"
+								division = "division_template = \"Troupe de communards\" start_experience_factor = 0.1 start_equipment_factor = 0.5"
 								owner = PREV
 							}
 							create_unit = {
-								division = "division_template = \"Troupe de communards\" start_experience_factor = 0.1 start_equipment_factor = 0.75"
+								division = "division_template = \"Troupe de communards\" start_experience_factor = 0.1 start_equipment_factor = 0.5"
 								owner = PREV
 							}
 							create_unit = {
-								division = "division_template = \"Troupe de communards\" start_experience_factor = 0.1 start_equipment_factor = 0.75"
+								division = "division_template = \"Troupe de communards\" start_experience_factor = 0.1 start_equipment_factor = 0.5"
 								owner = PREV
 							}
 						}
@@ -433,7 +443,7 @@ FRA_the_next_revolution = {
 			}
 		}
 		fixed_random_seed = no
-		cost = 25
+		cost = 0
 		days_re_enable = 30
 		days_remove = 35
 		
@@ -484,7 +494,7 @@ FRA_the_next_revolution = {
 			}
 		}
 		fixed_random_seed = no
-		cost = 25
+		cost = 0
 		days_re_enable = 30
 		days_remove = 35
 		
@@ -535,7 +545,7 @@ FRA_the_next_revolution = {
 			}
 		}
 		fixed_random_seed = no
-		cost = 25
+		cost = 0
 		days_re_enable = 30
 		days_remove = 35
 		
@@ -586,7 +596,7 @@ FRA_the_next_revolution = {
 			}
 		}
 		fixed_random_seed = no
-		cost = 25
+		cost = 0
 		days_re_enable = 30
 		days_remove = 35
 		
@@ -637,7 +647,7 @@ FRA_the_next_revolution = {
 			}
 		}
 		fixed_random_seed = no
-		cost = 25
+		cost = 0
 		days_re_enable = 30
 		days_remove = 35
 		
@@ -688,7 +698,7 @@ FRA_the_next_revolution = {
 			}
 		}
 		fixed_random_seed = no
-		cost = 25
+		cost = 0
 		days_re_enable = 30
 		days_remove = 35
 		
@@ -739,7 +749,7 @@ FRA_the_next_revolution = {
 			}
 		}
 		fixed_random_seed = no
-		cost = 25
+		cost = 0
 		days_re_enable = 30
 		days_remove = 35
 		
@@ -790,7 +800,7 @@ FRA_the_next_revolution = {
 			}
 		}
 		fixed_random_seed = no
-		cost = 25
+		cost = 0
 		days_re_enable = 30
 		days_remove = 35
 		
@@ -841,7 +851,7 @@ FRA_the_next_revolution = {
 			}
 		}
 		fixed_random_seed = no
-		cost = 25
+		cost = 0
 		days_re_enable = 30
 		days_remove = 35
 		
@@ -892,7 +902,7 @@ FRA_the_next_revolution = {
 			}
 		}
 		fixed_random_seed = no
-		cost = 25
+		cost = 0
 		days_re_enable = 30
 		days_remove = 35
 		
@@ -943,7 +953,7 @@ FRA_the_next_revolution = {
 			}
 		}
 		fixed_random_seed = no
-		cost = 25
+		cost = 0
 		days_re_enable = 30
 		days_remove = 35
 		
@@ -994,7 +1004,7 @@ FRA_the_next_revolution = {
 			}
 		}
 		fixed_random_seed = no
-		cost = 25
+		cost = 0
 		days_re_enable = 30
 		days_remove = 35
 		
@@ -1045,7 +1055,7 @@ FRA_the_next_revolution = {
 			}
 		}
 		fixed_random_seed = no
-		cost = 25
+		cost = 0
 		days_re_enable = 30
 		days_remove = 35
 		
@@ -1096,7 +1106,7 @@ FRA_the_next_revolution = {
 			}
 		}
 		fixed_random_seed = no
-		cost = 25
+		cost = 0
 		days_re_enable = 30
 		days_remove = 35
 		
@@ -1147,7 +1157,7 @@ FRA_the_next_revolution = {
 			}
 		}
 		fixed_random_seed = no
-		cost = 25
+		cost = 0
 		days_re_enable = 30
 		days_remove = 35
 		
@@ -1198,7 +1208,7 @@ FRA_the_next_revolution = {
 			}
 		}
 		fixed_random_seed = no
-		cost = 25
+		cost = 0
 		days_re_enable = 30
 		days_remove = 35
 		
@@ -1249,7 +1259,7 @@ FRA_the_next_revolution = {
 			}
 		}
 		fixed_random_seed = no
-		cost = 25
+		cost = 0
 		days_re_enable = 30
 		days_remove = 35
 		
@@ -1300,7 +1310,7 @@ FRA_the_next_revolution = {
 			}
 		}
 		fixed_random_seed = no
-		cost = 25
+		cost = 0
 		days_re_enable = 30
 		days_remove = 35
 		
@@ -1351,7 +1361,7 @@ FRA_the_next_revolution = {
 			}
 		}
 		fixed_random_seed = no
-		cost = 25
+		cost = 0
 		days_re_enable = 30
 		days_remove = 35
 		
@@ -1402,7 +1412,7 @@ FRA_the_next_revolution = {
 			}
 		}
 		fixed_random_seed = no
-		cost = 25
+		cost = 0
 		days_re_enable = 30
 		days_remove = 35
 		
@@ -1453,7 +1463,7 @@ FRA_the_next_revolution = {
 			}
 		}
 		fixed_random_seed = no
-		cost = 25
+		cost = 0
 		days_re_enable = 30
 		days_remove = 35
 		
