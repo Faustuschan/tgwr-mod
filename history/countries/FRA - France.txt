@@ -87,16 +87,15 @@ add_ideas = {
 	activate_mission = FRA_wadai_war_timer
 }
 
-
 set_technology = { bicycle_infantry = 1 }
 give_guarantee = BEL # Treaty of London (1839)
 
-create_country_leader = { 
-	name = "Louis Frossard" 
-	picture = "gfx/leaders/FRA/FRA_louis_frossard.dds" 
+create_country_leader = {
+	name = "Jean Jaurès" 
+	picture = "gfx/leaders/FRA/FRA_Jean_Jaures.png" 
 	expire = "1935.1.1" 
-	ideology = marxism
-	traits = { trait_marxism }  
+	ideology = reformist_socialism
+	traits = { trait_reformist_socialism }  
 }
 create_country_leader = {
 	name = "Armand Fallières" 
@@ -147,7 +146,7 @@ create_corps_commander={
 create_field_marshal={
 	name = "Ferdinand Foch" id=32006
 	portrait_path="gfx/leaders/FRA/FRA_ferdinand_foch.dds"
-	traits={ offensive_doctrine }
+	traits={ offensive_doctrine artillery_officer artillery_specialist }
 	skill=4
 	attack_skill = 3
 	defense_skill = 4
