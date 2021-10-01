@@ -5,12 +5,40 @@ French_historical = {
 	enable = {
 		original_tag = FRA
 		or = {
-			OR = {
-				is_historical_focus_on = yes
-				has_game_rule = {
-					rule = FRA_ai_behavior
-					option = HISTORICAL
-				}
+			is_historical_focus_on = yes
+			has_game_rule = {
+				rule = FRA_ai_behavior
+				option = HISTORICAL
+			}
+		}
+		NOT = {
+			has_game_rule = {
+				rule = FRA_ai_behavior
+				option = SOCIALIST
+			}
+		}
+		NOT = {
+			has_game_rule = {
+				rule = FRA_ai_behavior
+				option = DEMOCRATIC_ALTERNATE
+			}
+		}
+		NOT = {
+			has_game_rule = {
+				rule = FRA_ai_behavior
+				option = NEUTRALITY_MONARCHIST
+			}
+		}
+		NOT = {
+			has_game_rule = {
+				rule = FRA_ai_behavior
+				option = NEUTRALITY_BONARPARTIST
+			}
+		}
+		NOT = {
+			has_game_rule = {
+				rule = FRA_ai_behavior
+				option = FASCIST
 			}
 		}
 	}

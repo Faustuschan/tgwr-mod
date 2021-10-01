@@ -448,6 +448,39 @@ ww1_france.58.d:0 "We weren't able to push back the Germans. Defeat was inevitab
 ww1_france.59.t:0 "French interest in Syria"
 ww1_france.59.d:0 "Due to the battles between France and the Ottoman Empire, the idea of redrawing the map of the Middle East is becoming a priority for the government of [FRA.getLeader]. In order to deny the sublime gate, it was decided to install, in the event of victory, a protectorate in Syria, a central member of the Ottoman Empire. "
 
+ww1_france.60.t:0 "Discovery of an assassination plot"
+ww1_france.60.d:0 "The secret services of the Republic have discovered several proofs of a plot to assassinate President Jaurès. The father of the new socialist republic has long been in the sights of representatives of the far right. The president's security was immediately enhanced."
+ww1_france.60.a:0 "We won't let this happen" 
+
+ww1_france.61.t:0 "Attempted murder against Jean Jaurès"
+ww1_france.61.d:0 "President Jaurès was the victim of an assault this morning in his residence at the Elysee Palace. Several organized assault troops mobilized to take control of the hall before killing the twenty guards present. The terrorists are currently in possession of the building and the safety of Jean Jaurès seems compromised."
+ww1_france.61.a:0 "The army intervenes in time and saves the president"
+ww1_france.61.b:0 "We are helpless"
+FRA_elections_post_jaures:0 "§YElections will be organized within the party.§!"
+
+ww1_france.62.t:0 "SFIO elections"
+ww1_france.62.d:0 "The departure of Jean Jaurès left a vacuum at the head of the party. The elections within the SFIO made it possible to shed light on two possible leaders. The first is Karl Marx's grandson, Jean Longuet. The second is a friend of Jean Jaurès who fought alongside him during the riots in Champagne."
+ww1_france.62.a:0 "Jean Longuet is Karl Marx's grandson"
+ww1_france.62.b:0 "Jules Guesde was Jaurès's favorite"
+
+ww1_france.63.t:0 "Jaurès oppose to war"
+ww1_france.63.d:0 "Despite the national desire to fight the aggressiveness of the triplice, President Jean Jaurès expressed his total opposition to the coming war. The approval of the president is necessary to enter the conflict. We only have two options, Remove Jaurès or make a declaration of neutrality."
+ww1_france.63.a:0 "The president must resign"
+ww1_france.63.b:0 "We don't want another war"
+
+ww1_france.64.t:0 "Les gueules cassées"
+ww1_france.64.d:0 "After the great war, the survivors among the troops were permanently marked. Many of them are now "gueules cassées", combatants disfigured by the shells which now haunt the streets of major French towns. This traumastism will durably affect French military policy."
+ww1_france.64.a:0 "The great war was a test for all of us."
+ww1_france.64.b:0 "It was a disaster..."
+
+ww1_france.65.t:0 "Veteran wages"
+ww1_france.65.d:0 "After the war, the veterans returned home and claimed their pay. The government has an obligation to reward our brave soldiers, compounding the downturn in our economy."
+ww1_france.65.a:0 "They deserved it"
+
+ww1_france.66.t:0 "Post-war demobilization"
+ww1_france.66.d:0 "The great war is over, the war industry no longer has a reason to exist insofar as no army can oppose the agreement."
+ww1_france.66.a:0 "Back to civilian economy"
+
  #BELGIUM
  ww1_belgium.1.a:0 "Never forget Belgium"
  ww1_belgium.1.d:0 "Reports have come in describing outright barbaric, if not genocidal, treatment of Belgian civilians by those bastard Germans! Of course, some weak-willed members of Parliament have denounced these reports as exaggerated, but if nothing else, this gives us the perfect excuse to enter the war against Germany, and, more importantly, take their colonies for their rightful British masters."

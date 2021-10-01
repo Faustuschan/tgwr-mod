@@ -44,7 +44,7 @@ bookmarks = {
 			ideas = {
 				FRA_memories_of_1870
 				FRA_artisanal_industry
-				ww1_Scramble_for_Africa
+				FRA_disjointed_government
 			}
 			focuses = {
 				FRA_ww1_beyond_fear

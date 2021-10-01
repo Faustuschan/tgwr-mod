@@ -702,6 +702,9 @@ ideas = {
 			removal_cost = -1
 			picture = generic_production_bonus
 			available = {
+				NOT = { 
+					has_government = communism
+				}
 			}
 			modifier = {
 				consumer_goods_factor = -0.05
@@ -713,24 +716,67 @@ ideas = {
 			picture = generic_morale_bonus
 			modifier = {
 				out_of_supply_factor = -0.5
-				hidden_modifier = {
-					attrition = -0.5
-					offence = 0.5
-					army_org_Factor = 0.5
-					supply_consumption_factor = -0.5
-					
-				}
+				attrition = -0.5
+				army_org_Factor = 0.5
+				supply_consumption_factor = -0.5
 				custom_modifier_tooltip = FRA_must_won_before_1919
 				
 				
 			}
 			targeted_modifier = {
 				tag = GER
-				hidden_modifier = {
-					attack_bonus_against = 1
-					breakthrough_bonus_against = 1
-				}
+				attack_bonus_against = 2
+				breakthrough_bonus_against = 2
 				
+			}
+		}
+
+		FRA_jaures_in_danger = {
+			removal_cost = -1
+			picture = generic_spy_coup
+			available = {
+				has_country_leader = {
+					name = "Jean Jaurès"
+				}
+			}
+			modifier = {
+				
+			}
+		}
+
+
+		FRA_memory_of_the_somme = {
+			removal_cost = -1
+			picture = ENG_the_war_to_end_all_wars
+			available = {
+				original_tag = FRA
+			}
+			modifier = {
+				recruitable_population  = -0.25
+			}
+		}
+
+		FRA_memory_of_the_somme2 = {
+			name = FRA_memory_of_the_somme
+			desc = FRA_memory_of_the_somme
+			removal_cost = -1
+			picture = ENG_the_war_to_end_all_wars
+			available = {
+				original_tag = FRA
+			}
+			modifier = {
+				recruitable_population = -0.50
+			}
+		}
+
+		FRA_paying_veterans_wages = {
+			removal_cost = -1
+			picture = chi_hyper_inflation2
+			available = {
+				original_tag = FRA
+			}
+			modifier = {
+				consumer_goods_factor = 0.10
 			}
 		}
 		

@@ -296,6 +296,10 @@ parliament_gui_decision_category = {
 				add_to_variable = { var = SFIO value = independent_socialist }
 				set_variable = { var = democratic_republican_alliance value = 0 } 
 				set_variable = { var = independent_socialist value = 0 } 
+
+
+				set_variable = { var = democrat_alliance value = 0 } ## socialist alliance
+				add_to_variable = { var = democrat_alliance value = SFIO }
 			}
 			##########################################################################
 			#
@@ -509,6 +513,10 @@ parliament_gui_decision_category = {
 				add_to_variable = { var = SFIO value = independent_socialist }
 				set_variable = { var = democratic_republican_alliance value = 0 } 
 				set_variable = { var = independent_socialist value = 0 } 
+
+
+				set_variable = { var = democrat_alliance value = 0 } ## socialist alliance
+				add_to_variable = { var = democrat_alliance value = SFIO }
 			}
 
 			##########################################################################

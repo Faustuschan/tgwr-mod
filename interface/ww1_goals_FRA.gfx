@@ -32,6 +32,11 @@ spriteTypes = {
 		texturefile = "gfx/interface/goals/FRA/Form_the_popular_labour_service.dds"
 	}
 
+	SpriteType = {
+		name = "GFX_FRA_ww1_ally_the_republican_alliance_focus"
+		texturefile = "gfx/interface/goals/FRA/social-democratic_compromise.dds"
+	}
+
 	##### expanded duty 2
 	SpriteType = {
 		name = "GFX_goal_FRA_expanded_duty2"
@@ -140,6 +145,68 @@ spriteTypes = {
 	SpriteType = {
 		name = "GFX_goal_FRA_mention_de_censure_focus"
 		texturefile = "gfx/interface/goals/FRA/mention_de_censure.dds"
+	}
+
+
+	SpriteType = {
+		name = "GFX_FRA_ww1_dreyfus_exoneration_focus"
+		texturefile = "gfx/interface/goals/FRA/dreyfus_exoneration.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_chi_reach_out_to_france_2"
+		texturefile = "gfx/interface/goals/FRA/focus_chi_reach_out_to_france2.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_FRA_socialist_reality"
+		texturefile = "gfx/interface/goals/FRA/socialist_reality.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_FRA_ministerial_changes"
+		texturefile = "gfx/interface/goals/FRA/ministerial_changes.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_FRA_goverment_reform"
+		texturefile = "gfx/interface/goals/FRA/goverment_reform.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_FRA_social_investments"
+		texturefile = "gfx/interface/goals/FRA/social_investments.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_FRA_Social_demokrat_kompromiss"
+		texturefile = "gfx/interface/goals/FRA/Social_demokrat_kompromiss.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_FRA_improve_railways"
+		texturefile = "gfx/interface/goals/FRA/improve_railways.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_FRA_improve_railways"
+		texturefile = "gfx/interface/goals/FRA/improve_railways.dds"
+	}
+
+
+	SpriteType = {
+		name = "GFX_FRA_ww1_char2c_focus"
+		texturefile = "gfx/interface/goals/FRA/heavy_tank_focus.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_FRA_ww1_break_the_german_lines_focus"
+		texturefile = "gfx/interface/goals/FRA/break_german_lines.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_FRA_ww1_the_social_democrat_compromise_focus"
+		texturefile = "gfx/interface/goals/FRA/the_social_democrate_compromise.dds"
 	}
 
 	SpriteType = {

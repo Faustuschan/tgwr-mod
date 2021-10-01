@@ -1320,6 +1320,7 @@ spriteType = { name = "GFX_idea_nevsky_zavod" texturefile = "gfx/interface/ideas
 		name = "GFX_idea_FRA_charles_maurras"
 		texturefile = "gfx/interface/ideas/FRA/FRA_charles_maurras.dds"
 	}
+	
 	# Qing
 	spriteType = {
 		name = "GFX_idea_QIN_idea_xuantong"

@@ -437,6 +437,11 @@ FRA_dont_help_belgium = {
 		}
 		is_in_faction_with = BEL
 		BEL = { has_capitulated = no }
+		NOT = {
+			USA = {
+				has_war_with = GER
+			}
+		}
 	}
 	abort_when_not_enabled = yes
 	
@@ -750,7 +755,7 @@ FRA_put_a_end_to_the_great_war = {
 		tag = GER
 		ratio = 0.9
 		
-		priority = 1000
+		priority = 100000
 		ordertype = front
 		execution_type = rush
 		manual_attack = yes

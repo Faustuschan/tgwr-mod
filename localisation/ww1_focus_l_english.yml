@@ -3083,13 +3083,30 @@ TUR_invite_balkan_economy_sphere_tt:0 "Invites §YBalkan countries§! into an §
  
  
  FRA_ww1_dreyfus_exoneration:0 "Exonerate Dreyfus"
+ FRA_ww1_dreyfus_exoneration_desc:0 "Exempt since 1906, Alfred Dreyfus is still at the heart of the political debate. It is time to close this painful parenthesis of the 3rd Republic."
+
  FRA_ww1_save_the_republic:0 "Save the Republic"
+ FRA_ww1_save_the_republic_desc:0 "The French political division combined with the new tensions in Europe imposes great firmness in our national management. Let us prioritize essential actions and prepare for a potential conflict with the central powers."
+
  FRA_ww1_memories_of_the_commune:0 "Memories of the Commune"
+ FRA_ww1_memories_of_the_commune_desc:0 "The defeat of 1870 allowed the most incredible of governance. Within Paris, an idyllic commune has formed. Equal, strong and independent, it represents the hope of a new France."
+
  FRA_ww1_form_the_popular_labor_service:0 "Form the Popular Labour Service"
+ FRA_ww1_form_the_popular_labor_service_desc:0 "Youth must be brought into line to assist the economy. The formation of a popular labor movement will bring valuable manpower to the government."
+
  FRA_ww1_extend_the_duty:0 "Expand Factory Duty"
+ FRA_ww1_extend_the_duty_desc:0 "The extension of youth work can offer the possibility of directly increasing industrial production."
+
  FRA_ww1_popular_brigades:0 "Popular Brigades"
+ FRA_ww1_popular_brigades_desc:0 "Beyond civic duty, French youth can offer support to the army. Many auxiliary roles require small, nimble hands. The transport of ammunition, the repair of machinery, or the transport of supplies could be carried out via these new popular brigades."
+
  FRA_ww1_the_social_democrat_compromise:0 "The Social Democrat Compromise"
+ FRA_ww1_the_social_democrat_compromise_desc:0 "French politics are too tense and our economy too weak to stand up against the central powers on a lasting basis. It is time to initiate a fundamental reform of the government and to transform our economy through the construction of railroads."
+
+
  FRA_ww1_form_the_proudhon_circle:0 "Form the Proudhon Circle"
+ FRA_ww1_form_the_proudhon_circle_desc:0 "The last 40 years have proven that the French Republic is weak. The best years of France were under the reigns of Kings and Emperor. Despite the defeat of Napoleon III, the people can, will, and will still believe in it."
+
  FRA_ww1_support_paul_deroulede:0 "Support Paul Deroulede"
  FRA_ww1_support_the_suffragettes:0 "Support the Suffragettes"
  FRA_ww1_affiliation_with_the_CGT:0 "Affiliate with CGT"

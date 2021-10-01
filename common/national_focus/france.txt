@@ -11,7 +11,7 @@ focus_tree = {
 
 	focus = {
 		id = FRA_ww1_dreyfus_exoneration
-		icon = GFX_focus_chi_reach_out_to_france
+		icon = GFX_FRA_ww1_dreyfus_exoneration_focus
 		completion_reward = {
 			add_political_power = 120
 			news_event = ww1_france.40
@@ -29,7 +29,7 @@ focus_tree = {
 ###############################################################
 	focus = {
 		id = FRA_ww1_save_the_republic
-		icon = GFX_goal_FRA_democracy
+		icon = GFX_focus_chi_reach_out_to_france_2
 		relative_position_id = FRA_ww1_dreyfus_exoneration
 		prerequisite = { focus = FRA_ww1_dreyfus_exoneration }
 		mutually_exclusive = {
@@ -695,7 +695,7 @@ focus = {
 
 focus = {
 	id = FRA_ww1_ally_the_republican_alliance
-	icon = GFX_focus_generic_self_management
+	icon = GFX_FRA_ww1_ally_the_republican_alliance_focus
 	relative_position_id = FRA_ww1_memories_of_the_commune
 	prerequisite = { focus = FRA_ww1_memories_of_the_commune }
 	completion_reward = {
@@ -821,7 +821,7 @@ focus = {
 
 focus = {
 	id = FRA_ww1_socialist_reality
-	icon = GFX_focus_istirak_mukavemeti
+	icon = GFX_focus_FRA_socialist_reality
 	relative_position_id = FRA_ww1_mention_de_censure
 	prerequisite = { focus = FRA_ww1_mention_de_censure }
 	completion_reward = {
@@ -1068,7 +1068,7 @@ focus = {
 ###############################################################
 focus = {
 	id = FRA_ww1_the_social_democrat_compromise
-	icon = GFX_focus_GRE_metaxism
+	icon = GFX_FRA_ww1_the_social_democrat_compromise_focus
 	relative_position_id = FRA_ww1_dreyfus_exoneration
 	prerequisite = { focus = FRA_ww1_dreyfus_exoneration }
 	mutually_exclusive = {
@@ -1341,7 +1341,7 @@ focus = {
 
 focus = {
 	id = FRA_ww1_ministerial_reform
-	icon = GFX_goal_generic_national_unity
+	icon = GFX_focus_FRA_ministerial_changes
 	relative_position_id = FRA_ww1_the_social_democrat_compromise
 	prerequisite = { 
 		focus = FRA_ww1_the_social_democrat_compromise 
@@ -1375,7 +1375,7 @@ focus = {
 
 focus = {
 	id = FRA_ww1_government_reform
-	icon = GFX_focus_eng_concessions_to_the_trade_unions
+	icon = GFX_focus_FRA_goverment_reform
 	relative_position_id = FRA_ww1_ministerial_reform
 	prerequisite = { 
 		focus = FRA_ww1_ministerial_reform 
@@ -1398,7 +1398,7 @@ focus = {
 
 focus = {
 	id = FRA_ww1_political_coherence
-	icon = GFX_idea_SOV_scientist_defect
+	icon = GFX_focus_FRA_Social_demokrat_kompromiss
 	relative_position_id = FRA_ww1_government_reform
 	prerequisite = { 
 		focus = FRA_ww1_government_reform 
@@ -1424,7 +1424,7 @@ focus = {
 
 focus = {
 	id = FRA_ww1_social_investments
-	icon = GFX_focus_generic_concessions
+	icon = GFX_focus_FRA_social_investments
 	relative_position_id = FRA_ww1_the_social_democrat_compromise
 	prerequisite = { 
 		focus = FRA_ww1_the_social_democrat_compromise 
@@ -1443,7 +1443,7 @@ focus = {
 
 focus = {
 	id = FRA_ww1_improve_the_railways
-	icon = GFX_focus_train_railroads
+	icon = GFX_focus_FRA_improve_railways
 	relative_position_id = FRA_ww1_social_investments
 	prerequisite = { 
 		focus = FRA_ww1_social_investments 
@@ -2711,7 +2711,7 @@ focus = {
 	relative_position_id = FRA_ww1_form_the_proudhon_circle
 	prerequisite = { 
 		focus = FRA_ww1_form_the_proudhon_circle 
-		focus = FRA_save_the_republic 
+		focus = FRA_ww1_save_the_republic 
 	}
 	available = {
 		FRA = {
@@ -3128,11 +3128,15 @@ focus = {
 		focus = FRA_ww1_force_the_issue
 	}
 	available = {
-		check_variable = {
-			democrat_alliance > 250
-		}
-		custom_trigger_tooltip = {
-			tooltip = FRA_250_seats
+		AND = {
+			FRA = {
+				check_variable = {
+					democrat_alliance > 250
+				}
+				custom_trigger_tooltip = {
+					tooltip = FRA_250_seats
+				}
+			}
 		}
 		fascism > 0.4
 	}
@@ -3144,6 +3148,10 @@ focus = {
 		}
 		news_event = ww1_france.45
 		set_cosmetic_tag = FRA_proto_fascism
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.10
+		}
 	}
 	ai_will_do = {
 		factor = 1
@@ -3835,7 +3843,7 @@ focus = {
 
 focus = {
 	id = FRA_ww1_break_the_german_lines
-	icon = GFX_armored_breakthrough_medium
+	icon = GFX_FRA_ww1_break_the_german_lines_focus
 	relative_position_id = FRA_ww1_mechanized_effort
 	prerequisite = { 
 		focus = FRA_ww1_mechanized_effort
@@ -3874,7 +3882,7 @@ focus = {
 
 focus = {
 	id = FRA_ww1_char2c
-	icon = GFX_goal_continuous_armor_production
+	icon = GFX_FRA_ww1_char2c_focus
 	relative_position_id = FRA_ww1_break_the_german_lines
 	prerequisite = { 
 		focus = FRA_ww1_break_the_german_lines
