@@ -11,6 +11,7 @@ country_event = {
 	picture = GFX_ww1_france_63
 	fire_only_once = yes
 	trigger = {
+		original_tag = FRA
 		has_country_flag = great_war_winner
 		has_war = no
 	}
@@ -572,6 +573,10 @@ country_event = {
 			}
 		}
 		add_manpower = 250000
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 10000
+		}
 	}
 }
 
@@ -585,6 +590,7 @@ country_event = {
 		days = 2
 	}
 	trigger = {
+		original_tag = FRA
 		has_war_with = GER
 		date > 1919.2.2
 		has_global_flag = entente_last_attack
@@ -612,6 +618,7 @@ country_event = {
 	}
 	trigger = {
 		has_war_with = TUR
+		original_tag = FRA
 	}
 	fire_only_once = yes
 	option = {
@@ -650,6 +657,7 @@ country_event = {
 		days = 60
 	}
 	trigger = {
+		tag = FRA
 		has_country_leader = {
 			name = "Jean Jaurès"
 		}
@@ -671,6 +679,7 @@ country_event = {
 		days = 240
 	}
 	trigger = {
+		tag = FRA
 		has_idea = FRA_jaures_in_danger
 	}
 	fire_only_once = yes
@@ -679,6 +688,7 @@ country_event = {
 		name = ww1_france.61.a
 		remove_ideas = FRA_jaures_in_danger
 		add_country_leader_trait = our_right_to_survive
+		set_global_flag = Jaures_survived
 	}
 	option = {
 		name = ww1_france.61.b
@@ -728,7 +738,7 @@ country_event = {
 		retire_country_leader = yes
 		create_country_leader = {
 			name = "Jules Guesde"
-			ideology = socialism
+			ideology = marxism
 			traits = {
 				rearmer
 				socialist_novelist
@@ -747,11 +757,28 @@ country_event = {
 	picture = GFX_ww1_france_63
 	fire_only_once = yes
 	trigger = {
-		has_active_mission = european_crisis_mission
 		has_country_leader = {
 			name = "Jean Jaurès"
 		}
-		has_guaranteed = SER
+		OR = {
+			AND = {
+				has_active_mission = european_crisis_mission
+				is_in_faction_with = RUS
+			}
+			AND = {
+				has_active_mission = european_crisis_mission
+				has_guaranteed = SER
+			}
+			AND = {
+				has_war_with = GER
+				has_war_with = AUH
+				strength_ratio = {
+					tag = GER
+					ratio < 1
+				}
+				date < 1916.1.1
+			}
+		}
 	}
 	option = {
 		name = ww1_france.63.a
@@ -776,6 +803,18 @@ country_event = {
 		add_ideas = neutrality_idea
 		add_ideas = civilian_economy
 		set_country_flag = jaures_neutrality
+		if = {
+			limit = {
+				has_war = yes
+			}
+			every_country = {
+				limit = {
+					has_war_with = FRA
+				}
+				white_peace = ROOT
+			}
+			
+		}
 	}
 }
 
@@ -789,6 +828,7 @@ country_event = {
 	picture = GFX_ww1_france_63
 	fire_only_once = yes
 	trigger = {
+		original_tag = FRA
 		has_country_flag = great_war_winner
 		has_war = no
 	}
@@ -813,6 +853,7 @@ country_event = {
 	picture = GFX_ww1_france_63
 	fire_only_once = yes
 	trigger = {
+		original_tag = FRA
 		has_country_flag = great_war_winner
 		has_war = no
 	}

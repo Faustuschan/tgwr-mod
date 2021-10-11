@@ -154,6 +154,12 @@ FRA_not_hold_verdun:0 "Verdun fall into Germans hands."
  NFA_sue_for_peace_FRC:0 "Withdraw from the Metropolitan France"
  NFA_return_to_paris:0 "Return to Paris"
 
+ embargo_france:0 "Embargoes [FRA.GetName]"
+ FRA_embargo:0 " Has sanctionned §YFrance§!."
+ full_embargo:0 "Full embargo"
+ puppet_embargo_too:0 "\n§YOur subjects§! will place them under embargoes as well.\n\n"
+
+
  FRA_socialist_france_flag:0 "Socialist France"
  FRC_internationale:0 "Form Internationale"
  FRC_valois_seize_the_power:0 "Seize the Power"

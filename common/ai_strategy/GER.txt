@@ -138,10 +138,21 @@ invading_france_through_benelux = {
 	enable = {
 		original_tag = GER
 		has_war_with = FRA
+		FRA = {
+			NOT = {
+				has_idea = neutrality_idea
+			}
+		}
 	}
 	abort = {
-		BEL = {
-			has_capitulated = yes
+		OR = {
+			BEL = {
+				has_capitulated = yes
+			}
+			NOT = {
+				has_war_with = FRA
+			}
+			date > 1916.1.1
 		}
 	}
 	

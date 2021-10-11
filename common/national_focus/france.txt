@@ -56,7 +56,6 @@ focus_tree = {
 		relative_position_id = FRA_ww1_save_the_republic
 		prerequisite = { focus = FRA_ww1_save_the_republic }
 		available = {
-			
 			FRA = {
 				check_variable = {
 					democrat_alliance > 150
@@ -67,10 +66,8 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			add_timed_idea = {
-				idea = FRA_ww1_agricultural_sector_strike
-				days = 360
-			}
+			add_political_power = 120
+			remove_ideas = FRA_ww1_agricultural_sector_strike
 		}
 		ai_will_do = {
 			factor = 1
@@ -3596,6 +3593,10 @@ focus = {
 				has_idea = tot_economic_mobilisation
 				has_idea = war_economy
 			}
+		}
+		any_country = {
+			is_major = yes
+			has_war_with = FRA
 		}
 	}
 	completion_reward = {

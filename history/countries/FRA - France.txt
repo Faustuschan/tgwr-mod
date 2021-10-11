@@ -77,6 +77,12 @@ add_ideas = {
 }
 
 
+add_timed_idea = {
+	idea = FRA_ww1_agricultural_sector_strike
+	days = 360
+}
+
+
 1910.1.1 = {
 	declare_war_on = {
 		target = CHA
@@ -90,13 +96,6 @@ add_ideas = {
 set_technology = { bicycle_infantry = 1 }
 give_guarantee = BEL # Treaty of London (1839)
 
-create_country_leader = {
-	name = "Jean Jaurès" 
-	picture = "gfx/leaders/FRA/FRA_Jean_Jaures.png" 
-	expire = "1935.1.1" 
-	ideology = reformist_socialism
-	traits = { trait_reformist_socialism }  
-}
 create_country_leader = {
 	name = "Armand Fallières" 
 	picture = "gfx/leaders/FRA/FRA_armand_fallieres.dds" 
@@ -119,6 +118,13 @@ create_country_leader = {
 		monarchist_media_mogul
 		trait_oligarchism
 	}
+}
+create_country_leader = {
+	name = "Jean Jaurès" 
+	picture = "gfx/leaders/FRA/FRA_Jean_Jaures.png" 
+	expire = "1935.1.1" 
+	ideology = reformist_socialism
+	traits = { trait_reformist_socialism }  
 }
 
 create_field_marshal = {
@@ -306,7 +312,7 @@ create_corps_commander = {
 	logistics_skill = 3
 }
 create_corps_commander = {
-	name = "Nicolas Scalio"
+	name = "Nicolas Saclois"
 	portrait_path = "gfx/leaders/FRA/generic_commander_1.dds"
 	traits = {
 		media_personality

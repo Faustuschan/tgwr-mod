@@ -1458,8 +1458,14 @@ GER_great_war = {
 				BEL = {
 					has_capitulated = no
 				}
-				surrender_progress < 0.2
-				casualties < 2000000
+				OR = {
+					surrender_progress < 0.2
+					BEL = {
+						surrender_progress > 0.2
+					}
+					casualties < 2000000
+				}
+				
 			}
 			modifier = {
 				factor = 0
