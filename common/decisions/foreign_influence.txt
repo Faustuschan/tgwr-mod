@@ -476,6 +476,7 @@ embargo = {
 						limit = {
 							is_core_of = FRA
 							is_on_continent = europe
+							industrial_complex > 0
 						}
 						remove_building = {
 							type = industrial_complex
@@ -488,27 +489,27 @@ embargo = {
 		}
 		
 		ai_will_do = {
-			factor = 0
+			base = 0
 			modifier = {
 				has_opinion = {
 					target = FRA
 					value < 50
 				}
-				factor = 1
+				add = 10
+			}
+			modifier = {
+				has_opinion = {
+					target = FRA
+					value < 20
+				}
+				add = 10
 			}
 			modifier = {
 				has_opinion = {
 					target = FRA
 					value < 1
 				}
-				factor = 100
-			}
-			modifier = {
-				has_opinion = {
-					target = FRA
-					value < -10
-				}
-				factor = 200
+				add = 10
 			}
 			modifier = {
 				any_country = {
@@ -518,14 +519,13 @@ embargo = {
 					}
 					has_added_tension_amount > 5
 				}
-				factor = 100
+				add = 80
 			}
 			modifier = {
 				OR = {
 					has_government = communist
 					is_in_faction_with = FRA
 				}
-				
 				factor = 0
 			}
 		}
