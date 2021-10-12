@@ -951,6 +951,26 @@ country_event = {
 	}
 }
 
+# Joseph Gallieni died in 1916 may 27
+country_event = {
+	title = ww1_france.67.t
+	desc = ww1_france.67.d
+	id = ww1_france.67
+	picture = GFX_report_event_tomb
+	fire_only_once = yes
+	trigger = {
+		date > 1910.05.01
+	}
+
+	mean_time_to_happen = {
+		days = 10
+	}
+	option = {
+		name = ok
+		remove_unit_leader = 32019
+	}
+}
+
 #____________________________________________________________
 # End of new events
 #____________________________________________________________
@@ -3228,6 +3248,8 @@ country_event = {
 		}
 	}
 }
+
+
 
 # France - royalist claims the Throne
 ##########################################

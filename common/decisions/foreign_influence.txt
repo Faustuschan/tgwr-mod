@@ -495,14 +495,14 @@ embargo = {
 					target = FRA
 					value < 50
 				}
-				add = 10
+				add = 1
 			}
 			modifier = {
 				has_opinion = {
 					target = FRA
 					value < 20
 				}
-				add = 10
+				add = 1
 			}
 			modifier = {
 				has_opinion = {
