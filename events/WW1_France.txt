@@ -959,7 +959,8 @@ country_event = {
 	picture = GFX_report_event_tomb
 	fire_only_once = yes
 	trigger = {
-		date > 1910.05.01
+		original_tag = FRA
+		date > 1916.05.01
 	}
 
 	mean_time_to_happen = {
@@ -968,6 +969,36 @@ country_event = {
 	option = {
 		name = ok
 		remove_unit_leader = 32019
+	}
+}
+
+
+#old guards officers retire if france is communist
+country_event = {
+	title = ww1_france.68.t
+	desc = ww1_france.68.d
+	id = ww1_france.68
+	picture = GFX_report_event_worried_french
+	fire_only_once = yes
+	trigger = {
+		original_tag = FRA
+		has_government = communism
+		has_war = no
+	}
+
+	mean_time_to_happen = {
+		days = 50
+	}
+	option = {
+		name = ok
+		custom_effect_tooltip = remove_unit_leader
+		every_unit_leader = {
+			limit = {
+				has_trait = old_guard
+			}
+			retire = yes
+		}
+		
 	}
 }
 

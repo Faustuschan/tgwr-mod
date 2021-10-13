@@ -269,7 +269,7 @@ create_corps_commander={
 	logistics_skill = 2
 }
 create_corps_commander = {
-	name = "Paul Leblois"
+	name = "Paul Leblois" id=32033
 	portrait_path = "gfx/leaders/FRA/FRA_paul_leblois.dds"
 	traits = {
 		infantry_officer
@@ -283,7 +283,7 @@ create_corps_commander = {
 	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "Henri Gouraud"
+	name = "Henri Gouraud" id=32035
 	portrait_path = "gfx/leaders/FRA/FRA_Henri_Gouraud.dds"
 	traits = {
 		desert_fox
@@ -298,7 +298,7 @@ create_corps_commander = {
 	logistics_skill = 2
 }
 create_corps_commander = {
-	name = "Henri Berthelot"
+	name = "Henri Berthelot" id=32036
 	portrait_path = "gfx/leaders/FRA/FRA_Henri_Berthelot.dds"
 	traits = {
 		organizer
@@ -311,7 +311,7 @@ create_corps_commander = {
 	logistics_skill = 2
 }
 create_corps_commander = {
-	name = "Charles Mangin"
+	name = "Charles Mangin" id=32037
 	portrait_path = "gfx/leaders/FRA/FRA_Charles_Mangin.dds"
 	traits = {
 		harsh_leader
@@ -326,7 +326,7 @@ create_corps_commander = {
 	logistics_skill = 3
 }
 create_corps_commander = {
-	name = "Nicolas Saclois"
+	name = "Nicolas Saclois" id=32038
 	portrait_path = "gfx/leaders/FRA/generic_commander_1.dds"
 	traits = {
 		media_personality
@@ -338,6 +338,48 @@ create_corps_commander = {
 	defense_skill = 1
 	planning_skill = 3
 	logistics_skill = 1
+}
+
+create_corps_commander = {
+	name = "Maurice Sarrail" id=32039
+	#portrait_path = "gfx/leaders/FRA/generic_commander_1.dds"
+	traits = {
+		adaptable
+	}
+	skill = 2
+	attack_skill = 3
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 1
+}
+
+create_corps_commander = {
+	name = "Adolphe Guillaumat" id=32040
+	portrait_path = "gfx/leaders/FRA/FRA_Adolphe_Guillaumat.dds"
+	traits = {
+		cavalry_officer
+		defensive_doctrine
+	}
+	skill = 2
+	attack_skill = 2
+	defense_skill = 3
+	planning_skill = 2
+	logistics_skill = 2
+}
+
+create_corps_commander = {
+	name = "Augustin Gérard" id=32041
+	#portrait_path = "gfx/leaders/FRA/generic_commander_1.dds"
+	traits = {
+		media_personality
+		trait_cautious
+		infantry_officer
+	}
+	skill = 2
+	attack_skill = 1
+	defense_skill = 4
+	planning_skill = 1
+	logistics_skill = 3
 }
 
 create_navy_leader={
