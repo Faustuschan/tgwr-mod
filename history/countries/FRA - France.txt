@@ -99,11 +99,11 @@ set_technology = { bicycle_infantry = 1 }
 give_guarantee = BEL # Treaty of London (1839)
 
 create_country_leader = {
-	name = "Armand Fallières" 
-	picture = "gfx/leaders/FRA/FRA_armand_fallieres.dds" 
+	name = "Aristide Briand" 
+	picture = "gfx/leaders/FRA/FRA_Aristide_Briand.dds" 
 	expire = "1935.1.1" 
 	ideology = conservatism
-	traits = { trait_conservatism }  
+	traits = { dealbroker }  
 }
 create_country_leader = {
 	name = "Georges Valois" 

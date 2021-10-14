@@ -1002,6 +1002,1201 @@ country_event = {
 	}
 }
 
+#####################################################################################################################################################################
+#######################################################
+
+#
+# Ministerial change in order  date > > > ..
+#
+
+#######################################################
+##############################################################################################################
+
+# Briand retire 1911.2 (bored)
+##################
+country_event = {
+	id = ww1_france.72
+	title = ww1_france.72.t
+	desc = ww1_france.72.d
+	picture = GFX_report_event_election_vote
+	fire_only_once = yes
+	trigger = {
+		tag = FRA
+		has_government = democratic
+		date > 1911.2.2
+		date < 1912.1.1
+	}
+	mean_time_to_happen = {
+		days = 14
+	}
+	option = {
+		name = ok
+		create_country_leader = {
+			name = "Ernest Monis" 
+			picture = "gfx/leaders/FRA/FRA_Ernest_Monis.dds" 
+			expire = "1935.1.1" 
+			ideology = conservatism
+			traits = { stammer }  
+		}
+	}
+}
+
+
+# Ernest Monis retire 1911.5 (plane crash)
+##################
+country_event = {
+	id = ww1_france.71
+	title = ww1_france.71.t
+	desc = ww1_france.71.d
+	picture = GFX_report_event_election_vote
+	fire_only_once = yes
+	trigger = {
+		tag = FRA
+		has_government = democratic
+		date > 1911.5.1
+		date < 1912.1.1
+	}
+	mean_time_to_happen = {
+		days = 14
+	}
+	option = {
+		name = ok
+		create_country_leader = {
+			name = "Joseph Caillaux" 
+			picture = "gfx/leaders/FRA/FRA_Joseph_Caillaux.dds" 
+			expire = "1935.1.1" 
+			ideology = conservatism
+			traits = { corrupted_minister }  
+		}
+	}
+}
+
+
+# Josepsh Caillaux retire 1912.1 (corrupted)
+##################
+country_event = {
+	id = ww1_france.70
+	title = ww1_france.70.t
+	desc = ww1_france.70.d
+	picture = GFX_report_event_election_vote
+	fire_only_once = yes
+	trigger = {
+		tag = FRA
+		has_government = democratic
+		date > 1912.1.1
+		date < 1913.3.1
+	}
+	mean_time_to_happen = {
+		days = 2
+	}
+	option = {
+		name = ww1_france.69.a
+		trigger = {
+			NOT = {
+				has_country_leader = {
+					name = "Raymond Poincaré"
+				}
+			}
+		}
+		create_country_leader = {
+			name = "Raymond Poincaré"
+			picture = "gfx/leaders/FRA/FRA_raymond_poincare.dds"
+			expire = "1935.1.1"
+			ideology = classical_liberalism
+			traits = {
+				poincare_la_guerre
+				trait_classical_liberalism
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = ww1_france.69.b
+		trigger = {
+			NOT = {
+				has_country_leader = {
+					name = "Jules Pams"
+				}
+			}
+		}
+		create_country_leader = {
+			name = "Jules Pams"
+			picture = "gfx/leaders/FRA/FRA_Aristide_Briand.dds"
+			expire = "1935.1.1"
+			ideology = classical_liberalism
+			traits = {
+				naval_rearmer
+				inexperimented_president
+			}
+		}
+		ai_chance = {
+			factor = 80
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+	}
+	option = {
+		name = ww1_france.69.c
+		trigger = {
+			NOT = {
+				has_country_leader = {
+					name = "Aristide Briand"
+				}
+			}
+		}
+		create_country_leader = {
+			name = "Aristide Briand"
+			picture = "gfx/leaders/FRA/FRA_Aristide_Briand.dds"
+			expire = "1935.1.1"
+			ideology = classical_liberalism
+			traits = {
+				captain_of_industry
+			}
+		}
+		ai_chance = {
+			factor = 20
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+	}
+	option = {
+		name = ww1_france.69.e
+		trigger = {
+			NOT = {
+				has_country_leader = {
+					name = "Louis Barthou"
+				}
+			}
+		}
+		create_country_leader = {
+			name = "Louis Barthou"
+			picture = "gfx/leaders/FRA/FRA_Charles_Mangin.dds"
+			expire = "1935.1.1"
+			ideology = classical_liberalism
+			traits = {
+				popular_figurehead2
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+# Pointcarré retire 1913.1 (mandat ended)
+##################
+country_event = {
+	id = ww1_france.73
+	title = ww1_france.73.t
+	desc = ww1_france.73.d
+	picture = GFX_report_event_election_vote
+	fire_only_once = yes
+	trigger = {
+		tag = FRA
+		has_government = democratic
+		date > 1913.1.1
+		date < 1914.3.1
+	}
+	mean_time_to_happen = {
+		days = 2
+	}
+	option = {
+		name = ww1_france.69.a
+		trigger = {
+			NOT = {
+				has_country_leader = {
+					name = "Raymond Poincaré"
+				}
+			}
+		}
+		create_country_leader = {
+			name = "Raymond Poincaré"
+			picture = "gfx/leaders/FRA/FRA_raymond_poincare.dds"
+			expire = "1935.1.1"
+			ideology = classical_liberalism
+			traits = {
+				poincare_la_guerre
+				trait_classical_liberalism
+			}
+		}
+		ai_chance = {
+			factor = 80
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+	}
+	option = {
+		name = ww1_france.69.b
+		trigger = {
+			NOT = {
+				has_country_leader = {
+					name = "Jules Pams"
+				}
+			}
+		}
+		create_country_leader = {
+			name = "Jules Pams"
+			picture = "gfx/leaders/FRA/FRA_Aristide_Briand.dds"
+			expire = "1935.1.1"
+			ideology = classical_liberalism
+			traits = {
+				naval_rearmer
+				inexperimented_president
+			}
+		}
+		ai_chance = {
+			factor = 80
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+	}
+	option = {
+		name = ww1_france.69.c
+		trigger = {
+			NOT = {
+				has_country_leader = {
+					name = "Aristide Briand"
+				}
+			}
+		}
+		create_country_leader = {
+			name = "Aristide Briand"
+			picture = "gfx/leaders/FRA/FRA_Aristide_Briand.dds"
+			expire = "1935.1.1"
+			ideology = classical_liberalism
+			traits = {
+				captain_of_industry
+			}
+		}
+		ai_chance = {
+			factor = 40
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+	}
+	option = {
+		name = ww1_france.69.e
+		trigger = {
+			NOT = {
+				has_country_leader = {
+					name = "Louis Barthou"
+				}
+			}
+		}
+		create_country_leader = {
+			name = "Louis Barthou"
+			picture = "gfx/leaders/FRA/FRA_Charles_Mangin.dds"
+			expire = "1935.1.1"
+			ideology = classical_liberalism
+			traits = {
+				popular_figurehead2
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = ww1_france.69.f
+		trigger = {
+			NOT = {
+				has_country_leader = {
+					name = "Gaston Doumergue"
+				}
+			}
+		}
+		create_country_leader = {
+			name = "Gaston Doumergue"
+			picture = "gfx/leaders/FRA/FRA_Gaston_Doumergue.dds"
+			expire = "1935.1.1"
+			ideology = classical_liberalism
+			traits = {
+				tenacious_negotiator
+			}
+		}
+		ai_chance = {
+			factor = 40
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+	}
+}
+
+# Louis Barthou retire 1913.12 (almost 1914) (Bored)
+##################
+country_event = {
+	id = ww1_france.74
+	title = ww1_france.73.t
+	desc = ww1_france.73.d
+	picture = GFX_report_event_election_vote
+	fire_only_once = yes
+	trigger = {
+		tag = FRA
+		has_government = democratic
+		date > 1914.1.1
+		date < 1914.12.12
+	}
+	mean_time_to_happen = {
+		days = 10
+	}
+	option = {
+		name = ww1_france.69.a
+		trigger = {
+			NOT = {
+				has_country_leader = {
+					name = "Raymond Poincaré"
+				}
+			}
+		}
+		create_country_leader = {
+			name = "Raymond Poincaré"
+			picture = "gfx/leaders/FRA/FRA_raymond_poincare.dds"
+			expire = "1935.1.1"
+			ideology = classical_liberalism
+			traits = {
+				poincare_la_guerre
+				trait_classical_liberalism
+			}
+		}
+		ai_chance = {
+			factor = 50
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+			
+		}
+	}
+	option = {
+		name = ww1_france.69.b
+		trigger = {
+			NOT = {
+				has_country_leader = {
+					name = "Jules Pams"
+				}
+			}
+		}
+		create_country_leader = {
+			name = "Jules Pams"
+			picture = "gfx/leaders/FRA/FRA_Aristide_Briand.dds"
+			expire = "1935.1.1"
+			ideology = classical_liberalism
+			traits = {
+				naval_rearmer
+				inexperimented_president
+			}
+		}
+		ai_chance = {
+			factor = 30
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+	}
+	option = {
+		name = ww1_france.69.c
+		trigger = {
+			NOT = {
+				has_country_leader = {
+					name = "Aristide Briand"
+				}
+			}
+		}
+		create_country_leader = {
+			name = "Aristide Briand"
+			picture = "gfx/leaders/FRA/FRA_Aristide_Briand.dds"
+			expire = "1935.1.1"
+			ideology = classical_liberalism
+			traits = {
+				captain_of_industry
+			}
+		}
+		ai_chance = {
+			factor = 20
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+	}
+	option = {
+		name = ww1_france.69.e
+		trigger = {
+			NOT = {
+				has_country_leader = {
+					name = "Louis Barthou"
+				}
+			}
+		}
+		create_country_leader = {
+			name = "Louis Barthou"
+			picture = "gfx/leaders/FRA/FRA_Charles_Mangin.dds"
+			expire = "1935.1.1"
+			ideology = classical_liberalism
+			traits = {
+				popular_figurehead2
+			}
+		}
+		ai_chance = {
+			factor = 50
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+	}
+	option = {
+		name = ww1_france.69.f
+		trigger = {
+			NOT = {
+				has_country_leader = {
+					name = "Gaston Doumergue"
+				}
+			}
+		}
+		create_country_leader = {
+			name = "Gaston Doumergue"
+			picture = "gfx/leaders/FRA/FRA_Gaston_Doumergue.dds"
+			expire = "1935.1.1"
+			ideology = classical_liberalism
+			traits = {
+				tenacious_negotiator
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+# Gaston Doumergue retire 1914 (Bored)
+##################
+country_event = {
+	id = ww1_france.75
+	title = ww1_france.73.t
+	desc = ww1_france.73.d
+	picture = GFX_report_event_election_vote
+	fire_only_once = yes
+	trigger = {
+		tag = FRA
+		has_government = democratic
+		date > 1915.1.1
+		date < 1916.10.1
+	}
+	mean_time_to_happen = {
+		days = 10
+	}
+	option = {
+		name = ww1_france.69.a
+		trigger = {
+			NOT = {
+				has_country_leader = {
+					name = "Raymond Poincaré"
+				}
+			}
+		}
+		create_country_leader = {
+			name = "Raymond Poincaré"
+			picture = "gfx/leaders/FRA/FRA_raymond_poincare.dds"
+			expire = "1935.1.1"
+			ideology = classical_liberalism
+			traits = {
+				poincare_la_guerre
+				trait_classical_liberalism
+			}
+		}
+		ai_chance = {
+			factor = 50
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+			
+		}
+	}
+	option = {
+		name = ww1_france.69.b
+		trigger = {
+			NOT = {
+				has_country_leader = {
+					name = "Jules Pams"
+				}
+			}
+		}
+		create_country_leader = {
+			name = "Jules Pams"
+			picture = "gfx/leaders/FRA/FRA_Aristide_Briand.dds"
+			expire = "1935.1.1"
+			ideology = classical_liberalism
+			traits = {
+				naval_rearmer
+				inexperimented_president
+			}
+		}
+		ai_chance = {
+			factor = 30
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+	}
+	option = {
+		name = ww1_france.69.c
+		trigger = {
+			NOT = {
+				has_country_leader = {
+					name = "Aristide Briand"
+				}
+			}
+		}
+		create_country_leader = {
+			name = "Aristide Briand"
+			picture = "gfx/leaders/FRA/FRA_Aristide_Briand.dds"
+			expire = "1935.1.1"
+			ideology = classical_liberalism
+			traits = {
+				captain_of_industry
+			}
+		}
+		ai_chance = {
+			factor = 20
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+	}
+	option = {
+		name = ww1_france.69.f
+		trigger = {
+			NOT = {
+				has_country_leader = {
+					name = "Gaston Doumergue"
+				}
+			}
+		}
+		create_country_leader = {
+			name = "Gaston Doumergue"
+			picture = "gfx/leaders/FRA/FRA_Gaston_Doumergue.dds"
+			expire = "1935.1.1"
+			ideology = classical_liberalism
+			traits = {
+				tenacious_negotiator
+			}
+		}
+		ai_chance = {
+			factor = 50
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+	}
+	option = {
+		name = ww1_france.69.g
+		trigger = {
+			NOT = {
+				has_country_leader = {
+					name = "René Viviani"
+				}
+			}
+		}
+		create_country_leader = {
+			name = "René Viviani"
+			picture = "gfx/leaders/FRA/Portrait_France_Rene_Viviani.dds"
+			expire = "1935.1.1"
+			ideology = classical_liberalism
+			traits = {
+				war_industrialist
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+# René Viviani retire 1915.10
+##################
+country_event = {
+	id = ww1_france.76
+	title = ww1_france.73.t
+	desc = ww1_france.73.d
+	picture = GFX_report_event_election_vote
+	fire_only_once = yes
+	trigger = {
+		tag = FRA
+		has_government = democratic
+		date > 1915.10.10
+		date < 1916.10.10
+	}
+	mean_time_to_happen = {
+		days = 10
+	}
+	option = {
+		name = ww1_france.69.a
+		trigger = {
+			NOT = {
+				has_country_leader = {
+					name = "Raymond Poincaré"
+				}
+			}
+		}
+		create_country_leader = {
+			name = "Raymond Poincaré"
+			picture = "gfx/leaders/FRA/FRA_raymond_poincare.dds"
+			expire = "1935.1.1"
+			ideology = classical_liberalism
+			traits = {
+				poincare_la_guerre
+				trait_classical_liberalism
+			}
+		}
+		ai_chance = {
+			factor = 50
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+			
+		}
+	}
+	option = {
+		name = ww1_france.69.b
+		trigger = {
+			NOT = {
+				has_country_leader = {
+					name = "Jules Pams"
+				}
+			}
+		}
+		create_country_leader = {
+			name = "Jules Pams"
+			picture = "gfx/leaders/FRA/FRA_Aristide_Briand.dds"
+			expire = "1935.1.1"
+			ideology = classical_liberalism
+			traits = {
+				naval_rearmer
+				inexperimented_president
+			}
+		}
+		ai_chance = {
+			factor = 30
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+	}
+	option = {
+		name = ww1_france.69.c
+		trigger = {
+			NOT = {
+				has_country_leader = {
+					name = "Aristide Briand"
+				}
+			}
+		}
+		create_country_leader = {
+			name = "Aristide Briand"
+			picture = "gfx/leaders/FRA/FRA_Aristide_Briand.dds"
+			expire = "1935.1.1"
+			ideology = classical_liberalism
+			traits = {
+				captain_of_industry
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = ww1_france.69.f
+		trigger = {
+			NOT = {
+				has_country_leader = {
+					name = "Gaston Doumergue"
+				}
+			}
+		}
+		create_country_leader = {
+			name = "Gaston Doumergue"
+			picture = "gfx/leaders/FRA/FRA_Gaston_Doumergue.dds"
+			expire = "1935.1.1"
+			ideology = classical_liberalism
+			traits = {
+				tenacious_negotiator
+			}
+		}
+		ai_chance = {
+			factor = 20
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+	}
+	option = {
+		name = ww1_france.69.g
+		trigger = {
+			NOT = {
+				has_country_leader = {
+					name = "René Viviani"
+				}
+			}
+		}
+		create_country_leader = {
+			name = "René Viviani"
+			picture = "gfx/leaders/FRA/Portrait_France_Rene_Viviani.dds"
+			expire = "1935.1.1"
+			ideology = classical_liberalism
+			traits = {
+				war_industrialist
+			}
+		}
+		ai_chance = {
+			factor = 20
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+	}
+}
+
+# Aristide Briand 1916.10 retire (end of mandate)
+##################
+country_event = {
+	id = ww1_france.77
+	title = ww1_france.73.t
+	desc = ww1_france.73.d
+	picture = GFX_report_event_election_vote
+	fire_only_once = yes
+	trigger = {
+		tag = FRA
+		has_government = democratic
+		date > 1916.10.10
+		date < 1917.10.10
+	}
+	mean_time_to_happen = {
+		days = 10
+	}
+	option = {
+		name = ww1_france.69.a
+		trigger = {
+			NOT = {
+				has_country_leader = {
+					name = "Raymond Poincaré"
+				}
+			}
+		}
+		create_country_leader = {
+			name = "Raymond Poincaré"
+			picture = "gfx/leaders/FRA/FRA_raymond_poincare.dds"
+			expire = "1935.1.1"
+			ideology = classical_liberalism
+			traits = {
+				poincare_la_guerre
+				trait_classical_liberalism
+			}
+		}
+		ai_chance = {
+			factor = 50
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+			
+		}
+	}
+	option = {
+		name = ww1_france.69.f
+		trigger = {
+			NOT = {
+				has_country_leader = {
+					name = "Gaston Doumergue"
+				}
+			}
+		}
+		create_country_leader = {
+			name = "Gaston Doumergue"
+			picture = "gfx/leaders/FRA/FRA_Gaston_Doumergue.dds"
+			expire = "1935.1.1"
+			ideology = classical_liberalism
+			traits = {
+				tenacious_negotiator
+			}
+		}
+		ai_chance = {
+			factor = 20
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+	}
+	option = {
+		name = ww1_france.69.g
+		trigger = {
+			NOT = {
+				has_country_leader = {
+					name = "René Viviani"
+				}
+			}
+		}
+		create_country_leader = {
+			name = "René Viviani"
+			picture = "gfx/leaders/FRA/Portrait_France_Rene_Viviani.dds"
+			expire = "1935.1.1"
+			ideology = classical_liberalism
+			traits = {
+				war_industrialist
+			}
+		}
+		ai_chance = {
+			factor = 20
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+	}
+	option = {
+		name = ww1_france.69.h
+		trigger = {
+			NOT = {
+				has_country_leader = {
+					name = "Paul Painlevé"
+				}
+			}
+		}
+		create_country_leader = {
+			name = "Paul Painlevé"
+			picture = "gfx/leaders/FRA/FRA_Paul_Painleve.dds"
+			expire = "1935.1.1"
+			ideology = classical_liberalism
+			traits = {
+				quartermaster_general
+				war_profiteer
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+
+# PainLevé 1917.10 retire (end of mandate)
+##################
+country_event = {
+	id = ww1_france.78
+	title = ww1_france.73.t
+	desc = ww1_france.73.d
+	picture = GFX_report_event_election_vote
+	fire_only_once = yes
+	trigger = {
+		tag = FRA
+		has_government = democratic
+		date > 1917.10.10
+		date < 1918.10.10
+	}
+	mean_time_to_happen = {
+		days = 10
+	}
+	option = {
+		name = ww1_france.69.a
+		trigger = {
+			NOT = {
+				has_country_leader = {
+					name = "Raymond Poincaré"
+				}
+			}
+		}
+		create_country_leader = {
+			name = "Raymond Poincaré"
+			picture = "gfx/leaders/FRA/FRA_raymond_poincare.dds"
+			expire = "1935.1.1"
+			ideology = classical_liberalism
+			traits = {
+				poincare_la_guerre
+				trait_classical_liberalism
+			}
+		}
+		ai_chance = {
+			factor = 50
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+			
+		}
+	}
+	option = {
+		name = ww1_france.69.f
+		trigger = {
+			NOT = {
+				has_country_leader = {
+					name = "Gaston Doumergue"
+				}
+			}
+		}
+		create_country_leader = {
+			name = "Gaston Doumergue"
+			picture = "gfx/leaders/FRA/FRA_Gaston_Doumergue.dds"
+			expire = "1935.1.1"
+			ideology = classical_liberalism
+			traits = {
+				tenacious_negotiator
+			}
+		}
+		ai_chance = {
+			factor = 20
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+	}
+	option = {
+		name = ww1_france.69.g
+		trigger = {
+			NOT = {
+				has_country_leader = {
+					name = "René Viviani"
+				}
+			}
+		}
+		create_country_leader = {
+			name = "René Viviani"
+			picture = "gfx/leaders/FRA/Portrait_France_Rene_Viviani.dds"
+			expire = "1935.1.1"
+			ideology = classical_liberalism
+			traits = {
+				war_industrialist
+			}
+		}
+		ai_chance = {
+			factor = 20
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+	}
+	option = {
+		name = ww1_france.69.h
+		trigger = {
+			NOT = {
+				has_country_leader = {
+					name = "Paul Painlevé"
+				}
+			}
+		}
+		create_country_leader = {
+			name = "Paul Painlevé"
+			picture = "gfx/leaders/FRA/FRA_Paul_Painleve.dds"
+			expire = "1935.1.1"
+			ideology = classical_liberalism
+			traits = {
+				quartermaster_general
+				war_profiteer
+			}
+		}
+		ai_chance = {
+			factor = 40
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+	}
+	option = {
+		name = ww1_france.69.i
+		trigger = {
+			NOT = {
+				has_country_leader = {
+					name = "Georges Clemenceau"
+				}
+			}
+		}
+		create_country_leader = {
+			name = "Georges Clemenceau"
+			picture = "gfx/leaders/FRA/FRA_Georges_Clemenceau.dds"
+			expire = "1935.1.1"
+			ideology = classical_liberalism
+			traits = {
+				retired_minister_of_war
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+
+# early 1919.1 (end of mandate)
+##################
+country_event = {
+	id = ww1_france.79
+	title = ww1_france.73.t
+	desc = ww1_france.73.d
+	picture = GFX_report_event_election_vote
+	fire_only_once = yes
+	trigger = {
+		tag = FRA
+		has_government = democratic
+		date > 1919.1.1
+		date < 1920.1.1
+	}
+	mean_time_to_happen = {
+		days = 30
+	}
+	option = {
+		name = ww1_france.69.a
+		trigger = {
+			NOT = {
+				has_country_leader = {
+					name = "Raymond Poincaré"
+				}
+			}
+		}
+		create_country_leader = {
+			name = "Raymond Poincaré"
+			picture = "gfx/leaders/FRA/FRA_raymond_poincare.dds"
+			expire = "1935.1.1"
+			ideology = classical_liberalism
+			traits = {
+				poincare_la_guerre
+				trait_classical_liberalism
+			}
+		}
+		ai_chance = {
+			factor = 50
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+			
+		}
+	}
+	option = {
+		name = ww1_france.69.f
+		trigger = {
+			NOT = {
+				has_country_leader = {
+					name = "Gaston Doumergue"
+				}
+			}
+		}
+		create_country_leader = {
+			name = "Gaston Doumergue"
+			picture = "gfx/leaders/FRA/FRA_Gaston_Doumergue.dds"
+			expire = "1935.1.1"
+			ideology = classical_liberalism
+			traits = {
+				tenacious_negotiator
+			}
+		}
+		ai_chance = {
+			factor = 20
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+	}
+	option = {
+		name = ww1_france.69.h
+		trigger = {
+			NOT = {
+				has_country_leader = {
+					name = "Paul Painlevé"
+				}
+			}
+		}
+		create_country_leader = {
+			name = "Paul Painlevé"
+			picture = "gfx/leaders/FRA/FRA_Paul_Painleve.dds"
+			expire = "1935.1.1"
+			ideology = classical_liberalism
+			traits = {
+				quartermaster_general
+				war_profiteer
+			}
+		}
+		ai_chance = {
+			factor = 40
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+	}
+	option = {
+		name = ww1_france.69.i
+		trigger = {
+			NOT = {
+				has_country_leader = {
+					name = "Georges Clemenceau"
+				}
+			}
+		}
+		create_country_leader = {
+			name = "Georges Clemenceau"
+			picture = "gfx/leaders/FRA/FRA_Georges_Clemenceau.dds"
+			expire = "1935.1.1"
+			ideology = classical_liberalism
+			traits = {
+				retired_minister_of_war
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = ww1_france.69.j
+		trigger = {
+			NOT = {
+				has_country_leader = {
+					name = "Alexandre Millerand"
+				}
+			}
+		}
+		create_country_leader = {
+			name = "Alexandre Millerand"
+			picture = "gfx/leaders/Europe/Portrait_europe_generic_7.dds"
+			expire = "1935.1.1"
+			ideology = conservatism
+			traits = {
+				
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	
+}
+
 #____________________________________________________________
 # End of new events
 #____________________________________________________________
@@ -1962,37 +3157,31 @@ country_event = {
 	}
 }
 
-# NEW PRESIDENT - RAYMOND POINCARE
-##################
-country_event = {
-	id = ww1_france.17
-	title = ww1_france.17.t
-	desc = ww1_france.17.d
-	picture = GFX_report_event_election_vote
-	fire_only_once = yes
-	trigger = {
-		tag = FRA
-		has_government = democratic
-		date > 1913.1.1
-		date < 1914.1.1
-	}
-	mean_time_to_happen = {
-		days = 3
-	}
-	option = {
-		name = ww1_france.17.a
-		create_country_leader = {
-			name = "Raymond Poincaré"
-			picture = "gfx/leaders/FRA/FRA_raymond_poincare.dds"
-			expire = "1935.1.1"
-			ideology = classical_liberalism
-			traits = {
-				poincare_la_guerre
-				trait_classical_liberalism
-			}
-		}
-	}
-}
+
+# # NEW PRESIDENT - RAYMOND POINCARE
+# ##################
+# country_event = {
+# 	id = ww1_france.17
+# 	title = ww1_france.17.t
+# 	desc = ww1_france.17.d
+# 	picture = GFX_report_event_election_vote
+# 	fire_only_once = yes
+# 	trigger = {
+# 		tag = FRA
+# 		has_government = democratic
+# 		date > 1913.1.1
+# 		date < 1914.1.1
+# 	}
+# 	mean_time_to_happen = {
+# 		days = 3
+# 	}
+# 	option = {
+# 		name = ww1_france.17.a
+# 		ai_chance = {
+# 			factor = 100
+# 		}
+# 	}
+# }
 
 # BATTLE OF VERDUN
 ####################
@@ -2083,68 +3272,68 @@ news_event = {
 	}
 }
 
-# NEW PRESIDENT - PAUL DESCHANEL
-##################
-country_event = {
-	id = ww1_france.20
-	title = ww1_generic.1.t
-	desc = ww1_generic.1.d
-	picture = GFX_report_event_election_vote
-	fire_only_once = yes
-	trigger = {
-		tag = FRA
-		has_government = democratic
-		date > 1920.2.1
-		date < 1920.10.1
-	}
-	mean_time_to_happen = {
-		days = 20
-	}
-	option = {
-		name = ww1_generic.1.a
-		create_country_leader = {
-			name = "Paul Eugène Deschanel"
-			picture = "gfx/leaders/FRA/FRA_paul_deschanel.dds"
-			expire = "1935.1.1"
-			ideology = classical_liberalism
-			traits = {
-				lunatic
-				trait_classical_liberalism
-			}
-		}
-	}
-}
+# # NEW PRESIDENT - PAUL DESCHANEL
+# ##################
+# country_event = {
+# 	id = ww1_france.20
+# 	title = ww1_generic.1.t
+# 	desc = ww1_generic.1.d
+# 	picture = GFX_report_event_election_vote
+# 	fire_only_once = yes
+# 	trigger = {
+# 		tag = FRA
+# 		has_government = democratic
+# 		date > 1920.2.1
+# 		date < 1920.10.1
+# 	}
+# 	mean_time_to_happen = {
+# 		days = 20
+# 	}
+# 	option = {
+# 		name = ww1_generic.1.a
+# 		create_country_leader = {
+# 			name = "Paul Eugène Deschanel"
+# 			picture = "gfx/leaders/FRA/FRA_paul_deschanel.dds"
+# 			expire = "1935.1.1"
+# 			ideology = classical_liberalism
+# 			traits = {
+# 				lunatic
+# 				trait_classical_liberalism
+# 			}
+# 		}
+# 	}
+# }
 
-# NEW PRESIDENT - Alexandre Millerand
-##################
-country_event = {
-	id = ww1_france.21
-	title = ww1_generic.1.t
-	desc = ww1_generic.1.d
-	picture = GFX_report_event_election_vote
-	fire_only_once = yes
-	trigger = {
-		tag = FRA
-		has_government = democratic
-		date > 1920.10.1
-		date < 1921.10.1
-	}
-	mean_time_to_happen = {
-		days = 20
-	}
-	option = {
-		name = ww1_generic.1.a
-		create_country_leader = {
-			name = "Alexandre Millerand"
-			picture = "gfx/leaders/Europe/Portrait_europe_generic_7.dds"
-			expire = "1935.1.1"
-			ideology = conservatism
-			traits = {
-				trait_conservatism
-			}
-		}
-	}
-}
+# # NEW PRESIDENT - Alexandre Millerand
+# ##################
+# country_event = {
+# 	id = ww1_france.21
+# 	title = ww1_generic.1.t
+# 	desc = ww1_generic.1.d
+# 	picture = GFX_report_event_election_vote
+# 	fire_only_once = yes
+# 	trigger = {
+# 		tag = FRA
+# 		has_government = democratic
+# 		date > 1920.10.1
+# 		date < 1921.10.1
+# 	}
+# 	mean_time_to_happen = {
+# 		days = 20
+# 	}
+# 	option = {
+# 		name = ww1_generic.1.a
+# 		create_country_leader = {
+# 			name = "Alexandre Millerand"
+# 			picture = "gfx/leaders/Europe/Portrait_europe_generic_7.dds"
+# 			expire = "1935.1.1"
+# 			ideology = conservatism
+# 			traits = {
+# 				trait_conservatism
+# 			}
+# 		}
+# 	}
+# }
 
 #Italy seizes Savoy and Corsica 
 ####################################
