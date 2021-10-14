@@ -1797,12 +1797,18 @@ country_event = {
 	mean_time_to_happen = {
 		days = 10
 	}
+	
 	option = {
 		name = ww1_france.69.a
 		trigger = {
 			NOT = {
-				has_country_leader = {
-					name = "Raymond Poincaré"
+				OR = {
+					has_country_leader = {
+						name = "Raymond Poincaré"
+					}
+					has_country_leader = {
+						name = "Aristide Briand"
+					}
 				}
 			}
 		}
@@ -1823,6 +1829,22 @@ country_event = {
 				factor = 0
 			}
 			
+		}
+	}
+	option = {
+		name = ww1_france.69.c
+		#can be elected another time for historical pourporses
+		create_country_leader = {
+			name = "Aristide Briand"
+			picture = "gfx/leaders/FRA/FRA_Aristide_Briand.dds"
+			expire = "1935.1.1"
+			ideology = classical_liberalism
+			traits = {
+				captain_of_industry
+			}
+		}
+		ai_chance = {
+			factor = 100
 		}
 	}
 	option = {
@@ -1898,12 +1920,16 @@ country_event = {
 		}
 		ai_chance = {
 			factor = 100
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
 		}
 	}
 }
 
 
-# PainLevé 1917.10 retire (end of mandate)
+# Briand 1917.10 retire (end of mandate)
 ##################
 country_event = {
 	id = ww1_france.78
@@ -2196,6 +2222,45 @@ country_event = {
 	}
 	
 }
+####################################################################################################################################################
+#######################################################################################################################################################
+# temporray administrations, execeptionnals replacements on historical positions
+####################################################################################################################################################
+####################################################################################################################################################
+
+
+# Ernest Monis retire 1911.5 (plane crash)
+##################
+country_event = {
+	id = ww1_france.80
+	title = ww1_france.80.t
+	desc = ww1_france.80.d
+	picture = GFX_report_event_election_vote
+	fire_only_once = yes
+	trigger = {
+		tag = FRA
+		has_government = democratic
+		has_country_leader = {
+			name = "Aristide Briand"
+		}
+		date > 1917.3.1
+		date < 1917.9.1
+	}																	
+	mean_time_to_happen = {
+		days = 14
+	}
+	option = {
+		name = ok
+		create_country_leader = {
+			name = "Alexandre Ribot" 
+			picture = "gfx/leaders/Europe/Portrait_europe_generic_6.dds" 
+			expire = "1935.1.1" 
+			ideology = conservatism
+			traits = {  }  
+		}
+	}
+}
+
 
 #____________________________________________________________
 # End of new events

@@ -515,6 +515,9 @@ ww1_france.68.d:0 "The major changes in French politics resulted from strong opp
  ww1_france.73.t:0 "[FRA.GetLeader] retires"
  ww1_france.73.d:0 "Prime Minister [FRA.GetLeader]'s [GetYear] mandate has ended. It is time to choose your successor among the most popular representatives of the Democratic parties."
 
+ ww1_france.80.t:0 "[FRA.GetLeader] retires"
+ ww1_france.80.d:0 "Aristide Briand withdrew again, this resignation called Alexandre Ribot urgently as Prime Minister."
+
  #BELGIUM
  ww1_belgium.1.a:0 "Never forget Belgium"
  ww1_belgium.1.d:0 "Reports have come in describing outright barbaric, if not genocidal, treatment of Belgian civilians by those bastard Germans! Of course, some weak-willed members of Parliament have denounced these reports as exaggerated, but if nothing else, this gives us the perfect excuse to enter the war against Germany, and, more importantly, take their colonies for their rightful British masters."
