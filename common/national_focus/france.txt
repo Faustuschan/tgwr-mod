@@ -40,6 +40,8 @@ focus_tree = {
 		completion_reward = {
 			add_stability = 0.05
 			add_war_support = -0.10
+			custom_effect_tooltip = FRA_join_democrats_socialists_2
+			custom_effect_tooltip = FRA_get_democrats_socialists_seats
 		}
 		ai_will_do = {
 			factor = 1
@@ -2243,11 +2245,17 @@ focus = {
 	relative_position_id = FRA_ww1_divert_national_production
 	prerequisite = { focus = FRA_ww1_divert_national_production }
 	bypass = {
-		has_government = neutrality
+		OR = {
+			has_government = neutrality
+			has_country_leader = {
+				name = "Napoleon V"
+			}
+		}
 	}
 	available = {
 		NOT = {
 			has_idea = FRA_diverted_national_production
+			has_government = neutrality
 		}
 		neutrality > 0.40
 	}

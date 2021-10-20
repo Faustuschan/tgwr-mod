@@ -723,7 +723,7 @@ ideas = {
 			}
 			targeted_modifier = {
 				tag = GER
-				attack_bonus_against = 1.5
+				attack_bonus_against = 0.50
 			}
 			available = {
 				has_war = yes
@@ -1397,7 +1397,11 @@ ideas = {
 			removal_cost = -1
 			picture = FRA_they_shall_not_pass
 			available = {
-				has_war_with = GER
+				OR = {
+					has_war_with = GER
+					date < 1918.1.1
+				}
+				
 			}
 			modifier = {
 				surrender_limit = 0.1

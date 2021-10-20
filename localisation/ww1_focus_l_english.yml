@@ -3144,6 +3144,9 @@ TUR_invite_balkan_economy_sphere_tt:0 "Invites §YBalkan countries§! into an §
 
  FRA_get_socialists_seats:0 "Socialists represents [?socialist_alliance|Y0] seats."
  FRA_ally_democratic_republican_alliance:0 "The §Ydemocratic republican alliance§! will join our §Ysocialist alliance§!, allowing us to gain [?democratic_republican_alliance|Y0]§Y seats.§!"
+
+ FRA_join_democrats_socialists_2:0 "\nSelecting §Ythis focus§! will place us in the role of §Cthe Radical Party§!. \n\n§ROur alliance will combine moderate socialists and radicals seats!§!"
+
  FRA_fuze_the_fronts:0 "The §Ydemocratic republican alliance§! and §Yindependents socialists§! will join §Rthe SFIO§!."
  FRA_mention_de_censure:0 "§YThe French government§! will be removed from office by the §Yassembly§!. To do this, we need at least §Y150 seats.§!"
  FRA_mention_de_censure_socialist:0 "\n§RA Radical-Socialist§! government will be formed."
@@ -3214,7 +3217,7 @@ TUR_invite_balkan_economy_sphere_tt:0 "Invites §YBalkan countries§! into an §
  FRA_ww1_french_expansionism:0 "French expansionism"
 
  FRA_ww1_restore_franco_russia_friendship:0 "Restore Franco-Russian Friendship"
- FRA_Napoleon_love_russia:0 "§YNapoleon V§! will lose the §YDislake Russia§! trait."
+ FRA_Napoleon_love_russia:0 "§YNapoleon V§! will lose the §YDislike Russia§! trait."
 
 FRA_ww1_break_the_german_lines:0 "Break the German Lines"
 FRA_ww1_char2c:0 "The Char 2C"

@@ -981,7 +981,11 @@ leader_traits = {
 
 	retired_minister_of_war = {
 		war_support_factor = 0.10
-		high_command_cost_factor = 0.50
+		high_command_cost_factor = -0.50
+	}
+
+	GER_schliffen = {
+		ai_focus_aggressive_factor = 0.75
 	}
 	
 

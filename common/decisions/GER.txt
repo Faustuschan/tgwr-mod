@@ -35,6 +35,7 @@ GER_great_war = {
 				BEL = { remove_ideas = BEL_idea_pacifism }
 			}
 			GER = {
+				add_country_leader_trait = GER_schliffen
 				declare_war_on = {
 					target = BEL
 					type = puppet_wargoal_focus

@@ -102,8 +102,8 @@ create_country_leader = {
 	name = "Aristide Briand" 
 	picture = "gfx/leaders/FRA/FRA_Aristide_Briand.dds" 
 	expire = "1935.1.1" 
-	ideology = conservatism
-	traits = { dealbroker }  
+	ideology = classical_liberalism
+	traits = { captain_of_industry }  
 }
 create_country_leader = {
 	name = "Georges Valois" 
