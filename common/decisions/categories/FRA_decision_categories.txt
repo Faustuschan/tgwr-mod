@@ -40,3 +40,9 @@ FRA_the_next_revolution = {
 	visible = {
 	}
 }
+FRC_interwar_internationale_category = {
+	icon = spr_the_seeds_of_revolution
+	allowed = {
+	}
+	priority = 100
+}
