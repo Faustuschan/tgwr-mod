@@ -154,7 +154,6 @@ ideas = {
 		}
 		
 		BEL_outnumbered_army = {
-			name = BEL_neglected_military 
 			picture = chi_incompetent_officers
 			available = {
 				has_capitulated = no

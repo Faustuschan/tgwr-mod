@@ -957,6 +957,7 @@ leader_traits = {
 		war_support_factor = -0.1
 		high_command_cost_factor = 0.75
 	}
+	#Australia
 	little_digger = {
 		random = no
 		war_support_factor = 0.1
@@ -993,4 +994,10 @@ leader_traits = {
 	}
 	
 
+	#Belgium
+	knight_king = {
+		random = no
+		war_support_factor = 0.1
+		army_core_attack_factor = 0.1
+	}
 }
