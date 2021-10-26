@@ -642,7 +642,7 @@ GER_attack_if_france_is_weak = {
 		type = front_control
 		tag = FRA
 		
-		priority = 1
+		priority = 99999
 		ordertype = front
 		execution_type = rush_weak
 		execute_order = yes
@@ -757,8 +757,6 @@ GER_ignore_serbia = {
 		tag = "SER"
 		value = -99999
 	}
-	
-
 	
 }
 

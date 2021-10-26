@@ -229,10 +229,8 @@ country_event = {
 			every_owned_state = {
 				if = {
 					limit = {
-						PREV = {
-							arms_factory > 0
-							is_core_of = FRA
-						}
+						arms_factory > 0
+						is_owned_by = FRA
 					}
 					remove_building = {
 						type = arms_factory
@@ -241,10 +239,8 @@ country_event = {
 				}
 				if = {
 					limit = {
-						PREV = {
-							dockyard > 0
-							is_core_of = FRA
-						}
+						dockyard > 0
+						is_owned_by = FRA
 					}
 					remove_building = {
 						type = dockyard
@@ -763,19 +759,10 @@ country_event = {
 		OR = {
 			AND = {
 				has_active_mission = european_crisis_mission
-				is_in_faction_with = RUS
-			}
-			AND = {
-				has_active_mission = european_crisis_mission
 				has_guaranteed = SER
 			}
 			AND = {
 				has_war_with = GER
-				has_war_with = AUH
-				strength_ratio = {
-					tag = GER
-					ratio < 1
-				}
 				date < 1916.1.1
 			}
 		}
@@ -1152,7 +1139,7 @@ country_event = {
 			name = "Aristide Briand"
 			picture = "gfx/leaders/FRA/FRA_Aristide_Briand.dds"
 			expire = "1935.1.1"
-			ideology = classical_liberalism
+			ideology = social_liberalism
 			traits = {
 				captain_of_industry
 			}
@@ -1277,7 +1264,7 @@ country_event = {
 			name = "Aristide Briand"
 			picture = "gfx/leaders/FRA/FRA_Aristide_Briand.dds"
 			expire = "1935.1.1"
-			ideology = classical_liberalism
+			ideology = social_liberalism
 			traits = {
 				captain_of_industry
 			}
@@ -1425,7 +1412,7 @@ country_event = {
 			name = "Aristide Briand"
 			picture = "gfx/leaders/FRA/FRA_Aristide_Briand.dds"
 			expire = "1935.1.1"
-			ideology = classical_liberalism
+			ideology = social_liberalism
 			traits = {
 				captain_of_industry
 			}
@@ -1573,7 +1560,7 @@ country_event = {
 			name = "Aristide Briand"
 			picture = "gfx/leaders/FRA/FRA_Aristide_Briand.dds"
 			expire = "1935.1.1"
-			ideology = classical_liberalism
+			ideology = social_liberalism
 			traits = {
 				captain_of_industry
 			}
@@ -1721,7 +1708,7 @@ country_event = {
 			name = "Aristide Briand"
 			picture = "gfx/leaders/FRA/FRA_Aristide_Briand.dds"
 			expire = "1935.1.1"
-			ideology = classical_liberalism
+			ideology = social_liberalism
 			traits = {
 				captain_of_industry
 			}
@@ -1842,7 +1829,7 @@ country_event = {
 			name = "Aristide Briand"
 			picture = "gfx/leaders/FRA/FRA_Aristide_Briand.dds"
 			expire = "1935.1.1"
-			ideology = classical_liberalism
+			ideology = social_liberalism
 			traits = {
 				captain_of_industry
 			}
@@ -2264,6 +2251,325 @@ country_event = {
 		}
 	}
 }
+
+####################################################################################################################################################
+####################################################################################################################################################
+# 
+#
+#
+#	Law event using seats system
+#
+#
+#
+####################################################################################################################################################
+####################################################################################################################################################
+
+#
+# arms safety review 
+#
+country_event = {
+	id = ww1_france.81
+	title = ww1_france.81.t
+	desc = ww1_france.81.d
+	picture = GFX_report_event_gre_balkan_pact
+	fire_only_once = yes
+	trigger = {
+		tag = FRA
+		has_government = democratic
+		date > 1911.7.7
+	}																	
+	mean_time_to_happen = {
+		days = 60
+	}
+	immediate = {
+		hidden_effect = {
+			random_list = {
+				70 = {
+					set_variable = { islucky = 0 }
+				}
+				30 = {
+					set_variable = { islucky = 1 }
+				}
+			}
+		}
+	}
+	option = {
+		#dont have any seat, maluses
+		name = ww1_france.81.a
+		ai_will_do = {
+			factor = 1
+		}
+		add_timed_idea = {
+			idea = FRA_arms_safety_regulation
+			days = 180
+		}
+	}
+	
+	option = {
+		#got 250 seats at least
+		name = ww1_france.81.b
+		ai_will_do = {
+			factor = 50
+		}
+		trigger = {
+			FRA = {
+				check_variable = {
+					democrat_alliance > 250
+				}
+				custom_trigger_tooltip = {
+					tooltip = FRA_250_seats
+				}
+			}
+			check_variable = { islucky = 0 }
+		}
+		custom_effect_tooltip = line
+		custom_effect_tooltip = FRA_enough_seats
+		custom_effect_tooltip = FRA_250_seats_with_flag
+		custom_effect_tooltip = line
+		add_timed_idea = {
+			idea = FRA_arms_safety_regulation
+			days = 60
+		}
+	}
+	option = {
+		#got 150 seats at least
+		name = ww1_france.81.b
+		ai_will_do = {
+			factor = 50
+		}
+		trigger = {
+			FRA = {
+				check_variable = {
+					democrat_alliance > 150
+				}
+				custom_trigger_tooltip = {
+					tooltip = FRA_150_seats
+				}
+			}
+			check_variable = { islucky = 1 }
+		}
+		custom_effect_tooltip = line
+		custom_effect_tooltip = FRA_enough_seats
+		custom_effect_tooltip = FRA_150_seats_with_flag
+		custom_effect_tooltip = line
+		add_timed_idea = {
+			idea = FRA_arms_safety_regulation
+			days = 60
+		}
+	}
+	option = {
+		#got 350 seats at least
+		name = ww1_france.81.c
+		ai_will_do = {
+			factor = 500
+		}
+		trigger = {
+			FRA = {
+				check_variable = {
+					democrat_alliance > 350
+				}
+				custom_trigger_tooltip = {
+					tooltip = FRA_350_seats
+				}
+			}
+			check_variable = { islucky = 0 }
+		}
+		custom_effect_tooltip = line
+		custom_effect_tooltip = FRA_enough_seats
+		custom_effect_tooltip = FRA_350_seats_with_flag
+		custom_effect_tooltip = line
+		custom_effect_tooltip = nothing_happend
+	}
+
+	option = {
+		#got 350 seats at least
+		name = ww1_france.81.c
+		ai_will_do = {
+			factor = 500
+		}
+		trigger = {
+			FRA = {
+				check_variable = {
+					democrat_alliance > 250
+				}
+				custom_trigger_tooltip = {
+					tooltip = FRA_250_seats
+				}
+			}
+			check_variable = { islucky = 1 }
+		}
+		custom_effect_tooltip = line
+		custom_effect_tooltip = FRA_enough_seats
+		custom_effect_tooltip = FRA_250_seats_with_flag
+		custom_effect_tooltip = line
+		custom_effect_tooltip = nothing_happend
+	}
+}
+
+
+#
+# crime on the rise in the Parisian suburbs
+#
+country_event = {
+	id = ww1_france.82
+	title = ww1_france.82.t
+	desc = ww1_france.82.d
+	picture = GFX_report_event_gre_balkan_pact
+	fire_only_once = yes
+	trigger = {
+		tag = FRA
+		date > 1913.2.4
+	}																	
+	mean_time_to_happen = {
+		days = 60
+	}
+	immediate = {
+		hidden_effect = {
+			random_list = {
+				70 = {
+					set_variable = { islucky = 0 }
+				}
+				30 = {
+					set_variable = { islucky = 1 }
+				}
+			}
+		}
+	}
+	option = {
+		#dont have any seat, maluses
+		name = ww1_france.82.a
+		add_stability = -0.05
+		16 = {
+			limit = {
+				is_owned_and_controlled_by = FRA
+				industrial_complex > 1
+			}
+			remove_building = {
+				type = industrial_complex
+				level = 1
+			}
+		}
+		add_manpower = -1000000
+	}
+	
+	option = {
+		#got 250 seats at least
+		name = ww1_france.82.b
+		trigger = {
+			FRA = {
+				check_variable = {
+					democrat_alliance > 250
+				}
+				custom_trigger_tooltip = {
+					tooltip = FRA_250_seats
+				}
+			}
+			check_variable = { islucky = 0 }
+			has_equipment = { infantry_equipment > 1000 } 
+		}
+		custom_effect_tooltip = line
+		custom_effect_tooltip = FRA_enough_seats
+		custom_effect_tooltip = FRA_250_seats_with_flag
+		custom_effect_tooltip = line
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = -1000
+			producer = FRA
+		}
+	}
+	option = {
+		#got 150 seats at least
+		name = ww1_france.82.b
+		trigger = {
+			FRA = {
+				check_variable = {
+					democrat_alliance > 150
+				}
+				custom_trigger_tooltip = {
+					tooltip = FRA_150_seats
+				}
+			}
+			check_variable = { islucky = 1 }
+			has_equipment = { infantry_equipment > 1000 } 
+		}
+		custom_effect_tooltip = line
+		custom_effect_tooltip = FRA_enough_seats
+		custom_effect_tooltip = FRA_250_seats_with_flag
+		custom_effect_tooltip = line
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = -1000
+			producer = FRA
+		}
+	}
+
+	option = {
+		#got 350 seats at least
+		name = ww1_france.82.c
+		trigger = {
+			FRA = {
+				check_variable = {
+					democrat_alliance > 350
+				}
+				custom_trigger_tooltip = {
+					tooltip = FRA_350_seats
+				}
+			}
+			check_variable = { islucky = 0 }
+			16 = {
+				infrastructure < 10
+				is_owned_and_controlled_by = FRA
+			}
+			has_political_power > 50
+		}
+		custom_effect_tooltip = line
+		custom_effect_tooltip = FRA_enough_seats
+		custom_effect_tooltip = FRA_350_seats_with_flag
+		custom_effect_tooltip = line
+		16 = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+			}
+		}
+		add_political_power = -50
+		
+	}
+
+	option = {
+		#got 250 seats at least
+		name = ww1_france.82.c
+		trigger = {
+			FRA = {
+				check_variable = {
+					democrat_alliance > 250
+				}
+				custom_trigger_tooltip = {
+					tooltip = FRA_250_seats
+				}
+			}
+			check_variable = { islucky = 1 }
+			16 = {
+				infrastructure < 10
+				is_owned_and_controlled_by = FRA
+			}
+			has_political_power > 50
+		}
+		custom_effect_tooltip = line
+		custom_effect_tooltip = FRA_enough_seats
+		custom_effect_tooltip = FRA_250_seats_with_flag
+		custom_effect_tooltip = line
+		16 = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+			}
+		}
+		add_political_power = -50
+		
+	}
+}
+
 
 
 #____________________________________________________________

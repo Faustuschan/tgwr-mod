@@ -518,6 +518,21 @@ ww1_france.68.d:0 "The major changes in French politics resulted from strong opp
  ww1_france.80.t:0 "[FRA.GetLeader] retires"
  ww1_france.80.d:0 "Aristide Briand withdrew again, this resignation called Alexandre Ribot urgently as Prime Minister."
 
+ ww1_france.81.t:0 "Vote weapons reliability law"
+ ww1_france.81.d:0 "The parliament votes on a bill to regulate the production of weapons. The bill would impose a restructuring of industrial arms chains. Passage of this regulation would seriously slow down our production over half a year."
+ ww1_france.81.a:0 "The law passes"
+ ww1_france.81.b:0 "Impose a lightening of the law"
+ ww1_france.81.c:0 "Full oppose the law !"
+
+
+ ww1_france.82.t:0 "Crime on the rise in the Parisian suburbs"
+ ww1_france.82.d:0 "More and more various facts list the actions of groups of thugs in the Parisian suburbs. The criminals are said to be members of the "Bonnot gang", a dangerous underworld committing thefts, assassinations and various break-ins. The inhabitants of the capital live in fear and the parliament is debating the possibility of allocating a budget to fight against these bandits."
+ ww1_france.82.a:0 "Parliamentarians cannot agree"
+ ww1_france.82.b:0 "Local police will get large funding"
+ ww1_france.82.c:0 "Let's launch major works to revive growth in the suburbs"
+
+ FRA_enough_seats:0 "§YThis option is displayed because we meet the required conditions:§!"
+
  #BELGIUM
  ww1_belgium.1.a:0 "Never forget Belgium"
  ww1_belgium.1.d:0 "Reports have come in describing outright barbaric, if not genocidal, treatment of Belgian civilians by those bastard Germans! Of course, some weak-willed members of Parliament have denounced these reports as exaggerated, but if nothing else, this gives us the perfect excuse to enter the war against Germany, and, more importantly, take their colonies for their rightful British masters."
