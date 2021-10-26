@@ -2414,7 +2414,7 @@ country_event = {
 	id = ww1_france.82
 	title = ww1_france.82.t
 	desc = ww1_france.82.d
-	picture = GFX_report_event_gre_balkan_pact
+	picture = GFX_ww1_france_82
 	fire_only_once = yes
 	trigger = {
 		tag = FRA
@@ -2449,7 +2449,6 @@ country_event = {
 				level = 1
 			}
 		}
-		add_manpower = -1000000
 	}
 	
 	option = {
