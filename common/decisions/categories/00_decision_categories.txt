@@ -34,6 +34,10 @@ foreign_support = {
 	
 }
 
+embargo = {
+	icon = generic_political_actions
+}
+
 prestigious_projects = {
 	
 }

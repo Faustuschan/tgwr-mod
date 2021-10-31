@@ -1318,6 +1318,19 @@ spriteType = { name = "GFX_idea_nevsky_zavod" texturefile = "gfx/interface/ideas
 		name = "GFX_idea_FRA_idea_disunited_french_front"
 		texturefile = "gfx/interface/ideas/FRA/FRA_idea_disunited_french_front.dds"
 	}
+	SpriteType = {
+		name = "GFX_idea_FRA_marcel_cachin"
+		texturefile = "gfx/interface/ideas/FRA/FRA_marcel_cachin.dds"
+	}
+	spriteType = { 
+		name = "GFX_idea_FRA_aristide_briand" 
+		texturefile = "gfx/interface/ideas/FRA/idea_FRA_aristide_briand.dds" 
+	}
+	SpriteType = {
+		name = "GFX_idea_FRA_charles_maurras"
+		texturefile = "gfx/interface/ideas/FRA/FRA_charles_maurras.dds"
+	}
+	
 	# Qing
 	spriteType = {
 		name = "GFX_idea_QIN_idea_xuantong"

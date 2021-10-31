@@ -1,14 +1,89 @@
 ﻿capital = 16
 
 set_research_slots = 3
-set_stability = 0.56
-set_war_support = 0.56
+set_stability = 0.65
+set_war_support = 0.30
 set_convoys = 273
 
 create_faction = entente
 
 add_to_faction = FRA
 add_to_faction = RUS
+
+give_guarantee = ENG
+
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "1910.4.30" 
+	election_frequency = 48 
+	elections_allowed = yes
+}	
+set_popularities = { #1906 parliament representation
+	fascism = 6 # 6% (nationnalists)
+	communism = 24 #50% of the radical socialists (14) + communists (10)
+	democratic = 61 # 50% of the radical socialists (14) + gauche (20) + 50% of the popular liberal action (7)
+	neutrality = 9 # 50% of the popular liberal action (7)
+
+	#Actual parties :
+	# SFIO - communists 10% 54 seats
+	# Republican, Radical and Radical-Socialist Party democratc/communists 28% 132 seats 
+	# Independent Radicals - democrats 8% 115 seats
+	# Democratic Republican Alliance 10% 90 seats
+	# Independent Socialists - democrats 2% 20 seats 
+	# Popular Liberal Action - democratc/authoritarians 15% 66 seats
+	# Nationalists - fascists 6% 30 seats
+	# Republican Federation - democrats 21% 78 seats
+}
+
+#init political parliament
+set_variable = { var = SFIO value = 54 } 
+set_variable = { var = independent_socialist value = 20 } 
+set_variable = { var = democratic_republican_alliance value = 90 }
+set_variable = { var = radical_party value = 132 } 
+set_variable = { var = republicain_federation value = 78 } 
+set_variable = { var = conservatives value = 0 } 
+set_variable = { var = independent_republicans value = 0 } 
+set_variable = { var = independent_radicals value = 115 } 
+set_variable = { var = popular_liberal_action value = 66 } 
+set_variable = { var = nationalists value = 30 } 
+set_variable = { var = vacant value = 15 }
+set_variable = { var = seatNumbers value = 585 }
+#SFIO + socialists (var used for socialist path)
+set_variable = { var = socialist_alliance value = 0 }
+add_to_variable = { var = socialist_alliance value = independent_socialist }
+add_to_variable = { var = socialist_alliance value = SFIO } 
+#Social-democrat alliance (left bloc)
+set_variable = { var = democrat_socialist_alliance value = 0 }
+add_to_variable = { var = democrat_socialist_alliance value = independent_socialist }
+add_to_variable = { var = democrat_socialist_alliance value = independent_radicals } 
+add_to_variable = { var = democrat_socialist_alliance value = democratic_republican_alliance } 
+add_to_variable = { var = democrat_socialist_alliance value = radical_party } 
+# the unified republican bloc value
+set_variable = { var = democrat_alliance value = 0 } 
+add_to_variable = { var = democrat_alliance value = independent_socialist }
+add_to_variable = { var = democrat_alliance value = democratic_republican_alliance }
+add_to_variable = { var = democrat_alliance value = radical_party }
+add_to_variable = { var = democrat_alliance value = independent_radicals }
+set_variable = { var = democrat_alliance_percent value = democrat_alliance } 
+set_variable = { var = FRA_player_alliance value = "Right_democract_coalition" }
+multiply_variable = { democrat_alliance_percent = 100 }
+divide_variable = { democrat_alliance_percent = seatNumbers }
+
+add_ideas = {
+	FRA_memories_of_1870
+	FRA_artisanal_industry
+	FRA_disjointed_government
+	limited_conscription
+	FRA_wadai_war
+}
+
+
+add_timed_idea = {
+	idea = FRA_ww1_agricultural_sector_strike
+	days = 360
+}
+
 
 1910.1.1 = {
 	declare_war_on = {
@@ -24,18 +99,11 @@ set_technology = { bicycle_infantry = 1 }
 give_guarantee = BEL # Treaty of London (1839)
 
 create_country_leader = {
-	name = "Jean Jaurès" 
-	picture = "gfx/leaders/FRA/FRA_Jean_Jaures.png" 
+	name = "Aristide Briand" 
+	picture = "gfx/leaders/FRA/FRA_Aristide_Briand.dds" 
 	expire = "1935.1.1" 
-	ideology = reformist_socialism
-	traits = { socialist_giant trait_reformist_socialism }  
-}
-create_country_leader = {
-	name = "Armand Fallières" 
-	picture = "gfx/leaders/FRA/FRA_armand_fallieres.dds" 
-	expire = "1935.1.1" 
-	ideology = conservatism
-	traits = { trait_conservatism }  
+	ideology = social_liberalism
+	traits = { captain_of_industry }  
 }
 create_country_leader = {
 	name = "Georges Valois" 
@@ -53,6 +121,13 @@ create_country_leader = {
 		trait_oligarchism
 	}
 }
+create_country_leader = {
+	name = "Jean Jaurès" 
+	picture = "gfx/leaders/FRA/FRA_Jean_Jaures.png" 
+	expire = "1935.1.1" 
+	ideology = reformist_socialism
+	traits = { socialist_giant trait_reformist_socialism }  
+}
 
 create_field_marshal = {
 	name = "Joseph Joffre" id=32007
@@ -68,7 +143,13 @@ create_field_marshal = {
 create_corps_commander={
 	name = "Joseph Gallieni" id=32019
 	portrait_path="gfx/leaders/FRA/FRA_Joseph_Gallieni.dds"
-	traits={ defensive_doctrine war_hero infantry_officer jungle_rat}
+	traits={ 
+		defensive_doctrine 
+		war_hero 
+		infantry_officer 
+		jungle_rat
+		old_guard
+	}
 	skill=4
 	attack_skill = 3
 	defense_skill = 4
@@ -112,7 +193,11 @@ create_corps_commander={
 create_corps_commander={
     name = "Charles Lanrezac" id=3200
     portrait_path="gfx/leaders/FRA/FRA_charles_lanrezac.dds"
-    traits={ inflexible_strategist war_hero career_officer }
+    traits={ 
+		inflexible_strategist 
+		war_hero 
+		career_officer
+	}
     skill=3
     attack_skill = 2
     defense_skill = 3
@@ -123,7 +208,9 @@ create_corps_commander={
 create_corps_commander={
 	name = "Louis Franchet d'Espèrey" id=32003
 	portrait_path="gfx/leaders/FRA/FRA_louis_franchet_d_esperey.dds"
-	traits={ }
+	traits={
+		old_guard
+	}
 	skill=3
 	attack_skill = 1
 	defense_skill = 2
@@ -182,7 +269,7 @@ create_corps_commander={
 	logistics_skill = 2
 }
 create_corps_commander = {
-	name = "Paul Leblois"
+	name = "Paul Leblois" id=32033
 	portrait_path = "gfx/leaders/FRA/FRA_paul_leblois.dds"
 	traits = {
 		infantry_officer
@@ -196,7 +283,7 @@ create_corps_commander = {
 	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "Henri Gouraud"
+	name = "Henri Gouraud" id=32035
 	portrait_path = "gfx/leaders/FRA/FRA_Henri_Gouraud.dds"
 	traits = {
 		desert_fox
@@ -211,7 +298,7 @@ create_corps_commander = {
 	logistics_skill = 2
 }
 create_corps_commander = {
-	name = "Henri Berthelot"
+	name = "Henri Berthelot" id=32036
 	portrait_path = "gfx/leaders/FRA/FRA_Henri_Berthelot.dds"
 	traits = {
 		organizer
@@ -224,7 +311,7 @@ create_corps_commander = {
 	logistics_skill = 2
 }
 create_corps_commander = {
-	name = "Charles Mangin"
+	name = "Charles Mangin" id=32037
 	portrait_path = "gfx/leaders/FRA/FRA_Charles_Mangin.dds"
 	traits = {
 		harsh_leader
@@ -238,7 +325,77 @@ create_corps_commander = {
 	planning_skill = 2
 	logistics_skill = 3
 }
+create_corps_commander = {
+	name = "Nicolas Saclois" id=32038
+	portrait_path = "gfx/leaders/FRA/generic_commander_1.dds"
+	traits = {
+		media_personality
+		infantry_officer
+		trait_mountaineer
+	}
+	skill = 2
+	attack_skill = 3
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 1
+}
 
+create_corps_commander = {
+	name = "Maurice Sarrail" id=32039
+	#portrait_path = "gfx/leaders/FRA/generic_commander_1.dds"
+	traits = {
+		adaptable
+	}
+	skill = 2
+	attack_skill = 3
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 1
+}
+
+create_corps_commander = {
+	name = "Adolphe Guillaumat" id=32040
+	portrait_path = "gfx/leaders/FRA/FRA_Adolphe_Guillaumat.dds"
+	traits = {
+		cavalry_officer
+		defensive_doctrine
+	}
+	skill = 2
+	attack_skill = 2
+	defense_skill = 3
+	planning_skill = 2
+	logistics_skill = 2
+}
+
+create_corps_commander = {
+	name = "Augustin Gérard" id=32041
+	#portrait_path = "gfx/leaders/FRA/generic_commander_1.dds"
+	traits = {
+		media_personality
+		trait_cautious
+		infantry_officer
+	}
+	skill = 2
+	attack_skill = 1
+	defense_skill = 4
+	planning_skill = 1
+	logistics_skill = 3
+}
+
+create_corps_commander = {
+	name = "Matthieu Aubriot" id=32042
+	portrait_path = "gfx/leaders/FRA/FRA_matthieu_aubriot.dds"
+	traits = {
+		infantry_officer
+		infantry_leader
+		skilled_staffer
+	}
+	skill = 3
+	attack_skill = 2
+	defense_skill = 4
+	planning_skill = 2
+	logistics_skill = 1
+}
 
 create_navy_leader={
 	name = "Auguste Boué de Lapeyrère" id=32302
@@ -275,15 +432,8 @@ create_navy_leader={
 	attack_skill = 1
 	defense_skill = 1
 }
-
 oob = "FRA_1910"
 
-#Army
-complete_national_focus = FRA_ww1_army_effort
-complete_national_focus = FRA_ww1_industrial_effort
-complete_national_focus = FRA_ww1_naval_effort
-
-complete_national_focus = FRA_ww1_diplomatic_effort
 
 set_technology = {
 	#infantry
@@ -318,25 +468,6 @@ set_technology = {
 	generator_battery = 1
 }
 
-set_politics = {
-	ruling_party = democratic
-	last_election = "1910.4.30" 
-	election_frequency = 48 
-	elections_allowed = yes
-}	
-set_popularities = {
-	fascism = 2
-	communism = 24
-	democratic = 64
-	neutrality = 10
-}
-
-add_ideas = {
-	FRA_ww1_Revanchism
-	ww1_Scramble_for_Africa
-	FRA_disjointed_government
-	limited_conscription
-}
 
 if = {
 	limit = {

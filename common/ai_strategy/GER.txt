@@ -76,7 +76,7 @@ GER_prepare_war_with_FRA = {
 			## France is preparing war against us
 			FRA = {
 				focus_progress = {
-					focus = FRA_ww1_alsaceloreaine_war
+					focus = FRA_ww1_french_revenchism
 					progress > 0.01
 				}
 			}
@@ -500,7 +500,7 @@ GER_final_battle_against_allies = {
 		OR = {
 			## France got his attack spirit
 			FRA = {
-				#has_idea = ALL_together_to_victory
+				has_idea = ALL_together_to_victory
 			}
 			## OR Germany is able to attack anyway
 			AND = {

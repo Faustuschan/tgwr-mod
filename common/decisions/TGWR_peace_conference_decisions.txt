@@ -373,8 +373,14 @@ GER_great_war = {
 				BEL = {
 					has_capitulated = no
 				}
-				surrender_progress < 0.2
-				casualties < 2000000
+				OR = {
+					surrender_progress < 0.2
+					BEL = {
+						surrender_progress > 0.2
+					}
+					casualties < 2000000
+				}
+				
 			}
 			modifier = {
 				factor = 0
@@ -640,7 +646,7 @@ GER_great_war = {
 				set_global_flag = versallies_treaty
 				add_named_threat = {
 					name = versallies_treaty
-					threat = -20
+					threat = -100
 				}
 				hidden_effect = {
 					conference_effect = yes

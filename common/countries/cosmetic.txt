@@ -92,8 +92,8 @@ FRA_socialism = {
 	color_ui = rgb { 160 37 33 }
 }
 FRA_proto_fascism = {
-	color = rgb { 30 84 183 }
-	color_ui = rgb { 35 101 222 }
+	color = rgb { 86 109 152 }
+	color_ui = rgb { 86 109 152 }
 }
 POR_REP = {
 	color = rgb { 39 116 70 }
@@ -535,8 +535,12 @@ NFA = {
 	color_ui = rgb { 0 18 127 }
 }
 FRA_THIRD_EMPIRE = {
-	color = rgb { 0 18 127 }
-	color_ui = rgb { 0 18 127 }
+	color = rgb { 124 195 206 }
+	color_ui = rgb { 124 195 206 }
+}
+FRA_KINGDOM = {
+	color = rgb { 124 195 206 }
+	color_ui = rgb { 124 195 206 }
 }
 USA_FRA = {
 	color = rgb { 145 163 176  }
