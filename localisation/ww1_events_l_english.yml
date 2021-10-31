@@ -531,6 +531,60 @@ ww1_france.68.d:0 "The major changes in French politics resulted from strong opp
  ww1_france.82.b:0 "Local police will get large funding"
  ww1_france.82.c:0 "Let's launch major works to revive growth in the suburbs"
 
+
+ ww1_france.83.t:0 "Napoleon obtain full powers"
+ ww1_france.83.d:0 "For the third time in French history, a Bonaparte obtains full powers. Plunged into nostalgia for 1812, the French people placed their trust in Napoleon V. A new shadow hangs over Europe, that of the ambition of a cursed family once again threatening the stability of the great powers."
+ ww1_france.83.a:0 "Glory to the emperor !"
+ ww1_france.83.b:0 "It's impossible !"
+
+ ww1_france.84.t:0 "[FRA.getLeader] ask our submission !"
+ ww1_france.84.d:0 "The ambassador of the new French government consulted [BEL.getLeader] this morning in Brussels. Having become arrogant and expansionist, French officials demanded the submission of Belgium, in particular because of the Francophone majority which was, a century ago, an integral part of the French Empire."
+ ww1_france.84.a:0 "We have no other choice"
+ ww1_france.84.b:0 "Never !"
+
+ ww1_france.85.t:0 "Belgium submits"
+ ww1_france.85.d:0 "The government of [BEL.getLeader] did not resist our threats and accepted French supervision. We have obtained control of the Belgian economy as well as the details of the military forces of the King's army, as ridiculous as they are."
+ ww1_france.85.a:0 "Ahhh... Victory !"
+
+ ww1_france.86.t:0 "Belgium resist"
+ ww1_france.86.d:0 "Despite our ultimatum, the Belgian officials did not bend the knee, on the contrary. Our ambassador was excluded from the territory and the Belgian army mobilized at our borders. The diplomatic solution was only a facade, our army is largely able to reduce this buffer country to dust."
+ ww1_france.86.a:0 "Back to the good old days !"
+
+ ww1_france.87.t:0 "[FRA.getLeader] reclaim Romandy !"
+ ww1_france.87.d:0 "The French government has claimed its interest in the annexation of Romandy. The argument put forward by [FRA.getLeader] is based on the Francophone majority living in this part of our nation."
+ ww1_france.87.a:0 "We have no other choices"
+ ww1_france.87.b:0 "Never !"
+
+ ww1_france.88.t:0 "Switzerland submits !"
+ ww1_france.88.d:0 "Switzerland has validated the legitimacy of our claim and withdrew its army from Romandy, we now have total control over this territory!"
+ ww1_france.88.a:0 "Who said that the Swiss Romands were not French?"
+
+ ww1_france.89.t:0 "[BEL.getLeader] refused !"
+ ww1_france.89.d:0 "The Swiss Federal Council refused our ultimatum. Many Swiss divisions have been seen at our border. At least they know what to expect!"
+ ww1_france.89.a:0 "Its only a matter of time..."
+
+ ww1_france.90.t:0 "[FRA.GetName] annex Romandy"
+ ww1_france.90.d:0 "The French army has today invested Romandy, a French-speaking region located in the west of Switzerland. This territory made up of 4 cantons had been claimed by France a few weeks earlier by the new Executive. The Federal Council of Bern declared to have given in to avoid ''a bloody confrontation'''. This act of weakness is not without consequences, the Swiss government affirms to start a close collaboration with Germany in order to obtain reinforced security guarantees. "
+ ww1_france.90.a:0 "Its only a matter of time..."
+
+ ww1_france.91.t:0 "[FRA.GetName] threatens us"
+ ww1_france.91.d:0 "The French government ask us to return Alsace Lorraine. In the event of a refusal on our part, France has indicated that it will take all the necessary measures to regain this territory. This ridiculous threat is far from us worried The new government of [FRA.GetLeader] is fragile and his army weak due to internal turmoil. It is very likely that this campaign is just a formality for us."
+ ww1_france.91.a:0 "We have no other choices"
+ ww1_france.91.b:0 "Never !"
+
+ ww1_france.92.t:0 "[GER.getLeader] submits !"
+ ww1_france.92.d:0 "[GER.getName] has validated the legitimacy of our claim and withdrew its army from Alsace-Lorraine, we now have total control over this territory!"
+ ww1_france.92.a:0 "We get our revenge !"
+
+ ww1_france.93.t:0 "[GER.getLeader] refused !"
+ ww1_france.93.d:0 "The [GER.getName] refused our ultimatum. Many [GER.getAdjective] divisions have been seen at our border. At least they know what to expect!"
+ ww1_france.93.a:0 "Its only a matter of time..."
+
+ ww1_france.94.t:0 "Germany returns Alsace-Lorraine to France"
+ ww1_france.94.d:0 "Tensions between France and Germany have reached new heights. Faced with significant pressure from [FRA.getLeader] and its government, [GER.getLeader] was forced to surrender the territory of Alsace Lorraine. This region was a conquest of Prussia during the war against Napoleon III. This new event highlights the terribly bellicose behavior of the French government."
+ ww1_france.94.a:0 "Its a nightmare !"
+
+
  FRA_enough_seats:0 "§YThis option is displayed because we meet the required conditions:§!"
 
  #BELGIUM

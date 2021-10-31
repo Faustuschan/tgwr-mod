@@ -382,6 +382,21 @@ create_corps_commander = {
 	logistics_skill = 3
 }
 
+create_corps_commander = {
+	name = "Matthieu Aubriot" id=32042
+	portrait_path = "gfx/leaders/FRA/FRA_matthieu_aubriot.dds"
+	traits = {
+		infantry_officer
+		infantry_leader
+		skilled_staffer
+	}
+	skill = 3
+	attack_skill = 2
+	defense_skill = 4
+	planning_skill = 2
+	logistics_skill = 1
+}
+
 create_navy_leader={
 	name = "Auguste Boué de Lapeyrère" id=32302
 	portrait_path="gfx/leaders/FRA/FRA_de_lapeyrere.dds"

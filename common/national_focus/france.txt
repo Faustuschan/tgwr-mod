@@ -2586,7 +2586,7 @@ focus = {
 
 focus = {
 	id = FRA_ww1_restore_franco_russia_friendship
-	icon = GFX_focus_deal_with_russia_shine
+	icon = GFX_focus_deal_with_russia
 	relative_position_id = FRA_ww1_broken_ties
 	prerequisite = { focus = FRA_ww1_broken_ties }
 	available = {
@@ -3204,7 +3204,7 @@ focus = {
 			 fascism > 0.4
 		 }
 	}
-	 prerequisite = { focus = FRA_ww1_authoritarian_coup }
+	prerequisite = { focus = FRA_ww1_authoritarian_coup }
 	x = -2
 	y = 1
 	relative_position_id = FRA_ww1_authoritarian_coup
@@ -3234,8 +3234,172 @@ focus = {
 }
 
 focus = {
+	id = FRA_pressure_for_romandia
+	icon = GFX_focus_attack_switzerland
+	 available = {
+		OR = {
+			has_government = fascism
+			has_government = neutrality
+		}
+		is_puppet = no
+		SWI = {
+			exists = yes
+		}
+		NOT = {
+			has_war_with = SWI
+		}
+		has_army_manpower = {
+			size > 799999
+		}
+		851 = {
+			is_owned_and_controlled_by = SWI
+		}
+	}
+	prerequisite = { 
+		focus = FRA_ww1_authoritarian_coup 
+		focus = FRA_ww1_force_the_issue 
+	}
+	x = -6
+	y = 3
+	relative_position_id = FRA_ww1_authoritarian_coup
+	cost = 10
+
+	ai_will_do = {
+		factor = 1
+	}
+	search_filters = { FOCUS_FILTER_POLITICAL }
+	completion_reward = {
+		SWI = {
+			country_event = {
+				id = ww1_france.87
+				days = 2
+			}
+		}
+	}
+}
+
+focus = {
+	id = FRA_first_lille_award
+	icon = GFX_focus_belgium_fate
+	 available = {
+		OR = {
+			has_government = fascism
+			has_government = neutrality
+		}
+		is_puppet = no
+		BEL = {
+			exists = yes
+		}
+		NOT = {
+			has_war_with = BEL
+		}
+		has_army_manpower = {
+			size > 599999
+		}
+	}
+	prerequisite = { 
+		focus = FRA_ww1_authoritarian_coup 
+		focus = FRA_ww1_force_the_issue 
+	}
+	x = -3
+	y = 2
+	relative_position_id = FRA_ww1_authoritarian_coup
+	cost = 10
+
+	ai_will_do = {
+		factor = 1
+	}
+	search_filters = { FOCUS_FILTER_POLITICAL }
+	completion_reward = {
+		BEL = {
+			country_event = {
+				id = ww1_france.84
+				days = 2
+			}
+		}
+	}
+}
+
+focus = {
+	id = FRA_second_lille_award
+	icon = GFX_focus_second_belgian_award
+	 available = {
+		BEL = {
+			is_puppet_of = FRA
+			538 = {
+				is_owned_and_controlled_by = BEL
+			}
+			718 = {
+				is_owned_and_controlled_by = BEL
+			}
+			295 = {
+				is_owned_and_controlled_by = BEL
+			}
+		}
+	}
+	prerequisite = { 
+		focus = FRA_first_lille_award
+	}
+	x = 0
+	y = 1
+	relative_position_id = FRA_first_lille_award
+	cost = 10
+
+	ai_will_do = {
+		factor = 1
+	}
+	search_filters = { FOCUS_FILTER_POLITICAL }
+	completion_reward = {
+		FRA = {
+			transfer_state = 538
+			transfer_state = 718
+			transfer_state = 295
+		}
+	}
+}
+
+focus = {
+	id = FRA_strasbourg_or_war
+	icon = GFX_goal_generic_territory_or_war
+	 available = {
+		FRA = {
+			has_war = no
+			is_puppet = no
+		}
+		has_army_manpower = {
+			size > 899999
+		}
+		28 = {
+			is_owned_and_controlled_by = GER
+		}
+	}
+	prerequisite = { 
+		focus = FRA_ww1_authoritarian_coup 
+		focus = FRA_ww1_force_the_issue 
+	}
+	x = -1
+	y = 2
+	relative_position_id = FRA_first_lille_award
+	cost = 10
+
+	ai_will_do = {
+		factor = 1
+	}
+	search_filters = { FOCUS_FILTER_POLITICAL }
+	completion_reward = {
+		add_threat = 5
+		GER = {
+			country_event = {
+				id = ww1_france.91
+				days = 2
+			}
+		}
+	}
+}
+
+focus = {
 	id = FRA_ww1_french_expansionism
-	icon = GFX_goal_support_fascism_shine
+	icon = GFX_goal_support_fascism
 	relative_position_id = FRA_ww1_manipulate_the_mass
 	prerequisite = { focus = FRA_ww1_manipulate_the_mass }
 	available = {

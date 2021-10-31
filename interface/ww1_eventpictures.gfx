@@ -811,6 +811,11 @@ spriteTypes = {
 		texturefile = "gfx/event_pictures/ww1_france/report_event_bonnot_gang.dds"
 	}
 
+	spriteType = {
+		name = "GFX_ww1_france_83"
+		texturefile = "gfx/event_pictures/ww1_france/napoleonV.dds"
+	}
+
 
 	#RUSSIAN REVOLUTION
 	spriteType = {

@@ -209,6 +209,9 @@ country_event = {
 		has_war = no
 		has_global_flag = frankfurt_treaty
 		is_subject = no
+		NOT = {
+			has_completed_focus = FRA_emer
+		}
 	}
 	mean_time_to_happen = {
 		days = 35
@@ -724,6 +727,7 @@ country_event = {
 		retire_country_leader = yes
 		create_country_leader = {
 			name = "Jean Longuet"
+			picture = "gfx/leaders/FRA/jean_longuet.dds"
 			ideology = marxism
 			traits = {
 				marxist_philosopher
@@ -2276,7 +2280,7 @@ country_event = {
 	trigger = {
 		tag = FRA
 		has_government = democratic
-		date > 1911.7.7
+		date > 1912.4.4
 	}																	
 	mean_time_to_happen = {
 		days = 60
@@ -2408,7 +2412,7 @@ country_event = {
 
 
 #
-# crime on the rise in the Parisian suburbs
+# crime on the rise in the Parisian suburbs bonnot gang
 #
 country_event = {
 	id = ww1_france.82
@@ -2418,7 +2422,7 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		tag = FRA
-		date > 1913.2.4
+		date > 1911.7.7
 	}																	
 	mean_time_to_happen = {
 		days = 60
@@ -2447,6 +2451,11 @@ country_event = {
 			remove_building = {
 				type = industrial_complex
 				level = 1
+			}
+			add_state_modifier = {
+				modifier = {
+					local_manpower = -0.1
+				}
 			}
 		}
 	}
@@ -2570,6 +2579,469 @@ country_event = {
 }
 
 
+#
+# NAPOLEON IS BACK
+#
+news_event = {
+	id = ww1_france.83
+	title = ww1_france.83.t
+	desc = ww1_france.83.d
+	picture = GFX_ww1_france_83
+	fire_only_once = yes
+	trigger = {
+		has_country_leader = {
+			name = "Napoleon V"
+		}
+	}																	
+	mean_time_to_happen = {
+		days = 4
+	}
+	immediate = {
+		hidden_effect = {
+			FRA = {
+				set_cosmetic_tag = FRA_THIRD_EMPIRE
+				leave_faction = yes
+			}
+		}
+	}
+	option = {
+		trigger = {
+			OR = {
+				tag = FRA
+				is_in_faction_with = FRA
+			}
+		}
+		name = ww1_france.83.a
+	}
+	option = {
+		trigger = {
+			NOT = {
+				OR = {
+					tag = FRA
+					is_in_faction_with = FRA
+				}
+			}
+		}
+		name = ww1_france.83.b
+	}
+}
+
+
+#
+# France ask Belgian submission
+#
+country_event = {
+	id = ww1_france.84
+	title = ww1_france.84.t
+	desc = ww1_france.84.d
+	picture = GFX_report_event_gathering_protest
+	is_triggered_only = yes																
+	#We have no choice...
+	option = {
+		name = ww1_france.84.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				BEL = {
+					is_in_faction = no
+				}
+				add = 10
+			}
+			modifier = {
+				strength_ratio = {
+					tag = FRA
+					ratio < 2
+				}
+				add = 10
+			}
+			modifier = {
+				BEL = {
+					NOT = {
+						is_guaranteed_by = GER
+					}
+					NOT = {
+						is_guaranteed_by = ENG
+					}
+					NOT = {
+						is_guaranteed_by = USA
+					}
+				}
+				add = 5
+			}
+			modifier = {
+				FRA = {
+					is_in_faction = yes
+				}
+				add = 10
+			}
+			modifier = {
+				threat > 0.25
+				add = 1
+			}
+		}
+		FRA = {
+			country_event = {
+				id = ww1_france.85
+				days = 2
+			}
+		}
+	}
+	# we refuse !
+	option = {
+		name = ww1_france.84.b
+		ai_chance = {
+			base = 10
+			modifier = {
+				FRA = {
+					has_war = yes
+				}
+				add = 10
+			}
+
+		}
+		FRA = {
+			country_event = {
+				id = ww1_france.86
+				days = 2
+			}
+		}
+	}
+}
+
+#belgium surrender
+country_event = {
+	id = ww1_france.85
+	title = ww1_france.85.t
+	desc = ww1_france.85.d
+	picture = GFX_report_event_gathering_protest
+	is_triggered_only = yes																
+	# victory
+	option = {
+		name = ww1_france.85.a
+		FRA = {
+			puppet = BEL
+		}
+	}
+}
+
+#belgium fight
+country_event = {
+	id = ww1_france.86
+	title = ww1_france.86.t
+	desc = ww1_france.86.d
+	picture = GFX_report_event_gathering_protest
+	is_triggered_only = yes																
+	# They must die
+	option = {
+		name = ww1_france.86.a
+		create_wargoal = {
+			target = BEL
+			type = puppet_wargoal_focus
+		}
+		add_ai_strategy = {
+			type = antagonize
+			id = BEL
+			value = 200
+		}
+		add_ai_strategy = {
+			type = conquer
+			id = BEL
+			value = 200
+		}
+		BEL = {
+			add_ai_strategy = {
+				type = prepare_for_war
+				id = FRA
+				value = 200
+			}
+		}
+	}
+}
+
+#
+# France ask Belgian submission
+#
+country_event = {
+	id = ww1_france.87
+	title = ww1_france.87.t
+	desc = ww1_france.87.d
+	picture = GFX_report_event_gathering_protest
+	is_triggered_only = yes																
+	#We have no choice...
+	option = {
+		name = ww1_france.87.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				SWI = {
+					is_in_faction = no
+				}
+				add = 10
+			}
+			modifier = {
+				strength_ratio = {
+					tag = FRA
+					ratio < 2
+				}
+				add = 10
+			}
+			modifier = {
+				SWI = {
+					NOT = {
+						is_guaranteed_by = GER
+					}
+					NOT = {
+						is_guaranteed_by = ENG
+					}
+					NOT = {
+						is_guaranteed_by = USA
+					}
+				}
+				add = 5
+			}
+			modifier = {
+				SWI = {
+					is_in_faction = yes
+				}
+				add = 10
+			}
+			modifier = {
+				threat > 0.25
+				add = 1
+			}
+		}
+		FRA = {
+			country_event = {
+				id = ww1_france.88
+				days = 2
+			}
+		}
+	}
+	# we refuse !
+	option = {
+		name = ww1_france.87.b
+		ai_chance = {
+			base = 10
+			modifier = {
+				FRA = {
+					has_war = yes
+				}
+				add = 10
+			}
+
+		}
+		FRA = {
+			country_event = {
+				id = ww1_france.89
+				days = 2
+			}
+		}
+	}
+}
+
+#Switzerland surrender
+country_event = {
+	id = ww1_france.88
+	title = ww1_france.88.t
+	desc = ww1_france.88.d
+	picture = GFX_report_event_gathering_protest
+	is_triggered_only = yes																
+	# victory
+	option = {
+		name = ww1_france.88.a
+		transfer_state = 851
+		news_event = {
+			days = 2
+			id =  ww1_france.90
+		}
+	}
+}
+
+#switzerland fight
+country_event = {
+	id = ww1_france.89
+	title = ww1_france.89.t
+	desc = ww1_france.89.d
+	picture = GFX_report_event_gathering_protest
+	is_triggered_only = yes																
+	# They must die
+	option = {
+		name = ww1_france.89.a
+		create_wargoal = {
+			target = SWI
+			type = puppet_wargoal_focus
+		}
+		add_ai_strategy = {
+			type = antagonize
+			id = SWI
+			value = 200
+		}
+		add_ai_strategy = {
+			type = conquer
+			id = SWI
+			value = 200
+		}
+		SWI = {
+			add_ai_strategy = {
+				type = prepare_for_war
+				id = FRA
+				value = 200
+			}
+		}
+	}
+}
+
+
+#Switzerland surrender
+news_event = {
+	id = ww1_france.90
+	title = ww1_france.90.t
+	desc = ww1_france.90.d
+	picture = GFX_news_event_canada_treaty
+	is_triggered_only = yes																
+	option = {
+		name = ok
+	}
+}
+
+
+#
+# France ask for alsace lorraine
+#
+country_event = {
+	id = ww1_france.91
+	title = ww1_france.91.t
+	desc = ww1_france.91.d
+	picture = GFX_report_event_gathering_protest
+	is_triggered_only = yes																
+	#We have no choice...
+	option = {
+		name = ww1_france.91.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				GER = {
+					is_in_faction = no
+				}
+				add = 5
+			}
+			modifier = {
+				strength_ratio = {
+					tag = FRA
+					ratio < 2
+				}
+				add = 5
+			}
+			modifier = {
+				FRA = {
+					is_in_faction = yes
+				}
+				add = 5
+			}
+			modifier = {
+				any_country = {
+					has_war_with = GER
+					is_major = yes
+					NOT = {
+						tag = FRA
+					}
+				}
+				add = 10
+			}
+		}
+		FRA = {
+			country_event = {
+				id = ww1_france.92
+				days = 2
+			}
+		}
+	}
+	# we refuse !
+	option = {
+		name = ww1_france.91.b
+		ai_chance = {
+			base = 50
+			modifier = {
+				FRA = {
+					has_war = yes
+				}
+				add = 50
+			}
+
+		}
+		FRA = {
+			country_event = {
+				id = ww1_france.93
+				days = 2
+			}
+		}
+	}
+}
+
+#Germany surrender
+country_event = {
+	id = ww1_france.92
+	title = ww1_france.92.t
+	desc = ww1_france.92.d
+	picture = GFX_report_event_gathering_protest
+	is_triggered_only = yes																
+	# victory
+	option = {
+		name = ww1_france.92.a
+		transfer_state = 28
+		news_event = {
+			days = 2
+			id =  ww1_france.94
+		}
+	}
+}
+
+#Germany fight
+country_event = {
+	id = ww1_france.93
+	title = ww1_france.93.t
+	desc = ww1_france.93.d
+	picture = GFX_report_event_gathering_protest
+	is_triggered_only = yes																
+	# They must die
+	option = {
+		name = ww1_france.93.a
+		create_wargoal = {
+			target = GER
+			type = annex_everything
+		}
+		add_ai_strategy = {
+			type = antagonize
+			id = GER
+			value = 200
+		}
+		add_ai_strategy = {
+			type = conquer
+			id = GER
+			value = 200
+		}
+		GER = {
+			add_ai_strategy = {
+				type = prepare_for_war
+				id = FRA
+				value = 200
+			}
+		}
+	}
+}
+
+
+#Germany surrender alsace-lorraine surrender
+news_event = {
+	id = ww1_france.94
+	title = ww1_france.94.t
+	desc = ww1_france.94.d
+	picture = GFX_news_event_canada_treaty
+	is_triggered_only = yes																
+	option = {
+		name = ok
+	}
+}
 
 #____________________________________________________________
 # End of new events
