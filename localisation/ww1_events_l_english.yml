@@ -584,6 +584,32 @@ ww1_france.68.d:0 "The major changes in French politics resulted from strong opp
  ww1_france.94.d:0 "Tensions between France and Germany have reached new heights. Faced with significant pressure from [FRA.getLeader] and its government, [GER.getLeader] was forced to surrender the territory of Alsace Lorraine. This region was a conquest of Prussia during the war against Napoleon III. This new event highlights the terribly bellicose behavior of the French government."
  ww1_france.94.a:0 "Its a nightmare !"
 
+ ww1_france.95.t:0 "[FROM.GetNameDef] seek to ally us !"
+ ww1_france.95.d:0 "The [FROM.GetAdjective] government has come before us to discuss a potential alliance between [FROM.getName] and [ROOT.getName]. This collaborator is a direct response to the Germanic self-esteem in Europe and the threat hanging over the Balkans."
+ ww1_france.95.a:0 "[FROM.getName]'s fight is legitimate"
+ ww1_france.95.b:0 "We must avoid a bloody war"
+
+ ww1_france.96.t:0 "[FROM.GetNameDef] accepts !"
+ ww1_france.96.d:0 "[FROM.getName] has agreed to join us, we will be stronger together."
+ ww1_france.96.a:0 "Nice !"
+
+ ww1_france.97.t:0 "[FROM.GetNameDef] refuses !"
+ ww1_france.97.d:0 "[FROM.getName] has refused to join us, despite all our efforts."
+ ww1_france.97.a:0 "Mh..."
+
+ ww1_france.98.t:0 "[TUR.getAdjective]-[RUS.getAdjective] antagonism"
+ ww1_france.98.d:0 "The introduction of the [TUR.getName] into the [ROOT.GetFactionName] is a threat to our regional policy. The [TUR.getAdjective] have the same egemonic visions as we do on the Balkans, inevitably leading to a political confrontation sooner or later. It would be good to warn our allies that this situation is not acceptable. [ROOT.getName] is a great nation that does not need internal faction concerns."
+ ww1_france.98.a:0 "Someone has to go, either the ottomans or us"
+ ww1_france.98.b:0 "We are fine with it"
+
+ ww1_france.99.t:0 "[TUR.getAdjective]-[RUS.getAdjective] antagonism"
+ ww1_france.99.d:0 "We received the [RUS.getAdjective] ambassador urgently following the integration of the [TUR.getName] into the [ROOT.getFactionName]. Our position did not please the [RUS.getAdjective] authorities who immediately indicated the end of all collaboration in the event that the alliance with the [TUR.getAdjective] was maintained. We have to choose which ally we keep."
+ ww1_france.99.a:0 "Russia is our prior ally"
+ ww1_france.99.b:0 "We need the Ottomans"
+
+ ww1_france.210.t:0 "[FROM.getNameDef] is rejecting us"
+ ww1_france.210.d:0 "Despite the efforts of our diplomacy with [FROM.getNameDef]. It seems that the [FROM.getLeader] preferred to favor our rivals on the Russo-Ottoman affair. It is absolutely undesirable that our vision of the Balkans is not respected, especially as our control is legitimate."
+ ww1_france.210.a:0 "We are alone now"
 
  FRA_enough_seats:0 "§YThis option is displayed because we meet the required conditions:§!"
 

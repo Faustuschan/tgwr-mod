@@ -3043,6 +3043,155 @@ news_event = {
 	}
 }
 
+#France want us to join entente
+country_event = {
+	id = ww1_france.95
+	title = ww1_france.95.t
+	desc = ww1_france.95.d
+	picture = GFX_report_event_gathering_protest
+	is_triggered_only = yes		
+	#yes														
+	option = {
+		name = ww1_france.95.a
+		country_event = {
+			id = ww1_france.96
+			days = 2
+		}
+	}
+	#no
+	option = {
+		name = ww1_france.95.b
+		country_event = {
+			id = ww1_france.97
+			days = 2
+		}
+	}
+}
+
+#FROM said yes
+country_event = {
+	id = ww1_france.96
+	title = ww1_france.96.t
+	desc = ww1_france.96.d
+	picture = GFX_report_event_gathering_protest
+	is_triggered_only = yes		
+	#yes
+	option = {
+		name = ww1_france.96.a
+		add_to_faction = FROM
+	}
+}
+
+#FROM said no
+country_event = {
+	id = ww1_france.97
+	title = ww1_france.97.t
+	desc = ww1_france.97.d
+	picture = GFX_report_event_gathering_protest
+	is_triggered_only = yes		
+	#yes
+	option = {
+		name = ww1_france.97.a
+	}
+}
+
+
+#Russia dont like to be allied with ottomans
+country_event = {
+	id = ww1_france.98
+	title = ww1_france.98.t
+	desc = ww1_france.98.d
+	picture = GFX_report_event_gathering_protest
+	trigger = {
+		tag = RUS
+		is_in_faction_with = TUR
+	}	
+	fire_only_once = yes
+	#France must act
+	option = {
+		name = ww1_france.98.a
+		ai_chance = {
+			factor = 80
+		}
+		hidden_effect = {
+			every_country = {
+				if = {
+					limit = {
+						is_faction_leader = yes
+						is_in_faction_with = RUS
+						is_in_faction_with = TUR
+					}
+					country_event = {
+						id = ww1_france.99
+						days = 2
+					}
+				}
+			}
+		}
+		
+	}
+	#We are fine with it
+	option = {
+		name = ww1_france.98.b
+		add_political_power = -200
+		add_stability = -0.10
+		ai_chance = {
+			factor = 20
+		}
+	}
+}
+
+#Russian want to kick ottoman from the entente
+country_event = {
+	id = ww1_france.99
+	title = ww1_france.99.t
+	desc = ww1_france.99.d
+	picture = GFX_report_event_gathering_protest
+	is_triggered_only = yes		
+	#yes
+	option = {
+		name = ww1_france.99.a
+		TUR = {
+			country_event = {
+				id = ww1_france.210
+				days = 1
+			}
+		}
+	}
+	#no
+	option = {
+		name = ww1_france.99.b
+		RUS = {
+			country_event = {
+				id = ww1_france.210
+				days = 1
+			}
+		}
+	}
+}
+
+#Russia/Ottomans are kicked
+country_event = {
+	id = ww1_france.210
+	title = ww1_france.210.t
+	desc = ww1_france.210.d
+	picture = GFX_report_event_gathering_protest
+	is_triggered_only = yes		
+	option = {
+		name = ww1_france.210.a
+		leave_faction = yes
+		add_opinion_modifier = {
+			target = FRA
+			modifier = large_decrease
+		}
+		add_ai_strategy = {
+			type = alliance
+			id = FRA
+			value = -400
+		}
+	}
+}
+
 #____________________________________________________________
 # End of new events
 #____________________________________________________________
