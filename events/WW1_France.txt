@@ -1614,7 +1614,7 @@ country_event = {
 		}
 		create_country_leader = {
 			name = "René Viviani"
-			picture = "gfx/leaders/FRA/Portrait_France_Rene_Viviani.dds"
+			picture = "gfx/leaders/FRA/FRA_Rene_Viviani.png"
 			expire = "1935.1.1"
 			ideology = classical_liberalism
 			traits = {
@@ -1758,7 +1758,7 @@ country_event = {
 		}
 		create_country_leader = {
 			name = "René Viviani"
-			picture = "gfx/leaders/FRA/Portrait_France_Rene_Viviani.dds"
+			picture = "gfx/leaders/FRA/FRA_Rene_Viviani.png"
 			expire = "1935.1.1"
 			ideology = classical_liberalism
 			traits = {
@@ -1879,7 +1879,7 @@ country_event = {
 		}
 		create_country_leader = {
 			name = "René Viviani"
-			picture = "gfx/leaders/FRA/Portrait_France_Rene_Viviani.dds"
+			picture = "gfx/leaders/FRA/FRA_Rene_Viviani.png"
 			expire = "1935.1.1"
 			ideology = classical_liberalism
 			traits = {
@@ -2006,7 +2006,7 @@ country_event = {
 		}
 		create_country_leader = {
 			name = "René Viviani"
-			picture = "gfx/leaders/FRA/Portrait_France_Rene_Viviani.dds"
+			picture = "gfx/leaders/FRA/FRA_Rene_Viviani.png"
 			expire = "1935.1.1"
 			ideology = classical_liberalism
 			traits = {
