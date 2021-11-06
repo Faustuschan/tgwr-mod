@@ -733,6 +733,10 @@ FRA_put_a_end_to_the_great_war = {
 			original_tag = POR
 			original_tag = MEX
 		}
+		FRA = {
+			is_in_faction_with = USA
+		}
+		is_in_faction_with = FRA
 		has_war_with = GER
 		date > 1918.1.1
 	}
@@ -1084,6 +1088,39 @@ VIN_stay_in_asia = {
 	ai_strategy = {
 		type = area_priority
 		id = asia
+		value = 2000
+	}
+}
+
+FRA_ignore_serbian_war = {
+	allowed = {
+		original_tag = FRA
+	}
+	enable = {
+		is_subject_of = FRA
+		has_war_with = SER
+		is_in_faction_with = TUR
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_unit_request
+		id = BUL
+		value = -2000
+	}
+	ai_strategy = {
+		type = front_unit_request
+		id = TUR
+		value = -2000
+	}
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "TUR"
+		value = 2000
+	}
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "BUL"
 		value = 2000
 	}
 }

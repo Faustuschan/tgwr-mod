@@ -212,7 +212,7 @@ focus_tree = {
 
 	focus = {
 		id = FRA_ww1_ils_ne_passeront_pas
-		icon = GFX_goal_generic_propaganda
+		icon = GFX_goal_french_army
 		relative_position_id = FRA_ww1_develop_germanophobia
 		prerequisite = { focus = FRA_ww1_develop_germanophobia }
 		completion_reward = {
@@ -3403,7 +3403,7 @@ focus = {
 
 focus = {
 	id = FRA_ww1_french_expansionism
-	icon = GFX_goal_support_fascism
+	icon = GFX_goal_restore_the_empire
 	relative_position_id = FRA_ww1_manipulate_the_mass
 	prerequisite = { focus = FRA_ww1_manipulate_the_mass }
 	available = {

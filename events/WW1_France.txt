@@ -212,6 +212,9 @@ country_event = {
 		NOT = {
 			has_completed_focus = FRA_emer
 		}
+		NOT = {
+			has_global_flag = achievement_france_surrender
+		}
 	}
 	mean_time_to_happen = {
 		days = 35
@@ -316,6 +319,8 @@ country_event = {
 			remove_ideas = FRA_popular_labor_service
 			remove_ideas = FRA_CGT_support
 			remove_ideas = FRA_propaganda
+			remove_ideas = FRA_army_of_aggression_focus
+			remove_ideas = FRA_army_of_aggression_focus
 		}
 		custom_effect_tooltip = FRA_disband_army
 		custom_effect_tooltip = FRA_disband_factories
@@ -895,6 +900,8 @@ country_event = {
 			remove_ideas = FRA_popular_labor_service
 			remove_ideas = FRA_CGT_support
 			remove_ideas = FRA_propaganda
+			remove_ideas = FRA_army_of_aggression_focus
+			remove_ideas = FRA_army_of_aggression_focus_2
 		}
 		16 = {
 			add_building_construction = {

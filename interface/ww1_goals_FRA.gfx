@@ -26,6 +26,16 @@ spriteTypes = {
 		texturefile = "gfx/interface/ideas/FRA/marx_trash.dds"
 	}
 
+	SpriteType = {
+		name = "GFX_goal_french_army"
+		texturefile = "gfx/interface/goals/FRA/french_army.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_goal_restore_the_empire"
+		texturefile = "gfx/interface/goals/FRA/control_europe.dds"
+	}
+
 	##### expanded duty
 	SpriteType = {
 		name = "GFX_goal_FRA_expanded_duty"
