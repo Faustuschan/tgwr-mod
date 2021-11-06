@@ -1092,6 +1092,27 @@ VIN_stay_in_asia = {
 	}
 }
 
+FRA_ignore_africa = {
+	allowed = {
+		original_tag = FRA
+	}
+	enable = {
+		is_subject_of = FRA
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_unit_request
+		area = africa
+		value = -200
+	}
+	ai_strategy = {
+		type = area_priority
+		id = africa
+		value = -200
+	}
+}
+
 FRA_ignore_serbian_war = {
 	allowed = {
 		original_tag = FRA
