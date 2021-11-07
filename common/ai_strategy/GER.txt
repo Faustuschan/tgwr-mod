@@ -637,54 +637,20 @@ GER_attack_if_france_is_weak = {
 			NOT = { has_war_with = USA }
 		}
 	}
-	if = {
-		limit = {
-			OR = {
-				RUS = {
-					has_war_with = GER
-					has_civil_war = yes
-				}
-			}
-		}
-		ai_strategy = {
-			type = front_control
-			tag = FRA
-			
-			priority = 99999
-			ordertype = front
-			execution_type = rush_weak
-			ratio = 0.75
-			execute_order = yes
-		}
-		ai_strategy = {
-			type = front_unit_request
-			tag = FRA
-			value = 200
-		}
+	ai_strategy = {
+		type = front_control
+		tag = FRA
+		
+		priority = 99999
+		ordertype = front
+		execution_type = rush_weak
+		ratio = 0.45
+		execute_order = yes
 	}
-
-	if = {
-		limit = {
-			RUS = {
-				has_civil_war = no
-				has_war_with = GER
-			}
-		}
-		ai_strategy = {
-			type = front_control
-			tag = FRA
-			
-			priority = 99999
-			ordertype = front
-			execution_type = rush_weak
-			ratio = 0.45
-			execute_order = yes
-		}
-		ai_strategy = {
-			type = front_unit_request
-			tag = FRA
-			value = 100
-		}
+	ai_strategy = {
+		type = front_unit_request
+		tag = FRA
+		value = 100
 	}
 	
 }
