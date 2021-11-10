@@ -528,24 +528,6 @@ ideas = {
 			}
 		}
 
-		FRA_wadai_war = {
-			allowed = {
-				original_tag = FRA
-				always = no
-			}
-			available = {
-				has_war_with = CHA
-			}
-			removal_cost = -1
-			picture = generic_oppression
-			modifier = {
-				hidden_modifier = {
-					experience_gain_army_factor = -0.9
-				}
-				stability_factor = -0.05
-			}
-		}
-
 		FRA_protector_of_the_weakests = {
 			allowed = {
 				original_tag = FRA
@@ -1958,6 +1940,28 @@ ideas = {
 			removal_cost = -1
 			modifier = {
 				political_power_gain = 0.25
+			}
+		}
+	}
+	hidden_ideas = {
+		FRA_wadai_war = {
+			allowed = {
+				original_tag = FRA
+			}
+			available = {
+				has_war_with = CHA
+				NOT = {
+					any_country = {
+						NOT = {
+							tag = CHA
+						}
+						has_war_with = FRA
+					}
+				}			
+			}
+			removal_cost = -1
+			modifier = {
+				experience_gain_army_factor = -0.9
 			}
 		}
 	}

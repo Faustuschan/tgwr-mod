@@ -602,6 +602,47 @@ GER_attack_if_france_is_weak_but_RUS_are_alive = {
 			has_civil_war = no
 		}
 	}
+	abort_when_not_enabled = yes
+	abort = {
+		OR = {
+			NOT = { has_war_with = USA }
+		}
+	}
+	ai_strategy = {
+		type = front_control
+		tag = FRA
+		
+		priority = 99999
+		ordertype = front
+		execution_type = rush_weak
+		ratio = 0.75
+		execute_order = yes
+	}
+	ai_strategy = {
+		type = front_unit_request
+		tag = FRA
+		value = 200
+	}
+}
+
+GER_attack_if_france_is_weak_2 = {
+	enable = {
+		tag = GER
+		has_war_with = FRA
+		strength_ratio = {
+			tag = FRA
+			ratio > 1
+		}
+		date > 1915.1.1
+		RUS = {
+			has_civil_war = no
+			NOT = {
+				has_war_with = SOV
+			}
+			has_war_with = GER
+		}
+	}
+	abort_when_not_enabled = yes
 	abort = {
 		OR = {
 			NOT = { has_war_with = USA }
