@@ -628,7 +628,7 @@ GER_attack_if_france_is_weak_and_RUS_died = {
 	}
 	ai_strategy = {
 		type = conquer
-		tag = FRA
+		id = FRA
 		value = 200
 	}
 	ai_strategy = {
