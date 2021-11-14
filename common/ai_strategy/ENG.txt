@@ -175,7 +175,7 @@ commonwealth_allied_base_in_france = {
 			29
 			15
 		}
-		ratio = 0.25
+		ratio = 0.20
 		subtract_invasions_from_need = yes
 	}
 
@@ -184,14 +184,14 @@ commonwealth_allied_base_in_france = {
 		type = front_unit_request
 		tag = GER
 		area = africa
-		value = -150
+		value = -10
 	}
 
 	ai_strategy = {
 		type = front_unit_request
 		tag = GER
 		area = europe
-		value = 150
+		value = 10
 	}
 }
 
@@ -309,7 +309,7 @@ ENG_area_priority = {
 	ai_strategy = {
 		type = area_priority
 		id = europe
-		value = 1000
+		value = 100
 	}
 	ai_strategy = { 
 		type = area_priority
@@ -590,43 +590,7 @@ ENG_egypt_has_problems = {
 		value = 50
 	}
 }
-ENG_france_has_problems = {
-	enable = {
-		tag = ENG
-		has_war_with = GER
-		BEL = { has_capitulated = yes }
-		is_in_faction_with = FRA
-	}
-	abort = {
-		date > 1918.1.1
-		NOT = { has_war_with = GER }
-	}
-	ai_strategy = {
-		type = consider_weak
-		id = "FRA"
-		value = 200
-	}
-	ai_strategy = {
-		type = dont_defend_ally_borders
-		id = "FRA"
-		value = -1000
-	}
-	ai_strategy = {
-		type = protect
-		id = "FRA"
-		value = 500
-	}
-	ai_strategy = {
-		type = area_priority
-		id = europe
-		value = 300
-	}
-	ai_strategy = {
-		type = area_priority
-		id = africa
-		value = -50
-	}
-}
+
 entante_dont_help_serbia = {
 	enable = {
 		OR = {

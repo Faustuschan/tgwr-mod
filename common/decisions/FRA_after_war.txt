@@ -17,7 +17,7 @@ FRA_the_next_revolution = {
 		}
 		is_good = no            
 		fire_only_once = yes        
-		days_mission_timeout = 400        
+		days_mission_timeout = 470        
 		timeout_effect = {
 			custom_effect_tooltip = FRA_communist_uprising_start
 			if = {

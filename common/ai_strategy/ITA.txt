@@ -468,3 +468,21 @@ ITA_dont_ruin_your_economy = {
 	}
 
 }
+
+ITA_dont_waste_time_in_balkans = {
+	enable = {
+		tag = ITA
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = spare_unit_factor	
+		value = -200
+	}
+
+	ai_strategy = {
+		type = front_unit_request	
+		strategic_region = 26
+		value = -200
+	}
+}
+
