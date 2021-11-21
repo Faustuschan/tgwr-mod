@@ -3487,17 +3487,6 @@ ww1_france.68.d:0 "The major changes in French politics resulted from strong opp
  ww1_germany.84.t:0 "Imposed Army Restriction"
  ww1_germany.84.d:0 "By the Treaty of Versailles, our army is limited to 100,000 and our officers to 4,000. In addition, the General Staff will not be able to set up, and we are not allowed have up-to-date weapons such as tanks, submarines, and airplanes. Head of the Army Command Hans von Zeckt, who became the highst man in the army, tries to select young and competent officers and form elite troops within a limited military size."
  ww1_germany.84.a:0 "Leave competent men as we can..."
-<<<<<<< HEAD
-
- ww1_germany.86.t:0 "Famine"
- ww1_germany.86.d:0 "The war is expensive for Germany, because of the maritime blockades that we are suffering, we are today short of food for our population. Despite rationing, our people are suffering a terrible famine which threatens to undermine our war effort."
- ww1_germany.86.a:0 "Shocking."
-
- ww1_germany.87.t:0 "Forced to surrender"
- ww1_germany.87.d:0 "The German people no longer have any fighting will, support for the war is at its lowest and the people are in open revolt against the power in place. Soon our armed forces will no longer be able to feed themselves and our war effort is dangerously diminishing. We are forced to ask for an armistice from France."
- ww1_germany.87.a:0 "It's heartbroken..."
-
-=======
  ww1_germany.85.t:0 "Erich Ludendorff Is In Power"
  ww1_germany.85.d:0 "Although Kaiser Wilhelm II of the German Empire and the army chief of staff, Paul von Hindenburg, are in charge of leading [GER.GetNameDef] in the Great War, the Kaiser is incompetent in the military and Hindenburg is too old.   Because of that Erich Ludendorff which is the second army chief of staff and the commander-in-chief of the munitions is in power now.\nIn addition, he controlled the German economy with the pretext of producing military supplies, and became involved in business and general life of the people. In fact, he can be told as the leader of [GER.GetNameDef]."
  ww1_germany.85.a:0 "Can we trust him?"
@@ -3516,8 +3505,13 @@ ww1_france.68.d:0 "The major changes in French politics resulted from strong opp
  ww1_germany.89.t:0 "[SOV.GetAdjective] Refusal"
  ww1_germany.89.d:0 "The reds are incredible. They still burn with vengeance against us!"
  ww1_germany.89.a:0 "Sure then whatever..."
+ ww1_germany.90.t:0 "Forced to surrender"
+ ww1_germany.90.d:0 "The German people no longer have any fighting will, support for the war is at its lowest and the people are in open revolt against the power in place. Soon our armed forces will no longer be able to feed themselves and our war effort is dangerously diminishing. We are forced to ask for an armistice from France."
+ ww1_germany.90.a:0 "It's heartbroken..."
+ ww1_germany.91.t:0 "Famine"
+ ww1_germany.91.d:0 "The war is expensive for Germany, because of the maritime blockades that we are suffering, we are today short of food for our population. Despite rationing, our people are suffering a terrible famine which threatens to undermine our war effort."
+ ww1_germany.91.a:0 "Shocking."
  
->>>>>>> 9449bc4218b2f02a77e12880bf91a166e05bd0dc
 
  #Undead Unicorn's super duper Germany collapse event chain
  freikorps.1.t:0 "The Spartacist Revolution"
