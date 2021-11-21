@@ -15,8 +15,12 @@ focus_tree = {
 			add_political_power = 120
 			news_event = ww1_france.40
 		}
+		search_filters = {
+			FOCUS_FILTER_INTERNAL_AFFAIRS
+			FOCUS_FILTER_HISTORICAL
+		}
 		ai_will_do = {
-			factor = 1
+			factor = 100
 		}
 		cost = 10
 		x = 18
@@ -43,8 +47,12 @@ focus_tree = {
 			custom_effect_tooltip = FRA_join_democrats_socialists_2
 			custom_effect_tooltip = FRA_get_democrats_socialists_seats
 		}
+		search_filters = {
+			FOCUS_FILTER_INTERNAL_AFFAIRS
+			FOCUS_FILTER_HISTORICAL
+		}
 		ai_will_do = {
-			factor = 1
+			factor = 10
 		}
 		cost = 10
 		x = 0
@@ -72,7 +80,11 @@ focus_tree = {
 			remove_ideas = FRA_ww1_agricultural_sector_strike
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 10
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+			FOCUS_FILTER_HISTORICAL
 		}
 		cost = 10
 		x = -2
@@ -113,6 +125,10 @@ focus_tree = {
 				}
 			}
 		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+			FOCUS_FILTER_HISTORICAL
+		}
 		ai_will_do = {
 			factor = 1
 		}
@@ -133,6 +149,10 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+			FOCUS_FILTER_HISTORICAL
+		}
 		cost = 10
 		x = 0
 		y = 1
@@ -152,6 +172,10 @@ focus_tree = {
 				uses = 2
 			}
 			add_research_slot = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+			FOCUS_FILTER_HISTORICAL
 		}
 		ai_will_do = {
 			factor = 1
@@ -174,8 +198,12 @@ focus_tree = {
 				add_idea = FRA_disjointed_government3
 			}
 		}
+		search_filters = {
+			FOCUS_FILTER_INTERNAL_AFFAIRS
+			FOCUS_FILTER_HISTORICAL
+		}
 		ai_will_do = {
-			factor = 1
+			factor = 10
 		}
 		cost = 10
 		x = 0
@@ -207,6 +235,10 @@ focus_tree = {
 				modifier = sanctions
 			}
 		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+			FOCUS_FILTER_HISTORICAL
+		}
 		ai_will_do = {
 			factor = 1
 		}
@@ -226,6 +258,10 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+			FOCUS_FILTER_HISTORICAL
 		}
 		cost = 10
 		x = 0
@@ -256,6 +292,10 @@ focus_tree = {
 				id = ITA
 				value = 200
 			}
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+			FOCUS_FILTER_HISTORICAL
 		}
 		ai_will_do = {
 			factor = 1
@@ -341,6 +381,11 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+			FOCUS_FILTER_RESEARCH
+			FOCUS_FILTER_HISTORICAL
+		}
 		cost = 10
 		x = 0
 		y = 1
@@ -379,6 +424,10 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+			FOCUS_FILTER_HISTORICAL
+		}
 		cost = 10
 		x = 0
 		y = 1
@@ -409,6 +458,10 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_MANPOWER
+			FOCUS_FILTER_HISTORICAL
 		}
 		cost = 10
 		x = 4
@@ -442,6 +495,10 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+			FOCUS_FILTER_HISTORICAL
 		}
 		cost = 10
 		x = 6
@@ -526,6 +583,10 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+			FOCUS_FILTER_HISTORICAL
+		}
 		cost = 10
 		x = 0
 		y = 1
@@ -579,7 +640,10 @@ focus_tree = {
 			reload_parliament_gui = yes
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 10
+		}
+		search_filters = {
+			FOCUS_FILTER_INTERNAL_AFFAIRS
 		}
 		cost = 10
 		x = -20
@@ -597,6 +661,9 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
 		}
 		cost = 10
 		x = -2
@@ -617,6 +684,9 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
 		}
 		cost = 10
 		x = 0
@@ -647,6 +717,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		search_filters = {
+			FOCUS_FILTER_MANPOWER
+		}
 		cost = 10
 		x = 0
 		y = 1
@@ -668,6 +741,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		search_filters = {
+			FOCUS_FILTER_INTERNAL_AFFAIRS
+		}
 		cost = 10
 		x = 0
 		y = 1
@@ -683,7 +759,11 @@ focus_tree = {
 			add_ideas = FRA_CGT_support
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 10
+		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+			FOCUS_FILTER_INTERNAL_AFFAIRS
 		}
 		cost = 10
 		x = 0
@@ -702,8 +782,11 @@ focus_tree = {
 				add_idea = FRA_CGT_support2
 			}
 		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
 		ai_will_do = {
-			factor = 1
+			factor = 10
 		}
 		cost = 10
 		x = 0
@@ -747,7 +830,10 @@ focus_tree = {
 			reload_parliament_gui = yes
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 10
+		}
+		search_filters = {
+			FOCUS_FILTER_INTERNAL_AFFAIRS
 		}
 		cost = 10
 		x = 2
@@ -806,7 +892,10 @@ focus_tree = {
 			set_country_flag = FRA_democratic_republican_alliance_fuzed_with_SFIO
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 10
+		}
+		search_filters = {
+			FOCUS_FILTER_INTERNAL_AFFAIRS
 		}
 		cost = 10
 		x = 0
@@ -823,7 +912,10 @@ focus_tree = {
 			add_research_slot = 1
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 10
+		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
 		}
 		cost = 10
 		x = 0
@@ -863,7 +955,10 @@ focus_tree = {
 			news_event = ww1_france.41
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 10
+		}
+		search_filters = {
+			FOCUS_FILTER_INTERNAL_AFFAIRS
 		}
 		cost = 10
 		x = -2
@@ -881,7 +976,10 @@ focus_tree = {
 			add_political_power = 120
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 10
+		}
+		search_filters = {
+			FOCUS_FILTER_INTERNAL_AFFAIRS
 		}
 		cost = 10
 		x = 0
@@ -946,6 +1044,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
 		cost = 10
 		x = 2
 		y = 1
@@ -1001,6 +1102,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
 		cost = 10
 		x = -2
 		y = 1
@@ -1017,6 +1121,9 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
 		}
 		cost = 10
 		x = 0
@@ -1052,6 +1159,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
 		cost = 10
 		x = 0
 		y = 1
@@ -1068,6 +1178,9 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
 		}
 		cost = 10
 		x = 0
@@ -1143,7 +1256,10 @@ focus_tree = {
 			}
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 10
+		}
+		search_filters = {
+			FOCUS_FILTER_INTERNAL_AFFAIRS
 		}
 		cost = 10
 		x = 4
@@ -1170,7 +1286,10 @@ focus_tree = {
 			custom_effect_tooltip = FRA_get_democrats_socialists_seats
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 10
+		}
+		search_filters = {
+			FOCUS_FILTER_INTERNAL_AFFAIRS
 		}
 		cost = 10
 		x = -10
@@ -1289,6 +1408,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
 		cost = 10
 		x = 2
 		y = 1
@@ -1321,6 +1443,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
 		cost = 10
 		x = 0
 		y = 1
@@ -1341,6 +1466,9 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
 		}
 		cost = 10
 		x = 0
@@ -1369,6 +1497,9 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
 		}
 		cost = 10
 		x = -6
@@ -1401,6 +1532,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		search_filters = {
+			FOCUS_FILTER_MANPOWER
+		}
 		cost = 10
 		x = -4
 		y = 1
@@ -1422,6 +1556,9 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
 		}
 		cost = 10
 		x = -1
@@ -1450,8 +1587,11 @@ focus_tree = {
 				add_idea = FRA_disjointed_government2
 			}
 		}
+		search_filters = {
+			FOCUS_FILTER_INTERNAL_AFFAIRS
+		}
 		ai_will_do = {
-			factor = 1
+			factor = 10
 		}
 		cost = 10
 		x = -2
@@ -1471,7 +1611,10 @@ focus_tree = {
 			}
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 10
+		}
+		search_filters = {
+			FOCUS_FILTER_INTERNAL_AFFAIRS
 		}
 		cost = 10
 		x = 0
@@ -1495,7 +1638,10 @@ focus_tree = {
 			show_ideas_tooltip = FRA_aristide_briand
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 10
+		}
+		search_filters = {
+			FOCUS_FILTER_INTERNAL_AFFAIRS
 		}
 		cost = 10
 		x = 0
@@ -1513,6 +1659,9 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
 		}
 		cost = 10
 		x = 0
@@ -1590,6 +1739,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
 		cost = 10
 		x = 0
 		y = 1
@@ -1610,6 +1762,9 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
 		}
 		cost = 10
 		x = 0
@@ -1638,6 +1793,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
 		cost = 10
 		x = 0
 		y = 1
@@ -1653,7 +1811,10 @@ focus_tree = {
 			remove_ideas = FRA_disjointed_government2
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 10
+		}
+		search_filters = {
+			FOCUS_FILTER_INTERNAL_AFFAIRS
 		}
 		cost = 10
 		x = 0
@@ -1706,6 +1867,9 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_INTERNAL_AFFAIRS
 		}
 		cost = 10
 		x = 4
@@ -1760,6 +1924,10 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		search_filters = {
+			FOCUS_FILTER_INTERNAL_AFFAIRS
+			FOCUS_FILTER_HISTORICAL
+		}
 		cost = 10
 		x = 6
 		y = 1
@@ -1808,6 +1976,10 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+			FOCUS_FILTER_HISTORICAL
 		}
 		cost = 10
 		x = 0
@@ -1872,6 +2044,10 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+			FOCUS_FILTER_INTERNAL_AFFAIRS
+		}
 		cost = 10
 		x = 0
 		y = 1
@@ -1891,6 +2067,9 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
 		}
 		cost = 10
 		x = 1
@@ -1970,6 +2149,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
 		cost = 10
 		x = 0
 		y = 2
@@ -2039,6 +2221,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
 		cost = 10
 		x = -2
 		y = 2
@@ -2093,7 +2278,10 @@ focus_tree = {
 			reload_parliament_gui = yes
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 10
+		}
+		search_filters = {
+			FOCUS_FILTER_INTERNAL_AFFAIRS
 		}
 		cost = 10
 		x = 14
@@ -2114,7 +2302,10 @@ focus_tree = {
 			add_political_power = 120
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 10
+		}
+		search_filters = {
+			FOCUS_FILTER_INTERNAL_AFFAIRS
 		}
 		cost = 10
 		x = 0
@@ -2135,6 +2326,9 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_INTERNAL_AFFAIRS
 		}
 		cost = 10
 		x = 0
@@ -2180,7 +2374,10 @@ focus_tree = {
 			}
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 10
+		}
+		search_filters = {
+			FOCUS_FILTER_INTERNAL_AFFAIRS
 		}
 		cost = 10
 		x = 0
@@ -2201,6 +2398,10 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_MANPOWER
+			FOCUS_FILTER_WAR_SUPPORT
 		}
 		cost = 10
 		x = 0
@@ -2253,6 +2454,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
 		cost = 10
 		x = 2
 		y = 1
@@ -2268,7 +2472,10 @@ focus_tree = {
 			add_war_support = 0.1
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 10
+		}
+		search_filters = {
+			FOCUS_FILTER_INTERNAL_AFFAIRS
 		}
 		cost = 10
 		x = -2
@@ -2292,6 +2499,9 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_INTERNAL_AFFAIRS
 		}
 		cost = 10
 		x = 0
@@ -2318,7 +2528,10 @@ focus_tree = {
 			}
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 10
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
 		}
 		cost = 10
 		x = 0
@@ -2392,7 +2605,10 @@ focus_tree = {
 			}
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 10
+		}
+		search_filters = {
+			FOCUS_FILTER_INTERNAL_AFFAIRS
 		}
 		cost = 10
 		x = 0
@@ -2417,6 +2633,9 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_ideas = FRA_catholic_support
+		}
+		search_filters = {
+			FOCUS_FILTER_INTERNAL_AFFAIRS
 		}
 		ai_will_do = {
 			factor = 1
@@ -2448,6 +2667,9 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
 		}
 		cost = 10
 		x = 2
@@ -2520,7 +2742,10 @@ focus_tree = {
 			reload_parliament_gui = yes
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 10
+		}
+		search_filters = {
+			FOCUS_FILTER_INTERNAL_AFFAIRS
 		}
 		cost = 10
 		x = 0
@@ -2559,7 +2784,10 @@ focus_tree = {
 			}
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 10
+		}
+		search_filters = {
+			FOCUS_FILTER_INTERNAL_AFFAIRS
 		}
 		cost = 10
 		x = -4
@@ -2577,6 +2805,9 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
 		}
 		cost = 10
 		x = 0
@@ -2696,6 +2927,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
 		cost = 10
 		x = 0
 		y = 1
@@ -2739,6 +2973,9 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
 		}
 		cost = 10
 		x = -4
@@ -2787,6 +3024,10 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+			FOCUS_FILTER_ANNEXATION
+		}
 		cost = 10
 		x = 0
 		y = 1
@@ -2806,6 +3047,9 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
 		}
 		cost = 10
 		x = -2
@@ -2851,6 +3095,9 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
 		}
 		cost = 10
 		x = -6
@@ -2916,6 +3163,10 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+			FOCUS_FILTER_RESEARCH
+		}
 		cost = 10
 		x = 0
 		y = 1
@@ -2965,6 +3216,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
 		cost = 10
 		x = 0
 		y = 1
@@ -3012,7 +3266,10 @@ focus_tree = {
 			}
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 10
+		}
+		search_filters = {
+			FOCUS_FILTER_INTERNAL_AFFAIRS
 		}
 		cost = 10
 		x = 4
@@ -3032,7 +3289,10 @@ focus_tree = {
 			}
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 10
+		}
+		search_filters = {
+			FOCUS_FILTER_INTERNAL_AFFAIRS
 		}
 		cost = 10
 		x = -2
@@ -3108,6 +3368,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
 		cost = 10
 		x = 0
 		y = 1
@@ -3159,7 +3422,11 @@ focus_tree = {
 			reload_parliament_gui = yes
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 10
+		}
+		search_filters = {
+			FOCUS_FILTER_INTERNAL_AFFAIRS
+			FOCUS_FILTER_ANNEXATION
 		}
 		cost = 10
 		x = 0
@@ -3232,6 +3499,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		search_filters = {
+			FOCUS_FILTER_INTERNAL_AFFAIRS
+		}
 		cost = 10
 		x = 0
 		y = 1
@@ -3253,6 +3523,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		search_filters = {
+			FOCUS_FILTER_INTERNAL_AFFAIRS
+		}
 		cost = 10
 		x = 2
 		y = 1
@@ -3270,6 +3543,9 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_INTERNAL_AFFAIRS
 		}
 		cost = 10
 		x = 0
@@ -3315,7 +3591,10 @@ focus_tree = {
 			}
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 10
+		}
+		search_filters = {
+			FOCUS_FILTER_INTERNAL_AFFAIRS
 		}
 		cost = 10
 		x = 1
@@ -3353,7 +3632,10 @@ focus_tree = {
 			}
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 10
+		}
+		search_filters = {
+			FOCUS_FILTER_INTERNAL_AFFAIRS
 		}
 		cost = 10
 		x = 0
@@ -3380,7 +3662,7 @@ focus_tree = {
 			factor = 1
 		}
 		search_filters = {
-			FOCUS_FILTER_POLITICAL
+			FOCUS_FILTER_WAR_SUPPORT
 		}
 		completion_reward = {
 			add_ideas = FRA_army_of_aggression_focus_2
@@ -3438,7 +3720,7 @@ focus_tree = {
 			factor = 1
 		}
 		search_filters = {
-			FOCUS_FILTER_POLITICAL
+			FOCUS_FILTER_ANNEXATION
 		}
 		completion_reward = {
 			SWI = {
@@ -3480,7 +3762,7 @@ focus_tree = {
 			factor = 1
 		}
 		search_filters = {
-			FOCUS_FILTER_POLITICAL
+			FOCUS_FILTER_ANNEXATION
 		}
 		completion_reward = {
 			BEL = {
@@ -3519,7 +3801,7 @@ focus_tree = {
 			factor = 1
 		}
 		search_filters = {
-			FOCUS_FILTER_POLITICAL
+			FOCUS_FILTER_ANNEXATION
 		}
 		completion_reward = {
 			FRA = {
@@ -3556,7 +3838,7 @@ focus_tree = {
 			factor = 1
 		}
 		search_filters = {
-			FOCUS_FILTER_POLITICAL
+			FOCUS_FILTER_ANNEXATION
 		}
 		completion_reward = {
 			add_threat = 5
@@ -3622,6 +3904,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
 		cost = 10
 		x = 0
 		y = 1
@@ -3642,6 +3927,13 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				date > 1914.1.1
+				factor = 100
+			}
+		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
 		}
 		cost = 10
 		x = 10
@@ -3682,6 +3974,10 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+			FOCUS_FILTER_RESEARCH
+		}
 		cost = 10
 		x = 0
 		y = 1
@@ -3717,6 +4013,10 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+			FOCUS_FILTER_RESEARCH
+		}
 		cost = 10
 		x = -2
 		y = 1
@@ -3744,6 +4044,9 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
 		}
 		cost = 10
 		x = 0
@@ -3780,6 +4083,10 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+			FOCUS_FILTER_RESEARCH
 		}
 		cost = 10
 		x = 4
@@ -3824,6 +4131,10 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+			FOCUS_FILTER_INDUSTRY
+		}
 		cost = 10
 		x = 0
 		y = 1
@@ -3860,6 +4171,10 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+			FOCUS_FILTER_RESEARCH
+		}
 		cost = 10
 		x = 2
 		y = 1
@@ -3884,6 +4199,9 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
 		}
 		cost = 10
 		x = 0
@@ -3910,7 +4228,11 @@ focus_tree = {
 			}
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 10
+		}
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+			FOCUS_FILTER_HISTORICAL
 		}
 		cost = 10
 		x = -6
@@ -3941,6 +4263,10 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+			FOCUS_FILTER_HISTORICAL
+		}
 		cost = 10
 		x = -2
 		y = 1
@@ -3967,6 +4293,10 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+			FOCUS_FILTER_HISTORICAL
+		}
 		cost = 10
 		x = 2
 		y = 1
@@ -3991,6 +4321,10 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+			FOCUS_FILTER_HISTORICAL
 		}
 		cost = 10
 		x = 0
@@ -4030,6 +4364,11 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+			FOCUS_FILTER_RESEARCH
+			FOCUS_FILTER_HISTORICAL
+		}
 		cost = 10
 		x = 0
 		y = 1
@@ -4063,7 +4402,12 @@ focus_tree = {
 			show_ideas_tooltip = renault_fra
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 10
+		}
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+			FOCUS_FILTER_RESEARCH
+			FOCUS_FILTER_HISTORICAL
 		}
 		cost = 10
 		x = 0
@@ -4142,7 +4486,11 @@ focus_tree = {
 			custom_effect_tooltip = FRA_form_renault_tank_brigades
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 10
+		}
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+			FOCUS_FILTER_HISTORICAL
 		}
 		cost = 10
 		x = 0
@@ -4178,6 +4526,11 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+			FOCUS_FILTER_HISTORICAL
+			FOCUS_FILTER_RESEARCH
+		}
 		cost = 10
 		x = -2
 		y = 1
@@ -4211,6 +4564,11 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+			FOCUS_FILTER_HISTORICAL
+			FOCUS_FILTER_RESEARCH
+		}
 		cost = 10
 		x = 0
 		y = 1
@@ -4228,7 +4586,15 @@ focus_tree = {
 			remove_ideas = FRA_memories_of_1870
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 10
+			modifier = {
+				date > 1914.1.1
+				factor = 100
+			}
+		}
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+			FOCUS_FILTER_HISTORICAL
 		}
 		cost = 10
 		x = 6
@@ -4251,6 +4617,15 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				date > 1914.1.1
+				has_war = no
+				factor = 100
+			}
+		}
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+			FOCUS_FILTER_HISTORICAL
 		}
 		cost = 10
 		x = 0
@@ -4280,9 +4655,28 @@ focus_tree = {
 				id = GER
 				value = 200
 			}
+			add_ai_strategy = {
+				type = conquer
+				id = GER
+				value = 200
+			}
+			add_ai_strategy = {
+				type = prepare_for_war
+				id = GER
+				value = 200
+			}
 		}
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				date > 1914.1.1
+				has_war = no
+				factor = 100
+			}
+		}
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+			FOCUS_FILTER_HISTORICAL
 		}
 		cost = 10
 		x = 0
@@ -4309,6 +4703,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
 		cost = 10
 		x = -3
 		y = 3
@@ -4334,6 +4731,10 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+			FOCUS_FILTER_HISTORICAL
+		}
 		cost = 10
 		x = 3
 		y = 3
@@ -4351,6 +4752,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
 		cost = 10
 		x = 0
 		y = 1
@@ -4367,6 +4771,10 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+			FOCUS_FILTER_HISTORICAL
 		}
 		cost = 10
 		x = 0
@@ -4390,6 +4798,9 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
 		}
 		cost = 10
 		x = 22
@@ -4417,6 +4828,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
 		cost = 10
 		x = 2
 		y = 1
@@ -4433,6 +4847,9 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
 		}
 		cost = 10
 		x = 2
@@ -4455,6 +4872,9 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
 		}
 		cost = 10
 		x = 0
@@ -4493,6 +4913,10 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+			FOCUS_FILTER_HISTORICAL
+		}
 		cost = 10
 		x = -2
 		y = 1
@@ -4517,6 +4941,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
 		cost = 10
 		x = -2
 		y = 1
@@ -4538,6 +4965,9 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
 		}
 		cost = 10
 		x = 0
@@ -4573,6 +5003,11 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+			FOCUS_FILTER_RESEARCH
+			FOCUS_FILTER_HISTORICAL
+		}
 		cost = 10
 		x = 2
 		y = 1
@@ -4599,6 +5034,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
 		cost = 10
 		x = 22
 		y = 11
@@ -4623,6 +5061,9 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
 		}
 		cost = 10
 		x = -4
@@ -4655,6 +5096,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
 		cost = 10
 		x = -2
 		y = 1
@@ -4675,6 +5119,9 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
 		}
 		cost = 10
 		x = 0
@@ -4707,6 +5154,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
 		cost = 10
 		x = 0
 		y = 1
@@ -4727,6 +5177,9 @@ focus_tree = {
 				uses = 2
 				bonus = 1
 			}
+		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
 		}
 		ai_will_do = {
 			factor = 1
@@ -4756,6 +5209,9 @@ focus_tree = {
 				bonus = 1
 			}
 		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
 		ai_will_do = {
 			factor = 1
 		}
@@ -4782,6 +5238,9 @@ focus_tree = {
 				uses = 2
 				bonus = 1
 			}
+		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
 		}
 		ai_will_do = {
 			factor = 1
@@ -4823,6 +5282,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
 		cost = 10
 		x = 4
 		y = 1
@@ -4852,6 +5314,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
 		cost = 10
 		x = 0
 		y = 1
@@ -4877,6 +5342,9 @@ focus_tree = {
 				uses = 2
 				bonus = 2
 			}
+		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
 		}
 		ai_will_do = {
 			factor = 1
@@ -4905,6 +5373,9 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
 		}
 		cost = 10
 		x = 10
@@ -4992,6 +5463,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
 		cost = 10
 		x = 4
 		y = 1
@@ -5044,6 +5518,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
 		cost = 10
 		x = 0
 		y = 1
@@ -5066,6 +5543,9 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
 		}
 		cost = 10
 		x = -4
@@ -5100,6 +5580,9 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
 		}
 		cost = 10
 		x = 0
@@ -5203,6 +5686,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
 		cost = 10
 		x = 0
 		y = 1
@@ -5264,6 +5750,9 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
 		}
 		cost = 10
 		x = 0
@@ -5331,6 +5820,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
 		cost = 10
 		x = -2
 		y = 1
@@ -5382,6 +5874,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
 		cost = 10
 		x = 0
 		y = 1
@@ -5429,6 +5924,9 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
 		}
 		cost = 10
 		x = 2
@@ -5497,6 +5995,9 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
 		}
 		cost = 10
 		x = 0
@@ -5568,7 +6069,10 @@ focus_tree = {
 			}
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 10
+		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
 		}
 		cost = 10
 		x = -2

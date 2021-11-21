@@ -4360,3 +4360,77 @@ country_event = {
 		}
 	}
 }
+
+
+# Germany is fighting for too long and suffer from famine
+#########################
+country_event = {
+	id = ww1_germany.86
+	title = ww1_germany.86.t
+	desc = ww1_germany.86.d
+	picture = GFX_report_event_worker_protests
+	fire_only_once = yes
+	trigger = {
+		tag = GER
+		OR = {
+			has_war_with = USA
+			has_war_with = ENG
+		}
+		NOT = {
+			has_global_flag = great_war_ends
+			USA = {
+				has_capitulated = yes
+			}
+			ENG = {
+				has_capitulated = yes
+			}
+		}
+		date > 1917.10.10
+	}
+	mean_time_to_happen = {
+		days = 20
+	}
+	option = {
+		name = ww1_germany.86.a
+		add_ideas = ger_famine
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+# Germany surrender because 0% war support
+#########################
+country_event = {
+	id = ww1_germany.87
+	title = ww1_germany.87.t
+	desc = ww1_germany.87.d
+	picture = GFX_report_event_worker_protests
+	fire_only_once = yes
+	trigger = {
+		tag = GER
+		has_war_with = FRA
+		NOT = {
+			has_global_flag = great_war_ends
+			has_global_flag = great_war_winner
+			has_active_mission = GER_armistice
+			has_active_mission = FRA_armistice
+		}
+		OR = {
+			has_idea = ger_famine
+			surrender_progress > 0.10
+			casualties > 2000000
+		}
+		has_war_support < 0.05
+	}
+	mean_time_to_happen = {
+		days = 20
+	}
+	option = {
+		name = ww1_germany.87.a
+		activate_decision = GER_armistice
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
