@@ -6,6 +6,8 @@ set_war_support = 0.33
 set_convoys = 175
 set_major = yes
 
+starting_train_buffer = 1.5
+
 give_guarantee = GER
 give_guarantee = AUH
 
@@ -64,6 +66,7 @@ recruit_character = ITA_marcello_amero_dastestella
 		mechanical_engineering = 1
 		aircraft_engine = 1
 		generator_battery = 1
+		basic_train = 1
 	}
 	
 	set_politics = {

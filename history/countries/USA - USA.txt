@@ -19,6 +19,8 @@ activate_mission = USA_tax_monthly_profit_mission
 
 set_global_flag = PANAMA_CANAL_IS_NOT_BUILT
 
+starting_train_buffer = 5
+
 if = {
 	limit = {
 		has_dlc = "Together for Victory"
@@ -154,6 +156,7 @@ recruit_character = USA_tasker_h_bliss
 		mechanical_engineering = 1
 		aircraft_engine = 1
 		generator_battery = 1
+		basic_train = 1
 	}
 	
 	set_party_name = { 
