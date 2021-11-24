@@ -597,6 +597,75 @@ GER_final_battle_against_allies = {
 
 }
 
+######################
+# Germany try to push the french while USA are not here
+######
+GER_rush_france_while_we_can = {
+	allowed = {
+		tag = GER
+	}
+	enable = {
+		## must have enough equipement to perform large scale attack
+		stockpile_ratio = {	## 15% of the armies equipment must be in reserves
+				archetype = infantry_equipment
+				ratio > 0.15
+			}
+		#its not harsh situation
+		surrender_progress < 0.10
+		##Russia is not here
+		RUS = {
+			OR = {
+				NOT = {
+					has_war_with = GER
+				}
+				has_civil_war = yes
+				has_war_with = SOV
+			}
+		}
+		## USA is not here, or not really yet
+		USA = {
+			OR = {
+				casulaties < 30000
+				NOT = {
+					has_war_with = GER
+				}
+			}
+		}
+		tag = GER
+			
+	}
+	abort = {
+		OR = {
+			stockpile_ratio = {	## -10 % of the armies equipment must be in reserves
+				archetype = infantry_equipment
+				ratio < -0.10
+			}
+			casulaties > 3000000
+			surrender_progress > 0.15
+		
+			USA = {
+				casulaties > 30000
+			}
+			FRA = {
+				has_war = no
+			}
+		}
+	}
+
+	ai_strategy = {
+		type = front_control
+		tag = FRA
+		ratio = 0.8
+		
+		priority = 1000
+		ordertype = front
+		execution_type = balanced
+		execute_order = yes
+	}
+
+
+}
+
 GER_attack_if_france_is_weak_and_RUS_died = {
 	enable = {
 		tag = GER
@@ -666,7 +735,7 @@ GER_attack_if_france_is_weak_but_RUS_are_alive = {
 	abort_when_not_enabled = yes
 	abort = {
 		OR = {
-			NOT = { has_war_with = USA }
+			NOT = { has_war_with = FRA }
 			surrender_progress > 0.05
 		}
 	}
