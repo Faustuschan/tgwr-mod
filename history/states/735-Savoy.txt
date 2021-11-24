@@ -11,7 +11,7 @@ state={
 		add_core_of = FRA
 		add_claim_by = ITA
 		buildings = {
-			infrastructure = 3
+			infrastructure = 2
 			industrial_complex = 1
 			9745 = {
 				bunker = 2
@@ -25,5 +25,5 @@ state={
 	}
 	manpower=738333
 	buildings_max_level_factor=1.000
-	state_category=rural
+	state_category=town
 }
