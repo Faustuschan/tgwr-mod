@@ -6033,6 +6033,10 @@ focus_tree = {
 		}
 		prerequisite = {
 			focus = FRA_ww1_southern_industrialization
+			focus = FRA_ww1_north_african_arms_complexes
+			focus = FRA_ww1_madagascar_development
+			focus = FRA_ww1_franco-british-competition
+			focus = FRA_ww1_britany_industrialization
 		}
 		relative_position_id = FRA_ww1_southern_industrialization
 		completion_reward = {
