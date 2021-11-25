@@ -36,6 +36,11 @@ spriteTypes = {
 		texturefile = "gfx/interface/goals/FRA/control_europe.dds"
 	}
 
+	SpriteType = {
+		name = "GFX_goal_invest_in_sncf"
+		texturefile = "gfx/interface/goals/FRA/sncf.dds"
+	}
+
 	##### expanded duty
 	SpriteType = {
 		name = "GFX_goal_FRA_expanded_duty"
@@ -57,6 +62,12 @@ spriteTypes = {
 	SpriteType = {
 		name = "GFX_idea_berliet"
 		texturefile = "gfx/interface/ideas/FRA/berliet.dds"
+	}
+
+	##### berlet trucks
+	SpriteType = {
+		name = "GFX_idea_sncf"
+		texturefile = "gfx/interface/ideas/FRA/sncf.dds"
 	}
 
 	##### armored cars

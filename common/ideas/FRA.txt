@@ -1242,10 +1242,37 @@ ideas = {
 				}
 			}
 			research_bonus = {
-				industry = 0.1
+				industry = 0.05
+				excavation_tech = 0.10
 			}
 			traits = {
 				industrial_concern
+			}
+		}
+		sncf = {
+			allowed = {
+				original_tag = FRA
+			}
+			cost = 75
+			picture = GFX_idea_sncf
+			available = {
+				NOT = {
+					OR = {
+						has_idea = FRA_debt_council
+						has_idea = FRA_german_debt_supervision
+					}
+				}
+				has_country_flag = has_invested_in_sncf
+			}
+			research_bonus = {
+				industry = 0.05
+				train_tech = 0.15
+			}
+			modifier = {
+				production_speed_rail_way_factor = 0.1
+			}
+			traits = {
+				railway_company
 			}
 		}
 		FRA_debt_council = {
