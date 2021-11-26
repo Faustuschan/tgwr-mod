@@ -4019,6 +4019,7 @@ focus_tree = {
 			}
 			custom_effect_tooltip = available_designer
 			show_ideas_tooltip = schneider
+			set_country_flag = has_invested_in_schneider
 		}
 		ai_will_do = {
 			factor = 1
@@ -4090,6 +4091,7 @@ focus_tree = {
 			}
 			custom_effect_tooltip = available_designer
 			show_ideas_tooltip = berliet
+			set_country_flag = has_invested_in_berliet
 		}
 		ai_will_do = {
 			factor = 1
@@ -4177,6 +4179,7 @@ focus_tree = {
 			}
 			custom_effect_tooltip = available_designer
 			show_ideas_tooltip = peugeot
+			set_country_flag = has_invested_in_peugeot
 		}
 		ai_will_do = {
 			factor = 1
@@ -4410,6 +4413,7 @@ focus_tree = {
 			}
 			custom_effect_tooltip = available_designer
 			show_ideas_tooltip = renault_fra
+			set_country_flag = has_invested_in_renault
 		}
 		ai_will_do = {
 			factor = 10
@@ -5009,6 +5013,7 @@ focus_tree = {
 			}
 			custom_effect_tooltip = available_designer
 			show_ideas_tooltip = nieuport
+			set_country_flag = has_invested_in_nieuport
 		}
 		ai_will_do = {
 			factor = 1
@@ -5288,6 +5293,7 @@ focus_tree = {
 			}
 			custom_effect_tooltip = available_designer
 			show_ideas_tooltip = chantiers_de_penhoet
+			set_country_flag = has_invested_in_penhoet
 		}
 		ai_will_do = {
 			factor = 1

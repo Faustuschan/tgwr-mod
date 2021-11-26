@@ -1034,7 +1034,7 @@ ideas = {
 				original_tag = FRA
 			}
 			available = {
-				has_completed_focus = FRA_ww1_expand_penhoet_dockyards
+				has_country_flag = has_invested_in_penhoet
 			}
 			research_bonus = {
 				naval_equipment = 0.15
@@ -1076,13 +1076,15 @@ ideas = {
 				original_tag = FRA
 			}
 			available = {
-				has_completed_focus = FRA_ww1_fund_nieuport
+				has_country_flag = has_invested_in_nieuport
 			}
 			ai_will_do = {
 				factor = 1
 				modifier = {
 					ROOT = {
-						has_completed_focus = FRA_ww1_fund_nieuport
+						OR = {
+							has_completed_focus = FRA_ww1_fund_nieuport
+						}
 					}
 					factor = 100
 				}
@@ -1133,7 +1135,7 @@ ideas = {
 				original_tag = FRA
 			}
 			available = {
-				has_completed_focus = FRA_ww1_motorization
+				has_country_flag = has_invested_in_berliet
 			}
 			ai_will_do = {
 				factor = 1
@@ -1172,7 +1174,7 @@ ideas = {
 				original_tag = FRA
 			}
 			available = {
-				has_completed_focus = FRA_ww1_fund_schneider
+				has_country_flag = has_invested_in_schneider
 			}
 			ai_will_do = {
 				factor = 1
@@ -1346,7 +1348,7 @@ ideas = {
 				original_tag = FRA
 			}
 			available = {
-				has_completed_focus = FRA_ww1_the_french_miracle
+				has_country_flag = has_invested_in_renault
 			}
 			ai_will_do = {
 				factor = 1
@@ -1384,7 +1386,7 @@ ideas = {
 				original_tag = FRA
 			}
 			available = {
-				has_completed_focus = FRA_ww1_fund_peugeot
+				has_country_flag = has_invested_in_peugeot
 			}
 			ai_will_do = {
 				factor = 1
