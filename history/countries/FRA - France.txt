@@ -141,7 +141,7 @@ create_field_marshal = {
 	planning_skill = 3
 	logistics_skill = 3
 }
-recruit_character = FRA_jean_jaurès
+
 recruit_character = FRA_armand_fallières
 recruit_character = FRA_georges_valois
 recruit_character = FRA_maurice_pujo
@@ -174,6 +174,12 @@ recruit_character = FRA_louis_franchet_d_esperey
 recruit_character = FRA_charles_dumont
 recruit_character = FRA_joseph_thierry
 recruit_character = FRA_rene_viviani
+
+recruit_character = FRA_jean_jaures_adv
+recruit_character = FRA_aristide_briand
+recruit_character = FRA_paul_deroulede
+recruit_character = FRA_marcel_cachin
+recruit_character = FRA_charles_maurras
 recruit_character = FRA_maurice_sarrail
 recruit_character = FRA_jean_graziani
 recruit_character = FRA_marie_merveilleux_du_vignaux

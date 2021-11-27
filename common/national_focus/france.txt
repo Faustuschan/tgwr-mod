@@ -612,7 +612,7 @@ focus_tree = {
 				popularity = 0.1
 			}
 			custom_effect_tooltip = available_political_advisor
-			show_ideas_tooltip = FRA_jean_jaures
+			show_ideas_tooltip = FRA_jean_jaures_adv
 			custom_effect_tooltip = FRA_join_socialists
 			custom_effect_tooltip = FRA_get_socialists_seats
 			set_variable = {
@@ -3261,6 +3261,7 @@ focus_tree = {
 				}
 				custom_effect_tooltip = available_political_advisor
 				show_ideas_tooltip = FRA_paul_deroulede
+				recruit = FRA_paul_deroulede
 			}
 			create_country_leader = {
 				name = "Georges Valois"

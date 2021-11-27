@@ -966,7 +966,7 @@ country_event = {
 	}
 	option = {
 		name = ok
-		remove_unit_leader = 32019
+		retire_character = FRA_joseph_gallieni
 	}
 }
 

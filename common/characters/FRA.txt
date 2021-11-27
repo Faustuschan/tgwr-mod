@@ -1,6 +1,20 @@
 characters={
 	FRA_maxime_weygand={
 		name="Maxime Weygand"
+		advisor={
+			slot = theorist
+			idea_token = FRA_maxime_weygand
+			allowed  = {
+					original_tag  = FRA
+				}
+				ledger  = army 
+				traits  = {
+					military_theorist 
+				}
+				ai_will_do  = {
+					factor  = 1.000
+				}
+		}
 		portraits={
 			army={
 				small=""
@@ -152,52 +166,6 @@ characters={
 			legacy_id=32006
 		}
 	}
-	FRA_jean_jaurès={
-		name="Jean Jaurès"
-		advisor={
-			slot = political_advisor
-			idea_token = FRA_jean_jaures
-			allowed  = {
-					original_tag  = FRA
-					not  = {
-						has_global_flag  = kis_jauresassassination 
-					}
-				}
-				traits  = {
-					socialist_giant 
-				}
-				available  = {
-					NOT  = {
-						has_country_leader  = {
-							name  = "Jean Jaurès"
-							ruling_only  = yes 
-						}
-					}
-				}
-				visible  = {
-					not  = {
-						has_global_flag  = kis_jauresassassination 
-					}
-				}
-				ai_will_do  = {
-					factor  = 0.000
-				}
-		}
-		portraits={
-			army={
-				small="GFX_idea_FRA_jean_jaures"
-			}
-			civilian={
-				large="gfx/leaders/FRA/FRA_Jean_Jaures.png"
-			}
-		}
-		country_leader={
-			ideology=reformist_socialism
-			traits={ socialist_giant trait_reformist_socialism }
-			expire="1935.1.1.1"
-			id=-1
-		}
-	}
 	FRA_louis_frossard={
 		name="Louis Frossard"
 		portraits={
@@ -335,7 +303,22 @@ characters={
 		portraits={
 			civilian={
 				large="gfx/leaders/FRA/FRA_philippe_petain.dds"
+				small="gfx/interface/ideas/FRA/FRA_philippe_petain.dds"
 			}
+		}
+		advisor={
+			slot = theorist
+			idea_token = FRA_philippe_pétain
+			allowed  = {
+					original_tag  = FRA
+				}
+				ledger  = army 
+				traits  = {
+					military_theorist 
+				}
+				ai_will_do  = {
+					factor  = 1.000
+				}
 		}
 		corps_commander={
 			traits={ trickster }
@@ -858,6 +841,164 @@ characters={
 		portraits={
 			army={
 				small="GFX_idea_FRA_louis_pivet"
+			}
+		}
+	}
+
+	FRA_paul_deroulede={
+		advisor={
+			slot = political_advisor
+			idea_token = FRA_paul_deroulede
+			allowed  = {
+					original_tag  = FRA
+				}
+				traits  = {
+					fascist_sympathies
+					fascist_demagogue
+				}
+				available = {
+					has_completed_focus = FRA_ww1_support_valois2
+				}
+				ai_will_do  = {
+					factor  = 1.000
+					modifier = {
+						has_completed_focus = FRA_ww1_support_valois2
+						factor = 100
+					}
+				}
+		}
+		name="FRA_paul_deroulede"
+		portraits={
+			army={
+				small="GFX_idea_FRA_paul_deroulede"
+			}
+		}
+	}
+
+	FRA_charles_maurras={
+		advisor={
+			slot = political_advisor
+			idea_token = FRA_charles_maurras
+			allowed  = {
+					original_tag  = FRA
+				}
+				traits  = {
+					staunch_monarchist
+				}
+				available = {
+					has_completed_focus = FRA_ww1_form_the_proudhon_circle
+				}
+				ai_will_do  = {
+					factor  = 1.000
+					modifier = {
+						OR = {
+							has_completed_focus = FRA_ww1_support_valois
+							has_completed_focus = FRA_ww1_support_napoleon_V
+						}
+						factor = 100
+					}
+				}
+		}
+		name="FRA_charles_maurras"
+		portraits={
+			army={
+				small="GFX_idea_FRA_charles_maurras"
+			}
+		}
+	}
+
+	FRA_marcel_cachin={
+		advisor={
+			slot = political_advisor
+			idea_token = FRA_marcel_cachin
+			allowed  = {
+					original_tag  = FRA
+				}
+				traits  = {
+					communist_revolutionary
+				}
+				ai_will_do  = {
+					factor  = 1.000
+					modifier = {
+						OR = {
+							has_completed_focus = FRA_ww1_memories_of_the_commune
+						}
+						factor = 100
+					}
+				}
+		}
+		name="FRA_marcel_cachin"
+		portraits={
+			army={
+				small="GFX_idea_FRA_marcel_cachin"
+			}
+		}
+	}
+
+	FRA_aristide_briand={
+		advisor={
+			slot = political_advisor
+			idea_token = FRA_aristide_briand
+			allowed  = {
+					original_tag  = FRA
+				}
+				traits  = {
+					economic_reformer
+				}
+				available = {
+					has_completed_focus = FRA_ww1_political_coherence
+				}
+				ai_will_do  = {
+					factor  = 1.000
+					modifier = {
+						OR = {
+							has_completed_focus = FRA_ww1_political_coherence
+						}
+						factor = 100
+					}
+				}
+		}
+		name="FRA_aristide_briand"
+		portraits={
+			army={
+				small="GFX_idea_FRA_aristide_briand"
+			}
+		}
+	}
+
+	FRA_jean_jaures_adv={
+		advisor={
+			slot = political_advisor
+			idea_token = FRA_jean_jaures_adv
+			allowed  = {
+					original_tag  = FRA
+				}
+				traits  = {
+					socialist_giant
+				}
+				available = {
+					has_completed_focus = FRA_ww1_memories_of_the_commune
+					NOT = {
+						has_global_flag = kis_jauresassassination
+						has_country_leader = {
+							name = "Jean Jaurès"
+						}
+					}
+				}
+				ai_will_do  = {
+					factor  = 1.000
+					modifier = {
+						OR = {
+							has_completed_focus = FRA_ww1_memories_of_the_commune
+						}
+						factor = 100
+					}
+				}
+		}
+		name="FRA_jean_jaures"
+		portraits={
+			army={
+				small="GFX_idea_FRA_jean_jaures"
 			}
 		}
 	}
