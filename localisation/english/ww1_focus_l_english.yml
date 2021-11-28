@@ -3223,33 +3223,84 @@ Australia_disestablish_the_cmf_desc:0 ""
  FRA_ww1_form_the_proudhon_circle:0 "Form the Proudhon Circle"
  FRA_ww1_form_the_proudhon_circle_desc:0 "The last 40 years have proven that the French Republic is weak. The best years of France were under the reigns of Kings and Emperor. Despite the defeat of Napoleon III, the people can, will, and will still believe in it."
 
- FRA_ww1_support_paul_deroulede:0 "Support Paul Deroulede"
  FRA_ww1_support_the_suffragettes:0 "Support the Suffragettes"
+ FRA_ww1_support_the_suffragettes_desc:0 "The suffragette movement and a legitimate claim for the feminist cause. The French people must promote equal rights between men and women. Left movements must come together and support this legitimate fight."
+
  FRA_ww1_affiliation_with_the_CGT:0 "Affiliate with CGT"
+ FRA_ww1_affiliation_with_the_CGT_desc:0 "The electoral power of workers in industrial fields is strong. We must bring the working classes together and strengthen our popular bloc by aligning ourselves with them."
+
  FRA_ww1_labor_reform:0 "Labour Reform"
+ FRA_ww1_labor_reform_desc:0 "Labor regulations in France are unfavorable to the working classes; legislative support must be granted to workers by reforming the labor code."
+
  FRA_ww1_ally_the_republican_alliance:0 "Ally the Republicans"
+ FRA_ww1_ally_the_republican_alliance_desc:0 "The SFIO and the few independents who have joined us are too limited an opposition force. We must accept the conditions of alliance of the republican alliance and form a popular union of the left."
+
  FRA_ww1_socialist_mentality:0 "Socialist Mentality"
+ FRA_ww1_socialist_mentality_desc:0 "Our common formation with the democratic alliance is a godsend, it allows us to manipulate its voters through political maneuvers. By showing charisma and authority for the cause, we could gain the upper hand over the Democratic leaders and force the merger of the left bloc within the SFIO."
+
  FRA_ww1_support_for_universities:0 "Support for Universities"
+ FRA_ww1_support_for_universities_desc:0 "The basis of a socialist movement and to promote evolution, youth and progress. We must invest in the expansion of universities in Paris, Nantes, Bordeaux and Marseille!"
+
  FRA_ww1_mention_de_censure:0 "Motion de censure"
+ FRA_ww1_mention_de_censure_desc:0 "Our popularity is indisputable and the Democratic government can no longer rally as it did two years ago. It is time to bring our parties together and propose a mention of censorship - A democratic act allowing the dissolution of the government. Because of our majority presence in parliament, we are sure to be successful."
+
  FRA_ww1_socialist_reality:0 "Socialist Reality"
+ FRA_ww1_socialist_reality_desc:0 "The formation of the new socialist government will make it possible to reconsider French internal policy by chasing away the conflictuality which resided within the democratic government."
+
  FRA_ww1_nationalize_war_industry:0 "Nationalize War Industry"
+ FRA_ww1_nationalize_war_industry_desc:0 "Although part of the war industry is already nationalised, several manufacturers and inventors are independent. We are able to requisition private industries to integrate them into our national war effort."
+
  FRA_ww1_collectivisation:0 "Worker Owned Companies"
+ FRA_ww1_collectivisation_desc:0 "The forced nationalization of the civilian economy allows mass reinvestment by the disappearance of dividends taken by private investors. In other words, we have additional funds to fuel our industrial power."
+
  FRA_ww1_support_worldwide_revolution:0 "Support the Worldwide Revolution"
+ FRA_ww1_support_worldwide_revolution_desc:0 "All over the world the social struggle is raging, we must put in place solutions of subservience and intervention capable of supporting the nascent Marxist movements."
+
  FRA_ww1_over_influence_europe:0 "Our European Strategy"
+ FRA_ww1_over_influence_europe_desc:0 "The social revolution is a total success and [FRA.getLeader]'s government is supported by all French people. Now is the time to look elsewhere in Europe, where other nations are trending red. Let us set up an information network supporting socialist movements in Europe."
+
  FRA_ww1_guards_of_the_motherland:0 "Guardians of the Motherland"
+ FRA_ww1_guards_of_the_motherland_desc:0 "Our magnificient France is a work which is the source of national pride and the jealousy of our neighbors. Never again will Prussia march on Paris, never again will Albion threaten our territorial integrity, never again will we give up!"
+
  FRA_ww1_protect_european_minorities:0 "Protect European Minorities"
+ FRA_ww1_protect_european_minorities_desc:0 "Recent tensions in Europe threaten the integrity of small states like Belgium, the Netherlands and Denmark. We must maneuver in favor of their protection and do everything to limit the expansionist central powers."
+
  FRA_ww1_french_interventionism:0 "French Interventionism"
+ FRA_ww1_french_interventionism_desc:0 "Global conflicts are sometimes distant, sometimes neighboring, but they are always important. We must mobilize part of our army in order to intervene where French interests lie."
+
  FRA_ww1_ministerial_reform:0 "Ministerial Changes"
+ FRA_ww1_ministerial_reform_desc:0 "Part of the French leadership problem is based on the inconsistency of its political bloc. Unions mixing right and left, the impotence of the president and various other factors make the leadership of the Republic difficult. We should start with a series of laws relaxing ministerial powers for the benefit of other ministers."
+
  FRA_ww1_government_reform:0 "Government Reform"
+ FRA_ww1_government_reform_desc:0 "Something telling me we're getting a little ahead? It does not matter, let's reform the gournemental system in depth by increasing the size of the ministerial mandates to come, by unveiling an anti-corruption law and various projects of inclusion for the working classes."
+
  FRA_ww1_political_coherence:0 "Political Coherence"
+ FRA_ww1_political_coherence_desc:0 "The reduction of the French political weight requires an optimization of the management of our economy. Minister Aristide Briand has demonstrated over the course of several terms his involvement in the management of French industrial expansion. Let us offer him a place of choice within the new administration."
+
  FRA_ww1_improve_the_railways:0 "Improve Railways"
+ FRA_ww1_improve_the_railways_desc:0 "Since Napoleon III, France has always known how to acquire the best railways, competing strongly with the British. We must maintain this lead by renewing certain existing tracks while investing in new industrial zones."
+
  FRA_ww1_social_democrat_bloc_united:0 "Social Democrat Bloc United"
+ FRA_ww1_social_democrat_bloc_united_desc:0 "The reforms are finished, after so much effort, France is no longer affected by the unstable bureaucracy of the 3rd Republic!"
+
  FRA_ww1_research_budget:0 "Research Budget"
+ FRA_ww1_research_budget_desc:0 "We can allocate part of our funds to investment in new projects by the benefits of our industrial policy."
+
  FRA_ww1_colonial_integration_program:0 "Colonial Integration Program"
+ FRA_ww1_colonial_integration_program_desc:0 "Rather than trying to make our colonials French, we should guide and assist them in their empowerment. This great project, whether we implement it or not, will grant us the support of our distant lands."
+
  FRA_ww1_colonial_assimilation_program:0 "Colonial Assimilation Program"
+ FRA_ww1_colonial_assimilation_program_desc:0 "Our manifest destiny and to civilize the African and Asian territories. It is time to launch a vast program of assimilation of these tribes by imposing the French in local governments and eliminating rebel groups."
+
  FRA_ww1_algerian_france:0 "Algerian France"
+ FRA_ww1_algerian_france_desc:0 "Algeria is the best integrated territory outside mainland France, it is important to invest resources there in order to ensure our rear in the event of conflicts with the Germans."
+
  FRA_ww1_toward_algerian_self_managment:0 "Toward Algerian Self Managment"
+ FRA_ww1_toward_algerian_self_managment_desc:0 "Algeria is a strong nation which should be offered increased autonomy. With the help of strong investments, we would be able to make this colony a sister country capable of supporting us in our international initiatives."
+
  FRA_ww1_take_advantage_of_colonial_resources:0 "Take Advantage of Colonial Ressources"
+ FRA_ww1_take_advantage_of_colonial_resources_desc:0 "We have an indisputable stranglehold in Africa that we absolutely must exploit. By funding local authorities, we could get better returns."
+
  FRA_ww1_end_champagne_riots:0 "End Champagne Riots"
  FRA_ww1_rebuild_vineyard_production:0 "Rebuild Vineyard Production"
  FRA_ww1_market_dynamism:0 "Market Dynamism"

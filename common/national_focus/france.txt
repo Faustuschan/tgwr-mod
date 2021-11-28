@@ -1635,7 +1635,7 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 120
 			custom_effect_tooltip = available_political_advisor
-			show_ideas_tooltip = FRA_aristide_briand
+			show_ideas_tooltip = FRA_aristide_briand2
 		}
 		ai_will_do = {
 			factor = 10

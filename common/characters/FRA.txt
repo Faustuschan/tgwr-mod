@@ -17,7 +17,7 @@ characters={
 		}
 		portraits={
 			army={
-				small=""
+				small="gfx/interface/ideas/FRA/FRA_maxime_weygand.dds"
 			}
 			army={
 				large="gfx/leaders/FRA/FRA_Maxime_Weygand.dds"
@@ -33,6 +33,45 @@ characters={
 			legacy_id=-1
 		}
 	}
+
+	FRA_nicolas_saclois={
+		name="Nicolas Saclois"
+		advisor={
+			slot = theorist
+			idea_token = FRA_nicolas_saclois
+			allowed  = {
+					original_tag  = FRA
+				}
+				ledger  = army 
+				traits  = {
+					next_generation_theorist 
+				}
+				ai_will_do  = {
+					factor  = 1.000
+				}
+		}
+		portraits={
+			army={
+				small="gfx/interface/ideas/FRA/FRA_nicolas_saclois.dds"
+			}
+			army={
+				large="gfx/leaders/FRA/generic_commander_1.dds"
+			}
+		}
+		corps_commander={
+			traits = {
+				media_personality
+				infantry_officer
+				trait_mountaineer
+			}
+			skill = 2
+			attack_skill = 3
+			defense_skill = 1
+			planning_skill = 3
+			logistics_skill = 1
+		}
+	}
+
 	FRA_joseph_gallieni={
 		name="Joseph Gallieni"
 		advisor={
@@ -43,7 +82,7 @@ characters={
 				}
 				ledger  = army 
 				traits  = {
-					military_theorist 
+					great_military_theorist 
 				}
 				ai_will_do  = {
 					factor  = 1.000
@@ -67,11 +106,11 @@ characters={
 			legacy_id=32019
 		}
 	}
-	FRA_joseph_joffre={
+	FRA_joseph_joffre2 ={
 		name="Joseph Joffre"
 		advisor={
 			slot = army_chief
-			idea_token = FRA_joseph_joffre
+			idea_token = FRA_joseph_joffre2
 			allowed  = {
 					original_tag  = FRA
 				}
@@ -314,7 +353,7 @@ characters={
 				}
 				ledger  = army 
 				traits  = {
-					military_theorist 
+					trench_warfare_expert 
 				}
 				ai_will_do  = {
 					factor  = 1.000
@@ -935,10 +974,10 @@ characters={
 		}
 	}
 
-	FRA_aristide_briand={
+	FRA_aristide_briand2={
 		advisor={
 			slot = political_advisor
-			idea_token = FRA_aristide_briand
+			idea_token = FRA_aristide_briand2
 			allowed  = {
 					original_tag  = FRA
 				}

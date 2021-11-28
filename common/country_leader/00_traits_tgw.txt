@@ -1169,4 +1169,26 @@ leader_traits = {
 		stability_factor = 0.10
 		communism_acceptance = 75
 	}
+
+	trench_warfare_expert = {
+		msprite = 5
+		random = yes
+		land_doctrine_cost_factor = -0.05
+		max_dig_in_factor = 0.1
+	}
+
+	great_military_theorist = {
+		msprite = 5
+		random = yes
+		land_doctrine_cost_factor = -0.15
+	}
+
+	next_generation_theorist = {
+		msprite = 5
+		random = yes
+		land_doctrine_cost_factor = -0.05
+		experience_gain_air = 0.10
+		experience_gain_army_factor = 0.10
+		experience_gain_navy = 0.10
+	}
 }

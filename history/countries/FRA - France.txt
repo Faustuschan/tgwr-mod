@@ -148,7 +148,7 @@ recruit_character = FRA_maurice_pujo
 
 recruit_character = FRA_maxime_weygand
 recruit_character = FRA_joseph_gallieni
-recruit_character = FRA_joseph_joffre
+recruit_character = FRA_joseph_joffre2
 recruit_character = FRA_robert_nivelle
 recruit_character = FRA_ferdinand_foch
 recruit_character = FRA_louis_frossard
@@ -176,7 +176,8 @@ recruit_character = FRA_joseph_thierry
 recruit_character = FRA_rene_viviani
 
 recruit_character = FRA_jean_jaures_adv
-recruit_character = FRA_aristide_briand
+recruit_character = FRA_nicolas_saclois
+recruit_character = FRA_aristide_briand2
 recruit_character = FRA_paul_deroulede
 recruit_character = FRA_marcel_cachin
 recruit_character = FRA_charles_maurras
@@ -371,20 +372,7 @@ create_corps_commander = {
 	planning_skill = 2
 	logistics_skill = 3
 }
-create_corps_commander = {
-	name = "Nicolas Saclois" id=32038
-	portrait_path = "gfx/leaders/FRA/generic_commander_1.dds"
-	traits = {
-		media_personality
-		infantry_officer
-		trait_mountaineer
-	}
-	skill = 2
-	attack_skill = 3
-	defense_skill = 1
-	planning_skill = 3
-	logistics_skill = 1
-}
+
 
 create_corps_commander = {
 	name = "Maurice Sarrail" id=32039
