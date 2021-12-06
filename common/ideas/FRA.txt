@@ -1337,7 +1337,6 @@ ideas = {
 				conscription = -0.003
 			}
 		}
-
 		FRA_protected_by_the_maginot_line = {
 			allowed = {
 				always = no

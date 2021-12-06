@@ -1064,7 +1064,7 @@ country_event = {
 					has_government = democratic
 				}
 				set_cosmetic_tag = CHI_uprising
-				set_capital = 598				#Nanjing
+				set_capital = { state = 598	 }			#Nanjing
 				load_focus_tree = {
 					tree = china_focus
 					keep_completed = yes
@@ -1073,7 +1073,7 @@ country_event = {
 				add_ideas = CHI_idea_three_principles
 			}
 			CHI = {
-				set_capital = 608
+				set_capital = { state = 608 }
 			}
 		}
 		ai_chance = {
@@ -1714,7 +1714,7 @@ country_event = {
 						amount = 500
 						producer = QIN
 					}
-					set_capital = 592
+					set_capital = { state = 592 }
 				}
 			}
 			QIN = {
@@ -1805,7 +1805,7 @@ country_event = {
 						amount = 500
 						producer = CHI
 					}
-					set_capital = 592
+					set_capital = { state = 592 }
 				}
 			}
 			CHI = {
@@ -2700,7 +2700,7 @@ country_event = {
 				}
 			}
 			set_cosmetic_tag = NPA_clique
-			set_capital = 598
+			set_capital = { state = 598 }
 			set_politics = {
 				ruling_party = neutrality
 				elections_allowed = no
@@ -4555,7 +4555,7 @@ country_event = {
 				add_state_core = 745
 				add_state_core = 746
 				add_state_core = 524
-				set_capital = 598
+				set_capital = { state = 598 }
 				remove_unit_leader = 73051
 				add_ideas = CHI_idea_warlord_neutrality
 			}
@@ -4589,7 +4589,7 @@ country_event = {
 						add_state_core = 746
 					}
 				}
-				set_capital = 608
+				set_capital = { state = 608 }
 			}
 			if = {
 				limit = {
@@ -4889,7 +4889,7 @@ country_event = {
 						fascism = 0
 						communism = 100
 					}
-					set_capital = 622
+					set_capital = { state = 622 }
 					every_state = {
 						limit = {
 							OR = {
@@ -5105,7 +5105,7 @@ country_event = {
 						fascism = 53
 						communism = 0
 					}
-					set_capital = 608
+					set_capital = { state = 608 }
 					set_country_flag = CHI_national_protection_flag
 					set_cosmetic_tag = NPA
 				}
@@ -5198,7 +5198,7 @@ country_event = {
 						fascism = 4
 						communism = 2
 					}
-					set_capital = 325
+					set_capital = { state = 325 }
 					set_country_flag = CHI_national_protection_flag
 					set_cosmetic_tag = NPA
 				}
@@ -5389,7 +5389,7 @@ country_event = {
 			}
 			hidden_effect = {
 				set_cosmetic_tag = CHI_uprising
-				set_capital = 608
+				set_capital = { state = 608 }
 			}
 			add_popularity = {
 				ideology = neutrality
@@ -5690,7 +5690,7 @@ country_event = {
 			has_global_flag = second_zhili_fengtian_war
 			has_global_flag = zhili_fengtian_fengyushang_war
 			has_global_flag = zhili_fengtian_fengyushang_war_end
-			has_global_flag = north_expedition
+			has_global_flag = northern_expedition
 		}
 	}
 	fire_only_once = yes
@@ -5791,7 +5791,7 @@ country_event = {
 							add_state_core = PREV
 							transfer_state = PREV
 							country_event = ww1_china.44
-							set_capital = 613
+							set_capital = { state = 613 }
 						}
 					}
 				}
@@ -5822,7 +5822,7 @@ country_event = {
 					}
 					add_core_of = SDC
 				}
-				set_capital = 608
+				set_capital = { state = 608 }
 			}
 			every_state = {
 				limit = {
@@ -6035,7 +6035,7 @@ country_event = {
 					fascism = 0
 					communism = 3
 				}
-				set_capital = 592
+				set_capital = { state = 592 }
 				set_country_flag = CHI_kuomintang_flag
 				set_cosmetic_tag = CPG				#Constitutional Protection Government
 				reserve_dynamic_country = yes
@@ -6196,7 +6196,9 @@ country_event = {
 							long_name = CHI_zhigong_party
 							name = CHI_zhigong_party
 						}
-						create_faction = united_provinces_of_china
+						set_rule = {
+							can_join_factions = no
+						}
 					}
 					every_country = {
 						limit = {
@@ -6462,7 +6464,7 @@ country_event = {
 						transfer_state = 622
 						add_state_core = 622
 					}
-					set_capital = 611
+					set_capital = { state = 611 }
 					if = {
 						limit = {
 							PRC = {
@@ -6494,7 +6496,7 @@ country_event = {
 						has_trait = yuan_shikai_loyalist
 					}
 				}
-				set_capital = 620
+				set_capital = { state = 620 }
 			}
 			FNG = {
 				transfer_state = 597
@@ -6509,7 +6511,7 @@ country_event = {
 				add_state_core = 608
 				add_state_core = 609
 				add_state_core = 614
-				set_capital = 608
+				set_capital = { state = 608 }
 				dismantle_faction = yes
 			}
 			if = {
@@ -6936,7 +6938,7 @@ country_event = {
 					fascism = 0
 					communism = 100
 				}
-				set_capital = 600
+				set_capital = { state = 600 }
 				set_country_flag = CHI_soviet_republic_flag
 				set_cosmetic_tag = CSR
 				reserve_dynamic_country = yes
@@ -7353,7 +7355,7 @@ country_event = {
 						target = SDC
 						transfer_troops = no
 					}
-					set_capital = 598					#Nanjing
+					set_capital = { state = 598	 }				#Nanjing
 					set_cosmetic_tag = KMT_NANJING
 				}
 				every_state = {
@@ -7478,7 +7480,7 @@ country_event = {
 						target = KMT
 						days = 120
 					}
-					set_capital = 608
+					set_capital = { state = 608 }
 				}
 				FNG = {
 					transfer_units_fraction = {
@@ -7527,7 +7529,7 @@ country_event = {
 					GXC = {
 						add_state_core = PREV
 						transfer_state = PREV
-						set_capital = 592
+						set_capital = { state = 592 }
 					}
 				}
 				GXC = {
@@ -7540,7 +7542,7 @@ country_event = {
 			KMT = {
 				dismantle_faction = yes
 			}
-			set_global_flag = north_expedition_end
+			set_global_flag = northern_expedition_end
 		}
 	}
 	option = {
@@ -7744,7 +7746,7 @@ country_event = {
 					}
 					SHX = {
 						dismantle_faction = yes
-						set_capital = 615
+						set_capital = { state = 615 }
 					}
 					every_state = {
 						limit = {
@@ -8600,7 +8602,7 @@ country_event = {
 								}
 								remove_core_of = SHX
 							}
-							set_capital = 608
+							set_capital = { state = 608 }
 							create_country_leader = {
 								name = "Yan Xishan"
 								picture = "gfx/leaders/Asia/Portrait_Asia_Generic_warlord2.dds"
@@ -8806,7 +8808,7 @@ country_event = {
 		}
 		OR = {
 			date > 1927.2.6
-			has_global_flag = north_expedition_end
+			has_global_flag = northern_expedition_end
 		}
 	}
 	mean_time_to_happen = {
@@ -8951,7 +8953,7 @@ country_event = {
 					days = 300
 				}
 			}
-			set_capital = 608
+			set_capital = { state = 608 }
 			set_cosmetic_tag = KMT_BEIPING
 			change_tag_from = KMT
 		}
@@ -8973,9 +8975,9 @@ country_event = {
 	desc = ww1_china.70.d
 	trigger = {
 		has_country_flag = CHI_kuomintang_flag
-		has_global_flag = north_expedition
+		has_global_flag = northern_expedition
 		NOT = {
-			has_global_flag = north_expedition_end
+			has_global_flag = northern_expedition_end
 		}
 		620 = {
 			is_fully_controlled_by = ROOT
@@ -9001,7 +9003,7 @@ country_event = {
 			set_cosmetic_tag = KMT_NANJING
 			transfer_state = 598
 			add_state_core = 598
-			set_capital = 598
+			set_capital = { state = 598 }
 			create_dynamic_country = {
 				original_tag = GDC
 				set_politics = {
@@ -9014,7 +9016,7 @@ country_event = {
 					fascism = 0
 					communism = 30
 				}
-				set_capital = 620
+				set_capital = { state = 620 }
 				set_country_flag = CHI_left_kuomintang_flag
 				set_cosmetic_tag = KMT_WUHAN
 			}
@@ -9035,11 +9037,6 @@ country_event = {
 					ideology = democratic
 					long_name = CHI_left_kuomintang_party_long
 					name = CHI_left_kuomintang_party
-				}
-				set_party_name = {
-					ideology = communism
-					long_name = CHI_communist_party
-					name = CHI_communist_party
 				}
 				create_country_leader = {
 					name = "Wang Jingwei"
@@ -9080,17 +9077,6 @@ country_event = {
 						active = yes
 					}
 				}
-				create_country_leader = {
-					name = "Mao Zedong"
-					picture = "GFX_portrait_prc_mao_zedong"
-					expire = "1935.1.1"
-					ideology = vanguardism
-					traits = {
-						cornered_fox
-						trait_vanguardism
-					}
-				}
-				add_ideas = CHI_idea_communist_movement
 				every_country = {
 					limit = {
 						has_war_with = KMT
@@ -9107,12 +9093,6 @@ country_event = {
 	}
 	option = {
 		name = ww1_china.70.a
-		remove_ideas = CHI_idea_communist_movement
-		retire_ideology_leader = communism
-		add_popularity = {
-			ideology = communism
-			popularity = -0.2
-		}
 	}
 }
 
@@ -9126,7 +9106,7 @@ country_event = {
 		any_country = {
 			has_country_flag = CHI_left_kuomintang_flag
 		}
-		has_global_flag = north_expedition_end
+		has_global_flag = northern_expedition_end
 	}
 	mean_time_to_happen = {
 		days = 3
@@ -9134,6 +9114,9 @@ country_event = {
 	fire_only_once = yes
 	option = {
 		name = ww1_china.71.a
+		hidden_effect = {
+			set_global_flag = nanjing_wuhan_integration
+		}
 		if = {
 			limit = {
 				is_faction_leader = yes
@@ -9226,7 +9209,7 @@ country_event = {
 		NOT = {
 			original_tag = CHI
 			has_country_flag = CHI_left_kuomintang_flag
-			has_global_flag = north_expedition
+			has_global_flag = northern_expedition
 			has_global_flag = warlord_era_end
 		}
 		has_global_flag = sun_yatsen_dead
@@ -9238,6 +9221,11 @@ country_event = {
 	fire_only_once = yes
 	mean_time_to_happen = {
 		days = 270
+	}
+	immediate = {
+		hidden_effect = {
+			set_global_flag = zhongshan_incident
+		}
 	}
 	option = {
 		name = ww1_china.73.a
@@ -9253,6 +9241,41 @@ country_event = {
 			traits = {
 				generallissimo
 				trait_conservatism
+			}
+		}
+	}
+	option = {
+		name = ww1_china.73.b
+		start_civil_war = {
+			ideology = democratic
+			size = 0.6
+			states = {
+				593
+			}
+			keep_political_leader = yes
+			hidden_effect = {
+				set_cosmetic_tag = CHI_uprising_democratic
+				set_popularities = {
+					democratic = 51
+					neutrality = 42
+					fascism = 7
+					communism = 0
+				}
+				create_country_leader = {
+					name = "Chiang Kai-shek"
+					picture = "gfx/leaders/CHI/CHI_chiang_kai_shek.dds"
+					expire = "1935.1.1"
+					ideology = conservatism
+					traits = {
+						generallissimo
+						trait_conservatism
+					}
+				}
+				set_party_name = {
+					ideology = democratic
+					long_name = CHI_revolutionary_army_long
+					name = CHI_revolutionary_army
+				}
 			}
 		}
 	}
@@ -9551,7 +9574,7 @@ country_event = {
 	trigger = {
 		OR = {
 			date > 1928.7.7
-			has_global_flag = north_expedition_end
+			has_global_flag = northern_expedition_end
 		}
 		has_country_leader = {
 			name = "Yang Zengxin"
@@ -9894,7 +9917,7 @@ country_event = {
 			# East Turkestan Republic
 			KUM = {
 				transfer_state = 749
-				set_capital = 749
+				set_capital = { state = 749 }
 			}
 			SIK = {
 				transfer_state = 619

@@ -21,7 +21,7 @@ characters={
 			}
 		}
 		country_leader={
-			desc="GER_wilhelm_ii_desc"
+			#desc="GER_wilhelm_ii_desc"
 			ideology=autocracy
 			traits={ imperial_connections trait_autocracy }
 			expire="1935.1.1.1"
@@ -371,7 +371,7 @@ characters={
 		}
 		portraits={
 			civilian={
-				large="gfx/leaders/GER/GER_Alfred_Tirpitz.dds"
+				large="gfx/leaders/GER/GER_Alfred_Tirpitz.png"
 				small="GFX_idea_GER_alfred_von_tirpitz"
 			}
 		}
