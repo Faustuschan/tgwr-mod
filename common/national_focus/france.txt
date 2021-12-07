@@ -467,6 +467,156 @@ focus_tree = {
 		x = 4
 		y = 1
 	}
+
+	focus = {
+		id = FRA_ww1_armeeorient
+		prerequisite = {
+			focus = FRA_ww1_forced_conscription_in_colonies
+		}
+		relative_position_id = FRA_ww1_forced_conscription_in_colonies
+		icon = GFX_goal_generic_allies_build_infantry
+		available = {
+			any_country = {
+				is_major = yes
+				has_war_with = FRA
+			}
+			NOT = {
+				has_war_with = GRE
+			}
+		}
+		completion_reward = {
+			FRA = {
+				country_event = {
+					id = ww1_france.15
+					days = 1
+				}
+			}
+			GRE = {
+				country_event = {
+					id = ww1_greece.5
+					days = 1
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		cost = 10
+		x = 0
+		y = 1
+	}
+	focus = {
+		id = FRA_ww1_greece_friend
+		prerequisite = {
+			focus = FRA_ww1_armeeorient
+		}
+		relative_position_id = FRA_ww1_armeeorient
+		icon = GFX_goal_generic_improve_relations
+		available = {
+			is_subject = no
+			NOT = {
+				has_war_with = GRE
+			}
+		}
+		bypass = {
+			is_in_faction_with = GRE		
+		}	
+		completion_reward = {
+			add_opinion_modifier = {
+				target = GRE
+				modifier = medium_increase
+			}
+			GRE = {
+				add_opinion_modifier = {
+					target = FRA
+					modifier = entente_friendship
+				}
+				set_global_flag = kis_venizelists_flag				
+				country_event = {
+					id = generic.1
+				}
+			}
+		}
+		ai_will_do = {
+			base = 50				
+		}
+		cost = 10
+		x = 0
+		y = 1
+	}
+	focus = {
+		id = FRA_ww1_allied_bases
+		prerequisite = {
+			focus = FRA_ww1_greece_friend
+		}
+		relative_position_id = FRA_ww1_greece_friend
+		available = {
+			is_subject = no
+			is_faction_leader = yes
+			NOT = {
+				has_war_with = GRE
+			}
+			GRE = {
+				is_subject = no
+				NOT = {
+					has_war_with = GER
+				}
+			}
+		}
+		bypass = {
+			GRE = {
+				is_in_faction_with = FRA
+			}
+		}
+		icon = GFX_goal_generic_construction2
+		completion_reward = {
+			GRE = {
+				add_ai_strategy = {
+					type = alliance
+					id = ROOT
+					value = 200
+				}
+				country_event = {
+					id = generic.5
+				}
+				if = {
+					limit = {
+						TUR = {
+							is_in_faction_with = GER
+						}
+					}
+					add_state_core = 339
+					add_state_core = 756
+					add_state_core = 341
+				}
+			}
+			185 = {
+				add_building_construction = {
+					type = naval_base
+					level = 1
+					#province = 12001
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = air_base
+					level = 1
+					#province = 12001
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+				date < 1917.4.1
+			}
+		}
+		cost = 10
+		x = 0
+		y = 1
+	}
+
 	focus = {
 		id = FRA_ww1_support_serbia
 		icon = GFX_focus_AUH_serbian_protectorate
