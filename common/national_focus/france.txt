@@ -292,6 +292,12 @@ focus_tree = {
 				id = ITA
 				value = 200
 			}
+			hidden_effect = {
+				reverse_add_opinion_modifier = {
+					target = ITA
+					modifier = huge_increase
+				}
+			}
 		}
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
@@ -467,51 +473,13 @@ focus_tree = {
 		x = 4
 		y = 1
 	}
-
 	focus = {
-		id = FRA_ww1_armeeorient
+		id = FRA_ww1_greece_friend
 		prerequisite = {
 			focus = FRA_ww1_forced_conscription_in_colonies
 		}
 		relative_position_id = FRA_ww1_forced_conscription_in_colonies
-		icon = GFX_goal_generic_allies_build_infantry
-		available = {
-			any_country = {
-				is_major = yes
-				has_war_with = FRA
-			}
-			NOT = {
-				has_war_with = GRE
-			}
-		}
-		completion_reward = {
-			FRA = {
-				country_event = {
-					id = ww1_france.15
-					days = 1
-				}
-			}
-			GRE = {
-				country_event = {
-					id = ww1_greece.5
-					days = 1
-				}
-			}
-		}
-		ai_will_do = {
-			factor = 20
-		}
-		cost = 10
-		x = 0
-		y = 1
-	}
-	focus = {
-		id = FRA_ww1_greece_friend
-		prerequisite = {
-			focus = FRA_ww1_armeeorient
-		}
-		relative_position_id = FRA_ww1_armeeorient
-		icon = GFX_goal_generic_improve_relations
+		icon = GFX_focus_deal_with_greece
 		available = {
 			is_subject = no
 			NOT = {
@@ -522,25 +490,30 @@ focus_tree = {
 			is_in_faction_with = GRE		
 		}	
 		completion_reward = {
+
 			add_opinion_modifier = {
 				target = GRE
-				modifier = medium_increase
+				modifier = huge_increase
+			}
+			add_ai_strategy = {
+				type = alliance
+				id = GRE
+				value = 200
 			}
 			GRE = {
-				add_opinion_modifier = {
-					target = FRA
-					modifier = entente_friendship
-				}
-				set_global_flag = kis_venizelists_flag				
-				country_event = {
-					id = generic.1
+				country_event = generic.1
+			}
+			hidden_effect = {
+				reverse_add_opinion_modifier = {
+					target = GRE
+					modifier = huge_increase
 				}
 			}
 		}
 		ai_will_do = {
 			base = 50				
 		}
-		cost = 10
+		cost = 5
 		x = 0
 		y = 1
 	}
@@ -552,15 +525,8 @@ focus_tree = {
 		relative_position_id = FRA_ww1_greece_friend
 		available = {
 			is_subject = no
-			is_faction_leader = yes
-			NOT = {
-				has_war_with = GRE
-			}
 			GRE = {
-				is_subject = no
-				NOT = {
-					has_war_with = GER
-				}
+				is_in_faction_with = FRA
 			}
 		}
 		bypass = {
@@ -568,40 +534,36 @@ focus_tree = {
 				is_in_faction_with = FRA
 			}
 		}
-		icon = GFX_goal_generic_construction2
+		icon = GFX_goal_generic_military_deal
 		completion_reward = {
-			GRE = {
-				add_ai_strategy = {
-					type = alliance
-					id = ROOT
-					value = 200
-				}
-				country_event = {
-					id = generic.5
-				}
-				if = {
-					limit = {
-						TUR = {
-							is_in_faction_with = GER
-						}
-					}
-					add_state_core = 339
-					add_state_core = 756
-					add_state_core = 341
-				}
-			}
 			185 = {
 				add_building_construction = {
 					type = naval_base
-					level = 1
-					#province = 12001
+					level = 2
+					province = 3864
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = air_base
-					level = 1
-					#province = 12001
+					level = 2
+					province = 3864
 					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					province = 3864
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = supply_node
+					level = 1
+					province = 863
+					instant_build = yes
+				}
+				build_railway = {
+					path = { 863 3864 }
+					level = 2
 				}
 			}
 		}
@@ -641,6 +603,12 @@ focus_tree = {
 				type = alliance
 				id = SER
 				value = 200
+			}
+			hidden_effect = {
+				reverse_add_opinion_modifier = {
+					target = SER
+					modifier = huge_increase
+				}
 			}
 		}
 		ai_will_do = {
@@ -1583,6 +1551,12 @@ focus_tree = {
 			add_opinion_modifier = {
 				target = ENG
 				modifier = huge_increase
+			}
+			hidden_effect = {
+				reverse_add_opinion_modifier = {
+					target = ENG
+					modifier = huge_increase
+				}
 			}
 			add_ai_strategy = {
 				type = alliance
@@ -2588,9 +2562,11 @@ focus_tree = {
 				target = SPR
 				modifier = huge_increase
 			}
-			reverse_add_opinion_modifier = {
-				target = SPR
-				modifier = huge_increase
+			hidden_effect = {
+				reverse_add_opinion_modifier = {
+					target = SPR
+					modifier = huge_increase
+				}
 			}
 			add_ai_strategy = {
 				type = alliance
@@ -2618,7 +2594,7 @@ focus_tree = {
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
 		}
-		cost = 10
+		cost = 5
 		x = 2
 		y = 1
 	}
@@ -3115,9 +3091,11 @@ focus_tree = {
 				target = RUS
 				modifier = huge_increase
 			}
-			reverse_add_opinion_modifier = {
-				target = RUS
-				modifier = huge_increase
+			hidden_effect = {
+				reverse_add_opinion_modifier = {
+					target = RUS
+					modifier = huge_increase
+				}
 			}
 			custom_effect_tooltip = FRA_Napoleon_love_russia
 			hidden_effect = {
@@ -3138,7 +3116,7 @@ focus_tree = {
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
 		}
-		cost = 10
+		cost = 5
 		x = -4
 		y = 1
 	}
@@ -3237,9 +3215,11 @@ focus_tree = {
 				target = TUR
 				modifier = huge_increase
 			}
-			reverse_add_opinion_modifier = {
-				target = TUR
-				modifier = huge_increase
+			hidden_effect = {
+				reverse_add_opinion_modifier = {
+					target = TUR
+					modifier = huge_increase
+				}
 			}
 			add_ai_strategy = {
 				type = alliance
