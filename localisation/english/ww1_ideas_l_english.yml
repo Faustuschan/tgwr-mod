@@ -69,9 +69,9 @@
  FRA_land_army_restrictions:0 "French Army Restrictions"
  FRA_naval_army_restrictions:0 "French Naval Restrictions"
  FRA_idea_restore_the_nation:0 "Restore the Nation"
- trench_warfare_expert:0 "Trench warfare expert"
- great_military_theorist:0 "Great theorist"
- next_generation_theorist:0 "Next generation theorist"
+ trench_warfare_expert:0 "Trench Warfare Expert"
+ great_military_theorist:0 "Great Theorist"
+ next_generation_theorist:0 "Next Generation Theorist"
 
  superior_enemy:0 "Superior Enemy"
  superior_enemy_desc:0 "Army experience and equipment of our enemies are far ahead of ours."
