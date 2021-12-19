@@ -1571,7 +1571,7 @@ country_event = {
 				set_demilitarized_zone = no
 			}
 			hidden_effect = {
-				set_capital = 592
+				set_capital = { state = 592 }
 				every_country = {
 					limit = {
 						has_unit_leader = 73047
@@ -2318,7 +2318,7 @@ country_event = {
 			}
 			hidden_effect = {
 				set_cosmetic_tag = NPA_clique
-				set_capital = 598
+				set_capital = { state = 598 }
 				set_politics = {
 					ruling_party = neutrality
 					elections_allowed = no
@@ -4639,6 +4639,25 @@ country_event = {
 	fire_only_once = yes
 	immediate = {
 		hidden_effect = {
+			if = {
+				limit = {
+					QIN = {
+						is_ai = yes
+						has_war_with = CHI
+					}
+				}
+				CHI = {
+					annex_country = {
+						target = QIN
+					}
+					every_state = {
+						limit = {
+							is_core_of = QIN
+						}
+						remove_core_of = QIN
+					}
+				}
+			}
 			GXC = {
 				create_faction = constitutional_protection_government
 				add_to_faction = YUN
@@ -4713,9 +4732,6 @@ country_event = {
 	desc = ww1_china.40.d
 	id = ww1_china.40
 	is_triggered_only = yes
-	mean_time_to_happen = {
-		days = 365
-	}
 	immediate = {
 		hidden_effect = {
 			every_other_country = {
@@ -5033,7 +5049,7 @@ country_event = {
 					}
 					add_claim_by = SDC
 				}
-				set_capital = 608
+				set_capital = { state = 608 }
 			}
 			every_state = {
 				limit = {
@@ -8457,21 +8473,23 @@ country_event = {
 				trait_conservatism
 			}
 		}
+		ai_chance = {
+			factor = 100
+		}
 	}
 	option = {
 		name = ww1_china.73.b
 		start_civil_war = {
-			ideology = democratic
+			ideology = neutrality
 			size = 0.6
 			states = {
 				593
 			}
-			keep_political_leader = yes
+			keep_political_leader = no
 			hidden_effect = {
-				set_cosmetic_tag = CHI_uprising_democratic
 				set_popularities = {
-					democratic = 51
-					neutrality = 42
+					democratic = 42
+					neutrality = 51
 					fascism = 7
 					communism = 0
 				}
@@ -8485,12 +8503,43 @@ country_event = {
 						trait_conservatism
 					}
 				}
+				create_country_leader = {
+					name = "Chiang Kai-shek"
+					picture = "gfx/leaders/CHI/CHI_chiang_kai_shek.dds"
+					expire = "1935.1.1"
+					ideology = stratocracy
+					traits = {
+						generallissimo
+						trait_stratocracy
+					}
+				}
+			}
+		}
+		hidden_effect = {
+			every_other_country = {
+				limit = {
+					original_tag = GDC
+					has_government = neutrality
+					has_country_leader = {
+						name = "Chiang Kai-shek"
+						ruling_only = yes
+					}
+				}
 				set_party_name = {
 					ideology = democratic
 					long_name = CHI_revolutionary_army_long
 					name = CHI_revolutionary_army
 				}
+				set_party_name = {
+					ideology = neutrality
+					long_name = CHI_revolutionary_army_long
+					name = CHI_revolutionary_army
+				}
+				set_cosmetic_tag = CHI_uprising_democratic
 			}
+		}
+		ai_chance = {
+			factor = 100
 		}
 	}
 }
@@ -8922,45 +8971,56 @@ country_event = {
 	desc = ww1_xinjiang.3.d
 	trigger = {
 		tag = SIK
-		date > 1931.2.1
-		date < 1933.4.24
 		is_subject = no
-		KUM = {
-			exists = no
+		owns_state = 619
+		NOT = {
+			country_exists = KUM
 		}
 		has_country_leader = {
 			name = "Jin Shuren"
 			ruling_only = yes
 		}
-		owns_state = 619
+		date > 1931.2.1
+		date < 1933.4.24
 	}
 	fire_only_once = yes
 	mean_time_to_happen = {
-		days = 0
+		days = 10
 	}
 	immediate = {
 		hidden_effect = {
-			KUM = {
-				add_state_core = 619
-				transfer_state = 619
+			every_state = {
+				limit = {
+					is_owned_by = PREV
+					state = 619
+				}
+				KUM = {
+					add_state_core = PREV
+					transfer_state = PREV
+				}
 			}
 		}
-		declare_war_on = {
-			target = KUM
-			type = annex_everything
-		}
-		add_stability = -0.2
 	}
 	option = {
 		name = ww1_xinjiang.3.a
 		ai_chance = {
 			factor = 100
 		}
+		add_stability = -0.2
+		declare_war_on = {
+			target = KUM
+			type = annex_everything
+		}
 	}
 	option = {
 		name = ww1_xinjiang.3.b
 		ai_chance = {
 			factor = 100
+		}
+		add_stability = -0.2
+		declare_war_on = {
+			target = KUM
+			type = annex_everything
 		}
 		KUM = {
 			change_tag_from = ROOT
@@ -8981,7 +9041,13 @@ country_event = {
 		ai_chance = {
 			factor = 100
 		}
-		give_guarantee = KUM
+		KUM = {
+			diplomatic_relation = {
+				country = PREV
+				relation = military_access
+				active = yes
+			}
+		}
 		declare_war_on = {
 			target = SIK
 			type = annex_everything
@@ -9004,28 +9070,52 @@ country_event = {
 	trigger = {
 		tag = SIK
 		has_country_flag = sheng_shicai_in_sinkiang
-		has_war_with = KUM
-		OR = {
-			date > 1933.4.24
-			surrender_progress > 0.5
-		}
 		has_country_leader = {
 			name = "Jin Shuren"
 			ruling_only = yes
 		}
+		OR = {
+			has_war_with = KUM
+			has_war_with = XSM
+		}
+		surrender_progress > 0.5
 	}
 	fire_only_once = yes
 	mean_time_to_happen = {
 		days = 0
 	}
 	immediate = {
-		SIK = {
-			white_peace = KUM
-			if = {
-				limit = {
-					has_war_with = SIK
+		hidden_effect = {
+			SIK = {
+				if = {
+					limit = {
+						has_war_with = KUM
+					}
+					white_peace = KUM
 				}
-				white_peace = SIK
+				else_if = {
+					limit = {
+						NOT = {
+							country_exists = KUM
+						}
+					}
+					every_owned_state = {
+						limit = {
+							state = 749
+						}
+						KUM = {
+							remove_state_core = 619
+							transfer_state = PREV
+							set_capital = { state = 749 }
+						}
+					}
+					every_state = {
+						limit = {
+							is_core_of = SIK
+						}
+						add_core_of = KUM
+					}
+				}
 			}
 		}
 	}
@@ -9090,57 +9180,6 @@ country_event = {
 			add_popularity = {
 				ideology = democratic
 				popularity = 0.5
-			}
-		}
-		# Sheng Shicai vs. Ma Zhongying
-		XSM = {
-			if = {
-				limit = {
-					exists = yes
-					is_subject = no
-					has_war = no
-					is_neighbor_of = SIK
-				}
-				declare_war_on = {
-					target = SIK
-					type = annex_everything
-				}
-			}
-			# Warlord Era for Qing Empire
-			else = {
-				if = {
-					limit = {
-						QIN = {
-							exists = yes
-							is_faction_leader = yes
-							NOT = {
-								has_war_with = SIK
-							}
-						}
-						CHI = {
-							exists = no
-						}
-					}
-					QIN = {
-						add_to_faction = SIK
-					}
-				}
-			}
-		}
-		hidden_effect = {
-			# East Turkestan Republic
-			KUM = {
-				transfer_state = 749
-				set_capital = { state = 749 }
-			}
-			SIK = {
-				transfer_state = 619
-			}
-			every_state = {
-				limit = {
-					is_core_of = SIK
-				}
-				add_core_of = KUM
 			}
 		}
 	}

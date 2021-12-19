@@ -226,6 +226,7 @@ create_corps_commander={
 	logistics_skill = 2
 }
 
+<<<<<<< HEAD
 create_corps_commander={
 	name = "Robert Nivelle" id=32031
 	portrait_path="gfx/leaders/FRA/FRA_robert_nivelle.dds"
@@ -469,6 +470,8 @@ create_navy_leader={
 oob = "FRA_1910"
 
 
+=======
+>>>>>>> 878c2ae3e955866aad3f636c8fb483bc3230211f
 set_technology = {
 	#infantry
 	infantry_weapons = 1
