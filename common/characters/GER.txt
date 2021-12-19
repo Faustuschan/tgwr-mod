@@ -1918,11 +1918,10 @@ characters={
 					original_tag  = GER 
 				}
 				available  = {
-					not  = {
-						has_government  = fascism 
-					}
-					not  = {
-						has_government  = communism 
+					NOT  = {
+						has_government  = fascism
+						has_government  = communism
+						has_country_flag = great_war_loser
 					}
 				}
 				traits  = {
@@ -1979,6 +1978,33 @@ characters={
 		portraits={
 			army={
 				small="GFX_idea_GER_clemens_von_delbruck"
+			}
+		}
+	}
+	GER_hjalmar_schacht = {
+		name = "GER_hjalmar_schacht"
+		advisor = {
+			slot = political_advisor
+			idea_token = GER_hjalmar_schacht
+			allowed = {
+				original_tag = GER
+			}
+			visible = {
+				has_global_flag = interbellum			
+			}
+			available = {
+				NOT = {
+					has_government = communism
+				}
+			}	
+			traits = { captain_of_industry }
+			ai_will_do = {
+				factor = 2
+			}
+		}
+		portraits={
+			civilian={
+				small="GFX_idea_generic_captain_of_industry_western_european_2d"
 			}
 		}
 	}
