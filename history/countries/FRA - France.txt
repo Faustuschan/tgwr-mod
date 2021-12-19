@@ -227,6 +227,9 @@ create_corps_commander={
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> accfbc6cc5fbcca234fc557700d78eea3e7a6a6b
 create_corps_commander={
 	name = "Robert Nivelle" id=32031
 	portrait_path="gfx/leaders/FRA/FRA_robert_nivelle.dds"
@@ -470,8 +473,11 @@ create_navy_leader={
 oob = "FRA_1910"
 
 
+<<<<<<< HEAD
 =======
 >>>>>>> 878c2ae3e955866aad3f636c8fb483bc3230211f
+=======
+>>>>>>> accfbc6cc5fbcca234fc557700d78eea3e7a6a6b
 set_technology = {
 	#infantry
 	infantry_weapons = 1

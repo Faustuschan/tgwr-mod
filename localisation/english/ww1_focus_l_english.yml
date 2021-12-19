@@ -3223,6 +3223,9 @@
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> accfbc6cc5fbcca234fc557700d78eea3e7a6a6b
  
  
  
@@ -3550,10 +3553,13 @@ FRA_ww1_trenchwarfare_desc:0 "" #KAISER_ANONY
 
 FRA_ww1_artillery_effort_1:0 "Artillery Effort"
 FRA_ww1_artillery_effort_1_desc:0 "" #KAISER_ANONY
+<<<<<<< HEAD
 =======
  FRA_ww1_army_effort:0 "Armée de Terre Effort"
  FRA_ww1_army_effort_desc:0 "Germany's army is larger, and worse, more experienced than our own, which is still stocked mostly with veterans from the last war we had against them. If France is to pose a serious threat to German interests, we must reverse this scenario, modernize our army, and hopefully modernize our leadership!"
 >>>>>>> 878c2ae3e955866aad3f636c8fb483bc3230211f
+=======
+>>>>>>> accfbc6cc5fbcca234fc557700d78eea3e7a6a6b
 
  FRA_ww1_trenchwarfare:0 "Trench Warfare Focus"
  FRA_ww1_trenchwarfare_desc:0 "" #KAISER_ANONY
