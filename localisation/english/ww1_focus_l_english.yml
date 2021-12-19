@@ -3221,14 +3221,6 @@
  TUR_ask_for_konstantinniye:0 "Ask for Konstantinniye"
  TUR_ask_for_konstantinniye_desc:0 "Originally, Konstantinniye was where our government stationed in. But ever since the ceasefire, it's under foreign occupation. It's time to ask, actually beg for the return of the city and rest of the territory surrounding the Anatolian side of the Marmara sea."
 
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> accfbc6cc5fbcca234fc557700d78eea3e7a6a6b
- 
- 
- 
  
  FRA_ww1_dreyfus_exoneration:0 "Exonerate Dreyfus"
  FRA_ww1_dreyfus_exoneration_desc:0 "Exempt since 1906, Alfred Dreyfus is still at the heart of the political debate. It is time to close this painful parenthesis of the 3rd Republic."
@@ -3553,13 +3545,6 @@ FRA_ww1_trenchwarfare_desc:0 "" #KAISER_ANONY
 
 FRA_ww1_artillery_effort_1:0 "Artillery Effort"
 FRA_ww1_artillery_effort_1_desc:0 "" #KAISER_ANONY
-<<<<<<< HEAD
-=======
- FRA_ww1_army_effort:0 "Armée de Terre Effort"
- FRA_ww1_army_effort_desc:0 "Germany's army is larger, and worse, more experienced than our own, which is still stocked mostly with veterans from the last war we had against them. If France is to pose a serious threat to German interests, we must reverse this scenario, modernize our army, and hopefully modernize our leadership!"
->>>>>>> 878c2ae3e955866aad3f636c8fb483bc3230211f
-=======
->>>>>>> accfbc6cc5fbcca234fc557700d78eea3e7a6a6b
 
  FRA_ww1_trenchwarfare:0 "Trench Warfare Focus"
  FRA_ww1_trenchwarfare_desc:0 "" #KAISER_ANONY
@@ -3964,6 +3949,7 @@ FRA_ww1_artillery_effort_1_desc:0 "" #KAISER_ANONY
 
 FRA_paris_to_amiens:0 " (§YParis§! to §YAmiens§!)"
 FRA_paris_to_nancy:0 " (§YParis§! to §YNancy§!)"
+FRA_focus_alliance:0 "\nThey will be §Ymore inclined§! to be our §Yallies§! !"
 
 FRA_ww1_invest_in_sncf:0 "Create the SNCF"
 has_invested_in_sncf:0 "Has invested in SNCF"
@@ -3975,6 +3961,10 @@ has_invested_in_peugeot:0 "Has invested in Peugeot"
 has_invested_in_renault:0 "Has invested in Renault"
 sncf:0 "SNCF"
 excavation_tech:0 "Excavation Tech"
+
+
+ FRA_ww1_meet_franz_joseph:0 "Meet Franz Joseph"
+ FRA_ww1_pointcarre_ugron_pact:0 "Pointcarré-Ugron Pact"
 
  NFA_expansion_of_the_alliance:0 "Expansion of the Alliance"
  NFA_expansion_of_the_alliance_desc:0 "The lion is howling. The lion is burning with vengeance. So are we."

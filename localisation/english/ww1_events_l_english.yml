@@ -683,6 +683,29 @@ ww1_france.68.d:0 "The major changes in French politics resulted from strong opp
 
  FRA_enough_seats:0 "§YThis option is displayed because we meet the required conditions:§!"
 
+
+ ww1_france.211.t:0 "French government meet Franz Joseph"
+ ww1_france.211.d:0 "President Poincaré traveled to Vienna today to meet Emperor Franz Joseph. The objective of this meeting is to strengthen the links between the two nations which have always been mixed since the fall of Napoleon. Rumors would announce an attempt by the French government to withdraw Austro-Hungarian support for the central alliance."
+ ww1_france.211.a:0 "France is playing a risky game"
+ ww1_france.211.b:0 "The future of europe rests on this visit"
+
+ ww1_france.212.t:0 "French-Austrian alliance proposal"
+ ww1_france.212.d:0 "The French government is visiting us to discuss our geopolitical position. President Pointcarré presented us with a counter-alliance operation opposed to Germany allowing us to obtain several territories that we have claimed in the past. Obviously, let's not be fooled, France is looking for a powerful ally to recover its precious Alsace Lorraine. Nevertheless, the German Empire is in a hegemonic position and this position could cause harm to our nation."
+ ww1_france.212.a:0 "If we accept, we will become the main world power ..."
+ ww1_france.212.b:0 "What ridiculous opportunists!"
+
+ ww1_france.213.t:0 "French-Austrian alliance proposal"
+ ww1_france.213.d:0 "The Austro-Hungarian Empire accepted our proposal, we are now allies and will be able to prepare our operation against Germany!"
+ ww1_france.213.a:0 "Parfait !"
+
+ ww1_france.214.t:0 "French-Austrian alliance proposal"
+ ww1_france.214.d:0 "The Austro-Hungarian Empire refused our proposal, we will keep our traditional alliance for a while ..."
+ ww1_france.214.a:0 "Ce ne sont que des laquais des Allemands !"
+
+ ww1_france.215.t:0 "French-Austrian alliance"
+ ww1_france.215.d:0 "In accordance with the concerns of many political experts, France and the Austro-Hungarian Empire made a joint declaration on their joint external policy. Thus, the two powers have announced a military alliance whose main concern will be opposition to any hegemonic position."
+ ww1_france.215.a:0 "This lobby is not on historical mode"
+
  #BELGIUM
  ww1_belgium.1.t:0 "Rape of Belgium"
  ww1_belgium.1.desc:0 "Reports have come in describing the outright barbaric treatment of Belgian civilians by Germans. Anticipating guerrilla attacks from francs-tireurs who don’t actually exist, German commanders have taken civilian hostages as they pass through towns and villages, then shoot the hostages in groups whenever German soldiers are killed.\n\nBlamed on shadow guerrillas, the usual stray bullets and friendly fire incidents have already resulted in hundreds of murdered Belgians, and for reasons that remain unclear, the historic city and university of Louvain were burned.\n\nJust like looting and murder, rape was widespread."

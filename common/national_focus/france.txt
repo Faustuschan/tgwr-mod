@@ -292,7 +292,14 @@ focus_tree = {
 			add_ai_strategy = {
 				type = alliance
 				id = ITA
-				value = 200
+				value = 100
+			}
+			ITA = {
+				add_ai_strategy = {
+					type = alliance
+					id = FRA
+					value = 100
+				}
 			}
 			hidden_effect = {
 				reverse_add_opinion_modifier = {
@@ -300,6 +307,7 @@ focus_tree = {
 					modifier = huge_increase
 				}
 			}
+			custom_effect_tooltip = FRA_focus_alliance
 		}
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
@@ -460,6 +468,14 @@ focus_tree = {
 					is_puppet_of = ROOT
 				}
 			}
+			FRA = {
+				check_variable = {
+					democrat_alliance > 150
+				}
+				custom_trigger_tooltip = {
+					tooltip = FRA_150_seats
+				}
+			}
 		}
 		completion_reward = {
 			add_ideas = FRA_ww1_forced_conscription_in_colonies
@@ -472,15 +488,16 @@ focus_tree = {
 			FOCUS_FILTER_HISTORICAL
 		}
 		cost = 10
-		x = 4
+		x = 8
 		y = 1
 	}
 	focus = {
 		id = FRA_ww1_greece_friend
 		prerequisite = {
-			focus = FRA_ww1_forced_conscription_in_colonies
+			focus = FRA_ww1_save_the_republic
+			focus = FRA_ww1_form_the_proudhon_circle
 		}
-		relative_position_id = FRA_ww1_forced_conscription_in_colonies
+		relative_position_id = FRA_ww1_save_the_republic
 		icon = GFX_focus_deal_with_greece
 		available = {
 			is_subject = no
@@ -500,10 +517,15 @@ focus_tree = {
 			add_ai_strategy = {
 				type = alliance
 				id = GRE
-				value = 200
+				value = 100
 			}
 			GRE = {
 				country_event = generic.1
+				add_ai_strategy = {
+					type = alliance
+					id = FRA
+					value = 100
+				}
 			}
 			hidden_effect = {
 				reverse_add_opinion_modifier = {
@@ -511,12 +533,13 @@ focus_tree = {
 					modifier = huge_increase
 				}
 			}
+			custom_effect_tooltip = FRA_focus_alliance
 		}
 		ai_will_do = {
 			base = 50				
 		}
 		cost = 5
-		x = 0
+		x = 10
 		y = 1
 	}
 	focus = {
@@ -584,6 +607,137 @@ focus_tree = {
 		y = 1
 	}
 
+	# focus = {
+	# 	id = FRA_ww1_meet_franz_joseph
+	# 	icon = GFX_focus_deal_with_austria_hungary
+	# 	relative_position_id = FRA_ww1_save_the_republic
+	# 	prerequisite = {
+	# 		focus = FRA_ww1_save_the_republic
+	# 		focus = FRA_ww1_form_the_proudhon_circle
+	# 	}
+	# 	available = {
+	# 		FRA = {
+	# 			NOT = {
+	# 				has_war_with = AUH
+	# 			}
+	# 		}
+	# 	}
+	# 	completion_reward = {
+	# 		add_opinion_modifier = {
+	# 			target = AUH
+	# 			modifier = huge_increase
+	# 		}
+	# 		add_ai_strategy = {
+	# 			type = alliance
+	# 			id = AUH
+	# 			value = 50
+	# 		}
+	# 		AUH = {
+	# 			add_ai_strategy = {
+	# 				type = alliance
+	# 				id = FRA
+	# 				value = 50
+	# 			}
+	# 		}
+	# 		hidden_effect = {
+	# 			reverse_add_opinion_modifier = {
+	# 				target = AUH
+	# 				modifier = huge_increase
+	# 			}
+	# 		}
+	# 		news_event = ww1_france.211
+	# 		custom_effect_tooltip = FRA_focus_alliance
+	# 	}
+	# 	ai_will_do = {
+	# 		factor = 1
+	# 	}
+	# 	search_filters = {
+	# 		FOCUS_FILTER_POLITICAL
+	# 	}
+	# 	cost = 5
+	# 	x = 6
+	# 	y = 1
+	# }
+
+	# focus = {
+	# 	id = FRA_ww1_pointcarre_ugron_pact
+	# 	icon = GFX_goal_molotov_ribbentrop_pact
+	# 	relative_position_id = FRA_ww1_meet_franz_joseph
+	# 	prerequisite = {
+	# 		focus = FRA_ww1_meet_franz_joseph
+	# 	}
+	# 	available = {
+	# 		FRA = {
+	# 			NOT = {
+	# 				has_war_with = AUH
+	# 			}
+	# 		}
+	# 		FRA = {
+	# 			check_variable = {
+	# 				democrat_alliance > 250
+	# 			}
+	# 			custom_trigger_tooltip = {
+	# 				tooltip = FRA_250_seats
+	# 			}
+	# 		}
+	# 	}
+	# 	completion_reward = {
+	# 		AUH = {
+	# 			country_event = ww1_france.212
+	# 			custom_effect_tooltip = needs_approval
+	# 		}
+	# 	}
+	# 	ai_will_do = {
+	# 		factor = 1
+	# 	}
+	# 	search_filters = {
+	# 		FOCUS_FILTER_POLITICAL
+	# 	}
+	# 	cost = 10
+	# 	x = 0
+	# 	y = 2
+	# }
+
+	# focus = {
+	# 	id = FRA_strasbourg_or_war_2
+	# 	name = FRA_strasbourg_or_war
+	# 	icon = GFX_goal_generic_territory_or_war
+	# 	available = {
+	# 		FRA = {
+	# 			has_war = no
+	# 			is_puppet = no
+	# 		}
+	# 		has_army_manpower = {
+	# 			size > 699999
+	# 		}
+	# 		28 = {
+	# 			is_owned_and_controlled_by = GER
+	# 		}
+	# 	}
+	# 	prerequisite = {
+	# 		focus = FRA_ww1_pointcarre_ugron_pact
+	# 	}
+	# 	x = 0
+	# 	y = 1
+	# 	relative_position_id = FRA_ww1_pointcarre_ugron_pact
+	# 	cost = 10
+	# 	ai_will_do = {
+	# 		factor = 1
+	# 	}
+	# 	search_filters = {
+	# 		FOCUS_FILTER_ANNEXATION
+	# 	}
+	# 	completion_reward = {
+	# 		add_threat = 5
+	# 		GER = {
+	# 			country_event = {
+	# 				id = ww1_france.91
+	# 				days = 2
+	# 			}
+	# 		}
+	# 	}
+	# }
+
 	focus = {
 		id = FRA_ww1_support_serbia
 		icon = GFX_focus_AUH_serbian_protectorate
@@ -607,7 +761,14 @@ focus_tree = {
 			add_ai_strategy = {
 				type = alliance
 				id = SER
-				value = 200
+				value = 100
+			}
+			SER = {
+				add_ai_strategy = {
+					type = alliance
+					id = FRA
+					value = 100
+				}
 			}
 			hidden_effect = {
 				reverse_add_opinion_modifier = {
@@ -615,6 +776,7 @@ focus_tree = {
 					modifier = huge_increase
 				}
 			}
+			custom_effect_tooltip = FRA_focus_alliance
 		}
 		ai_will_do = {
 			factor = 1
@@ -624,7 +786,7 @@ focus_tree = {
 			FOCUS_FILTER_HISTORICAL
 		}
 		cost = 5
-		x = 6
+		x = 4
 		y = 1
 	}
 	focus = {
@@ -1568,6 +1730,14 @@ focus_tree = {
 				id = ENG
 				value = 200
 			}
+			ENG = {
+				add_ai_strategy = {
+					type = alliance
+					id = FRA
+					value = 200
+				}
+			}
+			custom_effect_tooltip = FRA_focus_alliance
 		}
 		ai_will_do = {
 			factor = 1
@@ -2424,7 +2594,7 @@ focus_tree = {
 			FOCUS_FILTER_INTERNAL_AFFAIRS
 		}
 		cost = 10
-		x = 14
+		x = 16
 		y = 1
 	}
 	focus = {
@@ -2576,22 +2746,21 @@ focus_tree = {
 			add_ai_strategy = {
 				type = alliance
 				id = SPR
-				value = 200
+				value = 100
 			}
 			SPR = {
 				add_ai_strategy = {
 					type = alliance
 					id = FRA
-					value = 200
+					value = 100
 				}
-			}
-			SPR = {
 				remove_ideas = neutrality_idea
 				country_event = {
 					id = ww1_france.95
 					days = 2
 				}
 			}
+			custom_effect_tooltip = FRA_focus_alliance
 		}
 		ai_will_do = {
 			factor = 1
@@ -3114,6 +3283,19 @@ focus_tree = {
 					}
 				}
 			}
+			add_ai_strategy = {
+				type = alliance
+				id = RUS
+				value = 100
+			}
+			RUS = {
+				add_ai_strategy = {
+					type = alliance
+					id = FRA
+					value = 100
+				}
+			}
+			custom_effect_tooltip = FRA_focus_alliance
 		}
 		ai_will_do = {
 			factor = 1
@@ -3229,15 +3411,16 @@ focus_tree = {
 			add_ai_strategy = {
 				type = alliance
 				id = TUR
-				value = 200
+				value = 100
 			}
 			TUR = {
 				add_ai_strategy = {
 					type = alliance
 					id = FRA
-					value = 200
+					value = 100
 				}
 			}
+			custom_effect_tooltip = FRA_focus_alliance
 		}
 		ai_will_do = {
 			factor = 1
@@ -3246,7 +3429,7 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		cost = 5
-		x = -6
+		x = -10
 		y = 1
 	}
 	focus = {

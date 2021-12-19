@@ -157,6 +157,8 @@ RULE_OPTION_NEUTRALITY_MONARCHIST_FRA:0 "Orléans House"
 RULE_OPTION_NEUTRALITY_MONARCHIST_FRA_AI_DESC:0 "France will be led by Jean III of Orleans then will approach the Spanish monarchy to strengthen the Entente."
 RULE_OPTION_FASCIST_FRA:0 "National Syndicalism"
 RULE_OPTION_FASCIST_FRA_AI_DESC:0 "France will take a path similar to post-WWI Germany and adopt a fascist system close to NSDAP National Socialism."
+RULE_OPTION_DEMOCRATIC_ALTERNATE_ALLIANCE:0 "Alliance with Austria-Hungary"
+RULE_OPTION_DEMOCRATIC_ALTERNATE_ALLIANCE_FRA_AI_DESC:0 "France will try to ally itself with Austria-Hungary and, if it accepts, to declare war on Germany."
 #Italy
  RULE_OPTION_HISTORICAL_ITA_AI_DESC:0 "The Italian AI will attempt to follow the historical chain of events as much as possible."
  RULE_OPTION_CP_ITA_AI_DESC:0 "The Italian AI will attempt to join the Central Powers by going down the relevant path in the national focus tree."

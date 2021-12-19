@@ -26,6 +26,12 @@ French_historical = {
 		NOT = {
 			has_game_rule = {
 				rule = FRA_ai_behavior
+				option = DEMOCRATIC_ALTERNATE_ALLIANCE
+			}
+		}
+		NOT = {
+			has_game_rule = {
+				rule = FRA_ai_behavior
 				option = NEUTRALITY_MONARCHIST
 			}
 		}
