@@ -103,6 +103,11 @@ spriteTypes = {
 	}
 
 	SpriteType = {
+		name = "GFX_goal_support_pujo"
+		texturefile = "gfx/interface/goals/FRA/support_pujo.png"
+	}
+
+	SpriteType = {
 		name = "GFX_goal_FRA_monarchism2"
 		texturefile = "gfx/interface/goals/FRA/France_Monarchy_2.dds"
 	}

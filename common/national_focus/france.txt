@@ -2468,7 +2468,7 @@ focus_tree = {
 	}
 	focus = {
 		id = FRA_ww1_support_valois
-		icon = GFX_focus_generic_monarchy_2
+		icon = GFX_goal_support_pujo
 		relative_position_id = FRA_ww1_form_the_proudhon_circle
 		prerequisite = {
 			focus = FRA_ww1_form_the_proudhon_circle

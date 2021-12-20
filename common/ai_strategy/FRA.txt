@@ -220,29 +220,6 @@ FRA_armored_production = {
 	}
 }
 
-#avoiding AI to spam infantry and getting colonial buildings destroyed by resistance
-FRA_low_infantry_production = {
-	allowed = {
-		original_tag = FRA	
-	}
-	enable = {
-		date < 1912.1.1
-		original_tag = FRA
-	}
-	abort = {
-		OR = {
-			date > 1912.1.1
-			has_war_with = GER
-		}
-	}
-
-	ai_strategy = {
-		type = role_ratio
-		id = infantry
-		value = 1
-	}
-}
-
 FRA_stockpile_more_early_game_and_war = {
 	allowed = { 
 		original_tag = FRA 
