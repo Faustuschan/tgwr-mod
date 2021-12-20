@@ -1,15 +1,10 @@
 
 tags={
-	"Fixes"
-	"Events"
-	"Balance"
-	"Graphics"
 	"Historical"
-	"Technologies"
-	"Sound"
+	"Gameplay"
 	"National Focuses"
-	"Military"
-	"Map"
+	"Events"	
+	"Technologies"	
 }
 name="Hearts of Iron IV: The Great War Redux [Beta]"
 version="0.77"
