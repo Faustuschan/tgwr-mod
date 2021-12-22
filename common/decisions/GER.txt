@@ -168,9 +168,10 @@ GER_decision_puppet_kingdoms = {
 			original_tag = GER
 		}
 		available = {
-			NOT = { has_country_flag = great_war_loser }
-			has_government = neutrality
-			POL = { exists = no }
+			OR = {
+				has_government = neutrality
+				has_idea = GER_idea_wilhelm_ii
+			}
 			if = {
 				limit = {
 					NOT = {
@@ -236,7 +237,7 @@ GER_decision_puppet_kingdoms = {
 			NOT = { 
 				has_country_flag = great_war_loser
 			}
-			POL = {exists = no}
+			POL = { exists = no }
 		}
 		fire_only_once = yes
 		cost = 25
@@ -259,13 +260,30 @@ GER_decision_puppet_kingdoms = {
 						remove_state_core = 98
 						remove_state_core = 766
 					}
-				}		
+				}
 			}
 			puppet = POL
+			POL = {
+				set_politics = {
+					ruling_party = neutrality
+  					elections_allowed = no
+				}
+				set_popularities = {
+   					democratic = 13
+   					fascism = 5
+   					communism = 21
+   					neutrality = 61
+				}
+			}
 			set_global_flag = poland_released
 		}
 		ai_will_do = { 
 			base = 100
+			modifier = {
+				factor = 0
+				date < 1916.11.5
+			
+			}
 		}
 	}
 	GER_form_lithuania = {
@@ -274,9 +292,10 @@ GER_decision_puppet_kingdoms = {
 			original_tag = GER
 		}
 		available = {
-			NOT = { has_country_flag = great_war_loser }
-			has_government = neutrality
-			LIT = { exists = no }
+			OR = {
+				has_government = neutrality
+				has_idea = GER_idea_wilhelm_iI
+			}
 			has_full_control_of_state = 11
 			has_full_control_of_state = 189
 			has_full_control_of_state = 784
@@ -293,7 +312,7 @@ GER_decision_puppet_kingdoms = {
 		visible = {
 			has_completed_focus = GER_puppet_kingdoms
 			NOT = { has_country_flag = great_war_loser }
-			LIT = {exists = no}
+			LIT = { exists = no }
 		}
 		fire_only_once = yes
 		cost = 25
@@ -332,6 +351,18 @@ GER_decision_puppet_kingdoms = {
 			}
 			puppet = LIT
 			set_global_flag = litva_released
+			LIT = {
+				set_politics = {
+					ruling_party = neutrality
+  					elections_allowed = no
+				}
+				set_popularities = {
+   					democratic = 4
+   					fascism = 0
+   					communism = 16
+   					neutrality = 80
+				}
+			}
 		}
 		ai_will_do = { 
 			base = 100
@@ -350,8 +381,10 @@ GER_decision_puppet_kingdoms = {
 			original_tag = GER
 		}
 		available = {
-			NOT = { has_country_flag = great_war_loser }
-			has_government = neutrality
+			OR = {
+				has_government = neutrality
+				has_idea = GER_idea_wilhelm_iI
+			}
 			has_full_control_of_state = 190
 		}
 		highlight_states = {
@@ -359,7 +392,10 @@ GER_decision_puppet_kingdoms = {
 		}
 		visible = {
 			has_completed_focus = GER_puppet_kingdoms
-			NOT = { has_country_flag = great_war_loser has_global_flag = COU_released }
+			NOT = {
+				has_country_flag = great_war_loser
+				has_global_flag = COU_released
+			}
 			COU = { exists = no }
 			OR = {
 				LAT = { is_subject = no }
@@ -388,6 +424,18 @@ GER_decision_puppet_kingdoms = {
 			}
 			GER = { puppet = COU }
 			set_global_flag = latvia_released
+			COU = {
+				set_politics = {
+					ruling_party = neutrality
+  					elections_allowed = no
+				}
+				set_popularities = {
+   					democratic = 25
+   					fascism = 0
+   					communism = 22
+   					neutrality = 53
+				}
+			}
 		}
 		ai_will_do = { 
 			base = 100
@@ -406,8 +454,10 @@ GER_decision_puppet_kingdoms = {
 			original_tag = GER
 		}
 		available = {
-			NOT = { has_country_flag = great_war_loser }
-			has_government = neutrality
+			OR = {
+				has_government = neutrality
+				has_idea = GER_idea_wilhelm_iI
+			}
 			has_full_control_of_state = 13
 			has_full_control_of_state = 191
 			has_full_control_of_state = 12
@@ -420,7 +470,7 @@ GER_decision_puppet_kingdoms = {
 		visible = {
 			has_completed_focus = GER_puppet_kingdoms
 			NOT = { has_country_flag = great_war_loser }
-			UBD = {exists = no}
+			UBD = { exists = no }
 		}
 		fire_only_once = yes
 		cost = 25
@@ -442,8 +492,20 @@ GER_decision_puppet_kingdoms = {
 					add_state_core = 12					
 				}	
 			}	
-			GER = { puppet = UBD }				
+			puppet = UBD
 			set_global_flag = estonia_released
+			UBD = {
+				set_politics = {
+					ruling_party = neutrality
+  					elections_allowed = no
+				}
+				set_popularities = {
+   					democratic = 25
+   					fascism = 0
+   					communism = 22
+   					neutrality = 53
+				}
+			}
 		}
 		ai_will_do = { 
 			base = 100
@@ -3387,18 +3449,7 @@ GER_prussian_blue_category = {
 					}
 				}
 			}
-			if = {
-				limit = {
-					has_country_leader = {
-						name = "Adolf Hitler"
-						ruling_only = yes
-					}
-				}
-				set_cosmetic_tag = GER_nazi
-			}
-			else = {
-				drop_cosmetic_tag = yes
-			}
+			drop_cosmetic_tag = yes
 		}
 		ai_will_do = { factor = 100 }
 	}
@@ -3567,141 +3618,6 @@ GER_prussian_blue_category = {
 		}
 		complete_effect = {
 			transfer_state = 55
-		}
-	}
-	GER_prussian_support_radicalism = {
-		allowed = {
-			OR = {
-				tag = GER
-				tag = BAY
-			}
-		}
-		available = {
-			NOT = {
-				has_idea = GER_idea_freikorps
-				any_country = {
-					has_country_leader = {
-						name = "Adolf Hitler"
-						ruling_only = yes
-					}
-				}
-			}
-		}
-		visible = {
-			has_global_flag = prussian_blue
-		}
-		fire_only_once = yes
-		ai_will_do = {
-			factor = 1
-		}
-		complete_effect = {
-			hidden_effect = {
-				set_country_flag = prussian_hitler
-			}
-			add_ideas = GER_idea_nazism
-		}
-	}
-	GER_prussian_appoint_hitler = {
-		allowed = {
-			OR = {
-				tag = GER
-				tag = BAY
-			}
-		}
-		available = {
-			OR = {
-				has_idea = GER_idea_nazism
-				fascism > 0.5
-			}
-			hidden_trigger = { has_country_flag = prussian_hitler }
-			owns_state = 64
-		}
-		visible = {
-			has_global_flag = prussian_blue
-			is_subject = no
-			has_war = no
-			fascism > 0.2
-			if = {
-				limit = {
-					tag = GER
-				}
-				BAY = {
-					NOT = {
-						has_country_leader = {
-							name = "Adolf Hitler"
-							ruling_only = yes
-						}
-					}
-				}
-				else = {
-					GER = {
-						NOT = {
-							has_country_leader = {
-								name = "Adolf Hitler"
-								ruling_only = yes
-							}
-						}
-					}
-				}
-			}
-		}
-		fire_only_once = yes
-		ai_will_do = {
-			factor = 1
-		}
-		complete_effect = {
-			if = {
-				limit = {
-					tag = GER
-				}
-				if = {
-					limit = {
-						has_country_leader = {
-							name = "Wilhelm II"
-							ruling_only = yes
-						}
-					}
-					add_ideas = GER_idea_wilhelm_ii
-				}
-				add_ideas = {
-					GER_idea_nazism
-				}
-				set_party_name = {
-					ideology = fascism
-					long_name = GER_fascism_party_NSDAP_long
-					name = GER_fascism_party_NSDAP
-				}
-				create_country_leader = {
-					name = "Adolf Hitler"
-					picture = "gfx/leaders/GER/GER_adolf_hitler.dds"
-					expire = "1935.1.1"
-					ideology = nazism
-					traits = {
-						dictator
-						trait_nazism
-					}
-				}
-			}
-			if = {
-				limit = {
-					tag = BAY
-				}
-				set_party_name = {
-					ideology = communism
-					long_name = GER_fascism_party_DAP_long
-					name = GER_fascism_party_DAP
-				}
-				create_country_leader = {
-					name = "Adolf Hitler"
-					picture = "gfx/leaders/GER/GER_adolf_hitler.dds"
-					expire = "1935.1.1"
-					ideology = vanguardism
-					traits = {
-						dictator
-						trait_vanguardism
-					}
-				}
-			}
 		}
 	}
 }

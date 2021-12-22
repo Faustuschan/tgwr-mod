@@ -393,7 +393,10 @@ focus_tree = {
 		y = 2
 		available = {
 			is_faction_leader = yes
-			has_government = neutrality
+			OR = {
+				has_government = neutrality
+				has_idea = GER_idea_wilhelm_iI
+			}			
 		}
 		bypass = {
 			AUH = {
@@ -439,7 +442,10 @@ focus_tree = {
 			NOT = {
 				has_country_flag = great_war_loser
 			}
-			has_government = neutrality
+			OR = {
+				has_government = neutrality
+				has_idea = GER_idea_wilhelm_iI
+			}
 		}
 		completion_reward = {
 			add_political_power = 150
@@ -468,7 +474,10 @@ focus_tree = {
 			NOT = {
 				has_country_flag = great_war_loser
 			}
-			has_government = neutrality
+			OR = {
+				has_government = neutrality
+				has_idea = GER_idea_wilhelm_ii
+			}
 		}
 		completion_reward = {
 			unlock_decision_category_tooltip = GER_decision_puppet_kingdoms
@@ -4837,7 +4846,16 @@ focus_tree = {
 				}
 				add_state_core = 244
 			}
-			country_event = ww1_germany.22
+			if = {
+				limit = {
+					HUN = {
+						NOT = {
+							has_country_flag = hungarian_revanchism
+						}
+					}
+				}
+				country_event = ww1_germany.22
+			}
 		}
 		ai_will_do = {
 			factor = 100
@@ -5090,7 +5108,7 @@ focus_tree = {
 			add_state_core = 75
 		}
 		ai_will_do = {
-			factor = 300
+			factor = 100
 		}
 	}
 	focus = {
@@ -5807,6 +5825,9 @@ focus_tree = {
 		}
 		x = 7
 		y = 10
+		bypass = {
+			has_goverment = democratic
+		}
 		completion_reward = {
 			add_stability = 0.05
 			add_popularity = {
@@ -5831,6 +5852,20 @@ focus_tree = {
 		x = 8
 		y = 11
 		bypass = {
+			NOT = {
+				has_idea = GER_idea_OHL1
+			}
+			hidden_trigger = {
+				NOT = {
+					has_idea = GER_idea_OHL2
+					has_idea = GER_idea_OHL3
+					has_idea = GER_idea_OHL_dictatorship
+					AND = {
+						has_global_flag = ludendorff_in_power
+						has_government = fascism
+					}
+				}
+			}
 		}
 		completion_reward = {
 			remove_ideas = GER_idea_OHL
@@ -5843,9 +5878,12 @@ focus_tree = {
 				}
 			}
 			add_ideas = GER_quenched_militarism
+			
+		}
+		select_effect = {
 			if = {
 				limit = {
-					has_global_flag = ludendorff_is_in_power
+					has_global_flag = ludendorff_in_power
 					has_government = fascism
 				}
 				set_politics = {
