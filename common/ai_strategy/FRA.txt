@@ -1059,6 +1059,45 @@ dont_invite_wadai_war = {
 		value = 99999
 	}
 }
+kill_wadai = {
+	allowed = {
+		tag = FRA
+	}
+	enable = {
+		has_war_with = CHA
+	}
+	abort = {
+		any_country = {
+			NOT = {
+				original_tag = CHA 
+				original_tag = DAR
+				original_tag = LBA
+			}
+			has_war_with = FRA
+		}
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = front_unit_request
+		id = CHA
+		value = 100
+	}
+	ai_strategy = {
+		type = conquer
+		id = CHA
+		value = 100
+	}
+	ai_strategy = {
+		type = front_unit_request
+		area = africa
+		value = 200
+	}
+	ai_strategy = {
+		type = area_priority
+		id = africa
+		value = 200
+	}
+}
 VIN_stay_in_asia = {
 	allowed = {
 		original_tag = VIN

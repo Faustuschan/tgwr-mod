@@ -1987,7 +1987,17 @@ focus_tree = {
 			focus = FRA_ww1_political_coherence
 		}
 		completion_reward = {
+<<<<<<< HEAD
 			remove_ideas = FRA_disjointed_government2
+=======
+			army_experience = 15
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus 
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine 
+			}
+>>>>>>> cb3170077e5cb9dcc9b5a264b0e7eec01cd84e90
 		}
 		ai_will_do = {
 			factor = 10
@@ -2242,7 +2252,17 @@ focus_tree = {
 		available = {
 		}
 		completion_reward = {
+<<<<<<< HEAD
 			add_ideas = FRA_ww1_colonial_resources
+=======
+			army_experience = 15
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus 
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine 
+			}
+>>>>>>> cb3170077e5cb9dcc9b5a264b0e7eec01cd84e90
 		}
 		ai_will_do = {
 			factor = 1
@@ -2535,6 +2555,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+<<<<<<< HEAD
 			retire_country_leader = yes
 			create_country_leader = {
 				name = "Jean III d'Orléans"
@@ -2550,6 +2571,14 @@ focus_tree = {
 				ideology = neutrality
 				long_name = FRA_orleanists_long
 				name = FRA_orleanists
+=======
+			army_experience = 15
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus 
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine 
+>>>>>>> cb3170077e5cb9dcc9b5a264b0e7eec01cd84e90
 			}
 		}
 		ai_will_do = {
@@ -5940,6 +5969,7 @@ focus_tree = {
 		}
 		relative_position_id = FRA_ww1_industrial_innovation
 		completion_reward = {
+<<<<<<< HEAD
 			671 = {
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
@@ -5981,6 +6011,14 @@ focus_tree = {
 					type = industrial_complex
 					level = 1
 				}
+=======
+			navy_experience = 15
+			add_doctrine_cost_reduction = {
+				name = newnavalcanons_1_bonus 
+				cost_reduction = 0.5
+				uses = 1
+				category = naval_doctrine 
+>>>>>>> cb3170077e5cb9dcc9b5a264b0e7eec01cd84e90
 			}
 		}
 		ai_will_do = {
@@ -6021,6 +6059,7 @@ focus_tree = {
 		}
 		relative_position_id = FRA_ww1_invest_in_indochina
 		completion_reward = {
+<<<<<<< HEAD
 			543 = {
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
@@ -6046,6 +6085,14 @@ focus_tree = {
 				technology = excavation5
 				bonus = 1
 				uses = 1
+=======
+			navy_experience = 15
+			add_doctrine_cost_reduction = {
+				name = newnavalcanons_2_bonus 
+				cost_reduction = 0.5
+				uses = 1
+				category = naval_doctrine 
+>>>>>>> cb3170077e5cb9dcc9b5a264b0e7eec01cd84e90
 			}
 		}
 		ai_will_do = {
@@ -6268,6 +6315,7 @@ focus_tree = {
 		}
 		relative_position_id = FRA_ww1_nord_pas_de_calais_iron_excavation
 		completion_reward = {
+<<<<<<< HEAD
 			26 = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
@@ -6291,6 +6339,14 @@ focus_tree = {
 					amount = 12
 					state = THIS
 				}
+=======
+			navy_experience = 15
+			add_doctrine_cost_reduction = {
+				name = newnavalcanons_3_bonus 
+				cost_reduction = 0.5
+				uses = 1
+				category = naval_doctrine 
+>>>>>>> cb3170077e5cb9dcc9b5a264b0e7eec01cd84e90
 			}
 		}
 		ai_will_do = {
@@ -6370,6 +6426,7 @@ focus_tree = {
 		}
 		relative_position_id = FRA_ww1_southern_industrialization
 		completion_reward = {
+<<<<<<< HEAD
 			remove_ideas = FRA_artisanal_industry
 			random_owned_controlled_state = {
 				limit = {
@@ -6410,6 +6467,14 @@ focus_tree = {
 					type = arms_factory
 					level = 1
 				}
+=======
+			navy_experience = 15
+			add_doctrine_cost_reduction = {
+				name = newnavalcanons_3_bonus 
+				cost_reduction = 0.5
+				uses = 1
+				category = naval_doctrine 
+>>>>>>> cb3170077e5cb9dcc9b5a264b0e7eec01cd84e90
 			}
 		}
 		ai_will_do = {
